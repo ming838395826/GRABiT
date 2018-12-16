@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content">
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/timg_close"
+            android:layout_gravity="right"
+            android:src="@mipmap/close"
+            android:paddingBottom="17.5dp"
+            android:paddingLeft="17.5dp"
+            android:layout_width="42.5dp"
+            android:layout_height="42.5dp" />
+    </FrameLayout>
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/timg_"
+        android:layout_below="@+id/fl"
+        android:layout_width="288dp"
+        android:layout_height="288dp"
+        android:layout_centerHorizontal="true"
+        app:siRadius="5dp"
+        app:siSquare="true" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_below="@+id/timg_"
+        android:layout_marginTop="35.5dp"
+        android:id="@+id/tbtn"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/text_ok"
+        android:textColor="@color/color_white"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:background="@drawable/btn_color_007aff"
+        android:layout_marginBottom="53dp"
+        android:layout_width="275dp"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

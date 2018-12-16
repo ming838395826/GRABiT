@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="20.5dp"
+    android:gravity="right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_your_name"
+        android:textColor="@color/app_font_color_main_title"
+        android:textSize="@dimen/app_font_title_sub_20sp"
+        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="17dp"
+        android:text="@string/text_your_name_remind"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/tet_name"
+        android:hint="@string/text_name"
+        android:textColor="@color/app_font_color_main_title"
+        android:textColorHint="@color/app_font_color_main_title_hint"
+        android:textSize="@dimen/app_font_title_sub_13sp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:maxLength="8"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <View
+        android:background="@color/app_line_color_dc"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:text="@string/text_register_agreement"
+            android:textColor="@color/app_font_color_main_title_hint"
+            android:textSize="@dimen/app_font_title_sub_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_service"
+            android:text="@string/text_register_agreement_service"
+            android:textColor="@color/app_color_1995ff"
+            android:textSize="@dimen/app_font_title_sub_12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="48dp"
+        android:id="@+id/tbtn_next"
+        android:gravity="center"
+        android:enabled="false"
+        android:text="@string/text_register_next"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/app_font_title_sub_14sp"
+        android:background="@drawable/btn_color_191917"
+        android:layout_marginRight="20dp"
+        android:layout_width="126dp"
+        android:layout_height="40dp" />
+
+
+
+</LinearLayout>

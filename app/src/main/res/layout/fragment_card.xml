@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_base_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_blur">
+
+    <RelativeLayout
+        android:layout_marginBottom="6px"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="4px"
+        android:layout_marginTop="1px"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/timg_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/timg_avatar"
+            android:background="@drawable/btn_color_88000_r2"
+            android:paddingBottom="2.5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2.5dp"
+            android:text="@string/text_home_got_it"
+            android:visibility="gone"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#eee" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_goods_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timg_avatar"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="28dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingBottom="10dp"
+            android:textColor="@color/app_font_color_main_title"
+            android:textSize="@dimen/app_font_title_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ttv_goods_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/timg_shop_avatar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/timg_shop_avatar"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/timg_shop_avatar"
+                android:gravity="center_vertical"
+                android:textColor="@color/app_font_color_main_title_sub"
+                android:textSize="@dimen/app_font_title_sub_14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

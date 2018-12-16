@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ListItemTextView-->
+    <declare-styleable name="BaseHeaderView">
+        <attr name="leftText" format="string" />
+        <attr name="leftTextSize" format="dimension" />
+        <attr name="leftTextColor" format="color" />
+        <attr name="leftDrawableLeft" format="reference|color" />
+        <attr name="centerText" format="string" />
+        <attr name="centerTextSize" format="dimension" />
+        <attr name="centerTextColor" format="color" />
+        <attr name="rightText" format="string" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightDrawableLeft" format="reference|color" />
+    </declare-styleable>
+
+    <!--WBGABadgeRadioButton-->
+    <declare-styleable name="DrawableStyle">
+        <attr name="drawableWidth" format="dimension" />
+        <attr name="drawableLeft" format="reference" />
+        <attr name="drawableTop" format="reference" />
+        <attr name="drawableRight" format="reference" />
+        <attr name="drawableBottom" format="reference" />
+    </declare-styleable>
+
+    <!--  indicator container -->
+    <declare-styleable name="IndicatorContainer">
+        <attr name="my_dot_type" format="enum">
+            <enum name="dot" value="0" />
+            <enum name="rect" value="1" />
+        </attr>
+        <attr name="my_indicator_height" format="dimension" />
+        <attr name="my_indicator_width" format="dimension" />
+        <attr name="my_indicator_span" format="dimension" />
+        <attr name="my_indicator_unselected_color" format="integer" />
+        <attr name="my_indicator_selected_color" format="integer" />
+    </declare-styleable>
+
+    <!-- slider banner -->
+    <declare-styleable name="SliderBanner">
+        <attr name="my_slider_banner_indicator" format="reference" />
+        <attr name="my_slider_banner_pager" format="reference" />
+        <attr name="my_slider_banner_time_interval" format="integer" />
+        <attr name="my_slider_banner_recycle_show" format="boolean" />
+        <attr name="my_slider_banner_auto_play" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EtaoSkin">
+        <attr name="appBackground" format="reference|color" />
+        <attr name="appTextSize" format="dimension" />
+        <attr name="appTextColor" format="reference|color" />
+        <attr name="appItemSelector" format="reference" />
+        <!--titleBar -->
+        <attr name="appHeaderContainerBackground" format="reference|color" />
+        <attr name="appHeaderTitleBackground" format="reference|color" />
+        <attr name="appHeaderTitleTextSize" format="dimension" />
+        <attr name="appHeaderTitleTextColor" format="reference|color" />
+
+        <!--list-->
+        <attr name="appListDivider" format="reference|color" />
+        <attr name="appListItemContainerBackground" format="reference|color" />
+        <!--listItem title-->
+        <attr name="appListItemTitleTextSize" format="dimension" />
+        <attr name="appListItemTitleTextColor" format="reference|color" />
+        <!--listItem subtitle-->
+        <attr name="appListItemSubTitleTextSize" format="dimension" />
+        <attr name="appListItemSubTitleTextColor" format="reference|color" />
+        <!--listItem content-->
+        <attr name="appListItemContentTextSize" format="dimension" />
+        <attr name="appListItemContentTextColor" format="reference|color" />
+
+        <!--tab -->
+        <attr name="appTabContainerBackground" format="reference|color" />
+        <attr name="appTabItemBackground" format="reference|color" />
+        <attr name="appTabItemSelectedBackground" format="reference|color" />
+        <attr name="appTabItemTextSize" format="dimension" />
+        <attr name="appTabItemTextColor" format="reference|color" />
+        <attr name="appTabItemSelectedTextColor" format="reference|color" />
+        <attr name="appTabItemLineColor" format="reference|color" />
+        <attr name="appTabItemSelectedLineColor" format="reference|color" />
+
+        <!--tipMenu-->
+        <attr name="appTipMenuContainerBackground" format="reference|color" />
+        <attr name="appTipMenuItemTextSize" format="dimension" />
+        <!--menuItem 原始状态-->
+        <attr name="appTipMenuItemBackground" format="reference|color" />
+        <attr name="appTipMenuItemTextColor" format="reference|color" />
+        <!--menuItem 点击状态-->
+        <attr name="appTipMenuItemPressBackground" format="reference|color" />
+        <attr name="appTipMenuItemPressTextColor" format="reference|color" />
+        <!--menuItem 选中状态-->
+        <attr name="appTipMenuItemSelectedBackground" format="reference|color" />
+        <attr name="appTipMenuItemSelectedTextColor" format="reference|color" />
+        <!--menuItem 分割线-->
+        <attr name="appTipMenuItemSeparatorColor" format="reference|color" />
+
+        <!--Separator-->
+        <attr name="appSeparatorBackground" format="reference|color" />
+
+        <!--pageBar-->
+        <attr name="appPagebarBackground" format="reference|color" />
+
+        <!--tip-->
+        <attr name="appTipContainerBackground" format="reference|color" />
+    </declare-styleable>
+
+    <!-- Auto Fit View Group -->
+    <declare-styleable name="autoFitViewGroup">
+        <attr name="rowMargin" format="dimension" />
+        <attr name="columnMargin" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="couponItemDotDivider">
+        <attr name="dotStrokeColor" format="color" />
+        <attr name="dotFillColor" format="color" />
+    </declare-styleable>
+
+    <!-- Material Ripple Layout -->
+    <declare-styleable name="MaterialRippleLayout">
+        <attr name="mrl_rippleColor" format="color" localization="suggested" />
+        <attr name="mrl_rippleDimension" format="dimension" localization="suggested" />
+        <attr name="mrl_rippleOverlay" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleAlpha" format="float" localization="suggested" />
+        <attr name="mrl_rippleDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleFadeDuration" format="integer" localization="suggested" />
+        <attr name="mrl_rippleHover" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleBackground" format="color" localization="suggested" />
+        <attr name="mrl_rippleDelayClick" format="boolean" localization="suggested" />
+        <attr name="mrl_ripplePersistent" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested" />
+        <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested" />
+    </declare-styleable>
+    <!--标签-->
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean" />
+        <attr name="max_select" format="integer" />
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="roundHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RotateLoading">
+        <attr name="loading_width" format="dimension"/>
+        <attr name="loading_color" format="color"/>
+        <attr name="shadow_position" format="integer"/>
+        <attr name="loading_speed" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CradleBall">
+        <attr name="cradle_ball_color" format="color" />
+    </declare-styleable>
+
+</resources>

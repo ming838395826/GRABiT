@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_tab_item_height"
+    android:paddingLeft="@dimen/activity_horizontal_margin">
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_item_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_mine_spin" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/timg_item_icon"
+        android:gravity="center_vertical"
+        android:text="SPIN币"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp" />
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_item_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_gray_go" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_item_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/timg_item_go"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"
+        android:drawablePadding="3dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="1223"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8dp"
+        android:visibility="gone"
+        android:layout_toLeftOf="@+id/timg_item_go"
+        android:gravity="center_vertical"
+        android:text="1"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_12sp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_alignLeft="@+id/ttv_item_title"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_line_color_dc" />
+</RelativeLayout>

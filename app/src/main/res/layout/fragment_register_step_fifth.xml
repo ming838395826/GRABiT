@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="20.5dp"
+    android:gravity="right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_your_info"
+        android:textColor="@color/app_font_color_main_title"
+        android:textSize="@dimen/app_font_title_sub_20sp"
+        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="17dp"
+        android:visibility="gone"
+        android:text="@string/text_your_info_remind"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="50dp"
+        android:text="@string/text_sex"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/ttv_sex"
+        android:gravity="center_vertical"
+        android:paddingRight="15dp"
+        android:text="@string/text_user_info_man"
+        android:drawableRight="@mipmap/icon_gray_go"
+        android:hint="@string/text_sex_selector_hint"
+        android:textColorHint="@color/app_font_color_main_title_hint"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <View
+        android:background="@color/app_line_color_dc"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="25dp"
+        android:text="@string/text_date"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_date"
+        android:text="2017-10-11"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:paddingRight="15dp"
+        android:drawableRight="@mipmap/icon_gray_go"
+        android:hint="@string/text_date_selector_hint"
+        android:textColorHint="@color/app_font_color_main_title_hint"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+    <View
+        android:background="@color/app_line_color_dc"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="48dp"
+        android:id="@+id/tbtn_next"
+        android:gravity="center"
+        android:text="@string/text_register_next"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/app_font_title_sub_14sp"
+        android:background="@drawable/btn_color_191917"
+        android:layout_marginRight="20dp"
+        android:layout_width="126dp"
+        android:layout_height="40dp" />
+
+
+
+</LinearLayout>

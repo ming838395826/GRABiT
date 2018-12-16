@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+
+//apply plugin: 'com.neenbedankt.android-apt'//增加这一句
+
+android {
+
+    signingConfigs {
+        release {
+            keyAlias 'grabit'
+            keyPassword 'grabit123456'
+            storeFile file('../../spin/grabit.jks')
+            storePassword 'grabit123456'
+        }
+    }
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.android.spin"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 5
+        versionName "1.0.4"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "1675d2d0483e034e617408fe", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+
+
+    }
+    afterEvaluate {
+        tasks.matching {
+            it.name.startsWith('dex')
+        }.each { dx ->
+            if (dx.additionalParameters == null) {
+                dx.additionalParameters = []
+            }
+            dx.additionalParameters += '--multi-dex' // enable multidex
+
+            // optional
+            // dx.additionalParameters += "--main-dex-list=$projectDir/<filename>".toString() // enable the main-dex-list
+        }
+    }
+    buildTypes {
+
+        debug { // 开发环境
+//            applicationIdSuffix ".debug"
+            minifyEnabled false
+            debuggable true
+            jniDebuggable true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+            jniDebuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //腾讯bugly
+
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    compile project(':ylibrary')
+    /** ************** tab_viewpage    ******************/
+
+    //七牛图片上传
+
+    // 此处以JPush 3.0.9 版本为例。
+
+    // 此处以JCore 1.1.7 版本为例。
+    compile files('libs/SocialSDK_facebook.jar')
+    compile files('libs/SocialSDK_whatsapp.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+    testCompile 'junit:junit:4.12'
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile 'com.contrarywind:Android-PickerView:3.2.3'
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    compile 'com.qiniu:qiniu-android-sdk:7.3.+'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    testCompile 'junit:junit:4.12'
+    compile 'com.alibaba:arouter-api:1.2.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.2'
+    compile files('libs/ShareSDK-WhatsApp-3.1.0.jar')
+    compile files('libs/ShareSDK-Facebook-3.1.0.jar')
+    compile files('libs/ShareSDK-Core-3.1.0.jar')
+    compile files('libs/MobTools-2017.0914.1125.jar')
+    compile files('libs/MobCommons-2017.0914.1125.jar')
+}

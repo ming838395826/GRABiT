@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="false"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/dialog_bg_white_r6"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_title"
+            android:paddingTop="72.5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="@dimen/app_font_title_sub_16sp"
+            android:text="@string/text_reset_success_title"
+            android:textColor="@color/app_font_color_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:paddingTop="13.5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:textSize="@dimen/app_font_title_sub_16sp"
+            android:text="@string/text_reset_remind_success_hint"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="35.5dp"
+            android:id="@+id/tbtn_to_login"
+            android:gravity="center"
+            android:text="@string/text_ok"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:background="@drawable/btn_color_191917"
+            android:layout_marginBottom="53dp"
+            android:layout_width="226.5dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:src="@mipmap/icon_setting_success_logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_close"
+        android:src="@mipmap/icon_dialog_close"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

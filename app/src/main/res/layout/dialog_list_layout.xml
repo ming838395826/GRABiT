@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:background="@color/app_color_f7f7f6"
+        android:layout_width="match_parent"
+        android:layout_height="40.5dp">
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_title"
+            android:layout_gravity="center"
+            tools:text="請選擇您希望設定的語言"
+            android:textSize="@dimen/app_font_title_sub_13sp"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/img_close"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/icon_close"
+            android:layout_marginRight="5dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </FrameLayout>
+    <com.taobao.uikit.feature.view.TRecyclerView
+        android:id="@+id/trv_list"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.taobao.uikit.feature.view.TRecyclerView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:paddingLeft="20.5dp">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/text_new_phone"
+        android:textColor="@color/app_font_color_main_title"
+        android:textSize="@dimen/app_font_title_size" />
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_phone_area"
+        android:text="+852"
+        android:textColor="@color/app_font_color_main_title"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:maxLength="8"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/ttv_phone_area"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:hint="@string/text_new_phone_input"
+        android:inputType="number"
+        android:textColor="@color/app_font_color_main_title"
+        android:textColorHint="@color/app_font_color_main_title_hint"
+        android:textSize="@dimen/app_font_title_sub_15sp" />
+
+        <View
+            android:layout_toRightOf="@+id/ttv_phone_area"
+            android:layout_below="@+id/et_phone"
+            android:background="@color/app_line_color_dc"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/tbtn_next"
+            android:layout_width="126dp"
+            android:layout_height="40dp"
+            android:enabled="false"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/btn_color_191917"
+            android:gravity="center"
+            android:text="@string/text_register_next"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp" />
+    </RelativeLayout>
+
+</LinearLayout>

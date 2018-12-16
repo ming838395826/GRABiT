@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:background="#ddd"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_title"
+            android:layout_gravity="center"
+            android:text="@string/title_dialog_share"
+            android:textSize="@dimen/app_font_title_sub_13sp"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/img_close"
+            android:layout_gravity="right"
+            android:src="@mipmap/icon_gray_go"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_share_facebook"
+        android:gravity="center_vertical"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_facebook"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@mipmap/share"
+            android:drawablePadding="10dp"
+            android:text="Facebook"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

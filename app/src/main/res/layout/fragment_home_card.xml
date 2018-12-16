@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.android.base.base.BaseHeaderTitleBarView
+        android:id="@+id/btb_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"></com.android.base.base.BaseHeaderTitleBarView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tl_mine_card"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            tl:tl_indicator_color="@color/app_color_191917"
+            tl:tl_indicator_width="67.5dp"
+            tl:tl_textSelectColor="@color/app_font_color_main_title"
+            tl:tl_textUnselectColor="@color/app_font_color_main_title_sub"
+            tl:tl_textsize="14sp"
+            tl:tl_underline_color="@color/color_white"
+            tl:tl_underline_gravity="BOTTOM"
+            tl:tl_underline_height="2dp" />
+
+        <View
+            android:background="@drawable/line_shape"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+    </FrameLayout>
+
+    <include layout="@layout/layout_line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_mine_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

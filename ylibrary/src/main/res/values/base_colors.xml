@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--tab颜色-->
+    <color name="tab_color_pressed">#191917</color>
+    <color name="tab_color_normal">#666</color>
+
+
+    <color name="color_top_title_bar">#191917</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="app_color_ccc">#ccc</color>
+
+    <color name="app_font_color_main_title">#333333</color>
+    <color name="app_font_color_main_title_sub">#666666</color>
+    <color name="app_font_color_main_title_hint">#999999</color>
+
+    <color name="text_Grey">#8496a0</color>
+    <!--line-->
+    <color name="app_line_color_dc">#DCDCDC</color>
+
+    <color name="app_color_191917">#191917</color>
+    <color name="app_color_7f191917">#7f191917</color>
+    <color name="app_color_aa191917">#aa191917</color>
+
+    <color name="app_color_4a4a4a">#4a4a4a</color>
+    <color name="app_color_415d99">#415d99</color>
+    <color name="app_color_aa415d99">#99415d99</color>
+
+    <color name="app_color_007aff">#007aff</color>
+    <color name="app_color_aa007aff">#aa007aff</color>
+
+    <color name="app_color_f6f6f8">#f6f6f8</color>
+    <color name="app_color_f7f7f6">#f7f7f6</color>
+
+    <color name="app_color_fff">#fff</color>
+    <color name="app_color_aafff">#aaffffff</color>
+
+
+</resources>

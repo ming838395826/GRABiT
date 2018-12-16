@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/img"
+        android:padding="3dp"
+
+        android:background="@drawable/btn_border_color_blue"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_content"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/app_font_hobby_size"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:background="@drawable/btn_border_color_blue"
+        android:id="@+id/bg_checked"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

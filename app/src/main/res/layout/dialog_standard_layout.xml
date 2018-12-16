@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:background="@drawable/dialog_bg_white_r6"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_title"
+        android:paddingTop="15dp"
+        android:visibility="gone"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:textColor="@color/app_font_color_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_content"
+        android:paddingTop="15dp"
+        android:text="文本"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:minHeight="79dp"
+        android:textColor="@color/app_font_color_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="15dp"
+        android:background="@color/app_line_color_dc"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_left"
+            android:gravity="center"
+            android:text="取消"
+            android:layout_weight="1"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:textColor="@color/app_color_1995ff"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <View
+            android:background="@color/app_line_color_dc"
+            android:layout_width="0.3dp"
+            android:layout_height="match_parent"/>
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_right"
+            android:gravity="center"
+            android:text="登陆"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:textColor="@color/app_color_1995ff"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

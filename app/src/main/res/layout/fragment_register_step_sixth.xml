@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.taobao.uikit.feature.view.TScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="20.5dp"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.taobao.uikit.feature.view.TTextView
+            android:text="@string/text_hobby"
+            android:textColor="@color/app_font_color_main_title"
+            android:textSize="@dimen/app_font_title_sub_20sp"
+            android:layout_marginTop="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="17dp"
+            android:text="@string/text_hobby_remind"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TRecyclerView
+            android:id="@+id/tre_hobby_list"
+            android:layout_marginRight="20.5dp"
+            android:layout_marginTop="47dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.taobao.uikit.feature.view.TRecyclerView>
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="48dp"
+            android:id="@+id/tbtn_next"
+            android:gravity="center"
+            android:text="@string/text_enter_home"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_14sp"
+            android:background="@drawable/btn_color_191917"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="126dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+</com.taobao.uikit.feature.view.TScrollView>

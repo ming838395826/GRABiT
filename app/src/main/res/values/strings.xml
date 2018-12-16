@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GRABiT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">168006187087824</string>
+    <string name="fb_login_protocol_scheme">90eaa8233d7d994099c73e2e81b48271</string>
+
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context="com.android.spin.logreg.RegisterFacebookActivity">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_mine_name"
+        android:paddingTop="5dp"
+        android:layout_marginTop="76dp"
+        android:textSize="25sp"
+        android:textColor="#333"
+        tools:text="卡号是恐惧啊"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:padding="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20.5dp"
+        android:textSize="17sp"
+        android:textColor="#666"
+        android:lineSpacingExtra="5dp"
+        android:gravity="center"
+        android:text="@string/text_bind_accoutn_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/tbtn_bind_phone"
+        android:gravity="center"
+        android:text="@string/text_bind_phone"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:background="@drawable/btn_color_191917"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_color_1995ff">#1995FF</color>
+    <color name="app_color_f9">#f9f9f9</color>
+
+    <color name="app_color_3b5998">#3b5998</color>
+    <color name="app_color_aa3b5998">#aa3b5998</color>
+
+    <color name="indicator_selected_color">#33191917</color>
+    <color name="indicator_unselected_color">#cc191917</color>
+
+</resources>

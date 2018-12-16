@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.spin.shop.fragment.GoodsFragment">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_comming_chind_content"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></android.support.v4.view.ViewPager>
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/ctl_nav_good_comming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tl:tl_textsize="0sp"
+        tl:tl_indicator_color="#7F000000"
+        tl:tl_divider_width="2dp"
+        tl:tl_divider_color="@color/color_white"
+        tl:tl_indicator_width="25dp"
+        tl:tl_underline_color="#33000000"
+        tl:tl_underline_height="3dp"/>
+
+    <com.android.spin.view.gallery.IndicatorContainer
+        android:id="@+id/dc_comming_indicator"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="3dp"
+        tl:my_dot_type="rect"
+        tl:my_indicator_height="3dp"
+        tl:my_indicator_selected_color="@color/indicator_unselected_color"
+        tl:my_indicator_span="1dp"
+        tl:my_indicator_unselected_color="@color/indicator_selected_color"
+        tl:my_indicator_width="40dp" />
+
+</LinearLayout>

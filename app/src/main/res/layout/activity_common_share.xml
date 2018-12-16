@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context="com.android.spin.common.CommonShareActivity">
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_bg"
+        android:visibility="gone"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="#b2191917"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.taobao.uikit.feature.view.TImageView
+                android:id="@+id/timg_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="24dp"
+                android:padding="10dp"
+                android:src="@mipmap/icon_white_close" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:id="@+id/timg_avatar"
+                android:layout_gravity="center"
+                app:siRadius="5dp"
+                app:siSquare="true"
+                android:maxHeight="200dp"
+                android:maxWidth="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#b2000000"
+            android:orientation="vertical">
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/title_dialog_share"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/app_font_title_sub_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_marginTop="16dp"
+                android:background="#33ffffff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="36dp">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_share_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@mipmap/icon_share_facebook"
+                    android:gravity="center"
+                    android:text="Facebook"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/app_font_title_sub_15sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_share_whats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@mipmap/icon_share_whatsapp"
+                    android:gravity="center"
+                    android:text="WhatsApp"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/app_font_title_sub_15sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

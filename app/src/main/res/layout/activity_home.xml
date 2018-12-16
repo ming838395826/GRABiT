@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.spin.home.HomeActivity">
+
+    <fragment
+        android:id="@+id/fg_home_found"
+        android:name="com.android.spin.home.fragment.HomeFoundFragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <fragment
+        android:id="@+id/fg_home_card"
+        android:name="com.android.spin.home.fragment.HomeCardFragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <fragment
+        android:id="@+id/fg_home_mine"
+        android:name="com.android.spin.home.fragment.HomeMineFragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/ctl_nav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_home_navi_height"
+        android:background="#000"
+        android:paddingBottom="2dp"
+        android:paddingTop="5dp"
+        tl:tl_textsize="0sp"
+        tl:tl_indicator_color="@color/color_white"
+        tl:tl_textUnselectColor="#66000000"
+        tl:tl_indicator_width="25dp"
+        tl:tl_underline_color="#000"
+        tl:tl_underline_height="2dp"/>
+
+    <!--<include layout="@layout/layout_home_navi"/>-->
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- listview -->
+    <string name="loading_more_footer" translatable="false">正在加载中哦，请耐心等待一下吧~</string>
+    <string name="load_finish_footer" translatable="false">加载完成，已无更多~</string>
+
+</resources>

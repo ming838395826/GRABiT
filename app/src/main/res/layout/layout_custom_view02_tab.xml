@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="45dp"
+    android:orientation="horizontal">
+
+    <com.android.spin.common.selector.view.CircleImageView
+        android:id="@+id/image"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="8.75dp"
+        android:layout_marginRight="8.75dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_card_item_1px" />
+
+</FrameLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_empty_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.android.base.view.load.RotateLoading
+        android:id="@+id/pb_loading"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:loading_width="3dp"
+        app:loading_color="#191917"
+        android:layout_width="55dp"
+        android:layout_height="55dp" />
+    <!--<ProgressBar-->
+        <!--android:id="@+id/pb_loading"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_empty"
+        android:text="没有更多数据"
+        android:drawablePadding="10dp"
+        android:visibility="gone"
+        android:textSize="@dimen/app_font_title_sub_12sp"
+        android:drawableTop="@mipmap/icon_empty"
+        android:textColor="@color/app_font_color_main_title_hint"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_network_error"
+        android:drawablePadding="10dp"
+        android:visibility="gone"
+        android:textSize="@dimen/app_font_title_sub_12sp"
+        android:drawableTop="@mipmap/icon_net_error"
+        android:textColor="@color/app_font_color_main_title_sub"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

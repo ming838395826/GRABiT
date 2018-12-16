@@ -1,0 +1,244 @@
+<resources>
+    <string name="app_name">GRABiT</string>
+
+    <string name="test">test</string>
+    <string name="test1">test1</string>
+
+    <string name="text_login">Log In</string>
+
+    <string name="text_notice_go">GO</string>
+
+    <!--註冊-->
+    <string name="text_main_title">Free Discounts at Your Finger Tips</string>
+    <string name="text_create_account">Create Account</string>
+    <string name="text_your_name">Username</string>
+    <string name="text_your_name_remind">Add your username</string>
+    <string name="text_name">Username</string>
+    <string name="text_register_agreement">By continuing,you agree to our </string>
+    <string name="text_register_agreement_service">Terms of Service</string>
+    <string name="text_register_next">Next</string>
+
+    <string name="text_name_error_length">The Username must be between 6 to 20 characters long</string>
+
+    <string name="text_your_phone">Phone number</string>
+    <string name="text_your_phone_remind">Registered phone number</string>
+    <string name="text_phone_hint">Enter your registered phone number</string>
+
+    <string name="text_phone_error_length">Please enter the correct phone number</string>
+
+    <string name="text_sms_code">Enter 6-digit code</string>
+    <string name="text_sms_code_remind">We have sent a temporary verification code to %s</string>
+    <string name="text_sms_code_hint">Please enter the 6-digit verification code</string>
+    <string name="text_get_sms_code">Didn’t receive code?</string>
+
+    <string name="text_sms_code_error_length">Please enter the 6-digit verification code</string>
+
+    <string name="text_pwd">Create Password</string>
+    <string name="text_pwd_remind">The password must be between 6 to 24 characters long</string>
+    <string name="text_pwd_hint">Password</string>
+    <string name="text_pwd_error_length">The password must be between 6 to 24 characters long</string>
+
+
+    <string name="text_your_info">Personal information</string>
+    <string name="text_your_info_remind">个人资讯文案</string>
+    <string name="text_sex">Gender</string>
+    <string name="text_sex_selector_hint">Select</string>
+    <string name="text_date">Birthday</string>
+    <string name="text_date_selector_hint">Select</string>
+
+    <string name="text_sex_empty_error">Please Select Gender</string>
+    <string name="text_birthday_empty_error">Please Select Birthday</string>
+    <string name="text_bind_phone">Connect your phone number</string>
+    <string name="text_bind_accoutn_hint">Account connected to Facebook, \nplease proceed to connect your phone number.</string>
+
+    <string name="text_hobby">Choose your consumption preference</string>
+    <string name="text_hobby_remind">Choose up to 3 consumption preferences</string>
+    <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
+    <string name="text_enter_home">Home Page</string>
+
+    <string name="text_hobby_Super_Markets">Super Markets</string>
+    <string name="text_hobby_Fashion">Fashion</string>
+    <string name="text_hobby_Food">Food</string>
+    <string name="text_hobby_Academics">Academics</string>
+    <string name="text_hobby_Professional_services">Professional services</string>
+    <string name="text_hobby_Leisure_services">Leisure services</string>
+    <string name="text_hobby_Entertainments">Entertainments</string>
+    <string name="text_hobby_Sports">Sports</string>
+    <string name="text_hobby_Health">Health</string>
+    <string name="text_hobby_Electronics">Electronics</string>
+    <string name="text_hobby_SFurniture">Furniture</string>
+    <string name="text_hobby_Auto">Auto</string>
+    <string name="text_hobby_Beauty_and_Skin_Care">Beauty and Skin Care</string>
+    <string name="text_hobby_Medical_service">Medical service</string>
+
+
+    <!--登陆-->
+    <string name="text_login_phone">Phone number</string>
+    <string name="text_login_phone_hint">Please enter your phone number</string>
+    <string name="text_login_pwd">password</string>
+    <string name="text_login_pwd_hint">Please enter your password</string>
+    <string name="text_login_forget_pwd">Forgot your password?</string>
+    <string name="text_login_btn">Log In</string>
+    <string name="text_face_book_login">Log in via Facebook</string>
+    <!--忘记密码-->
+    <string name="title_forget_pwd">Forgot your password</string>
+    <string name="text_forget_pwd_title">We need to identify your account</string>
+    <string name="text_forget_pwd_phone_hint">Please enter your registered phone number</string>
+    <string name="text_forget_pwd_input_hint">Please enter your phone number</string>
+    <string name="text_forget_pwd_new_pwd">Reset your Password</string>
+    <string name="text_forget_pwd_new_pwd_input_hint">The password must be between 6 to 24 characters long</string>
+    <string name="text_new_pwd_input_hint">New Password</string>
+    <string name="text_forget_pwd_submit">Submit</string>
+    <string name="text_forget_pwd_do_login">Log In</string>
+
+    <!--dialog-->
+    <!--忘记密码-->
+    <string name="text_reset_pwd_success_hint">Your password has been successfully set, please Log In again</string>
+    <string name="dialog_phone_registed_hint">This phone number has already been used to register, please log in.</string>
+    <string name="dialog_btn_cancel">Cancel</string>
+    <string name="dialog_btn_login">Log In</string>
+    <string name="dialog_btn_confirm">Confirm</string>
+    <string name="dialog_content_logout_hint">Log Out?</string>
+    <!--更换密码-->
+    <string name="text_change_pwd_title">Change phone number</string>
+    <string name="text_phone_title">Phone number</string>
+    <string name="text_finish">finish</string>
+    <string name="text_new_phone">New Phone number</string>
+    <string name="text_new_phone_input">New Phone number</string>
+
+    <string name="dialog_select_language_title">Please select your default language</string>
+
+
+    <!--设置提醒-->
+    <string name="text_reset_remind_success_hint">GRABiT reminder has been set, \nplease wait patiently</string>
+    <string name="text_reset_success_title">Set up successfully</string>
+    <string name="text_ok">OK</string>
+    <!--好物已抢光-->
+    <string name="text_no_goods_hint">Ran out of Premiums, \nGrab it earlier next time!</string>
+    <string name="text_no_goods_title">Ran out</string>
+    <!--抽中-->
+    <string name="text_getter_hint">You have grabbed the gift, \nplease proceed to your backpack to learn the use of details</string>
+    <string name="text_getter_title">Successfully earned</string>
+    <string name="text_getter_receied">ALREADY RECEIVED</string>
+    <string name="text_set_receied">ALREADY RECEIVED</string>
+    <!--分享-->
+    <string name="title_dialog_share">Share</string>
+
+    <!--首页-->
+    <string name="text_home_found">发现好物</string>
+    <string name="text_home_draw">抽奖</string>
+    <string name="text_home_card">Backpack</string>
+    <string name="text_home_mine">我的</string>
+    <string name="text_home_grabit">GrabiT</string>
+    <string name="text_home_upcoming">Upcoming</string>
+    <string name="text_home_countdown">Countdown:</string>
+    <string name="text_home_time_limit">Countdown:</string>
+    <string name="text_home_grab_it">Grab it</string>
+    <string name="text_home_ran_out">Ran out</string>
+    <string name="text_home_got_it">Got it</string>
+    <string name="text_home_reminder">Reminder</string>
+    <string name="text_home_reminder_has">Set</string>
+    <string name="text_home_grabit_reminder_set">Set</string>
+    <string name="text_home_total_premiums">Total Premiums</string>
+    <string name="text_home_goods_ran_out">Ran out</string>
+    <string name="text_home_unit_premiums"></string>
+    <string name="text_home_premiums">Premiums</string>
+    <string name="text_home_end">End</string>
+    <string name="text_home_date_day">day</string>
+    <string name="text_home_date_hour">hour</string>
+    <string name="text_home_date_min">minute</string>
+    <string name="text_home_date_s">second</string>
+    <string name="text_product_count">%1$d</string>
+    <string name="text_left_product_count">Only %1$d Left</string>
+
+    <string name="text_unit_comming_left"></string>
+    <string name="text_unit_comming_right"></string>
+
+    <string name="text_unit_left">Only&#160;</string>
+    <string name="text_unit_right">&#160;Left</string>
+    <!--好物-->
+    <string name="text_home_premium_information">Premium Information</string>
+    <string name="text_home_garb_address">Garb Address</string>
+    <string name="text_home_contact_us">Contact Us</string>
+
+
+    <!--我的-->
+    <string name="text_mine_title">Account</string>
+    <string name="text_mine_bind_face_book">Connect Facebook</string>
+    <string name="text_mine_unbind_face_book">Disconnect Facebook</string>
+    <string name="text_mine_bind_face_book_hint">Connect Facebook Success</string>
+    <string name="text_mine_unbind_face_book_hint">Disconnect Facebook Success</string>
+    <string name="text_mine_clear_cache">Clear cache</string>
+    <string name="text_mine_set_language">Language</string>
+    <string name="text_mine_mobile">Phone number</string>
+    <string name="text_mine_current_version">Current version</string>
+    <string name="text_mine_service_agreement">Terms of Service</string>
+    <string name="text_mine_about">About GRABiT</string>
+    <string name="text_mine_logout">Log Out</string>
+    <string name="text_mine_change_langua_hint">Restart is required to switch the language. Click to confirm</string>
+
+    <!--卡包-->
+    <string name="text_card_title">Backpack</string>
+    <string name="text_card_empty">Your bag is empty</string>
+    <string name="text_card_tab_new">New</string>
+    <string name="text_card_tab_used">Used</string>
+    <string name="text_card_tab_expired">Expired</string>
+    <string name="text_card_expiration_date">Expiration date</string>
+    <string name="text_card_service_address">Service address</string>
+
+    <!--个人资讯-->
+    <string name="text_user_info_title">Account</string>
+    <string name="text_user_info_title_save">Save</string>
+    <string name="text_user_info_title_edit">Edit</string>
+    <string name="text_user_info_avatar">Profit picture</string>
+    <string name="text_user_info_name">Username</string>
+    <string name="text_user_info_name_hint">Please enter the Username</string>
+    <string name="text_user_info_gender">Gender</string>
+    <string name="text_user_info_gender_hint">Select</string>
+    <string name="text_user_info_date_birth">Birthday</string>
+    <string name="text_user_info_date_birth_hint">Select</string>
+    <string name="text_user_info_man">male</string>
+    <string name="text_user_info_women">female</string>
+
+
+    <!--权限-->
+    <string name="mis_error_no_permission">Has no permission</string>
+    <string name="mis_folder_all">All Images</string>
+    <string name="mis_msg_amount_limit">Select images amount is limit</string>
+    <string name="mis_tip_take_photo">Take photo</string>
+    <string name="mis_error_image_not_exist">Image error</string>
+    <string name="mis_permission_dialog_title">Permission Deny</string>
+    <string name="mis_permission_rationale">Storage read permission is needed to pick files.</string>
+    <string name="mis_permission_rationale_write_storage">Storage write permission is needed to save the image.</string>
+    <string name="mis_ready_upload">Please later, ready to upload</string>
+    <string name="mis_confirm">Confirm</string>
+    <string name="mis_cancel">Cancel</string>
+    <string name="mis_msg_no_camera">No system camera found</string>
+    <string name="mis_photo_unit">Shot</string>
+    <string name="mis_action_button_string" >%1$s(%2$d/%3$d)</string>
+    <string name="mis_action_done">Done</string>
+
+    <string name="permission_to_album">访问相册需要允许读写存储权限</string>
+
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+
+    <string name="pull_to_refresh_pull_label">pull_to_refresh…</string>
+    <string name="pull_to_refresh_refreshing_label">Loading…</string>
+    <string name="pull_to_refresh_release_label">pull_to_refresh…</string>
+
+    <string name="text_clear_cache_hint">Should we clear your downloaded image information?</string>
+
+    <!--分享-->
+    <string name="text_share_title_1">invites you to grab</string>
+    <string name="text_share_title_2">！GrabiT：</string>
+    <string name="text_share_install">Please install</string>
+
+    <string name="text_fund_empty">Premium is coming</string>
+
+    <string name="text_empty_hobby">Please choose at least one hobby</string>
+    <string name="text_most_hobby_hint">Choose 3 hobbies at most</string>
+
+
+</resources>

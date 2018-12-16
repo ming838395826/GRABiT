@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_bg"
+    android:background="@color/color_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <com.android.base.base.BaseHeaderTitleBarView
+        android:id="@+id/htb_top_bar"
+        android:background="@color/color_top_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.android.base.base.BaseHeaderTitleBarView>
+
+</RelativeLayout>

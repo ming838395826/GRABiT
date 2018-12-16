@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="20.5dp"
+    android:gravity="right"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_sms_code"
+        android:textColor="@color/app_font_color_main_title"
+        android:textSize="@dimen/app_font_title_size"
+        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_sms_code"
+        android:layout_marginTop="30dp"
+        android:hint="@string/text_sms_code_hint"
+        android:inputType="number"
+        android:textColor="@color/app_font_color_main_title"
+        android:textColorHint="@color/app_font_color_main_title_hint"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <View
+        android:background="@color/app_line_color_dc"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="48dp"
+            android:id="@+id/tbtn_get_code_again"
+            android:gravity="center"
+            android:text="@string/text_get_sms_code"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="48dp"
+            android:id="@+id/tbtn_next"
+            android:gravity="center"
+            android:text="@string/text_register_next"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:enabled="false"
+            android:background="@drawable/btn_color_191917"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_width="126dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+</LinearLayout>

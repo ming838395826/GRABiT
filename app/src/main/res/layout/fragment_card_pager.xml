@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@id/main_view"
+    android:background="#f7f7f6"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.handmark.pulltorefresh.extras.viewpager.PullToRefreshViewPager
+        android:id="@id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        ptr:ptrAnimationStyle="rotate_and_anim"
+        ptr:ptrDrawable="@mipmap/loading_1"
+        ptr:ptrMode="both"
+        ptr:ptrScrollingWhileRefreshingEnabled="false" />
+
+    <com.android.spin.view.XGallery
+        android:id="@+id/xgallery"
+        android:visibility="gone"
+        android:layout_below="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        ptr:xGallery_itemHeight="50dp"
+        ptr:xGallery_itemWidth="50dp" />
+
+    <com.android.spin.view.tab.RecyclerTabLayout
+        android:id="@+id/recycler_tab_layout"
+        android:layout_below="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_marginTop="45dp"
+        android:layout_height="50dp"
+        ptr:rtl_tabPaddingStart="0dp"
+        ptr:rtl_tabPaddingEnd="0dp"
+        ptr:rtl_tabIndicatorHeight="0dp"
+        ptr:rtl_tabMinWidth="25dp"
+        ptr:rtl_tabMaxWidth="40dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.taobao.uikit.feature.view.TScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/color_white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="17dp"
+            android:text="服務條款"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:textSize="@dimen/app_font_title_sub_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:layout_marginTop="17dp"
+            android:text="哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n哈哈哈哈哈哈哈哈哈\n"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:textSize="@dimen/app_font_title_sub_15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</com.taobao.uikit.feature.view.TScrollView>

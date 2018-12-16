@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.spin.mine.PhoneActivity">
+
+    <include layout="@layout/layout_line"/>
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_phone"
+        android:layout_marginLeft="20.5dp"
+        android:gravity="center_vertical"
+        android:textColor="#4a4a4a"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+
+    <include layout="@layout/layout_line"/>
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_phone_change"
+        android:layout_marginTop="45dp"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_border_color_191917"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="@string/text_change_pwd_title"
+        android:layout_width="match_parent"
+        android:layout_height="40.5dp" />
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color_f7f7f6"
+    tools:context="com.android.spin.shop.HistoryFundActivity">
+
+    <View
+        android:id="@+id/sp_status"
+        android:background="#191917"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_top_title_bar">
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/timg_back"
+            android:src="@mipmap/icon_gray_back"
+            android:layout_centerVertical="true"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_week"
+                android:textColor="@color/app_font_color_main_title_hint"
+                android:textSize="12dp"
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_month"
+                android:textColor="@color/app_font_color_main_title_hint"
+                android:textSize="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_day"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/ll"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/app_font_color_main_title"
+            android:textSize="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

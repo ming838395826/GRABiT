@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context="com.android.spin.MainActivity">
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_logo"
+        android:src="@mipmap/icon_home_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
+        android:layout_width="121dp"
+        android:layout_height="121dp" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:textColor="#c4c4c3"
+        android:layout_below="@+id/timg_logo"
+        android:text="@string/text_main_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_login_btn"
+        android:id="@+id/tv_sample_login"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="51dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:textColor="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_face_book_login"
+        android:id="@+id/tv_face_book_login"
+        android:layout_above="@+id/tv_sample_login"
+        android:background="@drawable/btn_border_1"
+        android:visibility="gone"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:textColor="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <!--<com.facebook.login.widget.LoginButton-->
+        <!--android:id="@+id/login_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:layout_marginBottom="30dp" />-->
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:text="@string/text_create_account"
+        android:id="@+id/tv_create_account"
+        android:layout_above="@+id/tv_face_book_login"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:visibility="gone"
+        android:background="@drawable/btn_color_white"
+        android:gravity="center"
+        android:textSize="@dimen/app_font_title_sub_15sp"
+        android:textColor="@color/app_font_color_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</RelativeLayout>

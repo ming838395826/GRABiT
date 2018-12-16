@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.base.view.layout.PtrMaterialFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_material_style_ptr_frame"
+    android:background="#f7f7f6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.taobao.uikit.feature.view.TRecyclerView
+        android:id="@+id/tr_card_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.taobao.uikit.feature.view.TRecyclerView>
+
+</com.android.base.view.layout.PtrMaterialFrameLayout>

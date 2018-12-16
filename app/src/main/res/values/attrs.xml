@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="luckpan">
+        <attr name="pannum"  format="integer"/>
+        <attr name="names" format="reference"/>
+        <attr name="icons"  format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MineTabItemView">
+        <attr name="titleIcon" format="reference|color" />
+        <attr name="title" format="string" />
+        <attr name="value" format="string" />
+        <attr name="count" format="string" />
+        <attr name="enable" format="boolean" />
+        <attr name="showLine" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="x_radius" format="dimension"/>
+        <attr name="y_radius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="rtl_RecyclerTabLayout">
+        <attr name="rtl_tabIndicatorColor" format="color"/>
+        <attr name="rtl_tabIndicatorHeight" format="dimension"/>
+
+        <attr name="rtl_tabBackground" format="reference"/>
+
+        <attr name="rtl_tabTextAppearance" format="reference"/>
+        <attr name="rtl_tabSelectedTextColor" format="color"/>
+
+        <attr name="rtl_tabOnScreenLimit" format="integer"/>
+        <attr name="rtl_tabMinWidth" format="dimension"/>
+        <attr name="rtl_tabMaxWidth" format="dimension"/>
+
+        <attr name="rtl_tabPaddingStart" format="dimension"/>
+        <attr name="rtl_tabPaddingTop" format="dimension"/>
+        <attr name="rtl_tabPaddingEnd" format="dimension"/>
+        <attr name="rtl_tabPaddingBottom" format="dimension"/>
+        <attr name="rtl_tabPadding" format="dimension"/>
+
+        <attr name="rtl_scrollEnabled" format="boolean"/>
+
+    </declare-styleable>
+</resources>

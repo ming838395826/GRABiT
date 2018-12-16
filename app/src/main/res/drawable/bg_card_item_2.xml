@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item>-->
+        <!--<shape>-->
+            <!--<padding-->
+                <!--android:bottom="1dp"-->
+                <!--android:left="1dp"-->
+                <!--android:right="1dp"-->
+                <!--android:top="1dp" />-->
+            <!--<solid android:color="#07aaaaaa" />-->
+        <!--</shape>-->
+    <!--</item>-->
+
+    <!--<item>-->
+        <!--<shape>-->
+            <!--<padding-->
+                <!--android:bottom="1dp"-->
+                <!--android:left="1dp"-->
+                <!--android:right="1dp"-->
+                <!--android:top="1dp" />-->
+            <!--<solid android:color="#06aaaaaa" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--<item>-->
+        <!--<shape>-->
+            <!--<padding-->
+                <!--android:bottom="1dp"-->
+                <!--android:left="1dp"-->
+                <!--android:right="1dp"-->
+                <!--android:top="1dp" />-->
+            <!--<solid android:color="#05aaaaaa" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <item>
+        <shape>
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="#20bbbbbb" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="#30bbbbbb" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="#40bbbbbb" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+            <solid android:color="#50bbbbbb" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/color_white" />
+        </shape>
+    </item>
+</layer-list>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>--><!--<shape xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+    <!--<solid android:color="@color/default_green_color"></solid>--><!--<corners android:radius="50px"></corners>-->
+
+
+    <!--</shape>-->

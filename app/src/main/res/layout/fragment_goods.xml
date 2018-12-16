@@ -1,0 +1,353 @@
+<com.android.base.view.layout.PtrMaterialFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ptr_material_style_ptr_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.spin.shop.fragment.GoodsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.android.spin.view.gallery.SliderBanner
+                android:id="@+id/sb_home_banner"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="75%w"
+                app:my_slider_banner_auto_play="true"
+                app:my_slider_banner_indicator="@+id/dc_home_banner_indicator"
+                app:my_slider_banner_pager="@+id/vp_home_banner_pager"
+                app:my_slider_banner_recycle_show="true">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_home_banner_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.android.spin.view.gallery.IndicatorContainer
+                    android:id="@+id/dc_home_banner_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="8dp"
+                    app:my_dot_type="rect"
+                    app:my_indicator_height="3dp"
+                    app:my_indicator_selected_color="@color/indicator_unselected_color"
+                    app:my_indicator_span="6dp"
+                    app:my_indicator_unselected_color="@color/indicator_selected_color"
+                    app:my_indicator_width="10dp" />
+            </com.android.spin.view.gallery.SliderBanner>
+
+            <LinearLayout
+                android:id="@+id/ll_layout_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22.5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="25dp"
+                android:visibility="gone">
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开奖倒计时："
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_size" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_day_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/text_home_date_day"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_size" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/text_home_date_hour"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_size" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/text_home_date_min"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_date_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_size" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/text_home_date_s"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+            </LinearLayout>
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="21dp"
+                android:lineSpacingExtra="5dp"
+                android:maxWidth="325dp"
+                android:textColor="@color/app_font_color_main_title"
+                android:textSize="@dimen/app_font_title_size" />
+
+            <LinearLayout
+                android:id="@+id/ll_shop_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="22.5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.android.spin.common.selector.view.CircleImageView
+                    android:id="@+id/img_shop_avatar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_mine_avatar"
+                    android:scaleType="centerCrop" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_shop_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/app_line_color_dc" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/text_home_premium_information"
+                android:textColor="@color/app_font_color_main_title"
+                android:textSize="@dimen/app_font_title_sub_size" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_product_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/app_font_color_main_title_sub"
+                android:textSize="@dimen/app_font_title_sub_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/app_line_color_dc" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/text_home_garb_address"
+                android:textColor="@color/app_font_color_main_title"
+                android:textSize="@dimen/app_font_title_sub_size" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/app_font_color_main_title_sub"
+                android:textSize="@dimen/app_font_title_sub_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/app_line_color_dc" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/text_home_contact_us"
+                android:textColor="@color/app_font_color_main_title"
+                android:textSize="@dimen/app_font_title_sub_size" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/app_font_color_main_title_sub"
+                android:textSize="@dimen/app_font_title_sub_14sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_ran"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginBottom="36dp"
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginRight="14.5dp"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/btn_border_color_191917_2px">
+
+                <LinearLayout
+                    android:id="@+id/ll_btn_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ttv_product_tag_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_font_color_main_title"
+                        android:textSize="@dimen/app_font_title_sub_12sp" />
+
+                    <TextView
+                        android:id="@+id/ttv_product_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="999"
+                        android:textColor="@color/app_font_color_main_title"
+                        android:textSize="@dimen/app_font_title_size" />
+
+                    <TextView
+                        android:id="@+id/ttv_product_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_font_color_main_title"
+                        android:textSize="@dimen/app_font_title_sub_12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ttv_btn_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/app_color_191917"
+                    android:gravity="center"
+                    android:text="@string/text_home_reminder"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/app_font_title_sub_15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginBottom="36dp"
+                android:layout_marginLeft="14.5dp"
+                android:layout_marginRight="14.5dp"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/btn_border_color_191917_2px"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_home_total_premiums"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_goods_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+                <com.taobao.uikit.feature.view.TTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_home_unit_premiums"
+                    android:textColor="@color/app_font_color_main_title"
+                    android:textSize="@dimen/app_font_title_sub_12sp" />
+
+            </LinearLayout>
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+    </ScrollView>
+
+</com.android.base.view.layout.PtrMaterialFrameLayout>

@@ -1,0 +1,1278 @@
+[
+    {
+        "outputFile": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 52,
+                    "endOffset": 103
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 52,
+                        "endOffset": 103
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 108,
+                    "endColumn": 55,
+                    "endOffset": 159
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 108,
+                        "endColumn": 55,
+                        "endOffset": 159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 164,
+                    "endColumn": 57,
+                    "endOffset": 217
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 57,
+                        "endOffset": 217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 222,
+                    "endColumn": 50,
+                    "endOffset": 268
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 222,
+                        "endColumn": 50,
+                        "endOffset": 268
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 273,
+                    "endLine": 9,
+                    "endColumn": 11,
+                    "endOffset": 400
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 273,
+                        "endLine": 9,
+                        "endColumn": 11,
+                        "endOffset": 400
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 405,
+                    "endColumn": 48,
+                    "endOffset": 449
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 405,
+                        "endColumn": 48,
+                        "endOffset": 449
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 454,
+                    "endColumn": 49,
+                    "endOffset": 499
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 454,
+                        "endColumn": 49,
+                        "endOffset": 499
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 504,
+                    "endColumn": 49,
+                    "endOffset": 549
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 504,
+                        "endColumn": 49,
+                        "endOffset": 549
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 554,
+                    "endColumn": 43,
+                    "endOffset": 593
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 554,
+                        "endColumn": 43,
+                        "endOffset": 593
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 598,
+                    "endColumn": 56,
+                    "endOffset": 650
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 598,
+                        "endColumn": 56,
+                        "endOffset": 650
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 655,
+                    "endColumn": 54,
+                    "endOffset": 705
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 655,
+                        "endColumn": 54,
+                        "endOffset": 705
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 710,
+                    "endColumn": 59,
+                    "endOffset": 765
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 710,
+                        "endColumn": 59,
+                        "endOffset": 765
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 770,
+                    "endColumn": 53,
+                    "endOffset": 819
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 770,
+                        "endColumn": 53,
+                        "endOffset": 819
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 824,
+                    "endColumn": 46,
+                    "endOffset": 866
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 824,
+                        "endColumn": 46,
+                        "endOffset": 866
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 871,
+                    "endColumn": 52,
+                    "endOffset": 919
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 871,
+                        "endColumn": 52,
+                        "endOffset": 919
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 924,
+                    "endColumn": 47,
+                    "endOffset": 967
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 924,
+                        "endColumn": 47,
+                        "endOffset": 967
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 972,
+                    "endColumn": 48,
+                    "endOffset": 1016
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 972,
+                        "endColumn": 48,
+                        "endOffset": 1016
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 6320,
+                    "endColumn": 74,
+                    "endOffset": 6390
+                },
+                "from": {
+                    "file": "C:\\Users\\ming\\.android\\build-cache\\a66c2e992827d5cf7a41035bc7fa821be45ed24a\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 372,
+                        "endColumn": 74,
+                        "endOffset": 442
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 6395,
+                    "endColumn": 75,
+                    "endOffset": 6466
+                },
+                "from": {
+                    "file": "C:\\Users\\ming\\.android\\build-cache\\a66c2e992827d5cf7a41035bc7fa821be45ed24a\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 447,
+                        "endColumn": 75,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 6471,
+                    "endColumn": 71,
+                    "endOffset": 6538
+                },
+                "from": {
+                    "file": "C:\\Users\\ming\\.android\\build-cache\\a66c2e992827d5cf7a41035bc7fa821be45ed24a\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 523,
+                        "endColumn": 71,
+                        "endOffset": 590
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 6543,
+                    "endColumn": 48,
+                    "endOffset": 6587
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 6003,
+                        "endColumn": 48,
+                        "endOffset": 6047
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 6592,
+                    "endColumn": 49,
+                    "endOffset": 6637
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 6052,
+                        "endColumn": 49,
+                        "endOffset": 6097
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 6642,
+                    "endColumn": 51,
+                    "endOffset": 6689
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 6102,
+                        "endColumn": 51,
+                        "endOffset": 6149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 6694,
+                    "endColumn": 48,
+                    "endOffset": 6738
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 6154,
+                        "endColumn": 48,
+                        "endOffset": 6198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 6743,
+                    "endColumn": 48,
+                    "endOffset": 6787
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 6203,
+                        "endColumn": 48,
+                        "endOffset": 6247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 6792,
+                    "endColumn": 65,
+                    "endOffset": 6853
+                },
+                "from": {
+                    "file": "C:\\Users\\ming\\.android\\build-cache\\a66c2e992827d5cf7a41035bc7fa821be45ed24a\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 595,
+                        "endColumn": 65,
+                        "endOffset": 656
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 6858,
+                    "endColumn": 66,
+                    "endOffset": 6920
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 6252,
+                        "endColumn": 66,
+                        "endOffset": 6314
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 6925,
+                    "endColumn": 87,
+                    "endOffset": 7008
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 6319,
+                        "endColumn": 87,
+                        "endOffset": 6402
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 7013,
+                    "endColumn": 84,
+                    "endOffset": 7093
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 6407,
+                        "endColumn": 84,
+                        "endOffset": 6487
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 7098,
+                    "endColumn": 87,
+                    "endOffset": 7181
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 6492,
+                        "endColumn": 87,
+                        "endOffset": 6575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 7186,
+                    "endColumn": 68,
+                    "endOffset": 7250
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 6580,
+                        "endColumn": 68,
+                        "endOffset": 6644
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 7255,
+                    "endLine": 66,
+                    "endColumn": 12,
+                    "endOffset": 7771
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 6649,
+                        "endLine": 61,
+                        "endColumn": 12,
+                        "endOffset": 7165
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 7776,
+                    "endLine": 75,
+                    "endColumn": 12,
+                    "endOffset": 8293
+                },
+                "from": {
+                    "file": "F:\\GBAT2.0\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 7170,
+                        "endLine": 70,
+                        "endColumn": 12,
+                        "endOffset": 7687
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 52,
+                    "endOffset": 103
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 52,
+                        "endOffset": 103
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 108,
+                    "endColumn": 55,
+                    "endOffset": 159
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 108,
+                        "endColumn": 55,
+                        "endOffset": 159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 164,
+                    "endColumn": 57,
+                    "endOffset": 217
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 57,
+                        "endOffset": 217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 222,
+                    "endColumn": 50,
+                    "endOffset": 268
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 222,
+                        "endColumn": 50,
+                        "endOffset": 268
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 273,
+                    "endLine": 9,
+                    "endColumn": 11,
+                    "endOffset": 400
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 273,
+                        "endLine": 9,
+                        "endColumn": 11,
+                        "endOffset": 400
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 405,
+                    "endColumn": 48,
+                    "endOffset": 449
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 405,
+                        "endColumn": 48,
+                        "endOffset": 449
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 454,
+                    "endColumn": 49,
+                    "endOffset": 499
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 454,
+                        "endColumn": 49,
+                        "endOffset": 499
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 504,
+                    "endColumn": 49,
+                    "endOffset": 549
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 504,
+                        "endColumn": 49,
+                        "endOffset": 549
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 554,
+                    "endColumn": 43,
+                    "endOffset": 593
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 554,
+                        "endColumn": 43,
+                        "endOffset": 593
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 598,
+                    "endColumn": 56,
+                    "endOffset": 650
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 598,
+                        "endColumn": 56,
+                        "endOffset": 650
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 655,
+                    "endColumn": 54,
+                    "endOffset": 705
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 655,
+                        "endColumn": 54,
+                        "endOffset": 705
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 710,
+                    "endColumn": 59,
+                    "endOffset": 765
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 710,
+                        "endColumn": 59,
+                        "endOffset": 765
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 770,
+                    "endColumn": 53,
+                    "endOffset": 819
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 770,
+                        "endColumn": 53,
+                        "endOffset": 819
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 824,
+                    "endColumn": 46,
+                    "endOffset": 866
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 824,
+                        "endColumn": 46,
+                        "endOffset": 866
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 871,
+                    "endColumn": 52,
+                    "endOffset": 919
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 871,
+                        "endColumn": 52,
+                        "endOffset": 919
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 924,
+                    "endColumn": 47,
+                    "endOffset": 967
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 924,
+                        "endColumn": 47,
+                        "endOffset": 967
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 972,
+                    "endColumn": 48,
+                    "endOffset": 1016
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 972,
+                        "endColumn": 48,
+                        "endOffset": 1016
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 6320,
+                    "endColumn": 74,
+                    "endOffset": 6390
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\.android\\build-cache\\d23bffecb95dccce6e73c76c1a689d5fedd8612b\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 372,
+                        "endColumn": 74,
+                        "endOffset": 442
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 6395,
+                    "endColumn": 75,
+                    "endOffset": 6466
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\.android\\build-cache\\d23bffecb95dccce6e73c76c1a689d5fedd8612b\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 447,
+                        "endColumn": 75,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 6471,
+                    "endColumn": 71,
+                    "endOffset": 6538
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\.android\\build-cache\\d23bffecb95dccce6e73c76c1a689d5fedd8612b\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 523,
+                        "endColumn": 71,
+                        "endOffset": 590
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 6543,
+                    "endColumn": 48,
+                    "endOffset": 6587
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 6003,
+                        "endColumn": 48,
+                        "endOffset": 6047
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 6592,
+                    "endColumn": 49,
+                    "endOffset": 6637
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 6052,
+                        "endColumn": 49,
+                        "endOffset": 6097
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 6642,
+                    "endColumn": 51,
+                    "endOffset": 6689
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 6102,
+                        "endColumn": 51,
+                        "endOffset": 6149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 6694,
+                    "endColumn": 48,
+                    "endOffset": 6738
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 6154,
+                        "endColumn": 48,
+                        "endOffset": 6198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 6743,
+                    "endColumn": 48,
+                    "endOffset": 6787
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 6203,
+                        "endColumn": 48,
+                        "endOffset": 6247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 6792,
+                    "endColumn": 65,
+                    "endOffset": 6853
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\.android\\build-cache\\d23bffecb95dccce6e73c76c1a689d5fedd8612b\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 595,
+                        "endColumn": 65,
+                        "endOffset": 656
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 6858,
+                    "endColumn": 66,
+                    "endOffset": 6920
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 6252,
+                        "endColumn": 66,
+                        "endOffset": 6314
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 6925,
+                    "endColumn": 87,
+                    "endOffset": 7008
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 6319,
+                        "endColumn": 87,
+                        "endOffset": 6402
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 7013,
+                    "endColumn": 84,
+                    "endOffset": 7093
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 6407,
+                        "endColumn": 84,
+                        "endOffset": 6487
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 7098,
+                    "endColumn": 87,
+                    "endOffset": 7181
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 6492,
+                        "endColumn": 87,
+                        "endOffset": 6575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 7186,
+                    "endColumn": 68,
+                    "endOffset": 7250
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 6580,
+                        "endColumn": 68,
+                        "endOffset": 6644
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 7255,
+                    "endLine": 66,
+                    "endColumn": 12,
+                    "endOffset": 7771
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 6649,
+                        "endLine": 61,
+                        "endColumn": 12,
+                        "endOffset": 7165
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 7776,
+                    "endLine": 75,
+                    "endColumn": 12,
+                    "endOffset": 8293
+                },
+                "from": {
+                    "file": "F:\\Users\\yangqiyun\\Downloads\\android\\spin\\uikit_core\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 7170,
+                        "endLine": 70,
+                        "endColumn": 12,
+                        "endOffset": 7687
+                    }
+                }
+            }
+        ]
+    }
+]

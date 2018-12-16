@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>action</item>
+        <item>adventure</item>
+        <item>combat</item>
+        <item>moba</item>
+        <item>other</item>
+        <item>role</item>
+    </string-array>
+
+    <string-array name="icons">
+        <item>action</item>
+        <item>adventure</item>
+        <item>combat</item>
+        <item>moba</item>
+        <item>other</item>
+        <item>role</item>
+    </string-array>
+
+    <!--<integer-array name="list_language_res">-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+    <!--</integer-array>-->
+
+    <string-array name="list_language">
+        <item>香港繁體</item>
+        <item>中国简体</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="list_gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>
