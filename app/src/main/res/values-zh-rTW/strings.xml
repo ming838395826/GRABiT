@@ -167,6 +167,8 @@
     <string name="text_mine_unbind_face_book_hint">解绑Facebook成功</string>
     <string name="text_mine_clear_cache">清理緩存</string>
     <string name="text_mine_set_language">語言設定</string>
+    <string name="text_mine_feed_back">意見反饋</string>
+    <string name="text_mine_contact_us">聯繫我們</string>
     <string name="text_mine_mobile">電話號碼</string>
     <string name="text_mine_current_version">當前版本</string>
     <string name="text_mine_service_agreement">服務條款</string>
@@ -233,4 +235,8 @@
 
     <string name="text_empty_hobby">請最少選擇一個興趣愛好</string>
     <string name="text_most_hobby_hint">最多選擇3個興趣愛好</string>
+
+    <!--联系我们-->
+    <string name="text_contact_phone">聯繫電話</string>
+    <string name="text_contact_email">聯繫郵箱</string>
 </resources>

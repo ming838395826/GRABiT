@@ -1,15 +1,10 @@
 package com.android.spin.home.fragment;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.android.base.base.BaseHeaderTitleBarView;
 import com.android.base.base.MvpFragment;
@@ -25,10 +20,11 @@ import com.android.spin.common.AgreementActivity;
 import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.common.util.Constant;
 import com.android.spin.db.UserManager;
-import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateUserInfoEvent;
 import com.android.spin.home.HomeActivity;
 import com.android.spin.logreg.LoginActivity;
+import com.android.spin.mine.ContactUsActivity;
+import com.android.spin.mine.FeedBackActivity;
 import com.android.spin.mine.PhoneActivity;
 import com.android.spin.mine.UserInfoActivity;
 import com.android.spin.mine.presenter.MinePresenter;
@@ -37,8 +33,6 @@ import com.android.spin.util.facebook.FaceBookLogin;
 import com.android.spin.util.facebook.FacebookUser;
 import com.android.spin.util.string.FormatStringUtil;
 import com.android.spin.view.MineTabItemView;
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.orhanobut.logger.Logger;
 import com.taobao.uikit.feature.view.TRecyclerView;
 import com.taobao.uikit.feature.view.TTextView;
 
@@ -50,7 +44,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -170,7 +163,8 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
     @OnClick({R.id.miv_mine_clear_cache, R.id.miv_mine_set_language,
             R.id.miv_mine_mobile, R.id.miv_mine_version,
             R.id.miv_mine_agreement, R.id.miv_mine_about_grabit,
-            R.id.tv_bind_face_book, R.id.tv_face_book_login, R.id.ll_mine_info})
+            R.id.tv_bind_face_book, R.id.tv_face_book_login, R.id.ll_mine_info,
+            R.id.miv_mine_feed_back, R.id.miv_mine_contact_us})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -233,6 +227,14 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
             case R.id.tv_face_book_login:
                 //退出登陆
                 showLogoutDialog();
+                break;
+            case R.id.miv_mine_feed_back:
+                //意见反馈
+                FeedBackActivity.star(getContext());
+                break;
+            case R.id.miv_mine_contact_us:
+                //联系我们
+                ContactUsActivity.star(getContext());
                 break;
         }
     }

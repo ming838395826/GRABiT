@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:background="#F7F7F6">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
+        android:background="@color/color_white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="68dp"
+            android:layout_marginTop="87dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_contact_phone"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/app_font_title_sub_14sp"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="68-3333-3333"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/app_font_title_sub_18sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_contact_email"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/app_font_title_sub_14sp"
+                android:layout_marginTop="28dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="grabit@gmail.com"
+                android:textColor="#ff333333"
+                android:textSize="@dimen/app_font_title_sub_18sp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ImageView
+        android:layout_width="91dp"
+        android:layout_height="91dp"
+        android:src="@mipmap/icon_app_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"/>
+
+</RelativeLayout>

@@ -5,6 +5,14 @@ apply plugin: 'com.android.application'
 android {
 
     signingConfigs {
+
+        debug {
+            storeFile file("KeyStore/grabit.jks")
+            storePassword "grabit"
+            keyAlias "grabit"
+            keyPassword "grabit"
+        }
+
         release {
             keyAlias 'grabit'
             keyPassword 'grabit123456'

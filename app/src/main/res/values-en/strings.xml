@@ -171,6 +171,8 @@
     <string name="text_mine_clear_cache">Clear cache</string>
     <string name="text_mine_set_language">Language</string>
     <string name="text_mine_mobile">Phone number</string>
+    <string name="text_mine_feed_back">Feed back</string>
+    <string name="text_mine_contact_us">Contact us</string>
     <string name="text_mine_current_version">Current version</string>
     <string name="text_mine_service_agreement">Terms of Service</string>
     <string name="text_mine_about">About GRABiT</string>
@@ -239,6 +241,10 @@
 
     <string name="text_empty_hobby">Please choose at least one hobby</string>
     <string name="text_most_hobby_hint">Choose 3 hobbies at most</string>
+
+    <!--联系我们-->
+    <string name="text_contact_phone">Contact number</string>
+    <string name="text_contact_email">Contact mailbox</string>
 
 
 </resources>

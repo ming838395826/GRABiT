@@ -280,6 +280,8 @@
             android:value="59cf5ae88630f53eeb00007e" />
 
         <activity android:name=".mine.ChangePhoneActivity" />
+        <activity android:name=".mine.ContactUsActivity" />
+        <activity android:name=".mine.FeedBackActivity" />
         <activity android:name=".mine.PhoneActivity" />
         <activity android:name=".logreg.RegisterFacebookActivity" />
         <activity android:name=".logreg.FacebookBindPhoneActivity" />
