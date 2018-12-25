@@ -1,6 +1,7 @@
 package com.android.spin.db;
 
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -109,6 +110,17 @@ public class UserManager extends BaseManager {
     public void logout(){
         saveToken(null);
         setUserInfo(null);
+    }
+
+    /**
+     * 判断是否登陆
+     * @return
+     */
+    public boolean isLogin(){
+        if(TextUtils.isEmpty(UserManager.getInstance().getToken())){
+            return false;
+        }
+        return  true;
     }
 
 }

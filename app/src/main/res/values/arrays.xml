@@ -26,7 +26,7 @@
 
     <string-array name="list_language">
         <item>香港繁體</item>
-        <item>中国简体</item>
+<!--        <item>中国简体</item>-->
         <item>English</item>
     </string-array>
 

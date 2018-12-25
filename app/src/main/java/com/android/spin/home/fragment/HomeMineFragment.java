@@ -83,7 +83,7 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
     @Bind(R.id.cimg_user_avatar)
     CircleImageView cimgUserAvatar;
 
-    private int[] languageIcons = {R.mipmap.icon_language_hk, R.mipmap.icon_language_cn, R.mipmap.icon_language_en};
+    private int[] languageIcons = {R.mipmap.icon_language_hk, R.mipmap.icon_language_en};
 
     @Override
     public MinePresenter initPresenter() {
@@ -170,7 +170,11 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
         switch (v.getId()) {
             case R.id.ll_mine_info:
                 //个人资讯
-                UserInfoActivity.star(getActivity());
+                if(!UserManager.getInstance().isLogin()){
+                    showNoLogin();
+                }else {
+                    UserInfoActivity.star(getActivity());
+                }
                 break;
             case R.id.miv_mine_clear_cache:
                 //清理缓存
@@ -182,7 +186,11 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
                 break;
             case R.id.miv_mine_mobile:
                 //我的电话
-                PhoneActivity.star(getActivity(),UserManager.getInstance().getUser().getPhone());
+                if(!UserManager.getInstance().isLogin()){
+                    showNoLogin();
+                }else {
+                    PhoneActivity.star(getActivity(),UserManager.getInstance().getUser().getPhone());
+                }
                 break;
             case R.id.miv_mine_version:
                 //当前版本
@@ -241,7 +249,11 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
 
     private void initDatas() {
         try {
-            ttvMineName.setText(UserManager.getInstance().getUser().getName());
+            if(TextUtils.isEmpty(UserManager.getInstance().getUser().getName())){
+                ttvMineName.setText(getString(R.string.text_mine_login_register));
+            }else {
+                ttvMineName.setText(UserManager.getInstance().getUser().getName());
+            }
             GlideUtil.defualtLoad(getActivity(), UserManager.getInstance().getUser().getAvatar(),
                     R.mipmap.icon_mine_header,cimgUserAvatar);
         }catch (Exception e){}
@@ -254,7 +266,11 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
         try{
             mivMineVersion.setValue("V" + AppManagerUtil.getVersionName(getActivity()));
             mivMineClearCache.setValue(GlideCatchUtil.getInstance().getCacheSize());
-            mivMineMobile.setValue(FormatStringUtil.getPhone(UserManager.getInstance().getUser().getPhone()));
+            if(UserManager.getInstance().getUser().getName()==null){
+                mivMineMobile.setValue("");
+            }else {
+                mivMineMobile.setValue(FormatStringUtil.getPhone(UserManager.getInstance().getUser().getPhone()));
+            }
         }catch (Exception e){}
         initLanguage();
     }
@@ -334,7 +350,8 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
                                     AppLanguageManager.setLanguageHk();
                                     break;
                                 case 1:
-                                    AppLanguageManager.setLanguageCN();
+                                    AppLanguageManager.setLanguageEN();
+//                                    AppLanguageManager.setLanguageCN();
                                     break;
                                 case 2:
                                     AppLanguageManager.setLanguageEN();
@@ -380,8 +397,10 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
             case TYPE_REQUEST_LOGOUT:
                 //登出成功
                 UserManager.getInstance().logout();
-                LoginActivity.star(getActivity());
-                finishActivity();
+                initDatas();
+                initItem();
+//                LoginActivity.star(getActivity());
+//                finishActivity();
                 break;
             case TYPE_REQUEST_BIND:
                 initFacebookStatus();
@@ -392,6 +411,11 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
                 ToastUtil.shortShow(getString(R.string.text_mine_unbind_face_book_hint));
                 break;
         }
+    }
+
+    public void showNoLogin(){
+        LoginActivity.star(getActivity());
+        finishActivity();
     }
 
 }

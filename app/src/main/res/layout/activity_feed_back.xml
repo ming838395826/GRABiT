@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="意見或建議"
+        android:text="@string/text_feed_back_idea"
         android:textColor="#ff333333"
         android:textSize="@dimen/app_font_title_sub_18sp"
         android:layout_marginTop="30dp"/>
@@ -29,7 +29,7 @@
             android:id="@+id/et_idea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="感謝您使用GRABiT，使用過程中有任何意見或建議請反饋給我們。"
+            android:hint="@string/text_feed_back_idea_hint"
             android:textColorHint="#ff999999"
             android:textSize="@dimen/app_font_title_sub_14sp"
             android:background="@color/color_white"
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="個人郵箱"
+        android:text="@string/text_feed_back_email"
         android:textColor="#ff333333"
         android:textSize="@dimen/app_font_title_sub_18sp"
         android:layout_marginTop="27dp"/>
@@ -63,7 +63,7 @@
             android:id="@+id/et_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="留下您的個人郵箱，便於與您聯繫"
+            android:hint="@string/text_feed_back_email_hint"
             android:textColorHint="#ff999999"
             android:textSize="@dimen/app_font_title_sub_14sp"
             android:background="@color/color_white"
@@ -79,7 +79,7 @@
         android:id="@+id/tv_submit"
         android:layout_marginTop="48dp"
         android:gravity="center"
-        android:text="提交"
+        android:text="@string/text_feed_back_submit"
         android:textColor="@color/color_white"
         android:textSize="@dimen/app_font_title_sub_15sp"
         android:enabled="false"

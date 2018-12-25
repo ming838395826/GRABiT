@@ -175,6 +175,7 @@
     <string name="text_mine_about">關於GRABiT</string>
     <string name="text_mine_logout">登出</string>
     <string name="text_mine_change_langua_hint">切換語言需要重啓APP,確認切換？</string>
+    <string name="text_mine_login_register">登錄／註冊</string>
 
     <!--卡包-->
     <string name="text_card_title">卡包</string>
@@ -239,4 +240,16 @@
     <!--联系我们-->
     <string name="text_contact_phone">聯繫電話</string>
     <string name="text_contact_email">聯繫郵箱</string>
+
+    <!--意见反馈-->
+    <string name="text_feed_back_idea">意見或建議</string>
+    <string name="text_feed_back_email">個人郵箱</string>
+    <string name="text_feed_back_idea_hint">感謝您使用GRABiT，使用過程中有任何意見或建議請反饋給我們。</string>
+    <string name="text_feed_back_email_hint">留下您的個人郵箱，便於與您聯繫</string>
+    <string name="text_feed_back_submit">提交</string>
+
+    <!--好物抢购提示-->
+    <string name="text_home_grab_it_new">馬上領取好物</string>
+    <string name="text_home_ran_out_new">已搶光好物</string>
+    <string name="text_home_got_it_new">已領取好物</string>
 </resources>

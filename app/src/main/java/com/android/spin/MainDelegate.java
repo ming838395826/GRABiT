@@ -85,7 +85,7 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(TextUtils.isEmpty(UserManager.getInstance().getToken())){
+                if(false&&TextUtils.isEmpty(UserManager.getInstance().getToken())){//无论怎么样都进主界面
                     return;
                 }
                 HomeActivity.star(getActivity());
