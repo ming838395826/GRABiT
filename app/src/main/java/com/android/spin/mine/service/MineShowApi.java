@@ -101,4 +101,8 @@ public interface MineShowApi<T> {
     Observable<ShowApiResponse<Object>> doVerifyPhone(@Header("Cache-Control") String cacheControl,
                                                          @FieldMap Map<String, Object> map);
 
+    @FormUrlEncoded
+    @POST(MineApiInterface.getContactUsInfo)
+    Observable<ShowApiResponse<Object>> getContactUsInfo(@Header("Cache-Control") String cacheControl);
+
 }

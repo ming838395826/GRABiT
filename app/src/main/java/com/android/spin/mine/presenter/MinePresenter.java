@@ -182,4 +182,17 @@ public class MinePresenter extends MvpPresenter<IView> {
             }
         });
     }
+
+    /**
+     * 获取联系信息
+     */
+    public void getContactUsInfo(final int type) {
+        mMineModel.getContactUsInfo(new OnNetRequestImplListener<UserEntity>(getView(), type) {
+            @Override
+            public void onSuccess(UserEntity data) {
+                //基础数据持久化
+                super.onSuccess(data);
+            }
+        });
+    }
 }

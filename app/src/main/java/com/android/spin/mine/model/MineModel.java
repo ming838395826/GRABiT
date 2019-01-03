@@ -115,4 +115,18 @@ public class MineModel {
                 .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
                 });
     }
+
+    /**
+     * 获取联系信息
+     * @param listener
+     */
+    public void getContactUsInfo(OnNetRequestListener listener){
+        Observable<ShowApiResponse<Object>> observable = MineRetrofitService.getInstance().
+                createShowApi().getContactUsInfo(MineRetrofitService.getCacheControl());
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
+                });
+    }
 }

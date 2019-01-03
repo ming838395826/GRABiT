@@ -41,7 +41,7 @@ public class SpinApplication extends BaseApplication {
         if(AppUtil.isMainProcess(this)) {
             //为主进程才执行，避免重复初始化
             super.onCreate();
-            CrashReport.initCrashReport(getApplicationContext(), "59c6d91001", false);
+            CrashReport.initCrashReport(getApplicationContext(), "3f411f6972", false);
             FacebookSdk.sdkInitialize(this);
             JPushInterface.setDebugMode(true);
             JPushInterface.init(this);

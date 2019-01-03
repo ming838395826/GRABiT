@@ -36,4 +36,9 @@ public interface MineApiInterface {
      * */
     String POST_CHANGE_PHONE_URL = "auth/change_phone";
 
+    /**
+     * 获取联系信息
+     * */
+    String getContactUsInfo = "configs/contact";
+
 }
