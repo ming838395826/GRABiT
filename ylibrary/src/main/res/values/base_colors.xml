@@ -35,5 +35,9 @@
     <color name="app_color_fff">#fff</color>
     <color name="app_color_aafff">#aaffffff</color>
 
+    <color name="app_color_FF4141">#FF4141</color>
+    <color name="app_color_F0F0F0">#F0F0F0</color>
+
+
 
 </resources>

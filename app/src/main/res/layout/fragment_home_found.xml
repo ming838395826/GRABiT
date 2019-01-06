@@ -37,7 +37,7 @@
 
         <fragment
             android:id="@+id/fg_goos_current"
-            android:name="com.android.spin.shop.fragment.ShopFragment"
+            android:name="com.android.spin.shop.fragment.ShopListNewFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

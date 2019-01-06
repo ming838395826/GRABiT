@@ -150,6 +150,7 @@
     <string name="text_home_date_s">second</string>
     <string name="text_product_count">%1$d</string>
     <string name="text_left_product_count">Only %1$d Left</string>
+    <string name="text_good_count">Surplus: %1$d</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right"></string>
@@ -253,7 +254,7 @@
     <string name="text_feed_back_idea_hint">Thank you for using GRABiT. Feedback us if you have any comments or suggestions in the course of using GRABiT.</string>
     <string name="text_feed_back_email_hint">Leave your personal mailbox and contact you.</string>
     <string name="text_feed_back_submit">Submission</string>
-
+    <string name="text_feed_back_success">Successful feedback</string>
 
 
 </resources>

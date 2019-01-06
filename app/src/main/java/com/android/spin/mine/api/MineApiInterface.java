@@ -41,4 +41,9 @@ public interface MineApiInterface {
      * */
     String getContactUsInfo = "configs/contact";
 
+    /**
+     * 意见反馈
+     * */
+    String feedback= "feedback";
+
 }

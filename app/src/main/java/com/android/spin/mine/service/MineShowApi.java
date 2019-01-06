@@ -6,6 +6,7 @@ import com.android.spin.common.util.Constant;
 import com.android.spin.db.UserManager;
 import com.android.spin.logreg.api.LogregApiInterface;
 import com.android.spin.mine.api.MineApiInterface;
+import com.android.spin.mine.entity.ContactUsEntity;
 import com.android.spin.mine.entity.TestEntity;
 import com.android.spin.mine.entity.UserEntity;
 
@@ -101,8 +102,23 @@ public interface MineShowApi<T> {
     Observable<ShowApiResponse<Object>> doVerifyPhone(@Header("Cache-Control") String cacheControl,
                                                          @FieldMap Map<String, Object> map);
 
+    /**
+     * 获取联系信息
+     * @param cacheControl
+     * @return
+     */
+    @GET(MineApiInterface.getContactUsInfo)
+    Observable<ShowApiResponse<ContactUsEntity>> getContactUsInfo(@Header("Cache-Control") String cacheControl);
+
+    /**
+     * 意见反馈
+     * @param cacheControl
+     * @param map
+     * @return
+     */
     @FormUrlEncoded
-    @POST(MineApiInterface.getContactUsInfo)
-    Observable<ShowApiResponse<Object>> getContactUsInfo(@Header("Cache-Control") String cacheControl);
+    @POST(MineApiInterface.feedback)
+    Observable<ShowApiResponse<Object>> feedback(@Header("Cache-Control") String cacheControl,
+                                                       @FieldMap Map<String, Object> map);
 
 }

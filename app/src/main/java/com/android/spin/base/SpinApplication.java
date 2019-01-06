@@ -41,11 +41,11 @@ public class SpinApplication extends BaseApplication {
         if(AppUtil.isMainProcess(this)) {
             //为主进程才执行，避免重复初始化
             super.onCreate();
-            CrashReport.initCrashReport(getApplicationContext(), "3f411f6972", false);
+            CrashReport.initCrashReport(getApplicationContext(), "3f411f6972", true);
             FacebookSdk.sdkInitialize(this);
             JPushInterface.setDebugMode(true);
             JPushInterface.init(this);
-            Config.DEBUG = true;
+            Config.DEBUG = false;
             UMShareAPI.get(this);
             MobSDK.init(this,"21d0f66d142e1","e83c8771200804dc54fa22d5bcfd248d");
 //            AppSecretMobSDK

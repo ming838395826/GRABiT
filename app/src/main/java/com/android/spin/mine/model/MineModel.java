@@ -8,6 +8,7 @@ import com.android.spin.common.entity.LoginResultEntity;
 import com.android.spin.db.UserManager;
 import com.android.spin.logreg.entity.RegisterResultEntity;
 import com.android.spin.logreg.service.LogregRetrofitService;
+import com.android.spin.mine.entity.ContactUsEntity;
 import com.android.spin.mine.entity.UserEntity;
 import com.android.spin.mine.service.MineRetrofitService;
 
@@ -121,8 +122,22 @@ public class MineModel {
      * @param listener
      */
     public void getContactUsInfo(OnNetRequestListener listener){
-        Observable<ShowApiResponse<Object>> observable = MineRetrofitService.getInstance().
+        Observable<ShowApiResponse<ContactUsEntity>> observable = MineRetrofitService.getInstance().
                 createShowApi().getContactUsInfo(MineRetrofitService.getCacheControl());
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ChildSubscriber<ShowApiResponse<ContactUsEntity>>(listener) {
+                });
+    }
+
+    /**
+     * 意见反馈
+     * @param listener
+     */
+    public void feekback(Map<String,Object> params, OnNetRequestListener listener){
+        Observable<ShowApiResponse<Object>> observable = MineRetrofitService.getInstance().
+                createShowApi().feedback(MineRetrofitService.getCacheControl(),params);
 
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

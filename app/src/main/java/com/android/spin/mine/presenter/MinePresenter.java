@@ -2,6 +2,7 @@ package com.android.spin.mine.presenter;
 
 import com.alibaba.fastjson.JSONObject;
 import com.android.base.callback.impl.OnNetRequestImplListener;
+import com.android.base.module.http.callback.ShowApiResponse;
 import com.android.base.mvp.persenrter.MvpPresenter;
 import com.android.base.mvp.view.IView;
 import com.android.spin.common.entity.GetPhoneResultEntity;
@@ -11,6 +12,7 @@ import com.android.spin.db.UserManager;
 import com.android.spin.event.UpdateUserInfoEvent;
 import com.android.spin.logreg.entity.RegisterResultEntity;
 import com.android.spin.logreg.model.RegisterModel;
+import com.android.spin.mine.entity.ContactUsEntity;
 import com.android.spin.mine.entity.UserEntity;
 import com.android.spin.mine.model.MineModel;
 import com.orhanobut.logger.Logger;
@@ -187,9 +189,22 @@ public class MinePresenter extends MvpPresenter<IView> {
      * 获取联系信息
      */
     public void getContactUsInfo(final int type) {
-        mMineModel.getContactUsInfo(new OnNetRequestImplListener<UserEntity>(getView(), type) {
+        mMineModel.getContactUsInfo(new OnNetRequestImplListener<ContactUsEntity>(getView(), type) {
             @Override
-            public void onSuccess(UserEntity data) {
+            public void onSuccess(ContactUsEntity data) {
+                //基础数据持久化
+                super.onSuccess(data);
+            }
+        });
+    }
+
+    /**
+     * 获取联系信息
+     */
+    public void feedback(Map<String,Object> params, final int type) {
+        mMineModel.feekback(params,new OnNetRequestImplListener<Object>(getView(), type) {
+            @Override
+            public void onSuccess(Object data) {
                 //基础数据持久化
                 super.onSuccess(data);
             }

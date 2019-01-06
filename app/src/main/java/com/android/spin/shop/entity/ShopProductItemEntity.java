@@ -2,6 +2,8 @@ package com.android.spin.shop.entity;
 
 import com.android.base.mvp.entity.IEntity;
 
+import java.util.List;
+
 /**
  * 作者：yangqiyun
  * 时间：2017/9/20
@@ -53,6 +55,7 @@ public class ShopProductItemEntity implements IEntity{
     private String created_at;
     private String updated_at;
     private BusinessBean business;
+    private List<ShopItemEntity> items;
 
     private UserCouponBean user_coupon;
     private userItemNoticeBean user_item_notice;
@@ -207,6 +210,14 @@ public class ShopProductItemEntity implements IEntity{
 
     public void setBusiness(BusinessBean business) {
         this.business = business;
+    }
+
+    public List<ShopItemEntity> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ShopItemEntity> items) {
+        this.items = items;
     }
 
     public static class BusinessBean implements IEntity{

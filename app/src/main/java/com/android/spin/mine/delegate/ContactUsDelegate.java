@@ -1,20 +1,15 @@
 package com.android.spin.mine.delegate;
 
 import android.support.annotation.NonNull;
-import android.view.View;
+import android.widget.TextView;
 
-import com.android.base.base.delegate.AppDelegate;
 import com.android.base.base.delegate.MvpDelegate;
 import com.android.base.mvp.view.IView;
 import com.android.spin.R;
-import com.android.spin.db.UserManager;
-import com.android.spin.mine.ChangePhoneActivity;
+import com.android.spin.mine.entity.ContactUsEntity;
 import com.android.spin.mine.presenter.MinePresenter;
-import com.android.spin.util.string.FormatStringUtil;
-import com.taobao.uikit.feature.view.TTextView;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 /**
  * 作者：yangqiyun
@@ -26,6 +21,10 @@ import butterknife.OnClick;
 public class ContactUsDelegate extends MvpDelegate<IView, MinePresenter> {
 
     private static final int GET_CONTACT = 0x01;
+    @Bind(R.id.tv_phone)
+    TextView mTvPhone;
+    @Bind(R.id.tv_email)
+    TextView mTvEmail;
 
     @Override
     public int getRootLayoutId() {
@@ -49,7 +48,15 @@ public class ContactUsDelegate extends MvpDelegate<IView, MinePresenter> {
 
     @Override
     public void onSuccess(Object data, int type) {
+        switch (type) {
+            case GET_CONTACT:
+                if(data instanceof ContactUsEntity){
+                    mTvPhone.setText(((ContactUsEntity) data).getValue().getPhone());
+                    mTvEmail.setText(((ContactUsEntity) data).getValue().getEmail());
+                }
 
+                break;
+        }
     }
 
     @NonNull

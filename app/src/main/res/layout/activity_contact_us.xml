@@ -33,6 +33,7 @@
                 android:textSize="@dimen/app_font_title_sub_14sp"
                 android:layout_gravity="center_horizontal"/>
             <TextView
+                android:id="@+id/tv_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="68-3333-3333"
@@ -49,6 +50,7 @@
                 android:layout_marginTop="28dp"/>
 
             <TextView
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="grabit@gmail.com"

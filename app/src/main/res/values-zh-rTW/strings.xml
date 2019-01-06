@@ -147,6 +147,7 @@
     <string name="text_home_date_s">秒</string>
     <string name="text_product_count">%1$d份</string>
     <string name="text_left_product_count">還剩下%1$d份</string>
+    <string name="text_good_count">剩餘: %1$d份</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right">份</string>
@@ -247,6 +248,7 @@
     <string name="text_feed_back_idea_hint">感謝您使用GRABiT，使用過程中有任何意見或建議請反饋給我們。</string>
     <string name="text_feed_back_email_hint">留下您的個人郵箱，便於與您聯繫</string>
     <string name="text_feed_back_submit">提交</string>
+    <string name="text_feed_back_success">意見反饋成功</string>
 
     <!--好物抢购提示-->
     <string name="text_home_grab_it_new">馬上領取好物</string>
