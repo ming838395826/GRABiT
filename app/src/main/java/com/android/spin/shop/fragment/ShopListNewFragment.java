@@ -267,8 +267,9 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             public void recevier(int position) {
 
                 Map<String, Object> params = new HashMap<>();
-                mListWrapper.getAdapter().getItem(position);
-                params.put("item_id", mListWrapper.getAdapter().getItem(position));
+                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                recevierPosition=position;
+                params.put("card_id", entity.getId());
                 getPresenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
 
             }

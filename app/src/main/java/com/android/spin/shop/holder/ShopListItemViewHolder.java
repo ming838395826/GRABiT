@@ -108,7 +108,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
             if (entity.getUser_coupon() != null) {
                 setSubmitGotIt();
             }else {
-                setSubmitGotIt();
+                setSubmitGrabIt();
             }
         }
 
