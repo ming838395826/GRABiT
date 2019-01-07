@@ -290,6 +290,28 @@ public class DialogUtil {
     }
 
     /**
+     * 抢到
+     * @param mContent
+     * @param listener
+     * @return
+     */
+    public static Dialog getReceive(Context mContent,OnClickListener listener) {
+
+        Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_gift_receive, null);
+        dialog.setContentView(contentView);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+
+        ImageView imgClose = (ImageView)contentView.findViewById(R.id.iv_close);
+        TTextView tbtn = (TTextView)contentView.findViewById(R.id.tv_ok);
+
+        setOnClickListener(listener,dialog,imgClose,0);
+        setOnClickListener(listener,dialog,tbtn,1);
+        return dialog;
+    }
+
+    /**
      * 获取listDialog
      * @param mContent
      * @param iconResId

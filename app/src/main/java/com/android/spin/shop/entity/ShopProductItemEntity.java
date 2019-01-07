@@ -2,6 +2,7 @@ package com.android.spin.shop.entity;
 
 import com.android.base.mvp.entity.IEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,7 +56,7 @@ public class ShopProductItemEntity implements IEntity{
     private String created_at;
     private String updated_at;
     private BusinessBean business;
-    private List<ShopItemEntity> items;
+    private List<ShopItemEntity> items=new ArrayList<>();
 
     private UserCouponBean user_coupon;
     private userItemNoticeBean user_item_notice;

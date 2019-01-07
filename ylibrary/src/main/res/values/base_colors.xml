@@ -37,7 +37,7 @@
 
     <color name="app_color_FF4141">#FF4141</color>
     <color name="app_color_F0F0F0">#F0F0F0</color>
-
+    <color name="transparent">#00000000</color>
 
 
 </resources>

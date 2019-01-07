@@ -1,15 +1,18 @@
 package com.android.spin.shop.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.base.util.ToastUtil;
 import com.android.base.view.listview.adapter.BaseListAdapter;
 import com.android.spin.R;
 import com.android.spin.shop.holder.ShopListItemViewHolder;
 import com.android.spin.shop.entity.ShopProductItemEntity;
+import com.android.spin.util.DialogUtil;
 
 /**
  * 作者：yangqiyun
@@ -38,8 +41,45 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ShopListItemViewHolder newHolder = (ShopListItemViewHolder) holder;
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+        final ShopListItemViewHolder newHolder = (ShopListItemViewHolder) holder;
         newHolder.initData(getDataList().get(position));
+        newHolder.Recevier(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getItemCount()>position) {
+                    ToastUtil.shortShow("ERROR");
+                }
+                boolean isRanOut=true;
+                for (int i=0;i<getItem(position).getItems().size();i++){
+                    if(getItem(position).getItems().get(i).getCurrent_stock() < getItem(position).getItems().get(i).getStock()){
+                        isRanOut=false;
+                        break;
+                    }
+                }
+                if (isRanOut) {//如果已经满库存
+                    newHolder.setSubmitRanOut();
+                    DialogUtil.getNoGoodSDialog(getmActivity(), true, null).show();
+                    return;
+                }
+                if(onViewClickListener!=null){
+                    onViewClickListener.recevier(position);
+                }
+            }
+        });
+    }
+
+    private OnViewClickListener onViewClickListener;
+
+    public OnViewClickListener getOnViewClickListener() {
+        return onViewClickListener;
+    }
+
+    public void setOnViewClickListener(OnViewClickListener onViewClickListener) {
+        this.onViewClickListener = onViewClickListener;
+    }
+
+    public interface OnViewClickListener{
+        void recevier(int position);
     }
 }

@@ -1,6 +1,8 @@
 package com.android.spin.shop.fragment;
 
 
+import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.base.base.MvpFragment;
 import com.android.base.module.http.callback.ShowApiListResponse;
 import com.android.base.mvp.view.IView;
+import com.android.base.util.ToastUtil;
 import com.android.base.view.layout.PtrMaterialFrameLayout;
 import com.android.base.view.listview.CommonListLoadMoreHandler;
 import com.android.base.view.listview.CommonListViewWrapper;
@@ -19,11 +22,16 @@ import com.android.base.view.listview.CommonListViewWrapperConfig;
 import com.android.base.view.listview.ListItemDecoration;
 import com.android.spin.R;
 import com.android.spin.card.entity.CardItemEntity;
+import com.android.spin.common.util.Constant;
+import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
+import com.android.spin.home.HomeActivity;
 import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.adapter.GoodListAdapter;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
+import com.android.spin.util.DialogUtil;
+import com.android.spin.util.ErrorToastUtli;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.taobao.uikit.feature.view.TRecyclerView;
 
@@ -32,7 +40,9 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -46,20 +56,23 @@ import butterknife.ButterKnife;
 public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> implements
         CommonListViewWrapper.OnPtrHandlerRefreshListener, CommonListViewWrapper.OnPtrHandlerLoadListener{
 
-
+    private final static int TYPE_REQUEST_CURRENT = 0x01;//获取列表
+    private final static int TYPE_POST_USER_COUPONS = 0x02;//领取卡片
+    private final static int TYPE_GET_GOODS_DETAIL = 0x04;//获取详情
     @Bind(R.id.tr_shop_list)
     TRecyclerView mTrShopList;
+
     @Bind(R.id.ptr_material_style_ptr_frame)
     PtrMaterialFrameLayout mPtrMaterialStylePtrFrame;
-
     private GoodListAdapter mGoodListAdapter;
     private CommonListViewWrapper mListWrapper;
+
     private int page = 1;
     private final int perPage = 20;
+    private boolean isRefresh = false;
+    private int recevierPosition=-1;
 
     private List<ShopProductItemEntity> items;
-
-    private final static int TYPE_REQUEST_CURRENT = 0x01;
 
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
@@ -81,11 +94,43 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
         return fragment;
     }
 
+    private int getType() {
+        return getArguments().getInt("type");
+    }
+
     @Override
     public void onFail(String code, int type) {
-        if (type == TYPE_REQUEST_CURRENT) {
-            showNetErrorData();
+        switch (type){
+            case TYPE_REQUEST_CURRENT:
+                showNetErrorData();
+                break;
+            case TYPE_POST_USER_COUPONS:
+                if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
+                    if (getType() == 0) {
+                        ToastUtil.shortShow(getString(R.string.text_getter_receied));
+                    } else {
+                        ToastUtil.shortShow(getString(R.string.text_set_receied));
+                    }
+                }else {
+                    ErrorToastUtli.showErrorToast(code);
+                    //刷新商品
+                    if(recevierPosition>0){
+                        ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                        Map<String,Object> params = new HashMap<>();
+                        params.put("id",entity.getId());
+                        getPresenter().getShopItemDetailNew(params,TYPE_GET_GOODS_DETAIL);
+                        isRefresh = true;
+                    }
+
+                }
+
+                if("1006".equals(code)){
+                    //库存不足
+                    DialogUtil.getNoGoodSDialog(getActivity(), true, null).show();
+                }
+                break;
         }
+
     }
 
     @Override
@@ -113,6 +158,50 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                     mListWrapper.updateListData(items);
                 }
                 break;
+            case TYPE_POST_USER_COUPONS:
+                //获取优惠券成功
+                try {
+                    isRefresh = false;
+                    ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+
+//                    mShopProductItemEntity.setCurrent_stock(mShopProductItemEntity.getCurrent_stock() + 1);
+//                    String count = mShopProductItemEntity.getStock() - mShopProductItemEntity.getCurrent_stock() + "";
+//                    if (getType() == 1) {
+//                        ttvProductTagLeft.setText(getResources().getString(R.string.text_unit_comming_left));
+//                        ttvProductTag.setText(getResources().getString(R.string.text_unit_comming_right));
+//                    } else {
+//                        ttvProductTagLeft.setText(getResources().getString(R.string.text_unit_left));
+//                        ttvProductTag.setText(getResources().getString(R.string.text_unit_right));
+//                    }
+//                    ttvProductCount.setText(count);
+//
+//                    EventBus.getDefault().post(new UpdateCardEvent(mShopProductItemEntity.getId()));
+//                    mShopProductItemEntity.setUser_coupon(new ShopProductItemEntity.UserCouponBean());
+//                    ttvBtnRight.setText(getString(R.string.text_home_got_it));
+//                    ttvBtnRight.setBackgroundColor(Color.parseColor("#66191917"));
+//                    ttvBtnRight.setEnabled(false);
+                } catch (Exception e) {
+                }
+
+                DialogUtil.getGetterDialog(getActivity(), true, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();
+                        EventBus.getDefault().post(new AddCardEvent(0));
+                    }
+                }).show();
+                break;
+            case TYPE_GET_GOODS_DETAIL:
+                //刷新商品
+                try{
+                    isRefresh = false;
+                    if(mPtrMaterialStylePtrFrame != null){
+                        mPtrMaterialStylePtrFrame.refreshComplete();
+                        ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                        updateEntity(item,(ShopProductItemEntity) data);
+                    }
+                }catch (Exception e){}
+                break;
         }
     }
 
@@ -124,7 +213,38 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     @Override
     public void initView() {
         initListView();
-        getData();
+    }
+
+    /**
+     * 数据更新
+     * @param entity
+     */
+    private void updateEntity(ShopProductItemEntity mShopProductItemEntity,ShopProductItemEntity entity){
+
+        if(entity == null){
+            return;
+        }
+        mShopProductItemEntity.setUser_item_notice(entity.getUser_item_notice());
+        mShopProductItemEntity.setCurrent_stock(entity.getCurrent_stock());
+        mShopProductItemEntity.setUser_coupon(entity.getUser_coupon());
+        mShopProductItemEntity.setBusiness(entity.getBusiness());
+        mShopProductItemEntity.setBusiness_id(entity.getBusiness_id());
+        mShopProductItemEntity.setContact_phone(entity.getContact_phone());
+        mShopProductItemEntity.setDescription(entity.getDescription());
+        mShopProductItemEntity.setEnd_time(entity.getEnd_time());
+        mShopProductItemEntity.setExchange_deadline(entity.getExchange_deadline());
+        mShopProductItemEntity.setFront_cover(entity.getFront_cover());
+        mShopProductItemEntity.setImages(entity.getImages());
+        mShopProductItemEntity.setLocation(entity.getLocation());
+        mShopProductItemEntity.setName(entity.getName());
+        mShopProductItemEntity.setStart_time(entity.getStart_time());
+        mShopProductItemEntity.setStatus(entity.getStatus());
+        mShopProductItemEntity.setStock(entity.getStock());
+
+//        Bundle mBundle = getArguments();
+//        if (mBundle != null) {
+//            mBundle.putSerializable(PAGE_STATUS, mShopProductItemEntity);
+//        }
     }
 
     /**
@@ -142,6 +262,17 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 getActivity(), LinearLayout.VERTICAL, getResources().getDrawable(R.drawable.list_divider_h10_tran)));
 
         GoodListAdapter mListAdapter = new GoodListAdapter(getActivity());
+        mListAdapter.setOnViewClickListener(new GoodListAdapter.OnViewClickListener() {
+            @Override
+            public void recevier(int position) {
+
+                Map<String, Object> params = new HashMap<>();
+                mListWrapper.getAdapter().getItem(position);
+                params.put("item_id", mListWrapper.getAdapter().getItem(position));
+                getPresenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
+
+            }
+        });
         mListAdapter.setStatus("0");
 
         mListWrapper = new CommonListViewWrapper();

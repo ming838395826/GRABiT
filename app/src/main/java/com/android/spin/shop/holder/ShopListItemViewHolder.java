@@ -1,5 +1,6 @@
 package com.android.spin.shop.holder;
 
+import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -53,6 +54,15 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     TRecyclerView mTrGoodList;
 
     View itemView;
+    int type=0;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public ShopListItemViewHolder(View itemView) {
         super(itemView);
@@ -60,9 +70,48 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
+    public void Recevier(View.OnClickListener listener){
+        mTvSubmit.setOnClickListener(listener);
+    }
+
+    public void setSubmitRanOut(){
+        mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_ran_out));
+        mTvSubmit.setBackgroundColor(Color.parseColor("#66191917"));
+        mTvSubmit.setEnabled(false);
+    }
+
+    public void setSubmitGotIt(){
+        mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_got_it));
+        mTvSubmit.setBackgroundColor(Color.parseColor("#66191917"));
+        mTvSubmit.setEnabled(false);
+    }
+
+    public void setSubmitGrabIt(){
+        mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_grab_it));
+        mTvSubmit.setBackgroundColor(Color.parseColor("#191917"));
+        mTvSubmit.setEnabled(true);
+    }
+
     public void initData(ShopProductItemEntity entity) {
         GlideUtil.defaultLoad(mImgShopAvatar.getContext(), entity.getBusiness().getAvatar(), mImgShopAvatar);
         mTvShopName.setText(entity.getBusiness().getName());
+        boolean isRanOut=true;
+        for (int i=0;i<entity.getItems().size();i++){
+            if(entity.getItems().get(i).getCurrent_stock() < entity.getItems().get(i).getStock()){
+                isRanOut=false;
+                break;
+            }
+        }
+        if(isRanOut){
+            setSubmitRanOut();
+        }else {
+            if (entity.getUser_coupon() != null) {
+                setSubmitGotIt();
+            }else {
+                setSubmitGotIt();
+            }
+        }
+
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         mTrGoodList.setLayoutManager(layoutManager);
         mTrGoodList.addItemDecoration(new ListItemDecoration(

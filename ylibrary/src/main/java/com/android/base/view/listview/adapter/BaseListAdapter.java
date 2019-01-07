@@ -21,6 +21,14 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter<RecyclerVi
 
   protected OnAdapterListener onAdapterListener;
 
+  public Context getmActivity() {
+    return mActivity;
+  }
+
+  public void setmActivity(Context mActivity) {
+    this.mActivity = mActivity;
+  }
+
   public BaseListAdapter(Context activity) {
     mActivity = activity;
     mInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
