@@ -60,6 +60,8 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
         timgStatus.setImageResource(resid);
     }
 
+    public
+
     public void initData(CardItemEntity entity) {
 
         GlideUtil.defualtLoad(imgCardAvatar.getContext(), entity.getItem().getFront_cover(), R.drawable.bg_pic_defualt, imgCardAvatar);

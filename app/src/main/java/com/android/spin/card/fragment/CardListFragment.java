@@ -24,6 +24,7 @@ import com.android.spin.card.adapter.CardListAdapter;
 import com.android.spin.card.entity.CardItemEntity;
 import com.android.spin.card.presenter.CardPresenter;
 import com.android.spin.common.util.Constant;
+import com.android.spin.draw.view.SwipeItemLayout;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.shop.HistoryFundDetailActivity;
 import com.android.spin.shop.ShopFundDetailActivity;
@@ -125,6 +126,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
         final StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         trCardList.addItemDecoration(new ListItemDecoration(
                 getActivity(), LinearLayout.VERTICAL, getResources().getDrawable(R.drawable.list_divider_h10_tran)));
+        trCardList.addOnItemTouchListener(new SwipeItemLayout.OnSwipeItemTouchListener(getContext()));
 
         CardListAdapter mListAdapter = new CardListAdapter(getActivity());
         mListAdapter.setStatus(getArguments().getString(TYPE_PARAMS));

@@ -1,133 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<com.android.spin.draw.view.SwipeItemLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_card_blur"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="14dp"
-    android:layout_marginRight="14dp">
+    android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:paddingTop="1px"
-        android:paddingLeft="4px"
-        android:paddingBottom="6px"
-        android:paddingRight="4px"
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/bg_card_blur">
 
-        <com.taobao.uikit.feature.view.TImageView
-            android:id="@+id/img_card_avatar"
-            android:layout_width="110dp"
-            android:layout_height="83dp"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="13.5dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/bg_pic_defualt" />
-
-        <com.taobao.uikit.feature.view.TTextView
-            android:id="@+id/ttv_card_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/img_card_avatar"
-            android:layout_marginLeft="143dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textColor="@color/app_font_color_main_title_hint"
-            android:textSize="@dimen/app_font_title_sub_18sp"
-            tools:text="HHH234234" />
-
-        <com.taobao.uikit.feature.view.TTextView
-            android:id="@+id/ttv_card_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/ttv_card_title"
-            android:layout_below="@+id/ttv_card_title"
-            android:layout_marginTop="17.5dp"
-            android:paddingRight="10dp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textColor="@color/app_font_color_main_title_hint"
-            android:textSize="@dimen/app_font_title_sub_14sp"
-            tools:text="是开始打瞌睡的卡圣诞贺卡就速度很快" />
-
-        <com.android.spin.common.selector.view.CircleImageView
-            android:id="@+id/img_shop_avatar"
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_alignLeft="@+id/ttv_card_title"
-            android:layout_below="@+id/ttv_card_content"
-            android:layout_marginTop="7dp"
-            tools:src="@mipmap/icon_dialog_gifta" />
-
-        <com.taobao.uikit.feature.view.TTextView
-            android:id="@+id/ttv_shop_name"
-            android:layout_width="wrap_content"
-            android:layout_height="17dp"
-            android:layout_alignTop="@+id/img_shop_avatar"
-            android:layout_below="@+id/ttv_card_title"
-            android:layout_marginLeft="7.5dp"
-            android:layout_toRightOf="@+id/img_shop_avatar"
-            android:ellipsize="end"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:textColor="@color/app_font_color_main_title_hint"
-            android:textSize="@dimen/app_font_title_sub_12sp"
-            tools:text="屈成氏" />
-
-        <LinearLayout
-            android:id="@+id/ll_card_bottom"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="1.5px"
-            android:layout_marginRight="1.5px"
-            android:layout_below="@+id/img_card_avatar"
-            android:background="@color/app_color_f6f6f8"
-            android:orientation="vertical">
+            android:paddingBottom="6px"
+            android:paddingLeft="4px"
+            android:paddingRight="4px"
+            android:paddingTop="1px">
+
+            <com.taobao.uikit.feature.view.TImageView
+                android:id="@+id/img_card_avatar"
+                android:layout_width="110dp"
+                android:layout_height="83dp"
+                android:layout_marginBottom="13.5dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="13dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_pic_defualt" />
 
             <com.taobao.uikit.feature.view.TTextView
-                android:id="@+id/ttv_card_shop_date"
+                android:id="@+id/ttv_card_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
-                android:layout_marginTop="11.5dp"
+                android:layout_alignTop="@+id/img_card_avatar"
+                android:layout_marginLeft="143dp"
                 android:ellipsize="end"
-                android:gravity="center_vertical"
                 android:singleLine="true"
                 android:textColor="@color/app_font_color_main_title_hint"
-                android:textSize="@dimen/app_font_title_sub_13sp"
-                tools:text="截止日期：2017.6.30" />
+                android:textSize="@dimen/app_font_title_sub_18sp"
+                tools:text="HHH234234" />
 
             <com.taobao.uikit.feature.view.TTextView
-                android:id="@+id/ttv_card_exchange_addr"
+                android:id="@+id/ttv_card_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ttv_card_title"
+                android:layout_below="@+id/ttv_card_title"
+                android:layout_marginTop="17.5dp"
+                android:ellipsize="end"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/app_font_color_main_title_hint"
+                android:textSize="@dimen/app_font_title_sub_14sp"
+                tools:text="是开始打瞌睡的卡圣诞贺卡就速度很快" />
+
+            <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/img_shop_avatar"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_alignLeft="@+id/ttv_card_title"
+                android:layout_below="@+id/ttv_card_content"
+                android:layout_marginTop="7dp"
+                tools:src="@mipmap/icon_dialog_gifta" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_shop_name"
                 android:layout_width="wrap_content"
                 android:layout_height="17dp"
                 android:layout_alignTop="@+id/img_shop_avatar"
                 android:layout_below="@+id/ttv_card_title"
-                android:layout_marginBottom="13.5dp"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="6dp"
-                android:paddingRight="15dp"
+                android:layout_marginLeft="7.5dp"
                 android:layout_toRightOf="@+id/img_shop_avatar"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:singleLine="true"
                 android:textColor="@color/app_font_color_main_title_hint"
-                android:textSize="@dimen/app_font_title_sub_13sp"
-                tools:text="兑换地址：是大是大非上山东科技护肤上看到就会发生的纠纷还是快点恢复快速的恢复时间的回复对方" />
+                android:textSize="@dimen/app_font_title_sub_12sp"
+                tools:text="屈成氏" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_card_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_card_avatar"
+                android:layout_marginLeft="1.5px"
+                android:layout_marginRight="1.5px"
+                android:background="@color/app_color_f6f6f8"
+                android:orientation="vertical">
 
-        <com.taobao.uikit.feature.view.TImageView
-            android:id="@+id/timg_status"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/ll_card_bottom"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="-65dp"
-            tools:src="@mipmap/icon_dialog_gifta" />
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_card_shop_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:layout_marginTop="11.5dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textColor="@color/app_font_color_main_title_hint"
+                    android:textSize="@dimen/app_font_title_sub_13sp"
+                    tools:text="截止日期：2017.6.30" />
 
-    </RelativeLayout>
-</LinearLayout>
+                <com.taobao.uikit.feature.view.TTextView
+                    android:id="@+id/ttv_card_exchange_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:layout_alignTop="@+id/img_shop_avatar"
+                    android:layout_below="@+id/ttv_card_title"
+                    android:layout_marginBottom="13.5dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@+id/img_shop_avatar"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/app_font_color_main_title_hint"
+                    android:textSize="@dimen/app_font_title_sub_13sp"
+                    tools:text="兑换地址：是大是大非上山东科技护肤上看到就会发生的纠纷还是快点恢复快速的恢复时间的回复对方" />
+
+            </LinearLayout>
+
+            <com.taobao.uikit.feature.view.TImageView
+                android:id="@+id/timg_status"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/ll_card_bottom"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="-65dp"
+                tools:src="@mipmap/icon_dialog_gifta" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <Button
+            android:id="@+id/delete"
+            android:text="删除"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:background="#FF4141"
+            android:layout_width="375dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</com.android.spin.draw.view.SwipeItemLayout>

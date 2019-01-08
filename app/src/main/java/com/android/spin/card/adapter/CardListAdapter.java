@@ -66,5 +66,6 @@ public class CardListAdapter extends BaseListAdapter<CardItemEntity> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         CardListItemViewHolder newHolder = (CardListItemViewHolder) holder;
         newHolder.initData(getDataList().get(position));
+
     }
 }
