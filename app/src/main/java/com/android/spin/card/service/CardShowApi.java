@@ -10,11 +10,14 @@ import com.android.spin.mine.entity.UserEntity;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import retrofit2.http.DELETE;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 
 /**
@@ -44,5 +47,25 @@ public interface CardShowApi<T> {
     @POST(CardApiInterface.GET_USER_COUPONS_URL)
     Observable<ShowApiResponse<Object>> postUserCoupons(@Header("Cache-Control") String cacheControl,
                                                        @FieldMap Map<String, Object> map);
+
+    /**
+     * 删除优惠券
+     * @param cacheControl
+     * @param user_coupon_id
+     * @return
+     */
+    @DELETE(CardApiInterface.DELETE_USER_COUPONS_URL)
+    Observable<ShowApiResponse<Object>> deleteUserCoupons(@Header("Cache-Control") String cacheControl,
+                                                        @Path("user_coupon_id") String user_coupon_id);
+
+    /**
+     * 获取优惠券使用
+     * @param cacheControl
+     * @param user_coupon_id
+     * @return
+     */
+    @PUT(CardApiInterface.SET_USER_COUPONS_URL)
+    Observable<ShowApiResponse<Object>> setUserCoupons(@Header("Cache-Control") String cacheControl,
+                                                          @Path("user_coupon_id") String user_coupon_id);
 
 }

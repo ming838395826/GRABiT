@@ -8,6 +8,8 @@
     <com.taobao.uikit.feature.view.TRecyclerView
         android:id="@+id/tr_card_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.taobao.uikit.feature.view.TRecyclerView>
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"></com.taobao.uikit.feature.view.TRecyclerView>
 
 </com.android.base.view.layout.PtrMaterialFrameLayout>

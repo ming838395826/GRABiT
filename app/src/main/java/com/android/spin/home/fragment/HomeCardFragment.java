@@ -15,6 +15,7 @@ import com.android.spin.MainActivity;
 import com.android.spin.R;
 import com.android.spin.card.adapter.CardListPagerAdapter;
 import com.android.spin.card.fragment.CardListFragment;
+import com.android.spin.draw.view.NoScrollViewPager;
 import com.android.spin.event.AddCardEvent;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.SegmentTabLayout;
@@ -42,7 +43,7 @@ public class HomeCardFragment extends BaseFragment implements OnTabSelectListene
     @Bind(R.id.tl_mine_card)
     CommonTabLayout tlMineCard;
     @Bind(R.id.vp_mine_card)
-    ViewPager vpMineCard;
+    NoScrollViewPager vpMineCard;
     @Bind(R.id.btb_top_bar)
     BaseHeaderTitleBarView btbTopBar;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -78,7 +79,7 @@ public class HomeCardFragment extends BaseFragment implements OnTabSelectListene
 
     @Override
     public void initView() {
-
+        vpMineCard.setScroll(false);
         initHeaderView();
 
         initPages();

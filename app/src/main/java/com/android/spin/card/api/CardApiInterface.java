@@ -12,5 +12,14 @@ public interface CardApiInterface {
      * */
     String GET_USER_COUPONS_URL = "/user_coupons";
 
+    /**
+     * 删除用户优惠券
+     * */
+    String DELETE_USER_COUPONS_URL = "/user_coupons/{user_coupon_id}";
+
+    /**
+     * 删除用户优惠券
+     * */
+    String SET_USER_COUPONS_URL = "/user_coupons/{user_coupon_id}/used";
 
 }

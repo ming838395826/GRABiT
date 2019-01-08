@@ -2,6 +2,7 @@ package com.android.spin.card.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.android.base.util.DateUtil;
 import com.android.base.util.image.GlideUtil;
@@ -39,6 +40,10 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
     TTextView ttvCardExchangeAddr;
     @Bind(R.id.timg_status)
     TImageView timgStatus;
+    @Bind(R.id.tv_to_use)
+    TTextView tv_to_use;
+    @Bind(R.id.ln_delete)
+    LinearLayout ln_delete;
 
     View itemView;
 
@@ -60,12 +65,18 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
         timgStatus.setImageResource(resid);
     }
 
-    public
+    public void setUserdCoupons(View.OnClickListener listener){
+        tv_to_use.setOnClickListener(listener);
+    }
+
+    public void setDeleteCoupons(View.OnClickListener listener){
+        ln_delete.setOnClickListener(listener);
+    }
 
     public void initData(CardItemEntity entity) {
 
         GlideUtil.defualtLoad(imgCardAvatar.getContext(), entity.getItem().getFront_cover(), R.drawable.bg_pic_defualt, imgCardAvatar);
-        ttvCardTitle.setText(entity.getCode());
+        ttvCardTitle.setText(entity.getName());
         ttvCardContent.setText(entity.getItem().getName());
         GlideUtil.defaultLoad(imgShopAvatar.getContext(), entity.getBusiness().getAvatar(), imgShopAvatar);
         ttvShopName.setText(entity.getBusiness().getName());

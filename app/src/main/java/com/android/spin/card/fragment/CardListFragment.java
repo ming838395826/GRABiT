@@ -61,6 +61,8 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
     private CommonListViewWrapper mListWrapper;
 
     private static final int TYPE_REQUEST_LIST = 0x00;
+    private static final int DELETE_COUPONS = 0x01;
+    private static final int SET_COUPONS_USER = 0x02;
 
     private int page = 1;
     private final int perPage = 20;
@@ -128,7 +130,20 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                 getActivity(), LinearLayout.VERTICAL, getResources().getDrawable(R.drawable.list_divider_h10_tran)));
         trCardList.addOnItemTouchListener(new SwipeItemLayout.OnSwipeItemTouchListener(getContext()));
 
-        CardListAdapter mListAdapter = new CardListAdapter(getActivity());
+        final CardListAdapter mListAdapter = new CardListAdapter(getActivity());
+        mListAdapter.setOnViewClickListener(new CardListAdapter.OnViewClickListener() {
+            @Override
+            public void setUserdCoupons(int position) {
+                showLoadDialog();
+                getPresenter().setUserCoupons(mListAdapter.getItem(position).getId(),DELETE_COUPONS,position);
+            }
+
+            @Override
+            public void setDeleteCoupons(int position) {
+                showLoadDialog();
+                getPresenter().deleteUserCoupons(mListAdapter.getItem(position).getId(),SET_COUPONS_USER,position);
+            }
+        });
         mListAdapter.setStatus(getArguments().getString(TYPE_PARAMS));
 
         mListWrapper = new CommonListViewWrapper();

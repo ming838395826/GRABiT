@@ -50,4 +50,28 @@ public class CardPresenter extends MvpPresenter<IView> {
             }
         });
     }
+
+    /**
+     * 删除优惠券
+     */
+    public void deleteUserCoupons(String user_coupon_id,  final int type,int position) {
+        mCardModel.deleteUserCoupons(user_coupon_id, new OnNetRequestImplListener<Object>(getView(), type) {
+            @Override
+            public void onSuccess(Object data) {
+                super.onSuccess(data);
+            }
+        });
+    }
+
+    /**
+     * 设置优惠券
+     */
+    public void setUserCoupons(String user_coupon_id,  final int type,int position) {
+        mCardModel.setUserCoupons(user_coupon_id, new OnNetRequestImplListener<Object>(getView(), type) {
+            @Override
+            public void onSuccess(Object data) {
+                super.onSuccess(data);
+            }
+        });
+    }
 }

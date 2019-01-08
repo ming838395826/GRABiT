@@ -55,4 +55,32 @@ public class CardModel {
                 .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
                 });
     }
+
+    /**
+     * 删除优惠券
+     * @param listener
+     */
+    public void deleteUserCoupons(String user_coupon_id, OnNetRequestListener listener){
+        Observable<ShowApiResponse<Object>> observable = CardRetrofitService.getInstance().
+                createShowApi().deleteUserCoupons(CardRetrofitService.getCacheControl(), user_coupon_id);
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
+                });
+    }
+
+    /**
+     *  设置优惠券使用
+     * @param listener
+     */
+    public void setUserCoupons(String user_coupon_id, OnNetRequestListener listener){
+        Observable<ShowApiResponse<Object>> observable = CardRetrofitService.getInstance().
+                createShowApi().setUserCoupons(CardRetrofitService.getCacheControl(), user_coupon_id);
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
+                });
+    }
 }

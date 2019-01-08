@@ -63,9 +63,40 @@ public class CardListAdapter extends BaseListAdapter<CardItemEntity> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         CardListItemViewHolder newHolder = (CardListItemViewHolder) holder;
         newHolder.initData(getDataList().get(position));
+        newHolder.setUserdCoupons(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onViewClickListener!=null){
+                    onViewClickListener.setUserdCoupons(position);
+                }
+            }
+        });
+        newHolder.setDeleteCoupons(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onViewClickListener!=null){
+                    onViewClickListener.setDeleteCoupons(position);
+                }
+            }
+        });
+    }
 
+    private OnViewClickListener onViewClickListener;
+
+    public OnViewClickListener getOnViewClickListener() {
+        return onViewClickListener;
+    }
+
+    public void setOnViewClickListener(OnViewClickListener onViewClickListener) {
+        this.onViewClickListener = onViewClickListener;
+    }
+
+    public interface OnViewClickListener{
+        void setUserdCoupons(int position);
+
+        void setDeleteCoupons(int position);
     }
 }
