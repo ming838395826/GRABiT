@@ -155,4 +155,16 @@ public class ShopPresenter extends MvpPresenter<IView> {
         });
     }
 
+    /**
+     * 领取优惠券人员
+     */
+    public void getCardUser(String id, final int type) {
+        mShopModel.getCardUser(id, new OnNetRequestImplListener<NoticeResult>(getView(), type) {
+            @Override
+            public void onSuccess(NoticeResult data) {
+                super.onSuccess(data);
+            }
+        });
+    }
+
 }

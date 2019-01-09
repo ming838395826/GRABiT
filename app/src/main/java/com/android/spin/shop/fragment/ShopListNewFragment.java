@@ -276,6 +276,11 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 getPresenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
 
             }
+
+            @Override
+            public void showPerson(int position) {
+
+            }
         });
         mListAdapter.setStatus("0");
 
@@ -380,7 +385,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     @Override
     public void onRefreshBegin() {
         setCommonListViewWrapperRefresh(mListWrapper,true);
-//        page = 1;
+        page = 1;
 //        Map<String, Object> params = new HashMap<>();
 //        params.put("status", getArguments().getString(TYPE_PARAMS));
 //        params.put(Constant.KEY_PAGE, page);

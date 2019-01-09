@@ -148,6 +148,7 @@
     <string name="text_product_count">%1$d份</string>
     <string name="text_left_product_count">還剩下%1$d份</string>
     <string name="text_good_count">剩餘: %1$d份</string>
+    <string name="text_card_user">已搶到用戶</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right">份</string>

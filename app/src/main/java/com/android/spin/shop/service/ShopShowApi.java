@@ -160,4 +160,8 @@ public interface ShopShowApi<T> {
     @GET(ShopApiInterface.GET_CONFIGS_NOTICE_URL)
     Observable<ShowApiResponse<NoticeResult>> getConfigsNotice(@Header("Cache-Control") String cacheControl,
                                                                @QueryMap Map<String, Object> map);
+
+    @GET(ShopApiInterface.GET_CARDS_USER)
+    Observable<ShowApiResponse<ShowApiListResponse<Object>>> getCardUser(@Header("Cache-Control") String cacheControl,
+                                                               @Path("id") String id);
 }

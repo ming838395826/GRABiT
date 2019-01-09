@@ -67,6 +67,14 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
                 }
             }
         });
+        newHolder.showPerson(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onViewClickListener!=null){
+                    onViewClickListener.showPerson(position);
+                }
+            }
+        });
     }
 
     private OnViewClickListener onViewClickListener;
@@ -81,5 +89,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
 
     public interface OnViewClickListener{
         void recevier(int position);
+
+        void showPerson(int position);
     }
 }

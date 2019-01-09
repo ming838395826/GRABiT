@@ -53,5 +53,10 @@ public interface ShopApiInterface {
      * */
     String GET_CONFIGS_NOTICE_URL = "configs/notice";
 
+    /**
+     * 获取领取优惠券人员
+     * */
+    String GET_CARDS_USER = "cards/{id}/users";
+
 
 }

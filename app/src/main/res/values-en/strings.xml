@@ -151,6 +151,7 @@
     <string name="text_product_count">%1$d</string>
     <string name="text_left_product_count">Only %1$d Left</string>
     <string name="text_good_count">Surplus: %1$d</string>
+    <string name="text_card_user">Has grabbed the user</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right"></string>

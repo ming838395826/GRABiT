@@ -156,4 +156,18 @@ public class ShopModel {
                 .subscribe(new ChildSubscriber<ShowApiResponse<NoticeResult>>(listener) {
                 });
     }
+
+    /**
+     * 获取抢购中的商品
+     * @param listener
+     */
+    public void getCardUser(String id, OnNetRequestListener listener){
+        Observable<ShowApiResponse<ShowApiListResponse<Object>>> observable = ShopRetrofitService.getInstance().
+                createShowApi().getCardUser(ShopRetrofitService.getCacheControl(),id);
+
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new ChildSubscriber<ShowApiResponse<ShowApiListResponse<Object>>>(listener) {
+                });
+    }
 }

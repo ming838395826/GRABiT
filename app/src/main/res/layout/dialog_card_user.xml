@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="false"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/dialog_bg_white_r6"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:paddingTop="32dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="@dimen/app_font_title_size"
+            android:text="@string/text_card_user"
+            android:textColor="@color/app_color_191917"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <com.android.base.view.layout.PtrMaterialFrameLayout
+            android:id="@+id/ptr_material_style_ptr_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f7f7f6">
+
+            <com.taobao.uikit.feature.view.TRecyclerView
+                android:id="@+id/tr_user_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.android.base.view.layout.PtrMaterialFrameLayout>
+
+
+
+
+    </LinearLayout>
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_close"
+        android:src="@mipmap/icon_dialog_close"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

@@ -52,6 +52,8 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     TTextView mTvSubmit;
     @Bind(R.id.tr_good_list)
     TRecyclerView mTrGoodList;
+    @Bind(R.id.ln_have_grabit)
+    LinearLayout ln_have_grabit;
 
     View itemView;
     int type=0;
@@ -74,21 +76,25 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         mTvSubmit.setOnClickListener(listener);
     }
 
+    public void showPerson(View.OnClickListener listener){
+        ln_have_grabit.setOnClickListener(listener);
+    }
+
     public void setSubmitRanOut(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_ran_out));
-        mTvSubmit.setBackgroundColor(Color.parseColor("#66191917"));
+        mTvSubmit.setTextColor(Color.parseColor("#333333"));
         mTvSubmit.setEnabled(false);
     }
 
     public void setSubmitGotIt(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_got_it));
-        mTvSubmit.setBackgroundColor(Color.parseColor("#66191917"));
+        mTvSubmit.setTextColor(Color.parseColor("#333333"));
         mTvSubmit.setEnabled(false);
     }
 
     public void setSubmitGrabIt(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_grab_it));
-        mTvSubmit.setBackgroundColor(Color.parseColor("#191917"));
+        mTvSubmit.setTextColor(Color.parseColor("#FFFFFF"));
         mTvSubmit.setEnabled(true);
     }
 
