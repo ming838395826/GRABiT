@@ -41,7 +41,9 @@ public class CardListAdapter extends BaseListAdapter<CardItemEntity> {
         CardListItemViewHolder vh = new CardListItemViewHolder(view);
         if("0".equals(status)){
             vh.setViewStyle();
+            vh.showUser();
         }else if("1".equals(status)){
+            vh.showDelete();
             if(AppLanguageManager.isLanguageHK()){
                 vh.showSattus(R.mipmap.useda_3);
             }else if(AppLanguageManager.isLanguageCN()){
@@ -51,6 +53,7 @@ public class CardListAdapter extends BaseListAdapter<CardItemEntity> {
             }
 
         }else if("2".equals(status)){
+            vh.showDelete();
             if(AppLanguageManager.isLanguageHK()){
                 vh.showSattus(R.mipmap.overduea_3);
             }else if(AppLanguageManager.isLanguageCN()){

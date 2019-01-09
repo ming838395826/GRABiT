@@ -44,6 +44,8 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
     TTextView tv_to_use;
     @Bind(R.id.ln_delete)
     LinearLayout ln_delete;
+    @Bind(R.id.iv_delete)
+    TImageView iv_delete;
 
     View itemView;
 
@@ -65,12 +67,23 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
         timgStatus.setImageResource(resid);
     }
 
+    public void showDelete(){
+        iv_delete.setVisibility(View.VISIBLE);
+        tv_to_use.setVisibility(View.GONE);
+    }
+    public void showUser(){
+        iv_delete.setVisibility(View.GONE);
+        tv_to_use.setVisibility(View.VISIBLE);
+    }
+
+
     public void setUserdCoupons(View.OnClickListener listener){
         tv_to_use.setOnClickListener(listener);
     }
 
     public void setDeleteCoupons(View.OnClickListener listener){
         ln_delete.setOnClickListener(listener);
+        iv_delete.setOnClickListener(listener);
     }
 
     public void initData(CardItemEntity entity) {

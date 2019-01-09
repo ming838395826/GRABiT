@@ -1,5 +1,6 @@
 package com.android.spin.card.fragment;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import com.android.spin.event.AddCardEvent;
 import com.android.spin.shop.HistoryFundDetailActivity;
 import com.android.spin.shop.ShopFundDetailActivity;
 import com.android.spin.shop.entity.ShopHistroyItemEntity;
+import com.android.spin.util.DialogUtil;
 import com.taobao.uikit.feature.view.TRecyclerView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -128,20 +130,42 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
         final StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         trCardList.addItemDecoration(new ListItemDecoration(
                 getActivity(), LinearLayout.VERTICAL, getResources().getDrawable(R.drawable.list_divider_h10_tran)));
-        trCardList.addOnItemTouchListener(new SwipeItemLayout.OnSwipeItemTouchListener(getContext()));
+        if("0".equals(getArguments().getString(TYPE_PARAMS))){
+            trCardList.addOnItemTouchListener(new SwipeItemLayout.OnSwipeItemTouchListener(getContext()));
+        }
 
         final CardListAdapter mListAdapter = new CardListAdapter(getActivity());
         mListAdapter.setOnViewClickListener(new CardListAdapter.OnViewClickListener() {
             @Override
             public void setUserdCoupons(int position) {
-                showLoadDialog();
-                getPresenter().setUserCoupons(mListAdapter.getItem(position).getId(),DELETE_COUPONS,position);
+                DialogUtil.useCouponsDialog(getContext(), false, mListAdapter.getItem(position).getName(), new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        switch (position){
+                            case 1:
+                                showLoadDialog();
+                                getPresenter().setUserCoupons(mListAdapter.getItem(position).getId(),SET_COUPONS_USER,position);
+                                break;
+                        }
+                    }
+                });
+
             }
 
             @Override
             public void setDeleteCoupons(int position) {
-                showLoadDialog();
-                getPresenter().deleteUserCoupons(mListAdapter.getItem(position).getId(),SET_COUPONS_USER,position);
+                DialogUtil.deleteCouponsDialog(getContext(), false, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        switch (position){
+                            case 1:
+                                showLoadDialog();
+                                getPresenter().deleteUserCoupons(mListAdapter.getItem(position).getId(),DELETE_COUPONS,position);
+                                break;
+                        }
+                    }
+                });
+
             }
         });
         mListAdapter.setStatus(getArguments().getString(TYPE_PARAMS));
@@ -166,7 +190,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
 //                    startActivity(intent);
 //                    getActivity().overridePendingTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom);
 
-                    ARouter.getInstance().build("/app/ShopFundDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
+                    ARouter.getInstance().build("/app/CarDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
                             withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId()).navigation();
 //                    ShopFundDetailActivity.star(getActivity(), ((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId());
                 }
@@ -218,6 +242,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
 
     @Override
     public void onComplete(int type) {
+        dismissLoadDialog();
         if(mListWrapper != null){
             ptrMaterialStylePtrFrame.refreshComplete();
         }
@@ -241,6 +266,13 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                     ptrMaterialStylePtrFrame.refreshComplete();
                     mListWrapper.updateListData(cards);
                 }
+                break;
+            case SET_COUPONS_USER:
+                DialogUtil.havaUseCouponsDialog(getContext(),true,null);
+                EventBus.getDefault().post(new AddCardEvent(0));
+                break;
+            case DELETE_COUPONS:
+                EventBus.getDefault().post(new AddCardEvent(0));
                 break;
         }
     }

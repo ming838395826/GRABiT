@@ -175,6 +175,98 @@ public class DialogUtil {
     }
 
     /**
+     * 使用优惠券dialog
+     * @param mContent
+     * @param cancelable
+     * @param listener
+     * @return
+     */
+    public static Dialog useCouponsDialog(Context mContent,  boolean cancelable, String couponName,final OnClickListener listener) {
+
+        final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_use_coupons_layout, null);
+        View timgClose = contentView.findViewById(R.id.timg_close);
+        View tbtn_to_cancel = contentView.findViewById(R.id.tbtn_to_cancel);
+        View tbtn_to_use = contentView.findViewById(R.id.tbtn_to_use);
+        TTextView tv_coupon_name= (TTextView) contentView.findViewById(R.id.tv_coupon_name);
+        tv_coupon_name.setText(couponName);
+        dialog.setContentView(contentView);
+        ViewGroup.LayoutParams params = contentView.getLayoutParams();
+        params.width = (int) (DensityUtil.getWidth() * 0.8);
+        contentView.setLayoutParams(params);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelable);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        //关闭
+        setOnClickListener(listener,dialog,timgClose,0);
+        //好的
+        setOnClickListener(listener,dialog,tbtn_to_use,1);
+        //关闭
+        setOnClickListener(listener,dialog,tbtn_to_cancel,2);
+        return dialog;
+    }
+
+    /**
+     * 删除优惠券dialog
+     * @param mContent
+     * @param cancelable
+     * @param listener
+     * @return
+     */
+    public static Dialog deleteCouponsDialog(Context mContent,  boolean cancelable,final OnClickListener listener) {
+
+        final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_delete_coupons_layout, null);
+        View timgClose = contentView.findViewById(R.id.timg_close);
+        View tbtn_to_cancel = contentView.findViewById(R.id.tbtn_to_cancel);
+        View tbtn_to_use = contentView.findViewById(R.id.tbtn_to_use);
+        dialog.setContentView(contentView);
+        ViewGroup.LayoutParams params = contentView.getLayoutParams();
+        params.width = (int) (DensityUtil.getWidth() * 0.8);
+        contentView.setLayoutParams(params);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelable);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        //关闭
+        setOnClickListener(listener,dialog,timgClose,0);
+        //好的
+        setOnClickListener(listener,dialog,tbtn_to_use,1);
+        //关闭
+        setOnClickListener(listener,dialog,tbtn_to_cancel,2);
+        return dialog;
+    }
+
+    /**
+     * 删除优惠券dialog
+     * @param mContent
+     * @param cancelable
+     * @param listener
+     * @return
+     */
+    public static Dialog havaUseCouponsDialog(Context mContent,  boolean cancelable,final OnClickListener listener) {
+
+        final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_hava_use_coupons_layout, null);
+        View timgClose = contentView.findViewById(R.id.timg_close);
+        View tbtn_to_use = contentView.findViewById(R.id.tbtn_to_use);
+        dialog.setContentView(contentView);
+        ViewGroup.LayoutParams params = contentView.getLayoutParams();
+        params.width = (int) (DensityUtil.getWidth() * 0.8);
+        contentView.setLayoutParams(params);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelable);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        //关闭
+        setOnClickListener(listener,dialog,timgClose,0);
+        //好的
+        setOnClickListener(listener,dialog,tbtn_to_use,1);
+        return dialog;
+    }
+
+    /**
      * 抽中dialog
      * @param mContent
      * @param cancelable

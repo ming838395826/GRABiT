@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_card_blur">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="6px"
+        android:paddingLeft="4px"
+        android:paddingRight="4px"
+        android:paddingTop="1px">
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/img_card_avatar"
+            android:layout_width="110dp"
+            android:layout_height="83dp"
+            android:layout_marginBottom="13.5dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="13dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_pic_defualt" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_card_avatar"
+            android:layout_marginLeft="143dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/app_font_color_main_title_hint"
+            android:textSize="@dimen/app_font_title_sub_18sp"
+            tools:text="HHH234234" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_card_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ttv_card_title"
+            android:layout_below="@+id/ttv_card_title"
+            android:layout_marginTop="17.5dp"
+            android:ellipsize="end"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="@color/app_font_color_main_title_hint"
+            android:textSize="@dimen/app_font_title_sub_14sp"
+            tools:text="是开始打瞌睡的卡圣诞贺卡就速度很快"
+            android:visibility="gone"/>
+
+        <com.android.spin.common.selector.view.CircleImageView
+            android:id="@+id/img_shop_avatar"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignLeft="@+id/ttv_card_title"
+            android:layout_below="@+id/ttv_card_title"
+            android:layout_marginTop="23dp"
+            tools:src="@mipmap/icon_dialog_gifta" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_alignTop="@+id/img_shop_avatar"
+            android:layout_below="@+id/ttv_card_title"
+            android:layout_marginLeft="7.5dp"
+            android:layout_toRightOf="@+id/img_shop_avatar"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/app_font_color_main_title_hint"
+            android:textSize="@dimen/app_font_title_sub_12sp"
+            tools:text="屈成氏"/>
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3333 6666 9999 0000"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            android:background="@drawable/btn_color_f7f7f6_r2"
+            android:layout_below="@+id/img_card_avatar"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:paddingRight="18dp"
+            android:paddingLeft="18dp"
+            android:gravity="center"
+            android:layout_marginRight="17dp"
+            android:layout_marginLeft="17dp"/>
+
+        <ImageView
+            android:id="@+id/iv_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_line"
+            android:layout_below="@+id/ttv_code"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_card_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_line"
+            android:layout_marginLeft="1.5px"
+            android:layout_marginRight="1.5px"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="23dp">
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_card_shop_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/app_font_color_main_title_hint"
+                android:textSize="@dimen/app_font_title_sub_13sp"
+                tools:text="截止日期：2017.6.30" />
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:id="@+id/ttv_card_exchange_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_alignTop="@+id/img_shop_avatar"
+                android:layout_below="@+id/ttv_card_title"
+                android:layout_marginBottom="13.5dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/img_shop_avatar"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:textColor="@color/app_font_color_main_title_hint"
+                android:textSize="@dimen/app_font_title_sub_13sp"
+                tools:text="兑换地址：是大是大非上山东科技护肤上看到就会发生的纠纷还是快点恢复快速的恢复时间的回复对方"
+                android:visibility="visible"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

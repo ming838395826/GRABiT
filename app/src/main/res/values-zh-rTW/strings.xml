@@ -254,4 +254,13 @@
     <string name="text_home_grab_it_new">馬上領取好物</string>
     <string name="text_home_ran_out_new">已搶光好物</string>
     <string name="text_home_got_it_new">已領取好物</string>
+
+    <!--卡券使用-->
+    <string name="text_use_coupons">確認使用卡券？</string>
+    <string name="text_delete_coupons">確定刪除卡券？</string>
+    <string name="text_delete_coupons_describe">刪除後卡券將永久刪除</string>
+    <string name="text_use_coupons_success">用券成功</string>
+    <string name="ext_use_coupons_success_describe">恭喜成功使用卡券</string>
+    <string name="text_coupons_detail_title">卡券详情</string>
+    <string name="text_coupons_use_soon">立即使用</string>
 </resources>

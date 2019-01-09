@@ -213,6 +213,9 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     @Override
     public void initView() {
         initListView();
+        Map<String, Object> params1 = new HashMap<>();
+        params1.put("id", 1);
+        getPresenter().getShopItemReceived(params1,200);
     }
 
     /**

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="false"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/dialog_bg_white_r6"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_title"
+            android:paddingTop="72.5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="@dimen/app_font_title_size"
+            android:text="@string/text_use_coupons"
+            android:textColor="@color/app_color_191917"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/tv_coupon_name"
+            android:paddingTop="13.5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="@dimen/app_font_title_sub_16sp"
+            android:text="@string/text_use_coupons"
+            android:textColor="@color/app_font_color_main_title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <com.taobao.uikit.feature.view.TTextView
+                android:layout_marginTop="35.5dp"
+                android:id="@+id/tbtn_to_use"
+                android:gravity="center"
+                android:text="@string/dialog_btn_confirm"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/app_font_title_sub_15sp"
+                android:background="@drawable/btn_color_191917"
+                android:layout_marginBottom="53dp"
+                android:layout_width="217dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:src="@mipmap/ic_coupon_used"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="141dp"
+        android:layout_height="92dp" />
+
+    <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_close"
+        android:src="@mipmap/icon_dialog_close"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

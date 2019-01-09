@@ -135,7 +135,7 @@
                     android:id="@+id/tv_to_use"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="立即使用"
+                    android:text="@string/text_coupons_use_soon"
                     android:textColor="#ff333333"
                     android:textSize="@dimen/app_font_title_sub_13sp"
                     android:layout_marginRight="22dp"
@@ -147,17 +147,27 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="17dp"/>
 
+                <com.taobao.uikit.feature.view.TImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="18dp"
+                    android:layout_height="19dp"
+                    android:src="@mipmap/ic_delete_gray"
+                    android:layout_marginRight="22dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="17dp"/>
+
             </LinearLayout>
 
             <com.taobao.uikit.feature.view.TImageView
                 android:id="@+id/timg_status"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
+                android:layout_width="81dp"
+                android:layout_height="64dp"
                 android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/ll_card_bottom"
+                android:layout_above="@+id/iv_line"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="-65dp"
-                tools:src="@mipmap/icon_dialog_gifta" />
+                tools:src="@mipmap/icon_dialog_gifta"
+                android:layout_marginBottom="15dp"/>
 
         </RelativeLayout>
     </LinearLayout>
