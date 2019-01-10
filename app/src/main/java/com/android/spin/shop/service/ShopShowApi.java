@@ -6,6 +6,7 @@ import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.mine.api.MineApiInterface;
 import com.android.spin.mine.entity.UserEntity;
 import com.android.spin.shop.api.ShopApiInterface;
+import com.android.spin.shop.entity.CardUserEntity;
 import com.android.spin.shop.entity.SetNoticeResultEntity;
 import com.android.spin.shop.entity.ShopHistroyItemEntity;
 import com.android.spin.shop.entity.ShopItemReceivedEntity;
@@ -162,6 +163,6 @@ public interface ShopShowApi<T> {
                                                                @QueryMap Map<String, Object> map);
 
     @GET(ShopApiInterface.GET_CARDS_USER)
-    Observable<ShowApiResponse<ShowApiListResponse<Object>>> getCardUser(@Header("Cache-Control") String cacheControl,
-                                                               @Path("id") String id);
+    Observable<ShowApiResponse<ShowApiListResponse<CardUserEntity>>> getCardUser(@Header("Cache-Control") String cacheControl,
+                                                                                 @Path("id") String id);
 }

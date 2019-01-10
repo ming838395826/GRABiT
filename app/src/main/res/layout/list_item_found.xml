@@ -112,12 +112,14 @@
             android:id="@+id/ln_have_grabit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:gravity="right">
 
             <com.android.spin.common.selector.view.CircleImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+                android:src="@mipmap/icon_dialog_gifta"
                 tools:src="@mipmap/icon_dialog_gifta" />
         </LinearLayout>
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <com.android.spin.common.selector.view.CircleImageView
+        android:id="@+id/img_shop_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/ttv_card_title"
+        android:layout_below="@+id/ttv_card_title"
+        tools:src="@mipmap/icon_dialog_gifta"
+        android:layout_marginRight="18dp"/>
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Micheal Perry"
+        android:textColor="#ff030303"
+        android:textSize="@dimen/app_topbar_title_text_size"
+        android:gravity="center_vertical"/>
+
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/ttv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Micheal Perry"
+        android:textColor="#ff999999"
+        android:textSize="@dimen/app_font_title_sub_12sp"
+        android:gravity="center_vertical"
+        android:layout_marginRight="10dp"/>
+
+
+</LinearLayout>

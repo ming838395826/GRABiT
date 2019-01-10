@@ -167,4 +167,16 @@ public class ShopPresenter extends MvpPresenter<IView> {
         });
     }
 
+    /**
+     * 判断是否抢过这个商品
+     */
+    public void getShopItemReceived(Map<String,Object> params, final int type,int position) {
+        mShopModel.getShopItemReceived(params, new OnNetRequestImplListener<NoticeResult>(getView(), type) {
+            @Override
+            public void onSuccess(NoticeResult data) {
+                super.onSuccess(data);
+            }
+        });
+    }
+
 }

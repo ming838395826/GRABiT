@@ -46,6 +46,7 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit2.http.POST;
 
 /**
  * 作者：yangqiyun
@@ -59,6 +60,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     private final static int TYPE_REQUEST_CURRENT = 0x01;//获取列表
     private final static int TYPE_POST_USER_COUPONS = 0x02;//领取卡片
     private final static int TYPE_GET_GOODS_DETAIL = 0x04;//获取详情
+    private final static int TYPE_CHECK_RECEIVED = 0x05;//获取详情
     @Bind(R.id.tr_shop_list)
     TRecyclerView mTrShopList;
 
@@ -157,6 +159,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                     mPtrMaterialStylePtrFrame.refreshComplete();
                     mListWrapper.updateListData(items);
                 }
+
                 break;
             case TYPE_POST_USER_COUPONS:
                 //获取优惠券成功
@@ -279,7 +282,18 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
             @Override
             public void showPerson(int position) {
+                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                CardUserDialogFragment cardUserDialogFragment = CardUserDialogFragment.newInstance(entity.getId()+"");
+                cardUserDialogFragment.setTargetFragment(ShopListNewFragment.this, 200);
+                cardUserDialogFragment.show(getActivity().getSupportFragmentManager(), "USER");
+            }
 
+            @Override
+            public void checkRecevoerStatus(int position) {
+                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                Map<String, Object> params = new HashMap<>();
+                params.put("id", entity.getId());
+                getPresenter().getShopItemReceived(params,TYPE_CHECK_RECEIVED, position);
             }
         });
         mListAdapter.setStatus("0");
@@ -300,8 +314,8 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 @Override
                 public void onItemClick(TRecyclerView parent, View view, int position, long id) {
 
-                    ARouter.getInstance().build("/app/ShopFundDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
-                            withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId()).navigation();
+//                    ARouter.getInstance().build("/app/ShopFundDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
+//                            withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId()).navigation();
                 }
             });
         }
@@ -386,26 +400,28 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     public void onRefreshBegin() {
         setCommonListViewWrapperRefresh(mListWrapper,true);
         page = 1;
-//        Map<String, Object> params = new HashMap<>();
-//        params.put("status", getArguments().getString(TYPE_PARAMS));
-//        params.put(Constant.KEY_PAGE, page);
-//        params.put(Constant.KEY_PER_PAGE, perPage);
-//        getPresenter().getUserCoupons(params, TYPE_REQUEST_LIST);
+        Map<String, Object> params = new HashMap<>();
+        params.put(Constant.KEY_PAGE, page);
+        params.put(Constant.KEY_PER_PAGE, perPage);
         getData();
     }
 
     @Override
     public void onRefreshError() {
-
+        page = 1;
     }
 
     @Override
     public void onLoadBegin() {
-
+        page ++;
+        Map<String, Object> params = new HashMap<>();
+        params.put(Constant.KEY_PAGE, page);
+        params.put(Constant.KEY_PER_PAGE, perPage);
+        getData();
     }
 
     @Override
     public void onLoadError() {
-
+        page --;
     }
 }

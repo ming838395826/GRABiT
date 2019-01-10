@@ -9,6 +9,7 @@ import com.android.spin.db.UserManager;
 import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.mine.entity.UserEntity;
 import com.android.spin.mine.service.MineRetrofitService;
+import com.android.spin.shop.entity.CardUserEntity;
 import com.android.spin.shop.entity.SetNoticeResultEntity;
 import com.android.spin.shop.entity.ShopHistroyItemEntity;
 import com.android.spin.shop.entity.ShopItemReceivedEntity;
@@ -162,12 +163,12 @@ public class ShopModel {
      * @param listener
      */
     public void getCardUser(String id, OnNetRequestListener listener){
-        Observable<ShowApiResponse<ShowApiListResponse<Object>>> observable = ShopRetrofitService.getInstance().
+        Observable<ShowApiResponse<ShowApiListResponse<CardUserEntity>>> observable = ShopRetrofitService.getInstance().
                 createShowApi().getCardUser(ShopRetrofitService.getCacheControl(),id);
 
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ChildSubscriber<ShowApiResponse<ShowApiListResponse<Object>>>(listener) {
+                .subscribe(new ChildSubscriber<ShowApiResponse<ShowApiListResponse<CardUserEntity>>>(listener) {
                 });
     }
 }

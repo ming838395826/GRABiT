@@ -44,6 +44,11 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final ShopListItemViewHolder newHolder = (ShopListItemViewHolder) holder;
         newHolder.initData(getDataList().get(position));
+        if(getDataList().get(position).getIsRecerve()==null){
+            if(onViewClickListener!=null){
+                onViewClickListener.checkRecevoerStatus(position);
+            }
+        }
         newHolder.Recevier(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,5 +96,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         void recevier(int position);
 
         void showPerson(int position);
+
+        void checkRecevoerStatus(int position);
     }
 }

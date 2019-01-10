@@ -28,6 +28,7 @@ import com.android.spin.R;
 import com.android.spin.card.entity.CardItemEntity;
 import com.android.spin.shop.adapter.CardUserAdapter;
 import com.android.spin.shop.adapter.GoodListAdapter;
+import com.android.spin.shop.entity.CardUserEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.model.ShopModel;
 import com.taobao.uikit.feature.view.TImageView;
@@ -194,6 +195,10 @@ public class CardUserDialogFragment extends DialogFragment implements
 
     @Override
     public void onSuccess(Object data, int type) {
-
+        ShowApiListResponse<CardUserEntity> mShopProducts = (ShowApiListResponse<CardUserEntity>) data;
+        if(mListWrapper != null){
+            mPtrMaterialStylePtrFrame.refreshComplete();
+            mListWrapper.updateListData(mShopProducts.getData());
+        }
     }
 }
