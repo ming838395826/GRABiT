@@ -24,6 +24,15 @@ public class NoticeResult implements IEntity {
     private int status;
     private String created_at;
     private String updated_at;
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
     public String getKey() {
         return key;

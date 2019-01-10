@@ -83,18 +83,21 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     public void setSubmitRanOut(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_ran_out));
         mTvSubmit.setTextColor(Color.parseColor("#333333"));
+        mTvSubmit.setBackgroundResource(R.color.app_color_F0F0F0);
         mTvSubmit.setEnabled(false);
     }
 
     public void setSubmitGotIt(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_got_it));
         mTvSubmit.setTextColor(Color.parseColor("#333333"));
+        mTvSubmit.setBackgroundResource(R.color.app_color_F0F0F0);
         mTvSubmit.setEnabled(false);
     }
 
     public void setSubmitGrabIt(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_grab_it));
         mTvSubmit.setTextColor(Color.parseColor("#FFFFFF"));
+        mTvSubmit.setBackgroundResource(R.color.app_color_FF4141);
         mTvSubmit.setEnabled(true);
     }
 
@@ -111,10 +114,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         if(isRanOut){
             setSubmitRanOut();
         }else {
-            if (entity.getUser_coupon() != null) {
-                setSubmitGotIt();
-            }else {
+            if (entity.getIsRecerve() != null&&entity.getIsRecerve()==0) {
                 setSubmitGrabIt();
+            }else {
+                setSubmitGotIt();
             }
         }
 

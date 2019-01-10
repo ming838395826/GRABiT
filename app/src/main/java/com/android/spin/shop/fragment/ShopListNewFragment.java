@@ -12,8 +12,12 @@ import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.base.base.MvpFragment;
+import com.android.base.event.TokenFailEvent;
+import com.android.base.module.http.callback.ChildSubscriber;
 import com.android.base.module.http.callback.ShowApiListResponse;
+import com.android.base.module.http.callback.ShowApiResponse;
 import com.android.base.mvp.view.IView;
+import com.android.base.util.SignHelper;
 import com.android.base.util.ToastUtil;
 import com.android.base.view.layout.PtrMaterialFrameLayout;
 import com.android.base.view.listview.CommonListLoadMoreHandler;
@@ -26,10 +30,13 @@ import com.android.spin.common.util.Constant;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
 import com.android.spin.home.HomeActivity;
+import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.adapter.GoodListAdapter;
+import com.android.spin.shop.entity.ShopItemReceivedEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
+import com.android.spin.shop.service.ShopRetrofitService;
 import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -46,6 +53,9 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.http.POST;
 
 /**
@@ -60,7 +70,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     private final static int TYPE_REQUEST_CURRENT = 0x01;//获取列表
     private final static int TYPE_POST_USER_COUPONS = 0x02;//领取卡片
     private final static int TYPE_GET_GOODS_DETAIL = 0x04;//获取详情
-    private final static int TYPE_CHECK_RECEIVED = 0x05;//获取详情
+    private final static int TYPE_CHECK_RECEIVED = 0x05;//检查状态
     @Bind(R.id.tr_shop_list)
     TRecyclerView mTrShopList;
 
@@ -108,7 +118,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 break;
             case TYPE_POST_USER_COUPONS:
                 if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
-                    if (getType() == 0) {
+                    if (0 == 0) {//
                         ToastUtil.shortShow(getString(R.string.text_getter_receied));
                     } else {
                         ToastUtil.shortShow(getString(R.string.text_set_receied));
@@ -130,6 +140,8 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                     //库存不足
                     DialogUtil.getNoGoodSDialog(getActivity(), true, null).show();
                 }
+                break;
+            case TYPE_CHECK_RECEIVED:
                 break;
         }
 
@@ -204,6 +216,12 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         updateEntity(item,(ShopProductItemEntity) data);
                     }
                 }catch (Exception e){}
+                break;
+            case TYPE_CHECK_RECEIVED:
+                NoticeResult result= (NoticeResult) data;
+                ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(result.getPosition());
+                item.setIsRecerve(1);
+                mListWrapper.getAdapter().notifyItemChanged(result.getPosition());
                 break;
         }
     }
@@ -289,11 +307,36 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             }
 
             @Override
-            public void checkRecevoerStatus(int position) {
+            public void checkRecevoerStatus(final int position) {
                 ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                 Map<String, Object> params = new HashMap<>();
                 params.put("id", entity.getId());
-                getPresenter().getShopItemReceived(params,TYPE_CHECK_RECEIVED, position);
+//                getPresenter().getShopItemReceived(params,TYPE_CHECK_RECEIVED, position);
+                Observable<ShowApiResponse<ShopItemReceivedEntity>> observable = ShopRetrofitService.getInstance().
+                        createShowApi().getShopItemReceived(ShopRetrofitService.getCacheControl(),
+                        params.get("id") + "", SignHelper.addSign(params));
+
+                observable.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new ChildSubscriber<ShowApiResponse<ShopItemReceivedEntity>>(null) {
+                            @Override
+                            public void onNext(ShowApiResponse<ShopItemReceivedEntity> o) {
+                                int isRecevier=1;
+                                if("0".equals(o.getCode())){
+                                    isRecevier=0;
+                                }else if("1".equals(o.getCode())){
+                                    ToastUtil.shortShow(o.getMsg());
+                                }else if("1002".equals(o.getCode())){
+                                    EventBus.getDefault().post(new TokenFailEvent());
+                                } else {
+                                    //错误代码处理
+
+                                }
+                                ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                                item.setIsRecerve(isRecevier);
+                                mListWrapper.getAdapter().notifyItemChanged(position+1);
+                            }
+                        });
             }
         });
         mListAdapter.setStatus("0");
