@@ -13,6 +13,7 @@ import com.android.spin.R;
 import com.android.spin.shop.holder.ShopListItemViewHolder;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.util.DialogUtil;
+import com.taobao.uikit.feature.view.TRecyclerView;
 
 /**
  * 作者：yangqiyun
@@ -80,6 +81,15 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
                 }
             }
         });
+
+        newHolder.OnChildItem(new TRecyclerView.OnItemClickListener() {
+            @Override
+            public void onItemClick(TRecyclerView parent, View view, int ChildPosition, long id) {
+                if(onViewClickListener!=null){
+                    onViewClickListener.toItemDetail(position,ChildPosition);
+                }
+            }
+        });
     }
 
     private OnViewClickListener onViewClickListener;
@@ -92,11 +102,15 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         this.onViewClickListener = onViewClickListener;
     }
 
+
+
     public interface OnViewClickListener{
         void recevier(int position);
 
         void showPerson(int position);
 
         void checkRecevoerStatus(int position);
+
+        void toItemDetail(int position,int childPosition);
     }
 }

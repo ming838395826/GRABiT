@@ -90,8 +90,8 @@ public class ShopFundDetailDelegate extends MvpDelegate<IView, ShopPresenter> im
         return new ShopPresenter();
     }
 
-    private int getShopItemId() {
-        return getActivity().getIntent().getIntExtra("id", 0);
+    private String getShopItemId() {
+        return getActivity().getIntent().getStringExtra("id");
     }
 
     @Override

@@ -65,7 +65,7 @@ import retrofit2.http.POST;
  * 描述：发现好物
  */
 public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> implements
-        CommonListViewWrapper.OnPtrHandlerRefreshListener, CommonListViewWrapper.OnPtrHandlerLoadListener{
+        CommonListViewWrapper.OnPtrHandlerRefreshListener, CommonListViewWrapper.OnPtrHandlerLoadListener {
 
     private final static int TYPE_REQUEST_CURRENT = 0x01;//获取列表
     private final static int TYPE_POST_USER_COUPONS = 0x02;//领取卡片
@@ -82,7 +82,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     private int page = 1;
     private final int perPage = 20;
     private boolean isRefresh = false;
-    private int recevierPosition=-1;
+    private int recevierPosition = -1;
 
     private List<ShopProductItemEntity> items;
 
@@ -112,7 +112,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     @Override
     public void onFail(String code, int type) {
-        switch (type){
+        switch (type) {
             case TYPE_REQUEST_CURRENT:
                 showNetErrorData();
                 break;
@@ -123,20 +123,20 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                     } else {
                         ToastUtil.shortShow(getString(R.string.text_set_receied));
                     }
-                }else {
+                } else {
                     ErrorToastUtli.showErrorToast(code);
                     //刷新商品
-                    if(recevierPosition>0){
-                        ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-                        Map<String,Object> params = new HashMap<>();
-                        params.put("id",entity.getId());
-                        getPresenter().getShopItemDetailNew(params,TYPE_GET_GOODS_DETAIL);
+                    if (recevierPosition > 0) {
+                        ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                        Map<String, Object> params = new HashMap<>();
+                        params.put("id", entity.getId());
+                        getPresenter().getShopItemDetailNew(params, TYPE_GET_GOODS_DETAIL);
                         isRefresh = true;
                     }
 
                 }
 
-                if("1006".equals(code)){
+                if ("1006".equals(code)) {
                     //库存不足
                     DialogUtil.getNoGoodSDialog(getActivity(), true, null).show();
                 }
@@ -167,7 +167,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 //                if(mOnGetResultListener != null){
 //                    mOnGetResultListener.onGetResult(getArguments().getString(TYPE_PARAMS),Integer.valueOf(base.getTotal()));
 //                }
-                if(mListWrapper != null){
+                if (mListWrapper != null) {
                     mPtrMaterialStylePtrFrame.refreshComplete();
                     mListWrapper.updateListData(items);
                 }
@@ -208,17 +208,18 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 break;
             case TYPE_GET_GOODS_DETAIL:
                 //刷新商品
-                try{
+                try {
                     isRefresh = false;
-                    if(mPtrMaterialStylePtrFrame != null){
+                    if (mPtrMaterialStylePtrFrame != null) {
                         mPtrMaterialStylePtrFrame.refreshComplete();
                         ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-                        updateEntity(item,(ShopProductItemEntity) data);
+                        updateEntity(item, (ShopProductItemEntity) data);
                     }
-                }catch (Exception e){}
+                } catch (Exception e) {
+                }
                 break;
             case TYPE_CHECK_RECEIVED:
-                NoticeResult result= (NoticeResult) data;
+                NoticeResult result = (NoticeResult) data;
                 ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(result.getPosition());
                 item.setIsRecerve(1);
                 mListWrapper.getAdapter().notifyItemChanged(result.getPosition());
@@ -236,16 +237,17 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
         initListView();
         Map<String, Object> params1 = new HashMap<>();
         params1.put("id", 1);
-        getPresenter().getShopItemReceived(params1,200);
+        getPresenter().getShopItemReceived(params1, 200);
     }
 
     /**
      * 数据更新
+     *
      * @param entity
      */
-    private void updateEntity(ShopProductItemEntity mShopProductItemEntity,ShopProductItemEntity entity){
+    private void updateEntity(ShopProductItemEntity mShopProductItemEntity, ShopProductItemEntity entity) {
 
-        if(entity == null){
+        if (entity == null) {
             return;
         }
         mShopProductItemEntity.setUser_item_notice(entity.getUser_item_notice());
@@ -291,8 +293,8 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             public void recevier(int position) {
 
                 Map<String, Object> params = new HashMap<>();
-                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
-                recevierPosition=position;
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                recevierPosition = position;
                 params.put("card_id", entity.getId());
                 getPresenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
 
@@ -300,15 +302,15 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
             @Override
             public void showPerson(int position) {
-                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
-                CardUserDialogFragment cardUserDialogFragment = CardUserDialogFragment.newInstance(entity.getId()+"");
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                CardUserDialogFragment cardUserDialogFragment = CardUserDialogFragment.newInstance(entity.getId() + "");
                 cardUserDialogFragment.setTargetFragment(ShopListNewFragment.this, 200);
                 cardUserDialogFragment.show(getActivity().getSupportFragmentManager(), "USER");
             }
 
             @Override
             public void checkRecevoerStatus(final int position) {
-                ShopProductItemEntity entity= (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                 Map<String, Object> params = new HashMap<>();
                 params.put("id", entity.getId());
 //                getPresenter().getShopItemReceived(params,TYPE_CHECK_RECEIVED, position);
@@ -321,12 +323,12 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         .subscribe(new ChildSubscriber<ShowApiResponse<ShopItemReceivedEntity>>(null) {
                             @Override
                             public void onNext(ShowApiResponse<ShopItemReceivedEntity> o) {
-                                int isRecevier=1;
-                                if("0".equals(o.getCode())){
-                                    isRecevier=0;
-                                }else if("1".equals(o.getCode())){
+                                int isRecevier = 1;
+                                if ("0".equals(o.getCode())) {
+                                    isRecevier = 0;
+                                } else if ("1".equals(o.getCode())) {
                                     ToastUtil.shortShow(o.getMsg());
-                                }else if("1002".equals(o.getCode())){
+                                } else if ("1002".equals(o.getCode())) {
                                     EventBus.getDefault().post(new TokenFailEvent());
                                 } else {
                                     //错误代码处理
@@ -334,9 +336,19 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                                 }
                                 ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                                 item.setIsRecerve(isRecevier);
-                                mListWrapper.getAdapter().notifyItemChanged(position+1);
+                                mListWrapper.getAdapter().notifyItemChanged(position + 1);
                             }
                         });
+            }
+
+            @Override
+            public void toItemDetail(int position, int childPosition) {
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                ARouter.getInstance().build("/app/ShopDetail").withTransition(R.anim.slide_in_from_bottom, R.anim.slide_out_to_bottom).
+                        withString("id", ((ShopProductItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItems().get(childPosition).getId())
+                        .withLong("startTime", entity.getStart_time())
+                        .withLong("endTime", entity.getEnd_time())
+                        .withString("parentId",entity.getId()+"").navigation();
             }
         });
         mListAdapter.setStatus("0");
@@ -352,7 +364,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         .setLayoutManager(layoutManager).setLoadMoreHandler(loadMoreHandler)
                         .setPtrFrameLayout(mPtrMaterialStylePtrFrame).build();
         mListWrapper.init(config);
-        if("0".equals("0")){
+        if ("0".equals("0")) {
             mTrShopList.setOnItemClickListener(new TRecyclerView.OnItemClickListener() {
                 @Override
                 public void onItemClick(TRecyclerView parent, View view, int position, long id) {
@@ -441,7 +453,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     @Override
     public void onRefreshBegin() {
-        setCommonListViewWrapperRefresh(mListWrapper,true);
+        setCommonListViewWrapperRefresh(mListWrapper, true);
         page = 1;
         Map<String, Object> params = new HashMap<>();
         params.put(Constant.KEY_PAGE, page);
@@ -456,7 +468,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     @Override
     public void onLoadBegin() {
-        page ++;
+        page++;
         Map<String, Object> params = new HashMap<>();
         params.put(Constant.KEY_PAGE, page);
         params.put(Constant.KEY_PER_PAGE, perPage);
@@ -465,6 +477,6 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     @Override
     public void onLoadError() {
-        page --;
+        page--;
     }
 }

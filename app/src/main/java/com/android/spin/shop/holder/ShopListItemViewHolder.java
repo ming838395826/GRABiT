@@ -72,6 +72,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
+    public void OnChildItem(TRecyclerView.OnItemClickListener listener){
+        mTrGoodList.setOnItemClickListener(listener);
+    }
+
     public void Recevier(View.OnClickListener listener){
         mTvSubmit.setOnClickListener(listener);
     }

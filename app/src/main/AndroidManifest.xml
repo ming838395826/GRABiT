@@ -287,6 +287,7 @@
         <activity android:name=".logreg.FacebookBindPhoneActivity" />
         <activity android:name=".common.CommonWebActivity" />
         <activity android:name=".shop.ShopFundDetailActivity"/>
+        <activity android:name=".shop.ShopDetailActivity"/>
         <activity android:name=".card.CardDetailActivity"/>
 
         <!-- ShareSDK的activity -->

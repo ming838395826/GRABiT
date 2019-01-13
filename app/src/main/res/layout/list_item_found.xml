@@ -121,6 +121,26 @@
                 android:layout_height="22dp"
                 android:src="@mipmap/icon_dialog_gifta"
                 tools:src="@mipmap/icon_dialog_gifta" />
+
+            <com.android.spin.common.selector.view.CircleImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/icon_dialog_gifta"
+                tools:src="@mipmap/icon_dialog_gifta"
+                android:layout_marginLeft="-2dp"/>
+
+            <com.android.spin.common.selector.view.CircleImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/icon_dialog_gifta"
+                tools:src="@mipmap/icon_dialog_gifta"
+                android:layout_marginLeft="-12dp"/>
+
+            <com.android.spin.common.selector.view.CircleImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/icon_dialog_gifta"
+                tools:src="@mipmap/icon_dialog_gifta" />
         </LinearLayout>
 
     </LinearLayout>
