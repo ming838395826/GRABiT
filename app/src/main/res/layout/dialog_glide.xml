@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向商家出示卡券後 向下滑動可使用掉卡券"
+        android:textColor="#ffffffff"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/iv_card"
+        android:layout_width="289dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="21dp"
+        android:src="@mipmap/ic_glide_card"
+        android:layout_below="@+id/tv_title"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/iv_figure"
+        android:layout_width="88dp"
+        android:layout_height="108dp"
+        android:src="@mipmap/ic_glide_figure"
+        android:layout_alignRight="@+id/iv_card"
+        android:layout_marginTop="-50dp"
+        android:layout_below="@+id/iv_card"/>
+
+</RelativeLayout>

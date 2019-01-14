@@ -61,7 +61,16 @@ public class ShopProductItemEntity implements IEntity{
     private UserCouponBean user_coupon;
     private userItemNoticeBean user_item_notice;
 
-    private Integer isRecerve;
+    private Integer isRecerve;//是否已经领取,通知
+    private List<CardUserEntity> userList;
+
+    public List<CardUserEntity> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<CardUserEntity> userList) {
+        this.userList = userList;
+    }
 
     public Integer getIsRecerve() {
         return isRecerve;

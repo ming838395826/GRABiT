@@ -108,7 +108,7 @@
             android:padding="6dp"
             android:text="11"/>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/ln_have_grabit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -117,31 +117,42 @@
             android:gravity="right">
 
             <com.android.spin.common.selector.view.CircleImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta" />
-
-            <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/iv_person_one"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@mipmap/icon_dialog_gifta"
                 tools:src="@mipmap/icon_dialog_gifta"
-                android:layout_marginLeft="-2dp"/>
-
+                android:layout_alignParentRight="true"
+                android:visibility="gone"/>
             <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/iv_person_two"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@mipmap/icon_dialog_gifta"
                 tools:src="@mipmap/icon_dialog_gifta"
-                android:layout_marginLeft="-12dp"/>
-
+                android:layout_toLeftOf="@+id/iv_person_one"
+                android:layout_marginRight="-12dp"
+                android:visibility="gone"/>
             <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/iv_person_third"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta" />
-        </LinearLayout>
+                tools:src="@mipmap/icon_dialog_gifta"
+                android:layout_toLeftOf="@+id/iv_person_two"
+                android:layout_marginRight="-12dp"
+                android:visibility="gone"/>
+            <com.android.spin.common.selector.view.CircleImageView
+                android:id="@+id/iv_person_four"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@mipmap/icon_dialog_gifta"
+                tools:src="@mipmap/icon_dialog_gifta"
+                android:layout_toLeftOf="@+id/iv_person_third"
+                android:layout_marginRight="-12dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 

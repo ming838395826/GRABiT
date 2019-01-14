@@ -24,13 +24,13 @@ import com.taobao.uikit.feature.view.TRecyclerView;
 
 public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
 
-    private String status;
+    private int status;
 
     public GoodListAdapter(Context activity) {
         super(activity);
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -48,6 +48,11 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         if(getDataList().get(position).getIsRecerve()==null){
             if(onViewClickListener!=null){
                 onViewClickListener.checkRecevoerStatus(position);
+            }
+        }
+        if(getDataList().get(position).getUserList()==null){
+            if(onViewClickListener!=null){
+                onViewClickListener.showPersonIcon(position);
             }
         }
         newHolder.Recevier(new View.OnClickListener() {
@@ -110,6 +115,8 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         void showPerson(int position);
 
         void checkRecevoerStatus(int position);
+
+        void showPersonIcon(int position);
 
         void toItemDetail(int position,int childPosition);
     }

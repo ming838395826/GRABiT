@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.base.util.DateUtil;
@@ -53,7 +54,15 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.tr_good_list)
     TRecyclerView mTrGoodList;
     @Bind(R.id.ln_have_grabit)
-    LinearLayout ln_have_grabit;
+    RelativeLayout ln_have_grabit;
+    @Bind(R.id.iv_person_one)
+    CircleImageView iv_person_one;
+    @Bind(R.id.iv_person_two)
+    CircleImageView iv_person_two;
+    @Bind(R.id.iv_person_third)
+    CircleImageView iv_person_third;
+    @Bind(R.id.iv_person_four)
+    CircleImageView iv_person_four;
 
     View itemView;
     int type=0;
@@ -132,6 +141,33 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         GoodItemAdapter goodItemAdapter=new GoodItemAdapter(mTrGoodList.getContext());
         goodItemAdapter.addDataList(entity.getItems());
         mTrGoodList.setAdapter(goodItemAdapter);
+        if(entity.getUserList()==null){
+            iv_person_one.setVisibility(View.GONE);
+            iv_person_two.setVisibility(View.GONE);
+            iv_person_third.setVisibility(View.GONE);
+            iv_person_four.setVisibility(View.GONE);
+        }else {
+            for (int i=0;i<entity.getUserList().size();i++){
+                switch (i){
+                    case 0:
+                        iv_person_one.setVisibility(View.VISIBLE);
+                        GlideUtil.defaultLoad(iv_person_one.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_one);
+                        break;
+                    case 1:
+                        iv_person_two.setVisibility(View.VISIBLE);
+                        GlideUtil.defaultLoad(iv_person_two.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_two);
+                        break;
+                    case 2:
+                        iv_person_third.setVisibility(View.VISIBLE);
+                        GlideUtil.defaultLoad(iv_person_third.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_third);
+                        break;
+                    case 3:
+                        iv_person_four.setVisibility(View.VISIBLE);
+                        GlideUtil.defaultLoad(iv_person_four.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_four);
+                        break;
+                }
+            }
+        }
         starTimer(entity.getStart_time(), entity.getEnd_time());
     }
 
