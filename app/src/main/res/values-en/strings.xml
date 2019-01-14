@@ -257,6 +257,9 @@
     <string name="text_feed_back_submit">Submission</string>
     <string name="text_feed_back_success">Successful feedback</string>
 
+    <string name="text_home_Concern">Concern</string>
+    <string name="text_home_have_Concern">Pay close attention to</string>
+
     <!--卡券使用-->
     <string name="text_use_coupons">Confirm the use of card tickets？</string>
     <string name="text_delete_coupons">Determine to delete the card ticket？</string>

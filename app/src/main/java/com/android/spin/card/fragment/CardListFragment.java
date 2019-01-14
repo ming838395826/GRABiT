@@ -148,7 +148,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                                 break;
                         }
                     }
-                });
+                }).show();
 
             }
 
@@ -164,7 +164,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                                 break;
                         }
                     }
-                });
+                }).show();
 
             }
         });
@@ -268,7 +268,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                 }
                 break;
             case SET_COUPONS_USER:
-                DialogUtil.havaUseCouponsDialog(getContext(),true,null);
+                DialogUtil.havaUseCouponsDialog(getContext(),true,null).show();
                 EventBus.getDefault().post(new AddCardEvent(0));
                 break;
             case DELETE_COUPONS:

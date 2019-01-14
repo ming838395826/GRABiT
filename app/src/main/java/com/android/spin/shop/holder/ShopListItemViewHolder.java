@@ -5,6 +5,7 @@ import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,7 +17,10 @@ import com.android.spin.R;
 import com.android.spin.card.entity.CardItemEntity;
 import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.shop.adapter.GoodItemAdapter;
+import com.android.spin.shop.adapter.GoodItemListAdapter;
 import com.android.spin.shop.entity.ShopProductItemEntity;
+import com.android.spin.view.NoScrollListView;
+import com.android.spin.view.NoScrollRecyclerView;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TRecyclerView;
 import com.taobao.uikit.feature.view.TTextView;
@@ -52,7 +56,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     @Bind(R.id.tv_submit)
     TTextView mTvSubmit;
     @Bind(R.id.tr_good_list)
-    TRecyclerView mTrGoodList;
+    NoScrollListView mTrGoodList;
     @Bind(R.id.ln_have_grabit)
     RelativeLayout ln_have_grabit;
     @Bind(R.id.iv_person_one)
@@ -81,7 +85,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    public void OnChildItem(TRecyclerView.OnItemClickListener listener){
+    public void OnChildItem(AdapterView.OnItemClickListener listener){
         mTrGoodList.setOnItemClickListener(listener);
     }
 
@@ -107,6 +111,20 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         mTvSubmit.setEnabled(false);
     }
 
+    public void setAttend(){
+        mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_Concern));
+        mTvSubmit.setTextColor(Color.parseColor("#333333"));
+        mTvSubmit.setBackgroundResource(R.color.app_color_F0F0F0);
+        mTvSubmit.setEnabled(false);
+    }
+
+    public void setHaveAttend(){
+        mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_have_Concern));
+        mTvSubmit.setTextColor(Color.parseColor("#333333"));
+        mTvSubmit.setBackgroundResource(R.color.app_color_F0F0F0);
+        mTvSubmit.setEnabled(false);
+    }
+
     public void setSubmitGrabIt(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_grab_it));
         mTvSubmit.setTextColor(Color.parseColor("#FFFFFF"));
@@ -124,23 +142,36 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                 break;
             }
         }
-        if(isRanOut){
-            setSubmitRanOut();
-        }else {
-            if (entity.getIsRecerve() != null&&entity.getIsRecerve()==0) {
-                setSubmitGrabIt();
+        if(getType()==0){
+            if(isRanOut){
+                setSubmitRanOut();
             }else {
-                setSubmitGotIt();
+                if (entity.getIsRecerve() != null&&entity.getIsRecerve()==0) {
+                    setSubmitGrabIt();
+                }else {
+                    setSubmitGotIt();
+                }
             }
+        }else if(getType()==1){
+            if (entity.getIsRecerve() != null&&entity.getIsRecerve()==0) {
+                setAttend();
+            }else {
+                setHaveAttend();
+            }
+        }else if(getType()==2){
+            mTvSubmit.setVisibility(View.GONE);
         }
 
+
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        mTrGoodList.setLayoutManager(layoutManager);
-        mTrGoodList.addItemDecoration(new ListItemDecoration(
-                mTrGoodList.getContext(), LinearLayout.VERTICAL, mTrGoodList.getContext().getResources().getDrawable(R.drawable.list_divider_h10_tran)));
+//        mTrGoodList.setLayoutManager(layoutManager);
+//        mTrGoodList.addItemDecoration(new ListItemDecoration(
+//                mTrGoodList.getContext(), LinearLayout.VERTICAL, mTrGoodList.getContext().getResources().getDrawable(R.drawable.list_divider_h10_tran)));
         GoodItemAdapter goodItemAdapter=new GoodItemAdapter(mTrGoodList.getContext());
+        GoodItemListAdapter goodItemListAdapter=new GoodItemListAdapter(mTrGoodList.getContext());
         goodItemAdapter.addDataList(entity.getItems());
-        mTrGoodList.setAdapter(goodItemAdapter);
+        goodItemListAdapter.setData(entity.getItems());
+        mTrGoodList.setAdapter(goodItemListAdapter);
         if(entity.getUserList()==null){
             iv_person_one.setVisibility(View.GONE);
             iv_person_two.setVisibility(View.GONE);
@@ -155,15 +186,15 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                         break;
                     case 1:
                         iv_person_two.setVisibility(View.VISIBLE);
-                        GlideUtil.defaultLoad(iv_person_two.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_two);
+                        GlideUtil.defualtLoad(iv_person_two.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_two);
                         break;
                     case 2:
                         iv_person_third.setVisibility(View.VISIBLE);
-                        GlideUtil.defaultLoad(iv_person_third.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_third);
+                        GlideUtil.defualtLoad(iv_person_third.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_third);
                         break;
                     case 3:
                         iv_person_four.setVisibility(View.VISIBLE);
-                        GlideUtil.defaultLoad(iv_person_four.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_four);
+                        GlideUtil.defualtLoad(iv_person_four.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_four);
                         break;
                 }
             }

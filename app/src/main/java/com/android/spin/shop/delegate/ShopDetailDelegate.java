@@ -287,9 +287,15 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
             case R.id.tv_submit:
                 if(clickEnable){
                     if (getType() == 0) {//领取
-
+                        Map<String, Object> params = new HashMap<>();
+                        params.put("card_id", mShopProductDetailEntity.getId());
+                        showLoadDialog();
+                        getPrensenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
                     } else {//预约提醒
-
+                        Map<String, Object> params = new HashMap<>();
+                        params.put("item_id", mShopProductDetailEntity.getId());
+                        showLoadDialog();
+                        getPrensenter().postShopNotice(params, TYPE_POST_SET_TIP);
                     }
                 }
                 break;

@@ -457,7 +457,11 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
      */
     private void getData() {
         showLoadView();
-        getPresenter().getShopCurrent(null, TYPE_REQUEST_CURRENT);
+        if(getType()==0){
+            getPresenter().getShopCurrent(null, TYPE_REQUEST_CURRENT);
+        }else if(getType()==1){
+            getPresenter().getShopComing(null, TYPE_REQUEST_CURRENT);
+        }
     }
 
     @Override
@@ -493,7 +497,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     private void showEmptyData() {
         showEmptyView(getString(R.string.text_fund_empty), R.mipmap.icon_empty);
-        setVisibility(mTrShopList, View.GONE);
+        setVisibility(mPtrMaterialStylePtrFrame, View.GONE);
     }
 
     @Override

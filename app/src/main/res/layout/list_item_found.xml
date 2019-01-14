@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_card_blur"
-    android:orientation="vertical"
-    android:paddingTop="17dp"
-    android:paddingBottom="17dp"
-    android:paddingLeft="28dp"
-    android:paddingRight="28dp">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_card_blur"
+              android:orientation="vertical"
+              android:paddingBottom="17dp"
+              android:paddingLeft="28dp"
+              android:paddingRight="28dp"
+              android:paddingTop="17dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <com.android.spin.common.selector.view.CircleImageView
             android:id="@+id/img_shop_avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            tools:src="@mipmap/icon_dialog_gifta" />
+            tools:src="@mipmap/icon_dialog_gifta"/>
 
         <TextView
             android:id="@+id/tv_shop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:text="屈臣氏"
             android:textColor="#ff333333"
-            android:textSize="@dimen/app_font_title_size"
-            android:layout_marginLeft="16dp"/>
+            android:textSize="@dimen/app_font_title_size"/>
     </LinearLayout>
 
 
@@ -37,18 +37,18 @@
         android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:maxLines="2"
         android:text="我是商戶簡介我是商戶簡介我是商戶簡介我是商戶簡介我是商戶簡介我是商戶簡介我是商戶簡介"
         android:textColor="#ff666666"
-        android:textSize="@dimen/app_font_title_sub_15sp"
-        android:layout_marginTop="11dp"
-        android:maxLines="2"/>
+        android:textSize="@dimen/app_font_title_sub_15sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="18dp"
         android:gravity="center_vertical"
-        android:layout_marginTop="18dp">
+        android:orientation="horizontal">
 
         <com.taobao.uikit.feature.view.TTextView
             android:id="@+id/ttv_date_tag"
@@ -56,17 +56,18 @@
             android:layout_height="wrap_content"
             android:text="@string/text_home_countdown"
             android:textColor="@color/app_font_color_main_title"
-            android:textSize="@dimen/app_font_title_sub_12sp" />
+            android:textSize="@dimen/app_font_title_sub_12sp"/>
+
         <com.taobao.uikit.feature.view.TTextView
             android:id="@+id/ttv_date_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/app_font_title_sub_15sp"
-            android:text="11"
             android:background="#000000"
-            android:padding="6dp"/>
+            android:padding="6dp"
+            android:text="11"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp"/>
 
         <com.taobao.uikit.feature.view.TTextView
             android:id="@+id/ttv_date_day_unit"
@@ -75,7 +76,7 @@
             android:layout_marginLeft="2dp"
             android:text=":"
             android:textColor="@color/app_font_color_main_title"
-            android:textSize="@dimen/app_font_title_sub_12sp" />
+            android:textSize="@dimen/app_font_title_sub_12sp"/>
 
 
         <com.taobao.uikit.feature.view.TTextView
@@ -83,11 +84,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/app_font_title_sub_15sp"
             android:background="#000000"
             android:padding="6dp"
-            android:text="11"/>
+            android:text="11"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp"/>
 
         <com.taobao.uikit.feature.view.TTextView
             android:layout_width="wrap_content"
@@ -95,62 +96,65 @@
             android:layout_marginLeft="2dp"
             android:text=":"
             android:textColor="@color/app_font_color_main_title"
-            android:textSize="@dimen/app_font_title_sub_12sp" />
+            android:textSize="@dimen/app_font_title_sub_12sp"/>
 
         <com.taobao.uikit.feature.view.TTextView
             android:id="@+id/ttv_date_min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/app_font_title_sub_15sp"
             android:background="#000000"
             android:padding="6dp"
-            android:text="11"/>
+            android:text="11"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/app_font_title_sub_15sp"/>
 
         <RelativeLayout
             android:id="@+id/ln_have_grabit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="right">
+            android:gravity="right"
+            android:orientation="horizontal">
 
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_one"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta"
                 android:layout_alignParentRight="true"
-                android:visibility="gone"/>
+                android:src="@mipmap/icon_dialog_gifta"
+                android:visibility="gone"
+                tools:src="@mipmap/icon_dialog_gifta"/>
+
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_two"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta"
-                android:layout_toLeftOf="@+id/iv_person_one"
                 android:layout_marginRight="-12dp"
-                android:visibility="gone"/>
+                android:layout_toLeftOf="@+id/iv_person_one"
+                android:src="@mipmap/icon_dialog_gifta"
+                android:visibility="gone"
+                tools:src="@mipmap/icon_dialog_gifta"/>
+
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_third"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta"
-                android:layout_toLeftOf="@+id/iv_person_two"
                 android:layout_marginRight="-12dp"
-                android:visibility="gone"/>
+                android:layout_toLeftOf="@+id/iv_person_two"
+                android:src="@mipmap/icon_dialog_gifta"
+                android:visibility="gone"
+                tools:src="@mipmap/icon_dialog_gifta"/>
+
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_four"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:src="@mipmap/icon_dialog_gifta"
-                tools:src="@mipmap/icon_dialog_gifta"
-                android:layout_toLeftOf="@+id/iv_person_third"
                 android:layout_marginRight="-12dp"
-                android:visibility="gone"/>
+                android:layout_toLeftOf="@+id/iv_person_third"
+                android:src="@mipmap/icon_dialog_gifta"
+                android:visibility="gone"
+                tools:src="@mipmap/icon_dialog_gifta"/>
 
         </RelativeLayout>
 
@@ -159,19 +163,19 @@
 
     <com.taobao.uikit.feature.view.TTextView
         android:id="@+id/tv_submit"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="@string/text_home_grab_it_new"
-        android:textColor="@color/color_white"
-        android:textSize="@dimen/app_font_title_sub_15sp"
-        android:enabled="true"
-        android:background="@drawable/btn_color_red_gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_color_red_gray"
+        android:enabled="true"
+        android:gravity="center"
+        android:paddingBottom="13dp"
         android:paddingTop="13dp"
-        android:paddingBottom="13dp"/>
+        android:text="@string/text_home_grab_it_new"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/app_font_title_sub_15sp"/>
 
-    <com.taobao.uikit.feature.view.TRecyclerView
+    <com.android.spin.view.NoScrollListView
         android:id="@+id/tr_good_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

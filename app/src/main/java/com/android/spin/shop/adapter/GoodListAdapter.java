@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.android.base.util.ToastUtil;
 import com.android.base.view.listview.adapter.BaseListAdapter;
@@ -44,6 +45,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final ShopListItemViewHolder newHolder = (ShopListItemViewHolder) holder;
+        newHolder.setType(status);
         newHolder.initData(getDataList().get(position));
         if(getDataList().get(position).getIsRecerve()==null){
             if(onViewClickListener!=null){
@@ -86,15 +88,15 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
                 }
             }
         });
-
-        newHolder.OnChildItem(new TRecyclerView.OnItemClickListener() {
+        newHolder.OnChildItem(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(TRecyclerView parent, View view, int ChildPosition, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int ChildPosition, long l) {
                 if(onViewClickListener!=null){
                     onViewClickListener.toItemDetail(position,ChildPosition);
                 }
             }
         });
+
     }
 
     private OnViewClickListener onViewClickListener;
