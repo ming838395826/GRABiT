@@ -95,6 +95,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     public void onFail(String code, int type) {
         switch (type){
             case TYPE_POST_USER_COUPONS:
+                dismissLoadDialog();
                 if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
                     if (getType()== 0) {//
                         ToastUtil.shortShow(getString(R.string.text_getter_receied));
@@ -104,10 +105,16 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 } else {
                     ErrorToastUtli.showErrorToast(code);
                     //刷新商品
-                    mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock()+1);
-                    clickEnable=false;
-                    ttvSubmit.setEnabled(false);
-                    ttvSubmit.setText(getString(R.string.text_home_got_it));
+                    if (getType()== 0) {
+                        mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock()+1);
+                        clickEnable=false;
+                        ttvSubmit.setEnabled(false);
+                        ttvSubmit.setText(getString(R.string.text_home_got_it));
+                    }else {
+                        clickEnable=false;
+                        ttvSubmit.setEnabled(false);
+                        ttvSubmit.setText(getString(R.string.text_home_grabit_reminder_set));
+                    }
                 }
 
                 if ("1006".equals(code)) {
@@ -116,6 +123,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 }
                 break;
             case 1:
+                dismissLoadDialog();
                 if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
                     //已抢到
                     clickEnable=false;
@@ -144,6 +152,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 break;
             case TYPE_POST_USER_COUPONS:
                 //获取优惠券成功
+                dismissLoadDialog();
                 try {
                     mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock()+1);
                     clickEnable=false;
@@ -169,6 +178,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 break;
             case TYPE_POST_SET_TIP:
                 //设置提醒成功
+                dismissLoadDialog();
                 try {
                     ttvSubmit.setText(getString(R.string.text_home_grabit_reminder_set));
                     ttvSubmit.setBackgroundColor(Color.parseColor("#66191917"));
@@ -252,6 +262,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 llLayoutTime.setVisibility(View.VISIBLE);
                 ttvDateTag.setText(getString(R.string.text_home_time_limit));
                 ttvSubmit.setText(getString(R.string.text_home_reminder));
+
                 break;
             case 2:
                 llLayoutTime.setVisibility(View.GONE);
@@ -288,12 +299,12 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 if(clickEnable){
                     if (getType() == 0) {//领取
                         Map<String, Object> params = new HashMap<>();
-                        params.put("card_id", mShopProductDetailEntity.getId());
+                        params.put("card_id", getParentId());
                         showLoadDialog();
                         getPrensenter().postUserCoupons(params, TYPE_POST_USER_COUPONS);
                     } else {//预约提醒
                         Map<String, Object> params = new HashMap<>();
-                        params.put("item_id", mShopProductDetailEntity.getId());
+                        params.put("item_id", getParentId());
                         showLoadDialog();
                         getPrensenter().postShopNotice(params, TYPE_POST_SET_TIP);
                     }

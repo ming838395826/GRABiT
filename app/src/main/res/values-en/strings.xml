@@ -5,6 +5,7 @@
     <string name="test1">test1</string>
 
     <string name="text_login">Log In</string>
+    <string name="text_register">Registration</string>
 
     <string name="text_notice_go">GO</string>
 
@@ -268,4 +269,8 @@
     <string name="ext_use_coupons_success_describe">Congratulations on the successful use of card tickets</string>
     <string name="text_coupons_detail_title">Details of card voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
+    <string name="text_glide_coupons">Show the card ticket to the merchant \n and slide down to use the card ticket.</string>
+
+    <string name="text_login_welcome">Welcome to GRABiT</string>
+    <string name="text_login_describe">After login, you can get coupons \n and enjoy them.</string>
 </resources>

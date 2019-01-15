@@ -266,6 +266,50 @@ public class DialogUtil {
         return dialog;
     }
 
+
+    public static Dialog guideCouponsDialog(Context mContent,  boolean cancelable,final OnClickListener listener) {
+
+        final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_glide, null);
+        dialog.setContentView(contentView);
+        ViewGroup.LayoutParams params = contentView.getLayoutParams();
+        params.width = (int) (DensityUtil.getWidth() * 0.8);
+        contentView.setLayoutParams(params);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelable);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        //关闭
+//        setOnClickListener(listener,dialog,timgClose,0);
+//        //好的
+//        setOnClickListener(listener,dialog,tbtn_to_use,1);
+        return dialog;
+    }
+
+    public static Dialog getLoginDialog(Context mContent,  boolean cancelable,final OnClickListener listener) {
+
+        final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_glide, null);
+        dialog.setContentView(contentView);
+        View timgClose = contentView.findViewById(R.id.timg_close);
+        View tbtn_to_use = contentView.findViewById(R.id.tbtn_to_use);
+        View tbtn_to_cancel = contentView.findViewById(R.id.tbtn_to_cancel);
+        ViewGroup.LayoutParams params = contentView.getLayoutParams();
+        params.width = (int) (DensityUtil.getWidth() * 0.8);
+        contentView.setLayoutParams(params);
+        dialog.setCancelable(cancelable);
+        dialog.setCanceledOnTouchOutside(cancelable);
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        //关闭
+        setOnClickListener(listener,dialog,timgClose,0);
+        setOnClickListener(listener,dialog,tbtn_to_cancel,2);
+        //好的
+        setOnClickListener(listener,dialog,tbtn_to_use,1);
+
+        return dialog;
+    }
+
     /**
      * 抽中dialog
      * @param mContent

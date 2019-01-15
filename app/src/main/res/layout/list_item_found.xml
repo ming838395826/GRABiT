@@ -179,6 +179,8 @@
         android:id="@+id/tr_good_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="22dp"
+        android:divider="@color/color_white"
+        android:dividerHeight="2dp"/>
 
 </LinearLayout>

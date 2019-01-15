@@ -39,7 +39,7 @@ public class GoodItemListAdapter extends SingleTypeAdapter<ShopItemEntity> {
         ShopItemEntity entity = getItem(position);
         GlideUtil.defaultLoad(viewHolder.mIvUrl.getContext(), entity.getFront_cover(), viewHolder.mIvUrl);
         viewHolder.mTvGoodName.setText(entity.getName());
-        viewHolder.mTvCount.setText(viewHolder.mTvCount.getContext().getString(R.string.text_good_count,entity.getCurrent_stock()));
+        viewHolder.mTvCount.setText(viewHolder.mTvCount.getContext().getString(R.string.text_good_count,(entity.getStock()-entity.getCurrent_stock())));
         return convertView;
     }
 

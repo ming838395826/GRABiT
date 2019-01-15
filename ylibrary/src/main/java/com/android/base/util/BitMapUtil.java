@@ -2,7 +2,10 @@ package com.android.base.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Environment;
+import android.view.View;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -80,5 +83,47 @@ public class BitMapUtil {
             }
         }
         return file;
+    }
+
+    /**
+     * 生成布局图片
+     * @param v
+     * @return
+     */
+    public static Bitmap getViewBitmap(View v) {
+        v.clearFocus();
+        v.setPressed(false);
+        boolean willNotCache = v.willNotCacheDrawing();
+        v.setWillNotCacheDrawing(false);
+        int color = v.getDrawingCacheBackgroundColor();
+        v.setDrawingCacheBackgroundColor(0);
+        if (color != 0) {
+            v.destroyDrawingCache();
+        }
+        v.buildDrawingCache();
+        Bitmap cacheBitmap = v.getDrawingCache();
+        if (cacheBitmap == null) {
+            return null;
+        }
+        Bitmap bitmap = Bitmap.createBitmap(cacheBitmap);
+        v.destroyDrawingCache();
+        v.setWillNotCacheDrawing(willNotCache);
+        v.setDrawingCacheBackgroundColor(color);
+        return bitmap;
+    }
+
+    public static Bitmap getViewToBitmap(View v) {
+        int w = v.getMeasuredWidth();
+        int h = v.getMeasuredHeight();
+        Bitmap bmp = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(bmp);
+
+        /** 如果不设置canvas画布为白色，则生成透明 */
+//        c.drawColor(Color.YELLOW);
+
+        v.layout(0, 0, w, h);
+        v.draw(c);
+
+        return bmp;
     }
 }

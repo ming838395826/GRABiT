@@ -191,7 +191,8 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
 //                    getActivity().overridePendingTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom);
 
                     ARouter.getInstance().build("/app/CarDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
-                            withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId()).navigation();
+                            withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId())
+                            .withString("code",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getCode()).navigation();
 //                    ShopFundDetailActivity.star(getActivity(), ((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId());
                 }
             });

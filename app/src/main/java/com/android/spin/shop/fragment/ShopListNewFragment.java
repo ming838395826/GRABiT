@@ -134,7 +134,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 } else {
                     ErrorToastUtli.showErrorToast(code);
                     //刷新商品
-                    if (recevierPosition > 0) {
+                    if (recevierPosition >= 0) {
                         ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
                         Map<String, Object> params = new HashMap<>();
                         params.put("id", entity.getId());
@@ -186,7 +186,13 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 try {
                     isRefresh = false;
                     ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-
+                    if (recevierPosition >=0) {
+                        ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                        Map<String, Object> params = new HashMap<>();
+                        params.put("id", entity.getId());
+                        getPresenter().getShopItemDetailNew(params, TYPE_GET_GOODS_DETAIL);
+                        isRefresh = true;
+                    }
 //                    mShopProductItemEntity.setCurrent_stock(mShopProductItemEntity.getCurrent_stock() + 1);
 //                    String count = mShopProductItemEntity.getStock() - mShopProductItemEntity.getCurrent_stock() + "";
 //                    if (getType() == 1) {
@@ -217,6 +223,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             case TYPE_POST_SET_TIP:
                 //设置提醒成功
                 final ShopProductItemEntity itemsuccessful = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                itemsuccessful.setIsRecerve(1);
                 try {
 //                    mShopProductItemEntity.setUser_item_notice(new ShopProductItemEntity.userItemNoticeBean());
 //                    ttvBtnRight.setText(getString(R.string.text_home_grabit_reminder_set));
@@ -239,6 +246,8 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         mPtrMaterialStylePtrFrame.refreshComplete();
                         ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
                         updateEntity(item, (ShopProductItemEntity) data);
+                        mListWrapper.getAdapter().notifyItemChanged(recevierPosition);
+                        recevierPosition=-1;
                     }
                 } catch (Exception e) {
                 }
@@ -290,6 +299,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
         mShopProductItemEntity.setName(entity.getName());
         mShopProductItemEntity.setStart_time(entity.getStart_time());
         mShopProductItemEntity.setStatus(entity.getStatus());
+        mShopProductItemEntity.setItems(entity.getItems());
         mShopProductItemEntity.setStock(entity.getStock());
 
 //        Bundle mBundle = getArguments();
@@ -390,7 +400,12 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                                 if ("0".equals(o.getCode())) {
                                     ShowApiResponse<ShowApiListResponse<CardUserEntity>> entity=o;
                                     ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
-                                    item.setUserList(entity.getData().getData());
+                                    if(entity.getData().getData()==null){
+                                        item.setUserList(new ArrayList<CardUserEntity>());
+                                    }else {
+                                        item.setUserList(entity.getData().getData());
+                                    }
+
                                     mListWrapper.getAdapter().notifyItemChanged(position + 1);
                                 } else if ("1".equals(o.getCode())) {
                                     ToastUtil.shortShow(o.getMsg());
@@ -410,6 +425,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 ARouter.getInstance().build("/app/ShopDetail").withTransition(R.anim.slide_in_from_bottom, R.anim.slide_out_to_bottom).
                         withString("id", ((ShopProductItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItems().get(childPosition).getId())
                         .withLong("startTime", entity.getStart_time())
+                        .withInt("type",getType())
                         .withLong("endTime", entity.getEnd_time())
                         .withString("parentId",entity.getId()+"").navigation();
             }
@@ -492,7 +508,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     private void showNetErrorData() {
         showNetWorkError();
-        setVisibility(mTrShopList, View.GONE);
+        setVisibility(mPtrMaterialStylePtrFrame, View.GONE);
     }
 
     private void showEmptyData() {

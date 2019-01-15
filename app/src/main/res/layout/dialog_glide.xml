@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@color/transparent">
 
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="向商家出示卡券後 向下滑動可使用掉卡券"
+        android:text="@string/text_glide_coupons"
         android:textColor="#ffffffff"
         android:textSize="16sp"
         android:layout_centerHorizontal="true"/>

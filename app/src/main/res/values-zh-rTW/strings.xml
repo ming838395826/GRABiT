@@ -4,6 +4,7 @@
     <string name="test1">測試1=====</string>
 
     <string name="text_login">登錄</string>
+    <string name="text_register">註冊</string>
 
     <string name="text_notice_go">前往查看</string>
 
@@ -266,4 +267,8 @@
     <string name="ext_use_coupons_success_describe">恭喜成功使用卡券</string>
     <string name="text_coupons_detail_title">卡券详情</string>
     <string name="text_coupons_use_soon">立即使用</string>
+    <string name="text_glide_coupons">向商家出示卡券後 \n  向下滑動可使用掉卡券</string>
+
+    <string name="text_login_welcome">歡迎使用GRABiT</string>
+    <string name="text_login_describe">登錄後可領取優惠券 \n 優惠享起來</string>
 </resources>

@@ -8,14 +8,14 @@
     <LinearLayout
         android:background="@drawable/dialog_bg_white_r6"
         android:gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.taobao.uikit.feature.view.TTextView
             android:id="@+id/ttv_title"
-            android:paddingTop="72.5dp"
+            android:paddingTop="52.5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textSize="@dimen/app_font_title_size"
@@ -45,7 +45,7 @@
                 android:id="@+id/tbtn_to_cancel"
                 android:gravity="center"
                 android:text="@string/dialog_btn_cancel"
-                android:textColor="@color/color_white"
+                android:textColor="@color/app_color_aa191917"
                 android:textSize="@dimen/app_font_title_sub_15sp"
                 android:background="@drawable/btn_border_color_191917"
                 android:layout_marginBottom="53dp"

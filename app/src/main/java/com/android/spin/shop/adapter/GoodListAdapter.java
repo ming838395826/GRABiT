@@ -1,5 +1,6 @@
 package com.android.spin.shop.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,9 @@ import android.widget.AdapterView;
 import com.android.base.util.ToastUtil;
 import com.android.base.view.listview.adapter.BaseListAdapter;
 import com.android.spin.R;
+import com.android.spin.db.UserManager;
+import com.android.spin.logreg.LoginActivity;
+import com.android.spin.logreg.RegisterActivity;
 import com.android.spin.shop.holder.ShopListItemViewHolder;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.util.DialogUtil;
@@ -60,9 +64,30 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         newHolder.Recevier(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getItemCount()>position) {
+                if (getItemCount()<=position) {
                     ToastUtil.shortShow("ERROR");
+                    return;
                 }
+                if(!UserManager.getInstance().isLogin()){
+                    DialogUtil.getLoginDialog(getmActivity(), false, new DialogUtil.OnClickListener() {
+                        @Override
+                        public void onClick(Dialog dialog, View view, int position) {
+                            switch (position){
+                                case 0:
+
+                                    break;
+                                case 1://登陆
+                                    LoginActivity.star(getmActivity());
+                                    break;
+                                case 2://注册
+                                    RegisterActivity.star(getmActivity());
+                                    break;
+                            }
+                        }
+                    }).show();
+                    return;
+                }
+
                 boolean isRanOut=true;
                 for (int i=0;i<getItem(position).getItems().size();i++){
                     if(getItem(position).getItems().get(i).getCurrent_stock() < getItem(position).getItems().get(i).getStock()){

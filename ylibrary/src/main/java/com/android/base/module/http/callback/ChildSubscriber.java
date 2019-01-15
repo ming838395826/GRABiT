@@ -50,7 +50,7 @@ public class ChildSubscriber<T extends ShowApiResponse> extends DisposableObserv
         }else if("1".equals(o.getCode())){
             ToastUtil.shortShow(o.getMsg());
         }else if("1002".equals(o.getCode())){
-            EventBus.getDefault().post(new TokenFailEvent());
+//            EventBus.getDefault().post(new TokenFailEvent());
         } else {
             //错误代码处理
             //ERROR.VERIFYCODE.ERROR  验证码错误
