@@ -142,6 +142,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".shop.HistoryFundActivity" />
+        <activity android:name=".shop.HistoryFundNewActivity" />
         <activity android:name=".shop.HistoryFundDetailActivity"
             android:theme="@style/CustomActivityDialogStyle"/>
         <activity

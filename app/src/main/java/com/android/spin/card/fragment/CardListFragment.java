@@ -137,11 +137,11 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
         final CardListAdapter mListAdapter = new CardListAdapter(getActivity());
         mListAdapter.setOnViewClickListener(new CardListAdapter.OnViewClickListener() {
             @Override
-            public void setUserdCoupons(int position) {
+            public void setUserdCoupons(final int position) {
                 DialogUtil.useCouponsDialog(getContext(), false, mListAdapter.getItem(position).getName(), new DialogUtil.OnClickListener() {
                     @Override
-                    public void onClick(Dialog dialog, View view, int position) {
-                        switch (position){
+                    public void onClick(Dialog dialog, View view, int type) {
+                        switch (type){
                             case 1:
                                 showLoadDialog();
                                 getPresenter().setUserCoupons(mListAdapter.getItem(position).getId(),SET_COUPONS_USER,position);
@@ -153,11 +153,11 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
             }
 
             @Override
-            public void setDeleteCoupons(int position) {
+            public void setDeleteCoupons(final int position) {
                 DialogUtil.deleteCouponsDialog(getContext(), false, new DialogUtil.OnClickListener() {
                     @Override
-                    public void onClick(Dialog dialog, View view, int position) {
-                        switch (position){
+                    public void onClick(Dialog dialog, View view, int type) {
+                        switch (type){
                             case 1:
                                 showLoadDialog();
                                 getPresenter().deleteUserCoupons(mListAdapter.getItem(position).getId(),DELETE_COUPONS,position);

@@ -44,6 +44,7 @@
         android:textSize="@dimen/app_font_title_sub_15sp"/>
 
     <LinearLayout
+        android:id="@+id/ln_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"

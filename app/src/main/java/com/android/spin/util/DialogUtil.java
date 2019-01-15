@@ -289,7 +289,7 @@ public class DialogUtil {
     public static Dialog getLoginDialog(Context mContent,  boolean cancelable,final OnClickListener listener) {
 
         final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
-        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_glide, null);
+        View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_login, null);
         dialog.setContentView(contentView);
         View timgClose = contentView.findViewById(R.id.timg_close);
         View tbtn_to_use = contentView.findViewById(R.id.tbtn_to_use);

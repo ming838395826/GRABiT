@@ -54,6 +54,8 @@
 
     <string name="text_hobby">Choose your consumption preference</string>
     <string name="text_hobby_remind">Choose up to 3 consumption preferences</string>
+    <string name="text_place">Choose the area you visit frequently</string>
+    <string name="text_place_remind">Choose one to five areas where you often go \n and we will push the relevant coupons</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
     <string name="text_enter_home">Home Page</string>
 
@@ -245,10 +247,13 @@
 
     <string name="text_empty_hobby">Please choose at least one hobby</string>
     <string name="text_most_hobby_hint">Choose 3 hobbies at most</string>
+    <string name="text_empty_place">Please choose at least one area where you often go</string>
+    <string name="text_most_place_hint">Choose up to five areas you visit frequently.</string>
 
     <!--联系我们-->
     <string name="text_contact_phone">Contact number</string>
     <string name="text_contact_email">Contact mailbox</string>
+    <string name="text_history_title">Good things in history</string>
 
     <!--意见反馈-->
     <string name="text_feed_back_idea">Opinions or suggestions</string>
@@ -273,4 +278,23 @@
 
     <string name="text_login_welcome">Welcome to GRABiT</string>
     <string name="text_login_describe">After login, you can get coupons \n and enjoy them.</string>
+
+    <string name="text_place_Islands_District">Islands District</string>
+    <string name="text_place_Kwai_Tsing_District">Kwai Tsing District</string>
+    <string name="text_place_North_District">North District</string>
+    <string name="text_place_Sai_Kung_District">Sai Kung District</string>
+    <string name="text_place_Sha_Tin_District">Sha Tin District</string>
+    <string name="text_place_Tai_Po_District">Tai Po District</string>
+    <string name="text_place_Tsuen_Wan_District">Tsuen Wan District</string>
+    <string name="text_place_Tuen_Mun_District">Tuen Mun District</string>
+    <string name="text_place_Yuen_Long_District">Yuen Long District</string>
+    <string name="text_place_Kowloon_City">Kowloon City</string>
+    <string name="text_place_Kwun_Tong_District">Kwun Tong District</string>
+    <string name="text_place_Sham_Shui_Po_District">Sham Shui Po District</string>
+    <string name="text_place_Wong_Tai_Sin_District">Wong Tai Sin District</string>
+    <string name="text_place_Yau_Tsim_Mong_District">Yau Tsim Mong District</string>
+    <string name="text_place_Central_and_Western_District">Central and Western District</string>
+    <string name="text_place_Eastern_District">Eastern District</string>
+    <string name="text_place_Southern">Southern</string>
+    <string name="text_place_Wan_Chai_District">Wan Chai District</string>
 </resources>

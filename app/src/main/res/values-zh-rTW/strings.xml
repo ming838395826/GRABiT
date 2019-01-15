@@ -51,6 +51,8 @@
 
     <string name="text_hobby">選擇你感興趣的內容</string>
     <string name="text_hobby_remind">最少尋找一個，我們將推薦合適的資訊給你</string>
+    <string name="text_place">選擇你常去的區域</string>
+    <string name="text_place_remind">選擇1個至5個你常去的區域 \n 我們將推送相關優惠卡券</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
     <string name="text_enter_home">進入首頁</string>
 
@@ -239,6 +241,8 @@
 
     <string name="text_empty_hobby">請最少選擇一個興趣愛好</string>
     <string name="text_most_hobby_hint">最多選擇3個興趣愛好</string>
+    <string name="text_empty_place">請最少選擇一個你常去的區域</string>
+    <string name="text_most_place_hint">最多選擇5個你常去的區域</string>
 
     <!--联系我们-->
     <string name="text_contact_phone">聯繫電話</string>
@@ -271,4 +275,25 @@
 
     <string name="text_login_welcome">歡迎使用GRABiT</string>
     <string name="text_login_describe">登錄後可領取優惠券 \n 優惠享起來</string>
+    <string name="text_history_title">歷史好物</string>
+
+
+    <string name="text_place_islands_district">離島區</string>
+    <string name="text_place_Kwai_Tsing_District">葵青區</string>
+    <string name="text_place_North_District">北區</string>
+    <string name="text_place_Sai_Kung_District">西貢區</string>
+    <string name="text_place_Sha_Tin_District">沙田區</string>
+    <string name="text_place_Tai_Po_District">大埔區</string>
+    <string name="text_place_Tsuen_Wan_District">荃灣區</string>
+    <string name="text_place_Tuen_Mun_District">屯門區</string>
+    <string name="text_place_Yuen_Long_District">元朗區</string>
+    <string name="text_place_Kowloon_City">九龍城區</string>
+    <string name="text_place_Kwun_Tong_District">觀塘區</string>
+    <string name="text_place_Sham_Shui_Po_District">深水埗區</string>
+    <string name="text_place_Wong_Tai_Sin_District">黃大仙區</string>
+    <string name="text_place_Yau_Tsim_Mong_District">油尖旺區</string>
+    <string name="text_place_Central_and_Western_District">中西區</string>
+    <string name="text_place_Eastern_District">東區</string>
+    <string name="text_place_Southern">南區</string>
+    <string name="text_place_Wan_Chai_District">灣仔區</string>
 </resources>

@@ -67,6 +67,8 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     CircleImageView iv_person_third;
     @Bind(R.id.iv_person_four)
     CircleImageView iv_person_four;
+    @Bind(R.id.ln_time)
+    LinearLayout ln_time;
 
     View itemView;
     int type=0;
@@ -135,6 +137,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     public void initData(ShopProductItemEntity entity) {
         GlideUtil.defaultLoad(mImgShopAvatar.getContext(), entity.getBusiness().getAvatar(), mImgShopAvatar);
         mTvShopName.setText(entity.getBusiness().getName());
+        mTvContent.setText(entity.getBusiness().getDescription());
         boolean isRanOut=true;
         for (int i=0;i<entity.getItems().size();i++){
             if(entity.getItems().get(i).getCurrent_stock() < entity.getItems().get(i).getStock()){
@@ -160,6 +163,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
             }
         }else if(getType()==2){
             mTvSubmit.setVisibility(View.GONE);
+            ln_time.setVisibility(View.GONE);
         }
 
 
@@ -199,7 +203,9 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         }
-        starTimer(entity.getStart_time(), entity.getEnd_time());
+        if(getType()!=2){
+            starTimer(entity.getStart_time(), entity.getEnd_time());
+        }
     }
 
     private CountDownTimer timer;
@@ -242,17 +248,18 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
 //                long min = millisUntilFinished % 3600 / 60;
 //                long s = millisUntilFinished % 3600 % 60;
                 if (mTtvDateHour != null) {
-                    if (day > 0) {
-                        mTtvDateDay.setVisibility(View.VISIBLE);
-                        mTtvDateDayUnit.setVisibility(View.VISIBLE);
-                        mTtvDateDay.setText(day + "");
-                    } else {
-                        mTtvDateDay.setVisibility(View.GONE);
-                        mTtvDateDayUnit.setVisibility(View.GONE);
-                    }
-                    mTtvDateHour.setText(hour + "");
-                    mTtvDateMin.setText(min + "");
-                    mTtvDateHour.setText(s + "");
+//                    if (day > 0) {
+//                        mTtvDateDay.setVisibility(View.VISIBLE);
+//                        mTtvDateDayUnit.setVisibility(View.VISIBLE);
+//                        mTtvDateDay.setText(day + "");
+//                    } else {
+//                        mTtvDateDay.setVisibility(View.GONE);
+//                        mTtvDateDayUnit.setVisibility(View.GONE);
+//                    }
+                    mTtvDateDay.setText((day*24+hour)+"");
+                    mTtvDateHour.setText(min + "");
+                    mTtvDateMin.setText(s + "");
+//                    mTtvDateHour.setText(s + "");
                 }
             }
 

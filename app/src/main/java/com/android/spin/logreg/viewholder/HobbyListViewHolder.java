@@ -1,5 +1,6 @@
 package com.android.spin.logreg.viewholder;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
@@ -45,13 +46,17 @@ public class HobbyListViewHolder extends RecyclerView.ViewHolder {
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void initData(HobbyItemEntity entity){
-        img.setImageResource(entity.getResId());
+//        img.setImageResource(entity.getResId());
         ttvContent.setText(entity.getContent());
         if(entity.isChecked()){
 //            bgChecked.setVisibility(View.VISIBLE);
-            img.setBackground(itemView.getResources().getDrawable(R.drawable.btn_border_color_blue));
+            ttvContent.setTextColor(Color.parseColor("#ffffffff"));
+            img.setBackground(itemView.getResources().getDrawable(R.drawable.btn_color_191917));
+//            img.setBackground(itemView.getResources().getDrawable(R.drawable.btn_border_color_blue));
         }else{
-            img.setBackground(null);
+            ttvContent.setTextColor(Color.parseColor("#ff333333"));
+            img.setBackground(itemView.getResources().getDrawable(R.drawable.btn_border_color_191917));
+//            img.setBackground(null);
 //            bgChecked.setVisibility(View.GONE);
 
         }

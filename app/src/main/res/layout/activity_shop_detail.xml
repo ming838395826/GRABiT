@@ -70,7 +70,8 @@
                     android:textColor="@color/color_white"
                     android:textSize="@dimen/app_font_title_sub_size"
                     android:background="#000000"
-                    android:padding="6dp"/>
+                    android:padding="6dp"
+                    android:visibility="gone"/>
 
                 <com.taobao.uikit.feature.view.TTextView
                     android:id="@+id/ttv_date_day_unit"
@@ -79,7 +80,8 @@
                     android:layout_marginLeft="2dp"
                     android:text="@string/text_home_date_day"
                     android:textColor="@color/app_font_color_main_title"
-                    android:textSize="@dimen/app_font_title_sub_12sp" />
+                    android:textSize="@dimen/app_font_title_sub_12sp"
+                    android:visibility="gone"/>
 
 
                 <com.taobao.uikit.feature.view.TTextView

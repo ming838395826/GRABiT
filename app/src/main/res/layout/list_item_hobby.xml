@@ -11,18 +11,19 @@
         android:background="@drawable/btn_border_color_blue"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="50dp" />
 
     <com.taobao.uikit.feature.view.TTextView
         android:id="@+id/ttv_content"
         android:textColor="@color/color_white"
-        android:textSize="@dimen/app_font_hobby_size"
+        android:textSize="@dimen/app_font_title_sub_15sp"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:maxLines="1"/>
 
     <View
         android:background="@drawable/btn_border_color_blue"

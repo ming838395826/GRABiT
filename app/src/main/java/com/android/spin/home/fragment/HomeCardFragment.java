@@ -1,5 +1,6 @@
 package com.android.spin.home.fragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,8 +16,12 @@ import com.android.spin.MainActivity;
 import com.android.spin.R;
 import com.android.spin.card.adapter.CardListPagerAdapter;
 import com.android.spin.card.fragment.CardListFragment;
+import com.android.spin.db.UserManager;
 import com.android.spin.draw.view.NoScrollViewPager;
 import com.android.spin.event.AddCardEvent;
+import com.android.spin.logreg.LoginActivity;
+import com.android.spin.logreg.RegisterActivity;
+import com.android.spin.util.DialogUtil;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.SlidingTabLayout;
@@ -78,8 +83,34 @@ public class HomeCardFragment extends BaseFragment implements OnTabSelectListene
     }
 
     @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser&&getActivity()!=null){
+            if(!UserManager.getInstance().isLogin()){
+                DialogUtil.getLoginDialog(getActivity(), false, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        switch (position){
+                            case 0:
+
+                                break;
+                            case 1://登陆
+                                LoginActivity.star(getActivity());
+                                break;
+                            case 2://注册
+                                RegisterActivity.star(getActivity());
+                                break;
+                        }
+                    }
+                }).show();
+            }
+        }
+    }
+
+    @Override
     public void initView() {
         vpMineCard.setScroll(false);
+
         initHeaderView();
 
         initPages();

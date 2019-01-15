@@ -251,6 +251,15 @@ public class ShopProductItemEntity implements IEntity{
         private String name;
         private String avatar;
         private String url;
+        private String description;
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
 
         public String getUrl() {
             return url;

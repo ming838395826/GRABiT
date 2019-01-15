@@ -3,6 +3,8 @@ package com.android.spin.card;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -29,6 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
+import tyrantgit.explosionfield.ExplosionField;
 
 /**
  * 作者：yangqiyun
@@ -114,11 +117,13 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
 
     @Override
     public void initWidget() {
+        initTouchListener();
         mRlCard.setDrawingCacheEnabled(true);
 //        mRlCard.buildDrawingCache();
         boolean show=getActivity().getSharedPreferences("GLIDE",200).getBoolean("Show",false);
         if(!show){
-            DialogUtil.guideCouponsDialog(this.getActivity(),false,null);
+            DialogUtil.guideCouponsDialog(this.getActivity(),false,null).show();
+            getActivity().getSharedPreferences("GLIDE",200).edit().putBoolean("Show",true);
         }
         initData();
 
@@ -202,6 +207,67 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
                 e.printStackTrace();
             }
         }
+    }
+
+    GestureDetector detectordetector;
+    public void initTouchListener(){
+        detectordetector = new GestureDetector(this.getActivity(), new GestureDetector.OnGestureListener() {
+            @Override
+            public boolean onDown(MotionEvent motionEvent) {
+                return false;
+            }
+
+            @Override
+            public void onShowPress(MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent motionEvent) {
+                return false;
+            }
+
+            @Override
+            public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+                return false;
+            }
+
+            @Override
+            public void onLongPress(MotionEvent motionEvent) {
+
+            }
+
+            @Override
+            public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float velocityX, float velocityY) {
+                float minMove = 120; // 最小滑动距离
+                float minVelocity = 0; // 最小滑动速度
+                float beginX = motionEvent.getX();
+                float endX = motionEvent1.getX();
+                float beginY = motionEvent.getY();
+                float endY = motionEvent1.getY();
+
+                if (beginX - endX > minMove && Math.abs(velocityX) > minVelocity) { // 左滑
+
+                } else if (endX - beginX > minMove && Math.abs(velocityX) > minVelocity) { // 右滑
+
+                } else if (beginY - endY > minMove && Math.abs(velocityY) > minVelocity) { // 上滑
+
+                } else if (endY - beginY > minMove && Math.abs(velocityY) > minVelocity) { // 下滑
+                    //实现爆炸动画
+                    ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
+                    mExplosionField.explode(mRlCard);
+                }
+                return false;
+            }
+        });
+        mRlCard.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
+                mExplosionField.explode(mRlCard);
+                return detectordetector.onTouchEvent(motionEvent);
+            }
+        });
     }
 
 

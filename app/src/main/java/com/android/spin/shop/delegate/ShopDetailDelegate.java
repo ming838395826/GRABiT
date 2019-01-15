@@ -364,14 +364,14 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
 //                long s = millisUntilFinished % 3600 % 60;
                 if (ttvDateHour != null) {
                     if (day > 0) {
-                        ttvDateDay.setVisibility(View.VISIBLE);
+//                        ttvDateDay.setVisibility(View.VISIBLE);
 //                        ttvDateDayUnit.setVisibility(View.VISIBLE);
                         ttvDateDay.setText(day + "");
                     } else {
                         ttvDateDay.setVisibility(View.GONE);
 //                        ttvDateDayUnit.setVisibility(View.GONE);
                     }
-                    ttvDateHour.setText(hour + "");
+                    ttvDateHour.setText((day*24+hour) + "");
                     ttvDateMin.setText(min + "");
                     ttvDateS.setText(s + "");
                 }

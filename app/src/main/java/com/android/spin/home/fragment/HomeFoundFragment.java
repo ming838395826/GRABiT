@@ -23,6 +23,7 @@ import com.android.spin.common.CommonWebActivity;
 import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.HistoryFundActivity;
+import com.android.spin.shop.HistoryFundNewActivity;
 import com.android.spin.shop.adapter.GoodsPagerAdapter;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.fragment.GoodsFragment;
@@ -150,7 +151,7 @@ public class HomeFoundFragment extends MvpFragment<IView,ShopPresenter> implemen
         switch (v.getId()){
             case R.id.tv_top_bar_left:
                 //历史
-                startActivity(new Intent(getActivity(), HistoryFundActivity.class));
+                startActivity(new Intent(getActivity(), HistoryFundNewActivity.class));
                 break;
             case R.id.tv_top_bar_right:
                 //分享

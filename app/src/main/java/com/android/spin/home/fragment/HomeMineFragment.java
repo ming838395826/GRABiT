@@ -251,8 +251,12 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
         try {
             if(TextUtils.isEmpty(UserManager.getInstance().getUser().getName())){
                 ttvMineName.setText(getString(R.string.text_mine_login_register));
+                tvBindFaceBook.setVisibility(View.GONE);
+                tvFaceBookLogin.setVisibility(View.GONE);
             }else {
                 ttvMineName.setText(UserManager.getInstance().getUser().getName());
+                tvBindFaceBook.setVisibility(View.VISIBLE);
+                tvFaceBookLogin.setVisibility(View.VISIBLE);
             }
             GlideUtil.defualtLoad(getActivity(), UserManager.getInstance().getUser().getAvatar(),
                     R.mipmap.icon_mine_header,cimgUserAvatar);

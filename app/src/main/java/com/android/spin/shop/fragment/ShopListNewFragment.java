@@ -185,13 +185,15 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 //获取优惠券成功
                 try {
                     isRefresh = false;
-                    ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
                     if (recevierPosition >=0) {
-                        ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-                        Map<String, Object> params = new HashMap<>();
-                        params.put("id", entity.getId());
-                        getPresenter().getShopItemDetailNew(params, TYPE_GET_GOODS_DETAIL);
-                        isRefresh = true;
+                        ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                        item.setIsRecerve(1);
+                        mListWrapper.getAdapter().notifyItemChanged(recevierPosition + 1);
+//                        ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+//                        Map<String, Object> params = new HashMap<>();
+//                        params.put("id", entity.getId());
+//                        getPresenter().getShopItemDetailNew(params, TYPE_GET_GOODS_DETAIL);
+//                        isRefresh = true;
                     }
 //                    mShopProductItemEntity.setCurrent_stock(mShopProductItemEntity.getCurrent_stock() + 1);
 //                    String count = mShopProductItemEntity.getStock() - mShopProductItemEntity.getCurrent_stock() + "";
@@ -222,8 +224,17 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 break;
             case TYPE_POST_SET_TIP:
                 //设置提醒成功
-                final ShopProductItemEntity itemsuccessful = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-                itemsuccessful.setIsRecerve(1);
+                if (recevierPosition >=0) {
+                    final ShopProductItemEntity itemsuccessful = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
+                    itemsuccessful.setIsRecerve(1);
+                    mListWrapper.getAdapter().notifyItemChanged(recevierPosition + 1);
+                    DialogUtil.getRemindSetSuccessDialog(getActivity(), true, new DialogUtil.OnClickListener() {
+                        @Override
+                        public void onClick(Dialog dialog, View view, int position) {
+                            EventBus.getDefault().post(new UpdateCardEvent(itemsuccessful.getId()));
+                        }
+                    }).show();
+                }
                 try {
 //                    mShopProductItemEntity.setUser_item_notice(new ShopProductItemEntity.userItemNoticeBean());
 //                    ttvBtnRight.setText(getString(R.string.text_home_grabit_reminder_set));
@@ -231,12 +242,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 //                    ttvBtnRight.setEnabled(false);
                 } catch (Exception e) {
                 }
-                DialogUtil.getRemindSetSuccessDialog(getActivity(), true, new DialogUtil.OnClickListener() {
-                    @Override
-                    public void onClick(Dialog dialog, View view, int position) {
-                        EventBus.getDefault().post(new UpdateCardEvent(itemsuccessful.getId()));
-                    }
-                }).show();
+
                 break;
             case TYPE_GET_GOODS_DETAIL:
                 //刷新商品
@@ -367,16 +373,18 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         .subscribe(new ChildSubscriber<ShowApiResponse<ShopItemReceivedEntity>>(null) {
                             @Override
                             public void onNext(ShowApiResponse<ShopItemReceivedEntity> o) {
-                                int isRecevier = 1;
+                                int isRecevier = 0;
                                 if ("0".equals(o.getCode())) {
                                     isRecevier = 0;
                                 } else if ("1".equals(o.getCode())) {
                                     ToastUtil.shortShow(o.getMsg());
                                 } else if ("1002".equals(o.getCode())) {
-                                    EventBus.getDefault().post(new TokenFailEvent());
+//                                    EventBus.getDefault().post(new TokenFailEvent());
                                 } else {
                                     //错误代码处理
-
+                                    if (Constant.FAIL_GET_AGAIN_CODE.equals(o.getCode())) {
+                                        isRecevier=1;
+                                    }
                                 }
                                 ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                                 item.setIsRecerve(isRecevier);
@@ -410,7 +418,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                                 } else if ("1".equals(o.getCode())) {
                                     ToastUtil.shortShow(o.getMsg());
                                 } else if ("1002".equals(o.getCode())) {
-                                    EventBus.getDefault().post(new TokenFailEvent());
+//                                    EventBus.getDefault().post(new TokenFailEvent());
                                 } else {
                                     //错误代码处理
 
@@ -477,6 +485,8 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             getPresenter().getShopCurrent(null, TYPE_REQUEST_CURRENT);
         }else if(getType()==1){
             getPresenter().getShopComing(null, TYPE_REQUEST_CURRENT);
+        }else if(getType()==2){
+            getPresenter().getShopHistory(null,TYPE_REQUEST_CURRENT);
         }
     }
 
