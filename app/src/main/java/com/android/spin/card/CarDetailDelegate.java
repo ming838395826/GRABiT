@@ -156,10 +156,10 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter>  {
         mRlCard.setDrawingCacheEnabled(true);
 //        mRlCard.buildDrawingCache();
         boolean show = getActivity().getSharedPreferences("GLIDE", 200).getBoolean("Show", false);
-//        if (!show) {
+        if (!show) {
             DialogUtil.guideCouponsDialog(this.getActivity(), true, null).show();
             getActivity().getSharedPreferences("GLIDE", 200).edit().putBoolean("Show", true).commit();
-//        }
+        }
         initData();
 
     }
