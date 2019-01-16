@@ -68,12 +68,12 @@ public class ShopModel {
      * @param listener
      */
     public void getShopHistory(Map<String,Object> params, OnNetRequestListener listener){
-        Observable<ShowApiResponse<ShowApiListResponse<ShopHistroyItemEntity>>> observable = ShopRetrofitService.getInstance().
+        Observable<ShowApiResponse<ShowApiListResponse<ShopProductItemEntity>>> observable = ShopRetrofitService.getInstance().
                 createShowApi().getShopHistory(ShopRetrofitService.getCacheControl(),SignHelper.addSign(params));
 
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ChildSubscriber<ShowApiResponse<ShowApiListResponse<ShopHistroyItemEntity>>>(listener) {
+                .subscribe(new ChildSubscriber<ShowApiResponse<ShowApiListResponse<ShopProductItemEntity>>>(listener) {
                 });
     }
 

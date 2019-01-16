@@ -1,11 +1,17 @@
 package com.android.spin.card;
 
+import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -17,11 +23,15 @@ import com.android.base.util.image.GlideUtil;
 import com.android.spin.R;
 import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.common.util.Constant;
+import com.android.spin.event.AddCardEvent;
+import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.entity.ShopProductDetailEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
 import com.android.spin.util.DialogUtil;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.Bind;
-import tyrantgit.explosionfield.ExplosionField;
+import butterknife.OnClick;
 
 /**
  * 作者：yangqiyun
@@ -40,8 +50,10 @@ import tyrantgit.explosionfield.ExplosionField;
  * 描述：
  */
 
-public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
+public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter>  {
 
+    private static final int DELETE_COUPONS = 0x03;
+    private static final int SET_COUPONS_USER = 0x02;
 
     @Bind(R.id.img_card_avatar)
     TImageView mImgCardAvatar;
@@ -65,8 +77,14 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
     LinearLayout mLlCardBottom;
     @Bind(R.id.rl_card)
     RelativeLayout mRlCard;
-    @Bind(R.id.iv_view_picture)
-    ImageView mIvViewPicture;
+    @Bind(R.id.iv_view_left)
+    ImageView iv_view_left;
+    @Bind(R.id.iv_view_right)
+    ImageView iv_view_right;
+    @Bind(R.id.timg_back)
+    TImageView mTimgBack;
+    @Bind(R.id.iv_delete)
+    TImageView mIvDelete;
     private ShopProductDetailEntity mShopProductDetailEntity;
 
     @Override
@@ -94,13 +112,30 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
 
 //                Bitmap bmp = mRlCard.getDrawingCache();
 //                saveCroppedImage(bmp);
-                Bitmap viewBitmap = BitMapUtil.getViewToBitmap(mRlCard);
-                mIvViewPicture.setImageBitmap(viewBitmap);
-                mIvViewPicture.setVisibility(View.VISIBLE);
+
+//                iv_view_left.setVisibility(View.VISIBLE);
+//                iv_view_right.setVisibility(View.VISIBLE);
 //                mRlCard.setVisibility(View.GONE);
                 dismissLoadDialog();
                 break;
             case 1:
+                break;
+            case SET_COUPONS_USER:
+                dismissLoadDialog();
+                DialogUtil.havaUseCouponsDialog(this.getActivity(), true, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        finish();
+                    }
+                }).show();
+                EventBus.getDefault().post(new AddCardEvent(0));
+                EventBus.getDefault().post(new ProUpdateEvent());
+                break;
+            case DELETE_COUPONS:
+                dismissLoadDialog();
+                EventBus.getDefault().post(new AddCardEvent(0));
+                EventBus.getDefault().post(new ProUpdateEvent());
+                finish();
                 break;
         }
     }
@@ -120,11 +155,11 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
         initTouchListener();
         mRlCard.setDrawingCacheEnabled(true);
 //        mRlCard.buildDrawingCache();
-        boolean show=getActivity().getSharedPreferences("GLIDE",200).getBoolean("Show",false);
-        if(!show){
-            DialogUtil.guideCouponsDialog(this.getActivity(),false,null).show();
-            getActivity().getSharedPreferences("GLIDE",200).edit().putBoolean("Show",true);
-        }
+        boolean show = getActivity().getSharedPreferences("GLIDE", 200).getBoolean("Show", false);
+//        if (!show) {
+            DialogUtil.guideCouponsDialog(this.getActivity(), true, null).show();
+            getActivity().getSharedPreferences("GLIDE", 200).edit().putBoolean("Show", true).commit();
+//        }
         initData();
 
     }
@@ -178,19 +213,18 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
         return R.layout.activity_card_detail;
     }
 
-    public  void saveCroppedImage(Bitmap bmp) {
+    public void saveCroppedImage(Bitmap bmp) {
         // 判断是否可以对SDcard进行操作
-        if (Environment.getExternalStorageState().equals( Environment.MEDIA_MOUNTED))
-        {	  // 获取SDCard指定目录下
-            String  sdCardDir = Environment.getExternalStorageDirectory()+ "/BmpImage/";
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {      // 获取SDCard指定目录下
+            String sdCardDir = Environment.getExternalStorageDirectory() + "/BmpImage/";
             //目录转化成文件夹
-            File dirFile  = new File(sdCardDir);
+            File dirFile = new File(sdCardDir);
             //如果不存在，那就建立这个文件夹
-            if (!dirFile .exists()) {
-                dirFile .mkdirs();
+            if (!dirFile.exists()) {
+                dirFile.mkdirs();
             }
             // 在SDcard的目录下创建图片文,以当前时间为其命名，注意文件后缀，若生成为JPEG则为.jpg,若为PNG则为.png
-            File file = new File(sdCardDir, System.currentTimeMillis()+".jpg");
+            File file = new File(sdCardDir, System.currentTimeMillis() + ".jpg");
             FileOutputStream out = null;
             try {
                 out = new FileOutputStream(file);
@@ -210,8 +244,9 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
     }
 
     GestureDetector detectordetector;
-    public void initTouchListener(){
-        detectordetector = new GestureDetector(this.getActivity(), new GestureDetector.OnGestureListener() {
+
+    public void initTouchListener() {
+        detectordetector = new GestureDetector(new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent motionEvent) {
                 return false;
@@ -245,17 +280,104 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
                 float endX = motionEvent1.getX();
                 float beginY = motionEvent.getY();
                 float endY = motionEvent1.getY();
+                float distanceY = Math.abs(beginY - endY);
+                float distanceX = Math.abs(beginX - endX);
 
-                if (beginX - endX > minMove && Math.abs(velocityX) > minVelocity) { // 左滑
+                if ((distanceX > distanceY) && beginX - endX > minMove && Math.abs(velocityX) > minVelocity) { // 左滑
 
-                } else if (endX - beginX > minMove && Math.abs(velocityX) > minVelocity) { // 右滑
+                } else if ((distanceX > distanceY) && endX - beginX > minMove && Math.abs(velocityX) > minVelocity) { // 右滑
 
-                } else if (beginY - endY > minMove && Math.abs(velocityY) > minVelocity) { // 上滑
+                } else if ((distanceY > distanceX) && beginY - endY > minMove && Math.abs(velocityY) > minVelocity) { // 上滑
 
-                } else if (endY - beginY > minMove && Math.abs(velocityY) > minVelocity) { // 下滑
+                } else if ((distanceY > distanceX) && endY - beginY > minMove && Math.abs(velocityY) > minVelocity) { // 下滑
                     //实现爆炸动画
-                    ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
-                    mExplosionField.explode(mRlCard);
+//                    ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
+//                    mExplosionField.explode(mRlCard);
+                    Bitmap viewBitmap = BitMapUtil.getViewToBitmap(mRlCard);
+                    int width = viewBitmap.getWidth();
+                    int height = viewBitmap.getHeight();
+                    Bitmap left = Bitmap.createBitmap(viewBitmap, 0, 0,
+                            width / 2, height);
+                    Bitmap right = Bitmap.createBitmap(viewBitmap, width / 2, 0,
+                            width / 2, height);
+                    iv_view_left.setImageBitmap(left);
+                    iv_view_right.setImageBitmap(right);
+
+                    AnimationSet LeftanimationSet = new AnimationSet(true);
+                    LeftanimationSet.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            iv_view_left.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+                    AnimationSet RightanimationSet = new AnimationSet(true);
+
+                    RightanimationSet.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            iv_view_right.setVisibility(View.GONE);
+                            getPrensenter().setUserCoupons(getIntent().getStringExtra("USE_ID"), SET_COUPONS_USER, 0);
+
+                            DialogUtil.useCouponsDialog(getActivity(), false, mShopProductDetailEntity.getName(), new DialogUtil.OnClickListener() {
+                                @Override
+                                public void onClick(Dialog dialog, View view, int type) {
+                                    switch (type) {
+                                        case 1:
+                                            showLoadDialog();
+                                            getPrensenter().setUserCoupons(getIntent().getStringExtra("USE_ID"), SET_COUPONS_USER, 0);
+                                            break;
+                                    }
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+                    RotateAnimation leftanim = new RotateAnimation(0f, -110f, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f);
+                    RotateAnimation rightanim = new RotateAnimation(0f, 110f, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 1f);
+                    leftanim.setFillAfter(true); // 设置保持动画最后的状态
+                    leftanim.setDuration(2000); // 设置动画时间
+                    leftanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
+
+                    rightanim.setFillAfter(true); // 设置保持动画最后的状态
+                    rightanim.setDuration(2000); // 设置动画时间
+                    rightanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
+
+                    AlphaAnimation LeftalphaAnimation = new AlphaAnimation(1, 0);
+                    LeftalphaAnimation.setDuration(2000);
+                    AlphaAnimation RightalphaAnimation = new AlphaAnimation(1, 0);
+                    RightalphaAnimation.setDuration(2000);
+                    LeftanimationSet.addAnimation(leftanim);
+                    LeftanimationSet.addAnimation(LeftalphaAnimation);
+
+                    RightanimationSet.addAnimation(rightanim);
+                    RightanimationSet.addAnimation(RightalphaAnimation);
+
+                    mRlCard.setVisibility(View.GONE);
+                    iv_view_left.setVisibility(View.VISIBLE);
+                    iv_view_right.setVisibility(View.VISIBLE);
+
+                    iv_view_right.startAnimation(RightanimationSet);
+                    iv_view_left.startAnimation(LeftanimationSet);
+
                 }
                 return false;
             }
@@ -263,12 +385,31 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter> {
         mRlCard.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
-                mExplosionField.explode(mRlCard);
-                return detectordetector.onTouchEvent(motionEvent);
+                detectordetector.onTouchEvent(motionEvent);
+                return true;
             }
         });
     }
 
-
+    @OnClick({R.id.timg_back, R.id.iv_delete})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.timg_back:
+                finish();
+                break;
+            case R.id.iv_delete:
+                DialogUtil.deleteCouponsDialog(this.getActivity(), false, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int type) {
+                        switch (type) {
+                            case 1:
+                                showLoadDialog();
+                                getPrensenter().deleteUserCoupons(getIntent().getStringExtra("USE_ID"), DELETE_COUPONS, 0);
+                                break;
+                        }
+                    }
+                }).show();
+                break;
+        }
+    }
 }

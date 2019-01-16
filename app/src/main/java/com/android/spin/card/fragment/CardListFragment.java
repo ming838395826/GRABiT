@@ -27,6 +27,7 @@ import com.android.spin.card.presenter.CardPresenter;
 import com.android.spin.common.util.Constant;
 import com.android.spin.draw.view.SwipeItemLayout;
 import com.android.spin.event.AddCardEvent;
+import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.HistoryFundDetailActivity;
 import com.android.spin.shop.ShopFundDetailActivity;
 import com.android.spin.shop.entity.ShopHistroyItemEntity;
@@ -191,6 +192,7 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
 //                    getActivity().overridePendingTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom);
 
                     ARouter.getInstance().build("/app/CarDetail").withTransition(R.anim.slide_in_from_bottom,R.anim.slide_out_to_bottom).
+                            withString("USE_ID",mListAdapter.getItem(position).getId()).
                             withSerializable("id",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId())
                             .withString("code",((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getCode()).navigation();
 //                    ShopFundDetailActivity.star(getActivity(), ((CardItemEntity) mListWrapper.getAdapter().getDataList().get(position)).getItem().getId());
@@ -269,11 +271,15 @@ public class CardListFragment extends MvpFragment<IView, CardPresenter> implemen
                 }
                 break;
             case SET_COUPONS_USER:
+                dismissLoadDialog();
                 DialogUtil.havaUseCouponsDialog(getContext(),true,null).show();
                 EventBus.getDefault().post(new AddCardEvent(0));
+                EventBus.getDefault().post(new ProUpdateEvent());
                 break;
             case DELETE_COUPONS:
+                dismissLoadDialog();
                 EventBus.getDefault().post(new AddCardEvent(0));
+                EventBus.getDefault().post(new ProUpdateEvent());
                 break;
         }
     }

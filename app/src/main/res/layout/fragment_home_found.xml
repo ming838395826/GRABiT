@@ -35,7 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:background="#f7f7f6">
 
         <fragment
             android:id="@+id/fg_goos_current"

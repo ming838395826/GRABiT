@@ -61,7 +61,7 @@ public interface ShopShowApi<T> {
      * @return
      */
     @GET(ShopApiInterface.GET_SHOP_ITEMS_HISTORY_URL)
-    Observable<ShowApiResponse<ShowApiListResponse<ShopHistroyItemEntity>>> getShopHistory(@Header("Cache-Control") String cacheControl,
+    Observable<ShowApiResponse<ShowApiListResponse<ShopProductItemEntity>>> getShopHistory(@Header("Cache-Control") String cacheControl,
                                                                                            @QueryMap Map<String, Object> map);
 
     /**

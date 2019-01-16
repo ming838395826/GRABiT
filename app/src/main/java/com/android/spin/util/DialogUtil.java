@@ -11,6 +11,10 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,6 +27,7 @@ import com.android.base.view.image.GlideCircleTransform;
 import com.android.base.view.image.GlideRoundTransform;
 import com.android.base.view.listview.ListItemDecoration;
 import com.android.spin.R;
+import com.android.spin.common.selector.bean.Image;
 import com.android.spin.common.selector.view.RundCircleImageView;
 import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.util.adapter.DialogListAdapter;
@@ -271,6 +276,7 @@ public class DialogUtil {
 
         final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
         View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_glide, null);
+        ImageView iv_figure= (ImageView) contentView.findViewById(R.id.iv_figure);
         dialog.setContentView(contentView);
         ViewGroup.LayoutParams params = contentView.getLayoutParams();
         params.width = (int) (DensityUtil.getWidth() * 0.8);
@@ -279,6 +285,28 @@ public class DialogUtil {
         dialog.setCanceledOnTouchOutside(cancelable);
         dialog.getWindow().setGravity(Gravity.CENTER);
         dialog.getWindow().setWindowAnimations(R.style.StandDialog_Animation);
+        AnimationSet animationSet = new AnimationSet(true);
+        animationSet.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        Animation shake = AnimationUtils.loadAnimation(mContent, R.anim.shake);//加载动画资源文件
+        iv_figure.startAnimation(shake);
+        TranslateAnimation translateAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0,
+                Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, -1.0f);
+        translateAnimation.setDuration(2000);
         //关闭
 //        setOnClickListener(listener,dialog,timgClose,0);
 //        //好的

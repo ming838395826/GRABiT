@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <com.taobao.uikit.feature.view.TTextView
-            android:paddingTop="32dp"
+            android:paddingTop="22dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textSize="@dimen/app_font_title_size"
@@ -28,7 +28,7 @@
             android:id="@+id/ptr_material_style_ptr_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f7f7f6">
+            android:background="@color/color_white">
 
             <com.taobao.uikit.feature.view.TRecyclerView
                 android:id="@+id/tr_user_list"

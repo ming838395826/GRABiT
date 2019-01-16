@@ -53,7 +53,7 @@ public class AppLanguageManager {
 
     private static String getLanuage(){
         //默认语言
-        return SpUtil.getSharedPreferences().getString("language","CN");
+        return SpUtil.getSharedPreferences().getString("language","HK");
 
     }
 

@@ -31,7 +31,7 @@ public class ShopPresenter extends MvpPresenter<IView> {
 
     private ShopModel mShopModel = new ShopModel();
 
-    private CardModel mCardModel;
+    private CardModel mCardModel= new CardModel();
 
     private CardModel getCardModel(){
         if(mCardModel == null){
@@ -70,9 +70,9 @@ public class ShopPresenter extends MvpPresenter<IView> {
      * 获取历史商品
      */
     public void getShopHistory(Map<String, Object> params, final int type) {
-        mShopModel.getShopHistory(params, new OnNetRequestImplListener<ShowApiListResponse<ShopHistroyItemEntity>>(getView(), type) {
+        mShopModel.getShopHistory(params, new OnNetRequestImplListener<ShowApiListResponse<ShopProductItemEntity>>(getView(), type) {
             @Override
-            public void onSuccess(ShowApiListResponse<ShopHistroyItemEntity> data) {
+            public void onSuccess(ShowApiListResponse<ShopProductItemEntity> data) {
                 //基础数据持久化
                 super.onSuccess(data);
             }
@@ -162,6 +162,30 @@ public class ShopPresenter extends MvpPresenter<IView> {
         mShopModel.getCardUser(id, new OnNetRequestImplListener<NoticeResult>(getView(), type) {
             @Override
             public void onSuccess(NoticeResult data) {
+                super.onSuccess(data);
+            }
+        });
+    }
+
+    /**
+     * 删除优惠券
+     */
+    public void deleteUserCoupons(String user_coupon_id,  final int type,int position) {
+        mCardModel.deleteUserCoupons(user_coupon_id, new OnNetRequestImplListener<Object>(getView(), type) {
+            @Override
+            public void onSuccess(Object data) {
+                super.onSuccess(data);
+            }
+        });
+    }
+
+    /**
+     * 设置优惠券
+     */
+    public void setUserCoupons(String user_coupon_id,  final int type,int position) {
+        mCardModel.setUserCoupons(user_coupon_id, new OnNetRequestImplListener<Object>(getView(), type) {
+            @Override
+            public void onSuccess(Object data) {
                 super.onSuccess(data);
             }
         });

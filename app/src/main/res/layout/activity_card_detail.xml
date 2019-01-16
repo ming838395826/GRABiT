@@ -4,8 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#f3f3f3">
+
+    <View
+        android:id="@+id/sp_status"
+        android:background="#191917"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_top_title_bar"
+        android:visibility="visible"
+        android:background="@color/color_white">
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/timg_back"
+            android:src="@mipmap/icon_gray_back"
+            android:layout_centerVertical="true"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.taobao.uikit.feature.view.TTextView
+            android:textColor="@color/color_top_title_bar"
+            android:textSize="@dimen/app_topbar_title_text_size"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_coupons_detail_title"
+            android:layout_centerInParent="true"/>
+
+
+        <com.taobao.uikit.feature.view.TImageView
+            android:id="@+id/iv_delete"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_delete_gray"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/rl_card"
@@ -14,8 +60,9 @@
         android:paddingBottom="6px"
         android:paddingLeft="4px"
         android:paddingRight="4px"
-        android:paddingTop="1px"
-        android:background="@drawable/bg_card_blur">
+        android:paddingTop="10px"
+        android:background="@drawable/bg_card_blur"
+        android:layout_margin="5dp">
 
         <com.taobao.uikit.feature.view.TImageView
             android:id="@+id/img_card_avatar"
@@ -150,10 +197,27 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/iv_view_picture"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_gift"/>
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_view_left"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_gift"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_view_right"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_gift"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -136,9 +136,9 @@
     <string name="text_home_upcoming">Upcoming</string>
     <string name="text_home_countdown">Countdown:</string>
     <string name="text_home_time_limit">Countdown:</string>
-    <string name="text_home_grab_it">Grab it</string>
+    <string name="text_home_grab_it">Get it right away</string>
     <string name="text_home_ran_out">Ran out</string>
-    <string name="text_home_got_it">Got it</string>
+    <string name="text_home_got_it">Received good goods</string>
     <string name="text_home_reminder">Reminder</string>
     <string name="text_home_reminder_has">Set</string>
     <string name="text_home_grabit_reminder_set">Set</string>

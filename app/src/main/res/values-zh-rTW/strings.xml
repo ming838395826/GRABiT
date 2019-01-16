@@ -133,9 +133,9 @@
     <string name="text_home_upcoming">即將開槍</string>
     <string name="text_home_countdown">狂搶倒計時:</string>
     <string name="text_home_time_limit">開搶倒計時:</string>
-    <string name="text_home_grab_it">馬上搶</string>
+    <string name="text_home_grab_it">馬上領取好物</string>
     <string name="text_home_ran_out">已搶光</string>
-    <string name="text_home_got_it">已搶到</string>
+    <string name="text_home_got_it">已領取好物</string>
     <string name="text_home_reminder">開搶提醒</string>
     <string name="text_home_reminder_has">開搶提醒</string>
     <string name="text_home_grabit_reminder_set">已設置開搶提醒</string>

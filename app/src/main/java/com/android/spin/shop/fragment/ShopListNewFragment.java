@@ -541,7 +541,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onUpdate(ProUpdateEvent event) {
-        getData();
+        onRefreshBegin();
     }
 
     @Override

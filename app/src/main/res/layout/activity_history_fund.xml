@@ -12,7 +12,8 @@
         android:id="@+id/sp_status"
         android:background="#191917"
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="20dp"
+        android:visibility="gone"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

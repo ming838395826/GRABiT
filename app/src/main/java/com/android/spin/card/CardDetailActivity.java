@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
+import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android.base.base.BaseUIActivity;
@@ -37,7 +39,7 @@ public class CardDetailActivity extends BaseUIActivity<CarDetailDelegate> {
 
     @Override
     public int getLayoutStyle() {
-        return TITLEBARSTYLE_BELW;
+        return TITLEBARSTYLE_NOT;
     }
 
     @Override
@@ -51,6 +53,13 @@ public class CardDetailActivity extends BaseUIActivity<CarDetailDelegate> {
         setHeaderTitleViewBackgroundColor(R.color.color_white);
         setHeaderTitleLeftDrawable(R.mipmap.icon_gray_back);
         setHeaderTitleRightDrawable(R.mipmap.ic_delete_gray);
+        setHeaderRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatDelegate delegate = getDelegate();
+            }
+        });
+
 
     }
 
