@@ -1,12 +1,18 @@
 package com.android.spin.home.delegate;
 
+import android.app.Dialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.android.base.base.delegate.AppDelegate;
 import com.android.spin.R;
+import com.android.spin.db.UserManager;
 import com.android.spin.home.entity.TabEntity;
+import com.android.spin.logreg.LoginActivity;
+import com.android.spin.logreg.RegisterActivity;
+import com.android.spin.util.DialogUtil;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -70,6 +76,26 @@ public class HomeDelegate extends AppDelegate {
             }
         }
         fragmentTransaction.commitAllowingStateLoss();
+        if(R.id.fg_home_card==selectedFragmentId&&getActivity()!=null){
+            if(!UserManager.getInstance().isLogin()){
+                DialogUtil.getLoginDialog(getActivity(), false, new DialogUtil.OnClickListener() {
+                    @Override
+                    public void onClick(Dialog dialog, View view, int position) {
+                        switch (position){
+                            case 0:
+
+                                break;
+                            case 1://登陆
+                                LoginActivity.star(getActivity());
+                                break;
+                            case 2://注册
+                                RegisterActivity.star(getActivity());
+                                break;
+                        }
+                    }
+                }).show();
+            }
+        }
     }
 
 

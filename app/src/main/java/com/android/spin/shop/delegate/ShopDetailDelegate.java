@@ -168,7 +168,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 } catch (Exception e) {
                 }
 
-                DialogUtil.getGetterDialog(getActivity(), true, new DialogUtil.OnClickListener() {
+                DialogUtil.getGetterDialog(getActivity(), true, mShopProductDetailEntity.getBusiness().getName(),mShopProductDetailEntity.getBusiness().getAvatar(),new DialogUtil.OnClickListener() {
                     @Override
                     public void onClick(Dialog dialog, View view, int position) {
                         ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();

@@ -1,6 +1,7 @@
 package com.android.spin.home.fragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.android.base.util.AppManagerUtil;
 import com.android.base.util.ToastUtil;
 import com.android.base.util.image.GlideCatchUtil;
 import com.android.base.util.image.GlideUtil;
+import com.android.spin.MainActivity;
 import com.android.spin.R;
 import com.android.spin.common.AgreementActivity;
 import com.android.spin.common.selector.view.CircleImageView;
@@ -418,7 +420,8 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
     }
 
     public void showNoLogin(){
-        LoginActivity.star(getActivity());
+        Intent intent=new Intent(getContext(),MainActivity.class);
+        startActivity(intent);
         finishActivity();
     }
 

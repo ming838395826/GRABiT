@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.base.util.DensityUtil;
 import com.android.base.util.image.GlideUtil;
@@ -345,12 +346,16 @@ public class DialogUtil {
      * @param listener
      * @return
      */
-    public static Dialog getGetterDialog(Context mContent,  boolean cancelable, final OnClickListener listener) {
+    public static Dialog getGetterDialog(Context mContent,  boolean cancelable, String title ,String iamge,final OnClickListener listener) {
 
         final Dialog dialog = new Dialog(mContent, R.style.StandDialog);
         View contentView = LayoutInflater.from(mContent).inflate(R.layout.dialog_getter_layout, null);
         View timgClose = contentView.findViewById(R.id.timg_close);
         View btn = contentView.findViewById(R.id.tbtn_to_login);
+        TTextView tv_good_name= (TTextView) contentView.findViewById(R.id.tv_good_name);
+        TImageView iv_url= (TImageView) contentView.findViewById(R.id.iv_url);
+        tv_good_name.setText(title);
+        GlideUtil.defaultLoad(mContent, iamge, iv_url);
         dialog.setContentView(contentView);
         ViewGroup.LayoutParams params = contentView.getLayoutParams();
         params.width = (int) (DensityUtil.getWidth() * 0.8);

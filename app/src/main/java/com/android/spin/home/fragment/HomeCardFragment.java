@@ -83,31 +83,6 @@ public class HomeCardFragment extends BaseFragment implements OnTabSelectListene
     }
 
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser&&getActivity()!=null){
-            if(!UserManager.getInstance().isLogin()){
-                DialogUtil.getLoginDialog(getActivity(), false, new DialogUtil.OnClickListener() {
-                    @Override
-                    public void onClick(Dialog dialog, View view, int position) {
-                        switch (position){
-                            case 0:
-
-                                break;
-                            case 1://登陆
-                                LoginActivity.star(getActivity());
-                                break;
-                            case 2://注册
-                                RegisterActivity.star(getActivity());
-                                break;
-                        }
-                    }
-                }).show();
-            }
-        }
-    }
-
-    @Override
     public void initView() {
         vpMineCard.setScroll(false);
 

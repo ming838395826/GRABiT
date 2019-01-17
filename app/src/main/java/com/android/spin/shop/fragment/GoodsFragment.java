@@ -334,7 +334,7 @@ public class GoodsFragment extends MvpFragment<IView, ShopPresenter> implements 
                 } catch (Exception e) {
                 }
 
-                DialogUtil.getGetterDialog(getActivity(), true, new DialogUtil.OnClickListener() {
+                DialogUtil.getGetterDialog(getActivity(), true, mShopProductItemEntity.getBusiness().getName(),mShopProductItemEntity.getBusiness().getAvatar(),new DialogUtil.OnClickListener() {
                     @Override
                     public void onClick(Dialog dialog, View view, int position) {
                         ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();

@@ -1,122 +1,125 @@
 <resources>
     <string name="app_name">GRABiT</string>
-    <string name="test">测试</string>
-    <string name="test1">测试1</string>
+    <string name="test">測試-   -</string>
+    <string name="test1">測試1=====</string>
 
-    <string name="text_login">登录</string>
+    <string name="text_login">登錄</string>
+    <string name="text_register">註冊</string>
 
     <string name="text_notice_go">前往查看</string>
 
-    <string name="text_main_title">触手可及的免费优惠平台</string>
-    <string name="text_create_account">创建账号</string>
+    <string name="text_main_title">觸手可及的免費優惠平台</string>
+    <string name="text_create_account">創建帳號</string>
     <string name="text_your_name">你的名字</string>
     <string name="text_your_name_remind">添加您的名字</string>
     <string name="text_name">名字</string>
-    <string name="text_register_agreement">注册意味着你同意GRABiT</string>
-    <string name="text_register_agreement_service">服务条款</string>
+    <string name="text_register_agreement">註冊意味著你同意GRABiT</string>
+    <string name="text_register_agreement_service">服務條款</string>
     <string name="text_register_next">下一步</string>
 
-    <string name="text_name_error_length">请输入20个字符以内名字</string>
+    <string name="text_name_error_length">請輸入20個字符以內名字</string>
 
-    <string name="text_your_phone">手机号码</string>
-    <string name="text_your_phone_remind">输入注册手机号码</string>
-    <string name="text_phone_hint">注册手机号码</string>
+    <string name="text_your_phone">電話號碼</string>
+    <string name="text_your_phone_remind">輸入註冊手機號碼</string>
+    <string name="text_phone_hint">註冊手機號碼</string>
 
-    <string name="text_phone_error_length">请输入正确的电话号码</string>
+    <string name="text_phone_error_length">請輸入正確的電話號碼</string>
 
-    <string name="text_sms_code">短讯验证码</string>
-    <string name="text_sms_code_remind">我们向 %s 发送了短讯验证码</string>
-    <string name="text_sms_code_hint">6位验证码</string>
-    <string name="text_get_sms_code">重新请求验证码？</string>
+    <string name="text_sms_code">短訊驗證碼</string>
+    <string name="text_sms_code_remind">我们向 %s 发送了短訊驗證碼</string>
+    <string name="text_sms_code_hint">6位驗證碼</string>
+    <string name="text_get_sms_code">重新請求驗證碼？</string>
 
-    <string name="text_sms_code_error_length">请输入6位验证码</string>
+    <string name="text_sms_code_error_length">請輸入6位驗證碼</string>
 
-    <string name="text_pwd">创建密码</string>
-    <string name="text_pwd_remind">请输入大于6的数字或字母</string>
-    <string name="text_pwd_hint">密码</string>
-    <string name="text_pwd_error_length">请输入6-24位数字或字母，勿输入符号和空格</string>
+    <string name="text_pwd">創建密碼</string>
+    <string name="text_pwd_remind">輸入大於6位的數字或字母</string>
+    <string name="text_pwd_hint">密碼</string>
+    <string name="text_pwd_error_length">請輸入6-24位數字或字母，無輸入符號和空格</string>
 
-    <string name="text_your_info">填写个人资讯</string>
+    <string name="text_your_info">填寫個人資訊</string>
     <string name="text_your_info_remind">个人资讯文案</string>
-    <string name="text_sex">性别</string>
-    <string name="text_sex_selector_hint">选择你的性别</string>
+    <string name="text_sex">性別</string>
+    <string name="text_sex_selector_hint">請選者你的性別</string>
     <string name="text_date">生日</string>
-    <string name="text_date_selector_hint">选择你的出生日期</string>
+    <string name="text_date_selector_hint">請選擇你的出生日期</string>
 
-    <string name="text_sex_empty_error">请选择您的性别</string>
-    <string name="text_birthday_empty_error">请选择出生日期</string>
-    <string name="text_bind_phone">绑定手机号码</string>
-    <string name="text_bind_accoutn_hint">你的账号已与Facebook连接，\n请绑定电话号码！</string>
+    <string name="text_sex_empty_error">請選擇性別</string>
+    <string name="text_birthday_empty_error">請選擇出生日期</string>
+    <string name="text_bind_phone">綁定電話號碼</string>
+    <string name="text_bind_accoutn_hint">我們已經獲得您的基礎信息，\n請綁定電話號碼</string>
 
-    <string name="text_hobby">选择你感兴趣的内容</string>
-    <string name="text_hobby_remind">最少寻找一个，我们将推荐合适的资讯给你</string>
+    <string name="text_hobby">選擇你感興趣的內容</string>
+    <string name="text_hobby_remind">最少尋找一個，我們將推薦合適的資訊給你</string>
+    <string name="text_place">選擇你常去的區域</string>
+    <string name="text_place_remind">選擇1個至5個你常去的區域 \n 我們將推送相關優惠卡券</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
-    <string name="text_enter_home">进入首页</string>
+    <string name="text_enter_home">進入首頁</string>
 
     <string name="text_hobby_Super_Markets">超市</string>
-    <string name="text_hobby_Fashion">时装</string>
-    <string name="text_hobby_Food">饮食</string>
+    <string name="text_hobby_Fashion">時裝</string>
+    <string name="text_hobby_Food">飲食</string>
     <string name="text_hobby_Academics">教育</string>
-    <string name="text_hobby_Professional_services">专业服务</string>
-    <string name="text_hobby_Leisure_services">动态娱乐</string>
-    <string name="text_hobby_Entertainments">静态娱乐</string>
-    <string name="text_hobby_Sports">运动</string>
+    <string name="text_hobby_Professional_services">專業服務</string>
+    <string name="text_hobby_Leisure_services">動態娛樂</string>
+    <string name="text_hobby_Entertainments">靜態娛樂</string>
+    <string name="text_hobby_Sports">運動</string>
     <string name="text_hobby_Health">保健</string>
-    <string name="text_hobby_Electronics">电子</string>
+    <string name="text_hobby_Electronics">電子</string>
     <string name="text_hobby_SFurniture">家居用品</string>
-    <string name="text_hobby_Auto">汽车</string>
-    <string name="text_hobby_Beauty_and_Skin_Care">美容护理</string>
-    <string name="text_hobby_Medical_service">医疗</string>
+    <string name="text_hobby_Auto">汽車</string>
+    <string name="text_hobby_Beauty_and_Skin_Care">美容護理</string>
+    <string name="text_hobby_Medical_service">醫療</string>
 
     <!--登陆-->
-    <string name="text_login_phone">手机号码</string>
-    <string name="text_login_phone_hint">请输入8位香港手机号码</string>
-    <string name="text_login_pwd">密码</string>
-    <string name="text_login_pwd_hint">输入密码</string>
-    <string name="text_login_forget_pwd">忘记密码？</string>
+    <string name="text_login_phone">電話號碼</string>
+    <string name="text_login_phone_hint">請輸入8位香港手機號碼</string>
+    <string name="text_login_pwd">密碼</string>
+    <string name="text_login_pwd_hint">請輸入密碼</string>
+    <string name="text_login_forget_pwd">忘記密碼？</string>
     <string name="text_login_btn">登入</string>
     <string name="text_face_book_login">facebook登入</string>
 
     <!--忘记密码-->
-    <string name="title_forget_pwd">忘记密码</string>
-    <string name="text_forget_pwd_title">我们需要确认您的身份</string>
-    <string name="text_forget_pwd_phone_hint">请输入注册时使用的手机号码</string>
-    <string name="text_forget_pwd_input_hint">请输入8位香港手机号码</string>
-    <string name="text_forget_pwd_new_pwd">设置新密码</string>
-    <string name="text_forget_pwd_new_pwd_input_hint">输入大于6位的数字或字母</string>
-    <string name="text_new_pwd_input_hint">输入新密码</string>
+    <string name="title_forget_pwd">忘記密碼</string>
+    <string name="text_forget_pwd_title">我們需要確認您的身份</string>
+    <string name="text_forget_pwd_phone_hint">請輸入註冊時使用的手機號碼</string>
+    <string name="text_forget_pwd_input_hint">請輸入8位香港手機號碼</string>
+    <string name="text_forget_pwd_new_pwd">設置新密碼</string>
+    <string name="text_forget_pwd_new_pwd_input_hint">輸入大於6位少於24位的數字或字母</string>
+    <string name="text_new_pwd_input_hint">請輸入新密碼</string>
     <string name="text_forget_pwd_submit">提交修改</string>
-    <string name="text_forget_pwd_do_login">前往登陆</string>
+    <string name="text_forget_pwd_do_login">前往登錄</string>
 
     <!--更换密码-->
-    <string name="text_change_pwd_title">更换电话号码</string>
-    <string name="text_phone_title">电话号码</string>
+    <string name="text_change_pwd_title">更換電話號碼</string>
+    <string name="text_phone_title">電話號碼</string>
     <string name="text_finish">完成</string>
-    <string name="text_new_phone">新手机号码</string>
-    <string name="text_new_phone_input">新手机号码</string>
+    <string name="text_new_phone">新手機號碼</string>
+    <string name="text_new_phone_input">請輸入新手機號碼</string>
 
-    <string name="dialog_select_language_title">请选择您需要设定的语言</string>
+    <string name="dialog_select_language_title">請選擇您希望設定的語言</string>
 
     <!--dialog-->
     <!--忘记密码-->
     <string name="text_reset_pwd_success_hint">密碼設置成功，請重新登錄</string>
-    <string name="dialog_phone_registed_hint">该手机号码已注册，请直接登陆</string>
+    <string name="dialog_phone_registed_hint">該密碼已註冊，請直接登錄</string>
     <string name="dialog_btn_cancel">取消</string>
-    <string name="dialog_btn_login">登陆</string>
-    <string name="dialog_btn_confirm">确定</string>
-    <string name="dialog_content_logout_hint">确定登出？</string>
+    <string name="dialog_btn_login">登錄</string>
+    <string name="dialog_btn_confirm">確定</string>
+    <string name="dialog_content_logout_hint">確定登出？</string>
     <!--设置提醒-->
-    <string name="text_reset_remind_success_hint">你已设置了开抢提示\n请耐心等待</string>
-    <string name="text_reset_success_title">设置成功</string>
+    <string name="text_reset_remind_success_hint">你已設置了開搶提示\n請耐心等待</string>
+    <string name="text_reset_success_title">設置成功</string>
     <string name="text_ok">好的</string>
     <!--好物已抢光-->
-    <string name="text_no_goods_hint">好物已被抢空\n下次请早点来吧</string>
-    <string name="text_no_goods_title">好物已抢光</string>
+    <string name="text_no_goods_hint">好物已被搶空\n下次請早點來吧</string>
+    <string name="text_no_goods_title">好物已搶光</string>
     <!--抽中-->
-    <string name="text_getter_hint">您已抢到礼品\n请到卡包内查看使用详情</string>
-    <string name="text_getter_title">领取成功</string>
-    <string name="text_getter_receied">已领取过了</string>
-    <string name="text_set_receied">已设置成功</string>
+    <string name="text_getter_hint">您已搶到禮品\n請到卡包內查看使用詳情</string>
+    <string name="text_getter_title">領取成功</string>
+    <string name="text_getter_receied">已領取過了</string>
+    <string name="text_set_receied">已設置成功</string>
     <!--分享-->
     <string name="title_dialog_share">分享好物</string>
 
@@ -125,99 +128,99 @@
     <string name="text_home_draw">抽奖</string>
     <string name="text_home_card">卡包</string>
     <string name="text_home_mine">我的</string>
-    <string name="text_home_grabit">狂抢好物</string>
-    <string name="text_home_upcoming">即将开抢</string>
-    <string name="text_home_countdown">狂抢倒计时:</string>
-    <string name="text_home_time_limit">开抢倒计时:</string>
-    <string name="text_home_grab_it">马上抢</string>
-    <string name="text_home_ran_out">已抢光</string>
-    <string name="text_home_got_it">已抢到</string>
-    <string name="text_home_reminder">开抢提醒</string>
-    <string name="text_home_reminder_has">开抢提醒</string>
-    <string name="text_home_grabit_reminder_set">已设置开抢提醒</string>
-    <string name="text_home_total_premiums">共送出礼品</string>
+
+    <string name="text_home_grabit">狂搶好物</string>
+    <string name="text_home_upcoming">即將開槍</string>
+    <string name="text_home_countdown">狂搶倒計時:</string>
+    <string name="text_home_time_limit">開搶倒計時:</string>
+    <string name="text_home_grab_it">馬上領取好物</string>
+    <string name="text_home_ran_out">已搶光</string>
+    <string name="text_home_got_it">已領取好物</string>
+    <string name="text_home_reminder">開搶提醒</string>
+    <string name="text_home_reminder_has">開搶提醒</string>
+    <string name="text_home_grabit_reminder_set">已設置開搶提醒</string>
+    <string name="text_home_total_premiums">共送出禮品</string>
+    <string name="text_home_goods_ran_out">好物已搶光</string>
+    <string name="text_home_premiums">份禮品</string>
     <string name="text_home_unit_premiums">份</string>
-    <string name="text_home_goods_ran_out">好物已抢光</string>
-    <string name="text_home_premiums">份礼品</string>
-    <string name="text_home_end">已结束</string>
+    <string name="text_home_end">已結束</string>
     <string name="text_home_date_day">天</string>
-    <string name="text_home_date_hour">时</string>
+    <string name="text_home_date_hour">時</string>
     <string name="text_home_date_min">分</string>
     <string name="text_home_date_s">秒</string>
     <string name="text_product_count">%1$d份</string>
-    <string name="text_left_product_count">还剩下%1$d份</string>
+    <string name="text_left_product_count">還剩下%1$d份</string>
+    <string name="text_good_count">剩餘: %1$d份</string>
+    <string name="text_card_user">已搶到用戶</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right">份</string>
 
-    <string name="text_unit_left">还剩下</string>
+    <string name="text_unit_left">還剩下</string>
     <string name="text_unit_right">份</string>
 
     <!--好物-->
     <string name="text_home_premium_information">好物說明</string>
-    <string name="text_home_garb_address">兑换地址</string>
-    <string name="text_home_contact_us">联系电话</string>
+    <string name="text_home_garb_address">兌換地址</string>
+    <string name="text_home_contact_us">聯繫電話</string>
 
     <!--我的-->
-    <string name="text_mine_title">个人中心</string>
-    <string name="text_mine_bind_face_book">绑定Facebook</string>
+    <string name="text_mine_title">個人中心</string>
+    <string name="text_mine_bind_face_book">綁定Facebook</string>
     <string name="text_mine_unbind_face_book">解绑Facebook</string>
     <string name="text_mine_bind_face_book_hint">绑定Facebook成功</string>
     <string name="text_mine_unbind_face_book_hint">解绑Facebook成功</string>
-    <string name="text_mine_clear_cache">清理缓存</string>
-    <string name="text_mine_set_language">语言设定</string>
-    <string name="text_mine_mobile">电话号码</string>
-    <string name="text_mine_current_version">当前版本</string>
-    <string name="text_mine_service_agreement">服务条款</string>
-    <string name="text_mine_about">关于GRABiT</string>
+    <string name="text_mine_clear_cache">清理緩存</string>
+    <string name="text_mine_set_language">語言設定</string>
+    <string name="text_mine_feed_back">意見反饋</string>
+    <string name="text_mine_contact_us">聯繫我們</string>
+    <string name="text_mine_mobile">電話號碼</string>
+    <string name="text_mine_current_version">當前版本</string>
+    <string name="text_mine_service_agreement">服務條款</string>
+    <string name="text_mine_about">關於GRABiT</string>
     <string name="text_mine_logout">登出</string>
-    <string name="text_mine_change_langua_hint">切换语言需重启APP，确定切换？</string>
+    <string name="text_mine_change_langua_hint">切換語言需要重啓APP,確認切換？</string>
+    <string name="text_mine_login_register">登錄／註冊</string>
 
     <!--卡包-->
     <string name="text_card_title">卡包</string>
-    <string name="text_card_empty">没有卡券</string>
+    <string name="text_card_empty">沒有卡券</string>
     <string name="text_card_tab_new">未使用</string>
     <string name="text_card_tab_used">已使用</string>
     <string name="text_card_tab_expired">已过期</string>
     <string name="text_card_expiration_date">截止日期</string>
-    <string name="text_card_service_address">兑换地址</string>
+    <string name="text_card_service_address">兌換時間</string>
 
     <!--个人资讯-->
-    <string name="text_user_info_title">个人资讯</string>
+    <string name="text_user_info_title">個人資訊</string>
     <string name="text_user_info_title_save">保存</string>
-    <string name="text_user_info_title_edit">编辑</string>
-    <string name="text_user_info_avatar">用户头像</string>
-    <string name="text_user_info_name">用户名</string>
-    <string name="text_user_info_name_hint">请输入用户名</string>
+    <string name="text_user_info_title_edit">編輯</string>
+    <string name="text_user_info_avatar">用戶頭像</string>
+    <string name="text_user_info_name">用戶名</string>
+    <string name="text_user_info_name_hint">請輸入用戶名</string>
     <string name="text_user_info_gender">性别</string>
-    <string name="text_user_info_gender_hint">请选择性别</string>
+    <string name="text_user_info_gender_hint">请選擇性别</string>
     <string name="text_user_info_date_birth">出生日期</string>
     <string name="text_user_info_date_birth_hint">请选择出生日期</string>
     <string name="text_user_info_man">男</string>
     <string name="text_user_info_women">女</string>
 
     <!--权限-->
-    <string name="mis_folder_all">所有照片</string>
-    <string name="mis_back">返回</string>
-    <string name="mis_photo">相册</string>
-    <string name="mis_preview">预览</string>
-    <string name="mis_msg_no_camera">没有系统相机</string>
-    <string name="mis_msg_amount_limit">已经达到最高选择数量</string>
-    <string name="mis_action_done">完成</string>
-    <string name="mis_photo_unit">张</string>
-    <string name="mis_tip_take_photo">拍摄照片</string>
-    <string name="mis_error_image_not_exist">图片错误</string>
-    <string name="mis_error_no_permission">无权限</string>
-    <string name="mis_permission_dialog_title">权限拒绝</string>
-    <string name="mis_permission_dialog_ok">好</string>
-    <string name="mis_permission_dialog_cancel">拒绝</string>
-    <string name="mis_permission_rationale">浏览图片需要您提供浏览存储的权限</string>
-    <string name="mis_permission_rationale_write_storage">保存拍照图片需要您提供写存储权限</string>
-    <string name="mis_ready_upload">请稍后，准备上传</string>
-    <string name="mis_confirm">确定</string>
+    <string name="mis_error_no_permission">app沒有開啟相關權限</string>
+    <string name="mis_folder_all">全部</string>
+    <string name="mis_msg_amount_limit">已到達最高選擇數量</string>
+    <string name="mis_tip_take_photo">拍攝照片</string>
+    <string name="mis_error_image_not_exist">圖片錯誤</string>
+    <string name="mis_permission_dialog_title">權限拒絕</string>
+    <string name="mis_permission_rationale">瀏覽圖片需要您提供瀏覽存儲的權限</string>
+    <string name="mis_permission_rationale_write_storage">保存拍照圖片需要您提供寫存儲權限</string>
+    <string name="mis_ready_upload">請稍後，準備上傳</string>
+    <string name="mis_confirm">確定</string>
     <string name="mis_cancel">取消</string>
+    <string name="mis_msg_no_camera">沒有系統相機</string>
     <string name="mis_action_button_string">%1$s(%2$d/%3$d)</string>
-    <string name="permission_to_album">访问相册需要允许读写存储权限</string>
+    <string name="mis_action_done">確定</string>
+    <string name="permission_to_album">訪問相冊需要允許讀寫存儲權限</string>
 
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
@@ -227,15 +230,70 @@
     <string name="pull_to_refresh_refreshing_label">正在载入…</string>
     <string name="pull_to_refresh_release_label">放开以刷新…</string>
 
-    <string name="text_clear_cache_hint">我们将会清除您APP上下载的图片信息？</string>
+    <string name="text_clear_cache_hint">我們將會清除您APP上下載的圖片信息？</string>
 
     <!--分享-->
-    <string name="text_share_title_1">邀请你来抢</string>
+    <string name="text_share_title_1">邀請你來搶</string>
     <string name="text_share_title_2">！立即前往查看:</string>
-    <string name="text_share_install">请安装</string>
+    <string name="text_share_install">請安裝</string>
 
     <string name="text_fund_empty">好物正在路上</string>
 
-    <string name="text_empty_hobby">请最少选择一个爱好</string>
-    <string name="text_most_hobby_hint">最多选择3个爱好</string>
+    <string name="text_empty_hobby">請最少選擇一個興趣愛好</string>
+    <string name="text_most_hobby_hint">最多選擇3個興趣愛好</string>
+    <string name="text_empty_place">請最少選擇一個你常去的區域</string>
+    <string name="text_most_place_hint">最多選擇5個你常去的區域</string>
+
+    <!--联系我们-->
+    <string name="text_contact_phone">聯繫電話</string>
+    <string name="text_contact_email">聯繫郵箱</string>
+
+    <!--意见反馈-->
+    <string name="text_feed_back_idea">意見或建議</string>
+    <string name="text_feed_back_email">個人郵箱</string>
+    <string name="text_feed_back_idea_hint">感謝您使用GRABiT，使用過程中有任何意見或建議請反饋給我們。</string>
+    <string name="text_feed_back_email_hint">留下您的個人郵箱，便於與您聯繫</string>
+    <string name="text_feed_back_submit">提交</string>
+    <string name="text_feed_back_success">意見反饋成功</string>
+
+    <!--好物抢购提示-->
+    <string name="text_home_grab_it_new">馬上領取好物</string>
+    <string name="text_home_ran_out_new">已搶光好物</string>
+    <string name="text_home_got_it_new">已領取好物</string>
+    <string name="text_home_Concern">關注</string>
+    <string name="text_home_have_Concern">已關注</string>
+
+    <!--卡券使用-->
+    <string name="text_use_coupons">確認使用卡券？</string>
+    <string name="text_delete_coupons">確定刪除卡券？</string>
+    <string name="text_delete_coupons_describe">刪除後卡券將永久刪除</string>
+    <string name="text_use_coupons_success">用券成功</string>
+    <string name="ext_use_coupons_success_describe">恭喜成功使用卡券</string>
+    <string name="text_coupons_detail_title">卡券详情</string>
+    <string name="text_coupons_use_soon">立即使用</string>
+    <string name="text_glide_coupons">向商家出示卡券後 \n  向下滑動可使用掉卡券</string>
+
+    <string name="text_login_welcome">歡迎使用GRABiT</string>
+    <string name="text_login_describe">登錄後可領取優惠券 \n 優惠享起來</string>
+    <string name="text_history_title">歷史好物</string>
+
+
+    <string name="text_place_islands_district">離島區</string>
+    <string name="text_place_Kwai_Tsing_District">葵青區</string>
+    <string name="text_place_North_District">北區</string>
+    <string name="text_place_Sai_Kung_District">西貢區</string>
+    <string name="text_place_Sha_Tin_District">沙田區</string>
+    <string name="text_place_Tai_Po_District">大埔區</string>
+    <string name="text_place_Tsuen_Wan_District">荃灣區</string>
+    <string name="text_place_Tuen_Mun_District">屯門區</string>
+    <string name="text_place_Yuen_Long_District">元朗區</string>
+    <string name="text_place_Kowloon_City">九龍城區</string>
+    <string name="text_place_Kwun_Tong_District">觀塘區</string>
+    <string name="text_place_Sham_Shui_Po_District">深水埗區</string>
+    <string name="text_place_Wong_Tai_Sin_District">黃大仙區</string>
+    <string name="text_place_Yau_Tsim_Mong_District">油尖旺區</string>
+    <string name="text_place_Central_and_Western_District">中西區</string>
+    <string name="text_place_Eastern_District">東區</string>
+    <string name="text_place_Southern">南區</string>
+    <string name="text_place_Wan_Chai_District">灣仔區</string>
 </resources>

@@ -194,33 +194,17 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
 //                        params.put("id", entity.getId());
 //                        getPresenter().getShopItemDetailNew(params, TYPE_GET_GOODS_DETAIL);
 //                        isRefresh = true;
+                        DialogUtil.getGetterDialog(getActivity(), true, item.getBusiness().getName(), item.getBusiness().getAvatar(),new DialogUtil.OnClickListener() {
+                            @Override
+                            public void onClick(Dialog dialog, View view, int position) {
+                                ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();
+                                EventBus.getDefault().post(new AddCardEvent(0));
+                            }
+                        }).show();
                     }
-//                    mShopProductItemEntity.setCurrent_stock(mShopProductItemEntity.getCurrent_stock() + 1);
-//                    String count = mShopProductItemEntity.getStock() - mShopProductItemEntity.getCurrent_stock() + "";
-//                    if (getType() == 1) {
-//                        ttvProductTagLeft.setText(getResources().getString(R.string.text_unit_comming_left));
-//                        ttvProductTag.setText(getResources().getString(R.string.text_unit_comming_right));
-//                    } else {
-//                        ttvProductTagLeft.setText(getResources().getString(R.string.text_unit_left));
-//                        ttvProductTag.setText(getResources().getString(R.string.text_unit_right));
-//                    }
-//                    ttvProductCount.setText(count);
-//
-//                    EventBus.getDefault().post(new UpdateCardEvent(mShopProductItemEntity.getId()));
-//                    mShopProductItemEntity.setUser_coupon(new ShopProductItemEntity.UserCouponBean());
-//                    ttvBtnRight.setText(getString(R.string.text_home_got_it));
-//                    ttvBtnRight.setBackgroundColor(Color.parseColor("#66191917"));
-//                    ttvBtnRight.setEnabled(false);
                 } catch (Exception e) {
                 }
 
-                DialogUtil.getGetterDialog(getActivity(), true, new DialogUtil.OnClickListener() {
-                    @Override
-                    public void onClick(Dialog dialog, View view, int position) {
-                        ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();
-                        EventBus.getDefault().post(new AddCardEvent(0));
-                    }
-                }).show();
                 break;
             case TYPE_POST_SET_TIP:
                 //设置提醒成功
@@ -481,12 +465,15 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
      */
     private void getData() {
         showLoadView();
+        Map<String, Object> params = new HashMap<>();
+        params.put(Constant.KEY_PAGE, page);
+        params.put(Constant.KEY_PER_PAGE, perPage);
         if(getType()==0){
-            getPresenter().getShopCurrent(null, TYPE_REQUEST_CURRENT);
+            getPresenter().getShopCurrent(params, TYPE_REQUEST_CURRENT);
         }else if(getType()==1){
-            getPresenter().getShopComing(null, TYPE_REQUEST_CURRENT);
+            getPresenter().getShopComing(params, TYPE_REQUEST_CURRENT);
         }else if(getType()==2){
-            getPresenter().getShopHistory(null,TYPE_REQUEST_CURRENT);
+            getPresenter().getShopHistory(params,TYPE_REQUEST_CURRENT);
         }
     }
 

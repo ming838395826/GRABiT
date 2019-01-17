@@ -12,6 +12,7 @@ import com.android.base.base.delegate.AppDelegate;
 import com.android.base.base.delegate.MvpDelegate;
 import com.android.base.mvp.view.IView;
 import com.android.base.util.AppLanguageManager;
+import com.android.spin.base.SpinApplication;
 import com.android.spin.db.UserManager;
 import com.android.spin.home.HomeActivity;
 import com.android.spin.logreg.LoginActivity;
@@ -72,7 +73,7 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
     @Override
     public void onResume() {
         super.onResume();
-        if(TextUtils.isEmpty(UserManager.getInstance().getToken())){
+        if(TextUtils.isEmpty(UserManager.getInstance().getToken())&& !SpinApplication.isFirstLoad){
             showLoginView();
         }else{
             hideLoginView();
@@ -85,10 +86,11 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(false&&TextUtils.isEmpty(UserManager.getInstance().getToken())){//无论怎么样都进主界面
+                if(!SpinApplication.isFirstLoad||false&&TextUtils.isEmpty(UserManager.getInstance().getToken())){//无论怎么样都进主界面
                     return;
                 }
                 HomeActivity.star(getActivity());
+                SpinApplication.isFirstLoad=false;
 
             }
         },1000);

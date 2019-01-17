@@ -35,6 +35,7 @@ public class SpinApplication extends BaseApplication {
     private static SpinApplication instance;
 
     public static boolean isNeedLoad = true;
+    public static boolean isFirstLoad=true;//是否第一次加载 刚启动页面
 
     @Override
     public void onCreate() {
