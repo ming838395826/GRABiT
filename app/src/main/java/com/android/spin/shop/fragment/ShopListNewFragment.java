@@ -426,7 +426,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
             public void showAll(int position) {
                 ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                 entity.setShowAll(true);
-                mListWrapper.getAdapter().notifyItemChanged(position);
+                mListWrapper.getAdapter().notifyItemChanged(position+1);
             }
         });
         mListAdapter.setStatus(getType());

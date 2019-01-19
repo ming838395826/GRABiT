@@ -35,11 +35,22 @@ public class AppLanguageManager {
         String sta = getLanuage();
         // 本地语言设置
 //        Locale myLocale = new Locale(null,sta,null);
-        Resources res = act.getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        conf.locale = getLocale(sta);
-        res.updateConfiguration(conf, dm);
+//        Resources res = act.getResources();
+//        DisplayMetrics dm = res.getDisplayMetrics();
+//        Configuration conf = res.getConfiguration();
+//        conf.locale = getLocale(sta);
+//        res.updateConfiguration(conf, dm);
+
+        Configuration configuration = act.getResources().getConfiguration();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            configuration.setLocale(getLocale(sta));
+        } else {
+            configuration.locale = getLocale(sta);
+        }
+        DisplayMetrics displayMetrics = act.getResources().getDisplayMetrics();
+        act.getResources().updateConfiguration(configuration, displayMetrics);
+//        setLocale(context, locale);
+
     }
 
     private static Locale getLocale(String sta){

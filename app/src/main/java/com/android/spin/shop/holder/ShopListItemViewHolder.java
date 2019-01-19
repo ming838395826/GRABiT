@@ -186,6 +186,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         GoodItemAdapter goodItemAdapter=new GoodItemAdapter(mTrGoodList.getContext());
         goodItemAdapter.setShowAll(entity.isShowAll());
         GoodItemListAdapter goodItemListAdapter=new GoodItemListAdapter(mTrGoodList.getContext());
+        goodItemListAdapter.setShowAll(entity.isShowAll());
         goodItemAdapter.addDataList(entity.getItems());
         goodItemListAdapter.setData(entity.getItems());
         mTrGoodList.setAdapter(goodItemListAdapter);

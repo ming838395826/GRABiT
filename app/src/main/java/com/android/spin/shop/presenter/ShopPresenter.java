@@ -126,7 +126,6 @@ public class ShopPresenter extends MvpPresenter<IView> {
             @Override
             public void onSuccess(Object data) {
                 super.onSuccess(data);
-                Logger.d(data);
             }
         });
     }

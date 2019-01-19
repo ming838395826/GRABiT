@@ -146,7 +146,7 @@ public class RegisterStepSixthFragment extends BaseRegisterFragment implements V
             }
         }
         if (tags.length() == 0) {
-            ToastUtil.shortShow(getString(R.string.text_empty_hobby));
+            ToastUtil.shortShow(getString(R.string.text_empty_place));
             return;
         }
         showLoadDialog();

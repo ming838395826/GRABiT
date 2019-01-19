@@ -21,9 +21,27 @@ import butterknife.ButterKnife;
 
 public class GoodItemListAdapter extends SingleTypeAdapter<ShopItemEntity> {
 
+    private boolean isShowAll=false;
+
+    public boolean isShowAll() {
+        return isShowAll;
+    }
+
+    public void setShowAll(boolean showAll) {
+        isShowAll = showAll;
+    }
 
     public GoodItemListAdapter(Context context) {
         super(context);
+    }
+
+    @Override
+    public int getCount() {
+        if(super.getCount()>3&&!isShowAll()){
+            return 3;
+        }else {
+            return super.getCount();
+        }
     }
 
     @Override
