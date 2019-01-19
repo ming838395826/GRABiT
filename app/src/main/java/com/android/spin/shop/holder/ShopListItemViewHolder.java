@@ -69,6 +69,8 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     CircleImageView iv_person_four;
     @Bind(R.id.ln_time)
     LinearLayout ln_time;
+    @Bind(R.id.tv_show_all)
+    TTextView tv_show_all;
 
     View itemView;
     int type=0;
@@ -97,6 +99,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
 
     public void showPerson(View.OnClickListener listener){
         ln_have_grabit.setOnClickListener(listener);
+    }
+
+    public void showAll(View.OnClickListener listener){
+        tv_show_all.setOnClickListener(listener);
     }
 
     public void setSubmitRanOut(){
@@ -166,12 +172,19 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
             ln_time.setVisibility(View.GONE);
         }
 
+        if(!entity.isShowAll()&&entity.getItems().size()>3){
+            tv_show_all.setVisibility(View.VISIBLE);
+        }else {
+            tv_show_all.setVisibility(View.GONE);
+        }
+
 
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
 //        mTrGoodList.setLayoutManager(layoutManager);
 //        mTrGoodList.addItemDecoration(new ListItemDecoration(
 //                mTrGoodList.getContext(), LinearLayout.VERTICAL, mTrGoodList.getContext().getResources().getDrawable(R.drawable.list_divider_h10_tran)));
         GoodItemAdapter goodItemAdapter=new GoodItemAdapter(mTrGoodList.getContext());
+        goodItemAdapter.setShowAll(entity.isShowAll());
         GoodItemListAdapter goodItemListAdapter=new GoodItemListAdapter(mTrGoodList.getContext());
         goodItemAdapter.addDataList(entity.getItems());
         goodItemListAdapter.setData(entity.getItems());

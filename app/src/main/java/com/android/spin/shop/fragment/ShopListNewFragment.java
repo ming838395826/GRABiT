@@ -421,6 +421,13 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                         .withLong("endTime", entity.getEnd_time())
                         .withString("parentId",entity.getId()+"").navigation();
             }
+
+            @Override
+            public void showAll(int position) {
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                entity.setShowAll(true);
+                mListWrapper.getAdapter().notifyItemChanged(position);
+            }
         });
         mListAdapter.setStatus(getType());
 

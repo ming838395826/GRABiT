@@ -22,8 +22,27 @@ import butterknife.Bind;
 public class GoodItemAdapter extends BaseListAdapter<ShopItemEntity> {
 
 
+    private boolean isShowAll=false;
+
+    public boolean isShowAll() {
+        return isShowAll;
+    }
+
+    public void setShowAll(boolean showAll) {
+        isShowAll = showAll;
+    }
+
     public GoodItemAdapter(Context activity) {
         super(activity);
+    }
+
+    @Override
+    public int getItemCount() {
+        if(super.getItemCount()>3&&!isShowAll()){
+            return 3;
+        }else {
+            return super.getItemCount();
+        }
     }
 
     @Override

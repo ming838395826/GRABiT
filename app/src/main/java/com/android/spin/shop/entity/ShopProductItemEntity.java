@@ -63,6 +63,15 @@ public class ShopProductItemEntity implements IEntity{
 
     private Integer isRecerve;//是否已经领取,通知
     private List<CardUserEntity> userList;
+    private boolean isShowAll=false;
+
+    public boolean isShowAll() {
+        return isShowAll;
+    }
+
+    public void setShowAll(boolean showAll) {
+        isShowAll = showAll;
+    }
 
     public List<CardUserEntity> getUserList() {
         return userList;

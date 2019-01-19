@@ -184,4 +184,14 @@
         android:divider="@color/color_white"
         android:dividerHeight="2dp"/>
 
+    <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/tv_show_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_look_all"
+        android:textColor="#ff666666"
+        android:textSize="@dimen/app_font_title_sub_13sp"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>
