@@ -35,7 +35,7 @@ public class ShopItemViewHolder  extends RecyclerView.ViewHolder {
     }
 
     public void initData(ShopItemEntity entity) {
-        GlideUtil.defaultLoad(mIvUrl.getContext(), entity.getFront_cover(), mIvUrl);
+        GlideUtil.defualtLoad(mIvUrl.getContext(), entity.getFront_cover(), R.drawable.bg_pic_defualt,  mIvUrl);
         mTvGoodName.setText(entity.getName());
         mTvCount.setText(mTvCount.getContext().getString(R.string.text_good_count,entity.getCurrent_stock()));
     }

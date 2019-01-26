@@ -262,6 +262,7 @@
     <string name="text_home_got_it_new">已領取好物</string>
     <string name="text_home_Concern">關注</string>
     <string name="text_home_have_Concern">已關注</string>
+    <string name="text_look_all">查看全部好物</string>
 
     <!--卡券使用-->
     <string name="text_use_coupons">確認使用卡券？</string>

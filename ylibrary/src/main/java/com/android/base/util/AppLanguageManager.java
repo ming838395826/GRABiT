@@ -31,7 +31,7 @@ public class AppLanguageManager {
      * 切换语言
      * @param act
      */
-    public static void changeAppLanguage(Activity act) {
+    public static void changeAppLanguage(Context act) {
         String sta = getLanuage();
         // 本地语言设置
 //        Locale myLocale = new Locale(null,sta,null);

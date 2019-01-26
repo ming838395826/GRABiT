@@ -91,7 +91,7 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
         GlideUtil.defualtLoad(imgCardAvatar.getContext(), entity.getItem().getFront_cover(), R.drawable.bg_pic_defualt, imgCardAvatar);
         ttvCardTitle.setText(entity.getName());
         ttvCardContent.setText(entity.getItem().getName());
-        GlideUtil.defaultLoad(imgShopAvatar.getContext(), entity.getBusiness().getAvatar(), imgShopAvatar);
+        GlideUtil.defualtLoad(imgShopAvatar.getContext(), entity.getBusiness().getAvatar(), R.mipmap.ic_shop_defaut,imgShopAvatar);
         ttvShopName.setText(entity.getBusiness().getName());
         ttvCardShopDate.setText(imgCardAvatar.getResources().getString(R.string.text_card_expiration_date) + "：" + DateUtil.format("yyyy.MM.dd", entity.getExpired_time() * 1000));
         ttvCardExchangeAddr.setText(imgCardAvatar.getResources().getString(R.string.text_card_service_address) + "：" + entity.getItem().getLocation());

@@ -122,7 +122,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     public void setAttend(){
         mTvSubmit.setText(mTvSubmit.getContext().getString(R.string.text_home_Concern));
         mTvSubmit.setTextColor(Color.parseColor("#333333"));
-        mTvSubmit.setBackgroundResource(R.color.app_color_F0F0F0);
+        mTvSubmit.setBackgroundResource(R.drawable.btn_border_color_191917_2px);
         mTvSubmit.setEnabled(false);
     }
 
@@ -141,7 +141,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void initData(ShopProductItemEntity entity) {
-        GlideUtil.defaultLoad(mImgShopAvatar.getContext(), entity.getBusiness().getAvatar(), mImgShopAvatar);
+        GlideUtil.defualtLoad(mImgShopAvatar.getContext(), entity.getBusiness().getAvatar(),R.mipmap.ic_shop_defaut, mImgShopAvatar);
         mTvShopName.setText(entity.getBusiness().getName());
         mTvContent.setText(entity.getBusiness().getDescription());
         boolean isRanOut=true;
@@ -200,25 +200,27 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                 switch (i){
                     case 0:
                         iv_person_one.setVisibility(View.VISIBLE);
-                        GlideUtil.defaultLoad(iv_person_one.getContext(), entity.getUserList().get(i).getUser().getAvatar(), iv_person_one);
+                        GlideUtil.defualtLoad(iv_person_one.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_get_person_header, iv_person_one);
                         break;
                     case 1:
                         iv_person_two.setVisibility(View.VISIBLE);
-                        GlideUtil.defualtLoad(iv_person_two.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_two);
+                        GlideUtil.defualtLoad(iv_person_two.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_get_person_header, iv_person_two);
                         break;
                     case 2:
                         iv_person_third.setVisibility(View.VISIBLE);
-                        GlideUtil.defualtLoad(iv_person_third.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_third);
+                        GlideUtil.defualtLoad(iv_person_third.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_get_person_header, iv_person_third);
                         break;
                     case 3:
                         iv_person_four.setVisibility(View.VISIBLE);
-                        GlideUtil.defualtLoad(iv_person_four.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_mine_header, iv_person_four);
+                        GlideUtil.defualtLoad(iv_person_four.getContext(), entity.getUserList().get(i).getUser().getAvatar(),R.mipmap.icon_get_person_header, iv_person_four);
                         break;
                 }
             }
         }
-        if(getType()!=2){
+        if(getType()==0){
             starTimer(entity.getStart_time(), entity.getEnd_time());
+        }else if(getType()==1){
+            starTimer(entity.getStart_time(), entity.getStart_time());
         }
     }
 

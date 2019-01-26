@@ -170,7 +170,7 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter>  {
             if (entity != null) {
                 GlideUtil.defaultLoad(this.getActivity(), entity.getFront_cover(), mImgCardAvatar);
                 mTtvCardTitle.setText(entity.getName());
-                GlideUtil.defaultLoad(this.getActivity(), entity.getBusiness().getAvatar(), mImgShopAvatar);
+                GlideUtil.defualtLoad(this.getActivity(), entity.getBusiness().getAvatar(),R.mipmap.ic_shop_defaut, mImgShopAvatar);
                 mTtvShopName.setText(entity.getBusiness().getName());
                 mTtvCode.setText(getIntent().getStringExtra("code"));
                 mTtvCardExchangeAddr.setText(getString(R.string.text_home_garb_address) + " : " + entity.getLocation());

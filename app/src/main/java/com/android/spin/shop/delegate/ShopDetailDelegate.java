@@ -241,7 +241,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 GlideUtil.defaultLoad(this.getActivity(), entity.getFront_cover(), timgAvatar);
                 ttvGoodsTitle.setText(entity.getName());
                 ttvGoodsContent.setText(entity.getDescription());
-                GlideUtil.defaultLoad(this.getActivity(), entity.getBusiness().getAvatar(), timgShopAvatar);
+                GlideUtil.defualtLoad(this.getActivity(), entity.getBusiness().getAvatar(),R.mipmap.ic_shop_defaut, timgShopAvatar);
                 ttvShopName.setText(entity.getBusiness().getName());
                 ttvGoodsCount.setText(entity.getCurrent_stock() + "");
                 ttvAddress.setText(entity.getLocation());

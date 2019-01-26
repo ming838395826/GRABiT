@@ -40,7 +40,7 @@ public class HobbyListViewHolder extends RecyclerView.ViewHolder {
         ViewGroup.LayoutParams params = layoutContainer.getLayoutParams();
         int itemwidth = (DensityUtil.getWidth() - DensityUtil.dp2px(41))/3;
         params.width = itemwidth;
-        params.height = itemwidth;
+//        params.height = itemwidth;
         layoutContainer.setLayoutParams(params);
     }
 

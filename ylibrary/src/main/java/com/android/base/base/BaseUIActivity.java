@@ -74,8 +74,8 @@ public abstract class BaseUIActivity<T extends AppDelegate> extends BaseAdaptate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(!BaseApplication.isInitLanguage && Build.VERSION.SDK_INT < Build.VERSION_CODES.N){
-            AppLanguageManager.changeAppLanguage(this);
+        if(!BaseApplication.isInitLanguage ){
+            AppLanguageManager.changeAppLanguage(BaseApplication.application.getApplicationContext());
             BaseApplication.isInitLanguage = false;
         }
         viewDelegate.create(getLayoutInflater(), null, savedInstanceState);

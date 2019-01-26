@@ -125,7 +125,7 @@
                 android:layout_alignParentRight="true"
                 android:src="@mipmap/icon_dialog_gifta"
                 android:visibility="gone"
-                tools:src="@mipmap/icon_dialog_gifta"/>
+                tools:src="@mipmap/icon_dialog_gifta" />
 
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_two"
@@ -135,7 +135,7 @@
                 android:layout_toLeftOf="@+id/iv_person_one"
                 android:src="@mipmap/icon_dialog_gifta"
                 android:visibility="gone"
-                tools:src="@mipmap/icon_dialog_gifta"/>
+                tools:src="@mipmap/icon_dialog_gifta" />
 
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_third"
@@ -145,7 +145,7 @@
                 android:layout_toLeftOf="@+id/iv_person_two"
                 android:src="@mipmap/icon_dialog_gifta"
                 android:visibility="gone"
-                tools:src="@mipmap/icon_dialog_gifta"/>
+                tools:src="@mipmap/icon_dialog_gifta" />
 
             <com.android.spin.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_four"
@@ -155,7 +155,7 @@
                 android:layout_toLeftOf="@+id/iv_person_third"
                 android:src="@mipmap/icon_dialog_gifta"
                 android:visibility="gone"
-                tools:src="@mipmap/icon_dialog_gifta"/>
+                tools:src="@mipmap/icon_dialog_gifta" />
 
         </RelativeLayout>
 
