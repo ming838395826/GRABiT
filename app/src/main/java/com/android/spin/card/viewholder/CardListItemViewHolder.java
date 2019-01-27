@@ -88,7 +88,7 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
 
     public void initData(CardItemEntity entity) {
 
-        GlideUtil.defualtLoad(imgCardAvatar.getContext(), entity.getItem().getFront_cover(), R.drawable.bg_pic_defualt, imgCardAvatar);
+        GlideUtil.defualtLoad(imgCardAvatar.getContext(), entity.getItem().getFront_cover(), R.mipmap.ic_grabit_default, imgCardAvatar);
         ttvCardTitle.setText(entity.getName());
         ttvCardContent.setText(entity.getItem().getName());
         GlideUtil.defualtLoad(imgShopAvatar.getContext(), entity.getBusiness().getAvatar(), R.mipmap.ic_shop_defaut,imgShopAvatar);

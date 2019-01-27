@@ -52,7 +52,7 @@
     <string name="text_hobby">選擇你感興趣的內容</string>
     <string name="text_hobby_remind">最少尋找一個，我們將推薦合適的資訊給你</string>
     <string name="text_place">選擇你常去的區域</string>
-    <string name="text_place_remind">選擇1個至5個你常去的區域 \n 我們將推送相關優惠卡券</string>
+    <string name="text_place_remind">選擇1個至5個你常去的區域 \n我們將推送相關優惠卡券</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
     <string name="text_enter_home">進入首頁</string>
 

@@ -355,7 +355,7 @@ public class DialogUtil {
         TTextView tv_good_name= (TTextView) contentView.findViewById(R.id.tv_good_name);
         TImageView iv_url= (TImageView) contentView.findViewById(R.id.iv_url);
         tv_good_name.setText(title);
-        GlideUtil.defualtLoad(mContent, iamge,R.drawable.bg_pic_defualt, iv_url);
+        GlideUtil.defualtLoad(mContent, iamge,R.mipmap.ic_grabit_default, iv_url);
         dialog.setContentView(contentView);
         ViewGroup.LayoutParams params = contentView.getLayoutParams();
         params.width = (int) (DensityUtil.getWidth() * 0.8);
