@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.android.base.base.BaseFragment;
@@ -29,6 +30,7 @@ import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.fragment.GoodsFragment;
 import com.android.spin.shop.fragment.ShopCommingFragment;
 import com.android.spin.shop.fragment.ShopFragment;
+import com.android.spin.shop.fragment.ShopListNewFragment;
 import com.android.spin.shop.presenter.ShopPresenter;
 import com.android.spin.util.DialogUtil;
 import com.android.spin.util.image.BlurBuilder;
@@ -164,12 +166,12 @@ public class HomeFoundFragment extends MvpFragment<IView,ShopPresenter> implemen
                     ShopProductItemEntity entity;
                     int position = ctlNav.getCurrentTab();
                     if(position == 0){
-                        ShopFragment fragment = (ShopFragment) getChildFragmentManager().findFragmentById(R.id.fg_goos_current);
+                        ShopListNewFragment fragment = (ShopListNewFragment) getChildFragmentManager().findFragmentById(R.id.fg_goos_current);
 
-                        entity = fragment.getShopProductItemEntity();
+                        entity = fragment.getShareItem();
                     }else{
-                        ShopCommingFragment fragment = (ShopCommingFragment) getChildFragmentManager().findFragmentById(R.id.fg_goos_comming);
-                        entity = fragment.getShopProductItemEntity();
+                        ShopListNewFragment fragment = (ShopListNewFragment) getChildFragmentManager().findFragmentById(R.id.fg_goos_comming);
+                        entity = fragment.getShareItem();
                     }
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -181,7 +183,8 @@ public class HomeFoundFragment extends MvpFragment<IView,ShopPresenter> implemen
                     CommonShareActivity.star(getActivity(),entity);
                     dismissLoadDialog();
                 }catch (Exception e){
-
+                    Log.e("分享失败",Log.getStackTraceString(e));
+                    dismissLoadDialog();
                 }
 
                 break;

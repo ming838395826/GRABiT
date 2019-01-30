@@ -156,7 +156,7 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter>  {
         mRlCard.setDrawingCacheEnabled(true);
 //        mRlCard.buildDrawingCache();
         boolean show = getActivity().getSharedPreferences("GLIDE", 200).getBoolean("Show", false);
-        if (!show) {
+        if (true||!show) {
             DialogUtil.guideCouponsDialog(this.getActivity(), true, null).show();
             getActivity().getSharedPreferences("GLIDE", 200).edit().putBoolean("Show", true).commit();
         }
@@ -293,90 +293,103 @@ public class CarDetailDelegate extends MvpDelegate<IView, ShopPresenter>  {
                     //实现爆炸动画
 //                    ExplosionField mExplosionField = ExplosionField.attach2Window(getActivity());
 //                    mExplosionField.explode(mRlCard);
-                    Bitmap viewBitmap = BitMapUtil.getViewToBitmap(mRlCard);
-                    int width = viewBitmap.getWidth();
-                    int height = viewBitmap.getHeight();
-                    Bitmap left = Bitmap.createBitmap(viewBitmap, 0, 0,
-                            width / 2, height);
-                    Bitmap right = Bitmap.createBitmap(viewBitmap, width / 2, 0,
-                            width / 2, height);
-                    iv_view_left.setImageBitmap(left);
-                    iv_view_right.setImageBitmap(right);
-
-                    AnimationSet LeftanimationSet = new AnimationSet(true);
-                    LeftanimationSet.setAnimationListener(new Animation.AnimationListener() {
+                    //弹出确认领取提示框
+                    DialogUtil.useCouponsDialog(getActivity(), false, mShopProductDetailEntity.getName(), new DialogUtil.OnClickListener() {
                         @Override
-                        public void onAnimationStart(Animation animation) {
+                        public void onClick(Dialog dialog, View view, int type) {
+                            switch (type){
+                                case 1:
+                                    Bitmap viewBitmap = BitMapUtil.getViewToBitmap(mRlCard);
+                                    int width = viewBitmap.getWidth();
+                                    int height = viewBitmap.getHeight();
+                                    Bitmap left = Bitmap.createBitmap(viewBitmap, 0, 0,
+                                            width / 2, height);
+                                    Bitmap right = Bitmap.createBitmap(viewBitmap, width / 2, 0,
+                                            width / 2, height);
+                                    iv_view_left.setImageBitmap(left);
+                                    iv_view_right.setImageBitmap(right);
 
-                        }
+                                    AnimationSet LeftanimationSet = new AnimationSet(true);
+                                    LeftanimationSet.setAnimationListener(new Animation.AnimationListener() {
+                                        @Override
+                                        public void onAnimationStart(Animation animation) {
 
-                        @Override
-                        public void onAnimationEnd(Animation animation) {
-                            iv_view_left.setVisibility(View.GONE);
-                        }
+                                        }
 
-                        @Override
-                        public void onAnimationRepeat(Animation animation) {
+                                        @Override
+                                        public void onAnimationEnd(Animation animation) {
+                                            iv_view_left.setVisibility(View.GONE);
+                                        }
 
-                        }
-                    });
-                    AnimationSet RightanimationSet = new AnimationSet(true);
+                                        @Override
+                                        public void onAnimationRepeat(Animation animation) {
 
-                    RightanimationSet.setAnimationListener(new Animation.AnimationListener() {
-                        @Override
-                        public void onAnimationStart(Animation animation) {
+                                        }
+                                    });
+                                    AnimationSet RightanimationSet = new AnimationSet(true);
 
-                        }
+                                    RightanimationSet.setAnimationListener(new Animation.AnimationListener() {
+                                        @Override
+                                        public void onAnimationStart(Animation animation) {
 
-                        @Override
-                        public void onAnimationEnd(Animation animation) {
-                            iv_view_right.setVisibility(View.GONE);
-                            getPrensenter().setUserCoupons(getIntent().getStringExtra("USE_ID"), SET_COUPONS_USER, 0);
+                                        }
 
-                            DialogUtil.useCouponsDialog(getActivity(), false, mShopProductDetailEntity.getName(), new DialogUtil.OnClickListener() {
-                                @Override
-                                public void onClick(Dialog dialog, View view, int type) {
-                                    switch (type) {
-                                        case 1:
-                                            showLoadDialog();
+                                        @Override
+                                        public void onAnimationEnd(Animation animation) {
+                                            iv_view_right.setVisibility(View.GONE);
                                             getPrensenter().setUserCoupons(getIntent().getStringExtra("USE_ID"), SET_COUPONS_USER, 0);
-                                            break;
-                                    }
-                                }
-                            });
+
+                                            DialogUtil.useCouponsDialog(getActivity(), false, mShopProductDetailEntity.getName(), new DialogUtil.OnClickListener() {
+                                                @Override
+                                                public void onClick(Dialog dialog, View view, int type) {
+                                                    switch (type) {
+                                                        case 1:
+                                                            showLoadDialog();
+                                                            getPrensenter().setUserCoupons(getIntent().getStringExtra("USE_ID"), SET_COUPONS_USER, 0);
+                                                            break;
+                                                    }
+                                                }
+                                            });
+                                        }
+
+                                        @Override
+                                        public void onAnimationRepeat(Animation animation) {
+
+                                        }
+                                    });
+                                    RotateAnimation leftanim = new RotateAnimation(0f, -110f, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f);
+                                    RotateAnimation rightanim = new RotateAnimation(0f, 110f, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 1f);
+                                    leftanim.setFillAfter(true); // 设置保持动画最后的状态
+                                    leftanim.setDuration(2000); // 设置动画时间
+                                    leftanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
+
+                                    rightanim.setFillAfter(true); // 设置保持动画最后的状态
+                                    rightanim.setDuration(2000); // 设置动画时间
+                                    rightanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
+
+                                    AlphaAnimation LeftalphaAnimation = new AlphaAnimation(1, 0);
+                                    LeftalphaAnimation.setDuration(2000);
+                                    AlphaAnimation RightalphaAnimation = new AlphaAnimation(1, 0);
+                                    RightalphaAnimation.setDuration(2000);
+                                    LeftanimationSet.addAnimation(leftanim);
+                                    LeftanimationSet.addAnimation(LeftalphaAnimation);
+
+                                    RightanimationSet.addAnimation(rightanim);
+                                    RightanimationSet.addAnimation(RightalphaAnimation);
+
+                                    mRlCard.setVisibility(View.GONE);
+                                    iv_view_left.setVisibility(View.VISIBLE);
+                                    iv_view_right.setVisibility(View.VISIBLE);
+
+                                    iv_view_right.startAnimation(RightanimationSet);
+                                    iv_view_left.startAnimation(LeftanimationSet);
+                                    break;
+                            }
                         }
+                    }).show();
 
-                        @Override
-                        public void onAnimationRepeat(Animation animation) {
 
-                        }
-                    });
-                    RotateAnimation leftanim = new RotateAnimation(0f, -110f, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 1f);
-                    RotateAnimation rightanim = new RotateAnimation(0f, 110f, Animation.RELATIVE_TO_SELF, 1f, Animation.RELATIVE_TO_SELF, 1f);
-                    leftanim.setFillAfter(true); // 设置保持动画最后的状态
-                    leftanim.setDuration(2000); // 设置动画时间
-                    leftanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
 
-                    rightanim.setFillAfter(true); // 设置保持动画最后的状态
-                    rightanim.setDuration(2000); // 设置动画时间
-                    rightanim.setInterpolator(new AccelerateInterpolator()); // 设置插入器
-
-                    AlphaAnimation LeftalphaAnimation = new AlphaAnimation(1, 0);
-                    LeftalphaAnimation.setDuration(2000);
-                    AlphaAnimation RightalphaAnimation = new AlphaAnimation(1, 0);
-                    RightalphaAnimation.setDuration(2000);
-                    LeftanimationSet.addAnimation(leftanim);
-                    LeftanimationSet.addAnimation(LeftalphaAnimation);
-
-                    RightanimationSet.addAnimation(rightanim);
-                    RightanimationSet.addAnimation(RightalphaAnimation);
-
-                    mRlCard.setVisibility(View.GONE);
-                    iv_view_left.setVisibility(View.VISIBLE);
-                    iv_view_right.setVisibility(View.VISIBLE);
-
-                    iv_view_right.startAnimation(RightanimationSet);
-                    iv_view_left.startAnimation(LeftanimationSet);
 
                 }
                 return false;

@@ -70,18 +70,19 @@
                     android:textColor="@color/color_white"
                     android:textSize="@dimen/app_font_title_sub_size"
                     android:background="#000000"
-                    android:padding="6dp"
-                    android:visibility="gone"/>
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"/>
 
                 <com.taobao.uikit.feature.view.TTextView
-                    android:id="@+id/ttv_date_day_unit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
-                    android:text="@string/text_home_date_day"
+                    android:text=":"
                     android:textColor="@color/app_font_color_main_title"
                     android:textSize="@dimen/app_font_title_sub_12sp"
-                    android:visibility="gone"/>
+                    />
 
 
                 <com.taobao.uikit.feature.view.TTextView

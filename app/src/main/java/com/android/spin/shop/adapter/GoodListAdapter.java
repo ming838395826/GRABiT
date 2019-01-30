@@ -51,7 +51,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         final ShopListItemViewHolder newHolder = (ShopListItemViewHolder) holder;
         newHolder.setType(status);
         newHolder.initData(getDataList().get(position));
-        if(getDataList().get(position).getIsRecerve()==null){
+        if(getDataList().get(position).getIsRecerve()==null&&status==0){
             if(onViewClickListener!=null){
                 onViewClickListener.checkRecevoerStatus(position);
             }

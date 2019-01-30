@@ -5,7 +5,7 @@
     <string name="test1">test1</string>
 
     <string name="text_login">Log In</string>
-    <string name="text_register">Registration</string>
+    <string name="text_register">Register</string>
 
     <string name="text_notice_go">GO</string>
 
@@ -13,9 +13,9 @@
     <string name="text_main_title">Free Discounts at Your Finger Tips</string>
     <string name="text_create_account">Create Account</string>
     <string name="text_your_name">Username</string>
-    <string name="text_your_name_remind">Add your username</string>
+    <string name="text_your_name_remind">Create your username</string>
     <string name="text_name">Username</string>
-    <string name="text_register_agreement">By continuing,you agree to our </string>
+    <string name="text_register_agreement">Registration means that you agree to the GRABiT Terms of Service By clicking “Next”, you agreed to the GRABiT Terms of Service </string>
     <string name="text_register_agreement_service">Terms of Service</string>
     <string name="text_register_next">Next</string>
 
@@ -25,23 +25,23 @@
     <string name="text_your_phone_remind">Registered phone number</string>
     <string name="text_phone_hint">Enter your registered phone number</string>
 
-    <string name="text_phone_error_length">Please enter the correct phone number</string>
+    <string name="text_phone_error_length">Please enter a valid phone number</string>
 
-    <string name="text_sms_code">Enter 6-digit code</string>
+    <string name="text_sms_code">SMS verification code</string>
     <string name="text_sms_code_remind">We have sent a temporary verification code to %s</string>
     <string name="text_sms_code_hint">Please enter the 6-digit verification code</string>
-    <string name="text_get_sms_code">Didn’t receive code?</string>
+    <string name="text_get_sms_code">Didn’t receive a verification code?</string>
 
-    <string name="text_sms_code_error_length">Please enter the 6-digit verification code</string>
+    <string name="text_sms_code_error_length">Please enter a valid verification code</string>
 
     <string name="text_pwd">Create Password</string>
-    <string name="text_pwd_remind">The password must be between 6 to 24 characters long</string>
+    <string name="text_pwd_remind">The password must be 6 to 24 characters long</string>
     <string name="text_pwd_hint">Password</string>
-    <string name="text_pwd_error_length">The password must be between 6 to 24 characters long</string>
+    <string name="text_pwd_error_length">The password must be 6 to 24 characters long</string>
 
 
     <string name="text_your_info">Personal information</string>
-    <string name="text_your_info_remind">个人资讯文案</string>
+    <string name="text_your_info_remind">Personal information</string>
     <string name="text_sex">Gender</string>
     <string name="text_sex_selector_hint">Select</string>
     <string name="text_date">Birthday</string>
@@ -49,13 +49,13 @@
 
     <string name="text_sex_empty_error">Please Select Gender</string>
     <string name="text_birthday_empty_error">Please Select Birthday</string>
-    <string name="text_bind_phone">Connect your phone number</string>
-    <string name="text_bind_accoutn_hint">Account connected to Facebook, \nplease proceed to connect your phone number.</string>
+    <string name="text_bind_phone">Connect phone number</string>
+    <string name="text_bind_accoutn_hint">We have gathered your basic information, \nplease proceed to connect your phone number</string>
 
     <string name="text_hobby">Choose your consumption preference</string>
     <string name="text_hobby_remind">Choose up to 3 consumption preferences</string>
-    <string name="text_place">Choose the area you visit frequently</string>
-    <string name="text_place_remind">Choose one to five areas where you often go \n and we will push the relevant coupons</string>
+    <string name="text_place">Area you normally visit</string>
+    <string name="text_place_remind">Choose up to 5 areas \nRelevant coupons could be given based on your selected locations</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
     <string name="text_enter_home">Home Page</string>
 
@@ -89,7 +89,7 @@
     <string name="text_forget_pwd_phone_hint">Please enter your registered phone number</string>
     <string name="text_forget_pwd_input_hint">Please enter your phone number</string>
     <string name="text_forget_pwd_new_pwd">Reset your Password</string>
-    <string name="text_forget_pwd_new_pwd_input_hint">The password must be between 6 to 24 characters long</string>
+    <string name="text_forget_pwd_new_pwd_input_hint">The password must be 6 to 24 characters long</string>
     <string name="text_new_pwd_input_hint">New Password</string>
     <string name="text_forget_pwd_submit">Submit</string>
     <string name="text_forget_pwd_do_login">Log In</string>
@@ -105,9 +105,9 @@
     <!--更换密码-->
     <string name="text_change_pwd_title">Change phone number</string>
     <string name="text_phone_title">Phone number</string>
-    <string name="text_finish">finish</string>
-    <string name="text_new_phone">New Phone number</string>
-    <string name="text_new_phone_input">New Phone number</string>
+    <string name="text_finish">Complete</string>
+    <string name="text_new_phone">New phone number</string>
+    <string name="text_new_phone_input">enter your new phone number</string>
 
     <string name="dialog_select_language_title">Please select your default language</string>
 
@@ -117,10 +117,10 @@
     <string name="text_reset_success_title">Set up successfully</string>
     <string name="text_ok">OK</string>
     <!--好物已抢光-->
-    <string name="text_no_goods_hint">Ran out of Premiums, \nGrab it earlier next time!</string>
+    <string name="text_no_goods_hint">Grab it \nfaster next time!</string>
     <string name="text_no_goods_title">Ran out</string>
     <!--抽中-->
-    <string name="text_getter_hint">You have grabbed the gift, \nplease proceed to your backpack to learn the use of details</string>
+    <string name="text_getter_hint">You have grabbed the Premium, \nplease proceed to check the usage details in your bag</string>
     <string name="text_getter_title">Successfully earned</string>
     <string name="text_getter_receied">ALREADY RECEIVED</string>
     <string name="text_set_receied">ALREADY RECEIVED</string>
@@ -130,18 +130,18 @@
     <!--首页-->
     <string name="text_home_found">发现好物</string>
     <string name="text_home_draw">抽奖</string>
-    <string name="text_home_card">Backpack</string>
+    <string name="text_home_card">Wallet</string>
     <string name="text_home_mine">我的</string>
     <string name="text_home_grabit">GrabiT</string>
-    <string name="text_home_upcoming">Upcoming</string>
-    <string name="text_home_countdown">Countdown:</string>
-    <string name="text_home_time_limit">Countdown:</string>
-    <string name="text_home_grab_it">Get it right away</string>
+    <string name="text_home_upcoming">Coming soon</string>
+    <string name="text_home_countdown">Time limit:</string>
+    <string name="text_home_time_limit">Time limit:</string>
+    <string name="text_home_grab_it">GRAB iT</string>
     <string name="text_home_ran_out">Ran out</string>
-    <string name="text_home_got_it">Received good goods</string>
+    <string name="text_home_got_it">Got it</string>
     <string name="text_home_reminder">Reminder</string>
     <string name="text_home_reminder_has">Set</string>
-    <string name="text_home_grabit_reminder_set">Set</string>
+    <string name="text_home_grabit_reminder_set">Reminder has been set</string>
     <string name="text_home_total_premiums">Total Premiums</string>
     <string name="text_home_goods_ran_out">Ran out</string>
     <string name="text_home_unit_premiums"></string>
@@ -163,7 +163,7 @@
     <string name="text_unit_right">&#160;Left</string>
     <!--好物-->
     <string name="text_home_premium_information">Premium Information</string>
-    <string name="text_home_garb_address">Garb Address</string>
+    <string name="text_home_garb_address">Service address</string>
     <string name="text_home_contact_us">Contact Us</string>
 
 
@@ -176,9 +176,9 @@
     <string name="text_mine_clear_cache">Clear cache</string>
     <string name="text_mine_set_language">Language</string>
     <string name="text_mine_mobile">Phone number</string>
-    <string name="text_mine_feed_back">Feed back</string>
+    <string name="text_mine_feed_back">Feedback</string>
     <string name="text_mine_contact_us">Contact us</string>
-    <string name="text_mine_current_version">Current version</string>
+    <string name="text_mine_current_version">Version</string>
     <string name="text_mine_service_agreement">Terms of Service</string>
     <string name="text_mine_about">About GRABiT</string>
     <string name="text_mine_logout">Log Out</string>
@@ -186,7 +186,7 @@
     <string name="text_mine_login_register">Login/Registration</string>
 
     <!--卡包-->
-    <string name="text_card_title">Backpack</string>
+    <string name="text_card_title">Wallet</string>
     <string name="text_card_empty">Your bag is empty</string>
     <string name="text_card_tab_new">New</string>
     <string name="text_card_tab_used">Used</string>
@@ -275,10 +275,10 @@
     <string name="ext_use_coupons_success_describe">Congratulations on the successful use of card tickets</string>
     <string name="text_coupons_detail_title">Details of card voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
-    <string name="text_glide_coupons">Show the card ticket to the merchant \n and slide down to use the card ticket.</string>
+    <string name="text_glide_coupons">Show the card ticket to the merchant \nand slide down to use the card ticket.</string>
 
     <string name="text_login_welcome">Welcome to GRABiT</string>
-    <string name="text_login_describe">After login, you can get coupons \n and enjoy them.</string>
+    <string name="text_login_describe">After login, you can get coupons \nand enjoy them.</string>
 
     <string name="text_place_Islands_District">Islands District</string>
     <string name="text_place_Kwai_Tsing_District">Kwai Tsing District</string>

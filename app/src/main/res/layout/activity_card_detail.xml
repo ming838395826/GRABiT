@@ -62,7 +62,7 @@
         android:paddingRight="4px"
         android:paddingTop="10px"
         android:background="@drawable/bg_card_blur"
-        android:layout_margin="5dp">
+        android:layout_margin="12dp">
 
         <com.taobao.uikit.feature.view.TImageView
             android:id="@+id/img_card_avatar"

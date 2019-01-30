@@ -48,7 +48,8 @@ public class SpinApplication extends BaseApplication {
             JPushInterface.init(this);
             Config.DEBUG = false;
             UMShareAPI.get(this);
-            MobSDK.init(this,"21d0f66d142e1","e83c8771200804dc54fa22d5bcfd248d");
+//            MobSDK.init(this,"21d0f66d142e1","e83c8771200804dc54fa22d5bcfd248d");
+            MobSDK.init(this,"29fc443b73fa0","b773458182b27fc4a1e09a8c49ee783e");
 //            AppSecretMobSDK
         }
 

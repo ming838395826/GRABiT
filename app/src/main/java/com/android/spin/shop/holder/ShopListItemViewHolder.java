@@ -19,6 +19,7 @@ import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.shop.adapter.GoodItemAdapter;
 import com.android.spin.shop.adapter.GoodItemListAdapter;
 import com.android.spin.shop.entity.ShopProductItemEntity;
+import com.android.spin.util.FormatUtil;
 import com.android.spin.view.NoScrollListView;
 import com.android.spin.view.NoScrollRecyclerView;
 import com.taobao.uikit.feature.view.TImageView;
@@ -53,6 +54,8 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     TTextView mTtvDateHour;
     @Bind(R.id.ttv_date_min)
     TTextView mTtvDateMin;
+    @Bind(R.id.ttv_date_second)
+    TTextView mTtvDateSecond;
     @Bind(R.id.tv_submit)
     TTextView mTvSubmit;
     @Bind(R.id.tr_good_list)
@@ -162,7 +165,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         }else if(getType()==1){
-            if (entity.getIsRecerve() != null&&entity.getIsRecerve()==0) {
+            if (entity.getUser_item_notice() == null) {
                 setAttend();
             }else {
                 setHaveAttend();
@@ -232,6 +235,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
             mTtvDateHour.setText("00");
             mTtvDateMin.setText("00");
             mTtvDateDay.setText("00");
+            mTtvDateSecond.setText("00");
             mTvSubmit.setEnabled(false);
             return;
         }else {
@@ -272,10 +276,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
 //                        mTtvDateDay.setVisibility(View.GONE);
 //                        mTtvDateDayUnit.setVisibility(View.GONE);
 //                    }
-                    mTtvDateDay.setText((day*24+hour)+"");
-                    mTtvDateHour.setText(min + "");
-                    mTtvDateMin.setText(s + "");
-//                    mTtvDateHour.setText(s + "");
+                    mTtvDateDay.setText(FormatUtil.formatTime(day));
+                    mTtvDateHour.setText(FormatUtil.formatTime(hour));
+                    mTtvDateMin.setText(FormatUtil.formatTime(min));
+                    mTtvDateSecond.setText(FormatUtil.formatTime(s));
                 }
             }
 
@@ -289,6 +293,7 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                 mTtvDateHour.setText("00");
                 mTtvDateMin.setText("00");
                 mTtvDateHour.setText("00");
+                mTtvDateSecond.setText("00");
             }
         };
 

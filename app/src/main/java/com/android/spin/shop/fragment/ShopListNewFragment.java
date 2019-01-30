@@ -210,7 +210,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 //设置提醒成功
                 if (recevierPosition >=0) {
                     final ShopProductItemEntity itemsuccessful = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
-                    itemsuccessful.setIsRecerve(1);
+                    itemsuccessful.setUser_item_notice(new ShopProductItemEntity.userItemNoticeBean());
                     mListWrapper.getAdapter().notifyItemChanged(recevierPosition + 1);
                     DialogUtil.getRemindSetSuccessDialog(getActivity(), true, new DialogUtil.OnClickListener() {
                         @Override
@@ -565,5 +565,9 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     @Override
     public void onLoadError() {
         page--;
+    }
+
+    public ShopProductItemEntity getShareItem(){
+        return items.get(0);
     }
 }

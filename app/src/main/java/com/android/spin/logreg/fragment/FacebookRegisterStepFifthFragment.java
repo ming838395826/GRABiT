@@ -97,7 +97,7 @@ public class FacebookRegisterStepFifthFragment extends BaseRegisterFragment impl
                 mHobbyListWrapper.getAdapter().notifyDataSetChanged();
             }
         });
-        mHobbyListWrapper.updateListData(getAllHobby());
+        mHobbyListWrapper.updateListData(getAllPlace());
 
     }
 
@@ -127,7 +127,7 @@ public class FacebookRegisterStepFifthFragment extends BaseRegisterFragment impl
             }
         }
         if (tags.length() == 0) {
-            ToastUtil.shortShow("请至少选择一个爱好");
+            ToastUtil.shortShow(getString(R.string.text_empty_place));
             return;
         }
         showLoadDialog();
@@ -161,6 +161,29 @@ public class FacebookRegisterStepFifthFragment extends BaseRegisterFragment impl
         hobbys.add(new HobbyItemEntity(R.mipmap.car, getString(R.string.text_hobby_Auto)));
         hobbys.add(new HobbyItemEntity(R.mipmap.beauty, getString(R.string.text_hobby_Beauty_and_Skin_Care)));
         hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_hobby_Medical_service)));
+        return hobbys;
+    }
+
+    private List<HobbyItemEntity> getAllPlace() {
+        List<HobbyItemEntity> hobbys = new ArrayList<>();
+        hobbys.add(new HobbyItemEntity(R.mipmap.supermarket, getString(R.string.text_place_islands_district)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.fashion, getString(R.string.text_place_Kwai_Tsing_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.food, getString(R.string.text_place_North_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.education, getString(R.string.text_place_Sai_Kung_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.professional_service, getString(R.string.text_place_Sha_Tin_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.entertainmentb, getString(R.string.text_place_Tai_Po_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.entertainmenta, getString(R.string.text_place_Tsuen_Wan_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.sport, getString(R.string.text_place_Tuen_Mun_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.healthcare, getString(R.string.text_place_Yuen_Long_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.electronics, getString(R.string.text_place_Kowloon_City)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.home, getString(R.string.text_place_Kwun_Tong_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.car, getString(R.string.text_place_Sham_Shui_Po_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.beauty, getString(R.string.text_place_Wong_Tai_Sin_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_place_Yau_Tsim_Mong_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_place_Central_and_Western_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_place_Eastern_District)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_place_Southern)));
+        hobbys.add(new HobbyItemEntity(R.mipmap.medical, getString(R.string.text_place_Wan_Chai_District)));
         return hobbys;
     }
 

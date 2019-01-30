@@ -25,6 +25,7 @@ import com.android.spin.db.UserManager;
 import com.android.spin.event.UpdateUserInfoEvent;
 import com.android.spin.home.HomeActivity;
 import com.android.spin.logreg.LoginActivity;
+import com.android.spin.logreg.RegisterActivity;
 import com.android.spin.mine.ContactUsActivity;
 import com.android.spin.mine.FeedBackActivity;
 import com.android.spin.mine.PhoneActivity;
@@ -189,7 +190,7 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
             case R.id.miv_mine_mobile:
                 //我的电话
                 if(!UserManager.getInstance().isLogin()){
-                    showNoLogin();
+                    showLoginDialog();
                 }else {
                     PhoneActivity.star(getActivity(),UserManager.getInstance().getUser().getPhone());
                 }
@@ -240,6 +241,10 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
                 break;
             case R.id.miv_mine_feed_back:
                 //意见反馈
+                if(!UserManager.getInstance().isLogin()){
+                    showLoginDialog();
+                    return;
+                }
                 FeedBackActivity.star(getContext());
                 break;
             case R.id.miv_mine_contact_us:
@@ -423,6 +428,27 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
         Intent intent=new Intent(getContext(),MainActivity.class);
         startActivity(intent);
         finishActivity();
+    }
+
+    public void showLoginDialog(){
+        if(!UserManager.getInstance().isLogin()){
+            DialogUtil.getLoginDialog(getActivity(), false, new DialogUtil.OnClickListener() {
+                @Override
+                public void onClick(Dialog dialog, View view, int position) {
+                    switch (position){
+                        case 0:
+
+                            break;
+                        case 1://登陆
+                            LoginActivity.star(getActivity());
+                            break;
+                        case 2://注册
+                            RegisterActivity.star(getActivity());
+                            break;
+                    }
+                }
+            }).show();
+        }
     }
 
 }

@@ -1,10 +1,12 @@
 package com.android.spin.shop.entity;
 
+import com.android.base.mvp.entity.IEntity;
+
 /**
  * Created by ming on 2019/1/6.
  */
 
-public class ShopItemEntity {
+public class ShopItemEntity implements IEntity{
 
 
     /**

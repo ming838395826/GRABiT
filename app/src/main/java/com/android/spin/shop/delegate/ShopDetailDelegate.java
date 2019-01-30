@@ -22,11 +22,14 @@ import com.android.spin.common.util.Constant;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
 import com.android.spin.home.HomeActivity;
+import com.android.spin.home.entity.ProUpdateEvent;
+import com.android.spin.shop.ShopDetailActivity;
 import com.android.spin.shop.entity.ShopProductDetailEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
 import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
+import com.android.spin.util.FormatUtil;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
 
@@ -171,7 +174,8 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 DialogUtil.getGetterDialog(getActivity(), true, mShopProductDetailEntity.getBusiness().getName(),mShopProductDetailEntity.getBusiness().getAvatar(),new DialogUtil.OnClickListener() {
                     @Override
                     public void onClick(Dialog dialog, View view, int position) {
-                        ((HomeActivity) getActivity()).getViewDelegate().showCardfragment();
+
+                        EventBus.getDefault().post(new ProUpdateEvent());
                         EventBus.getDefault().post(new AddCardEvent(0));
                     }
                 }).show();
@@ -257,12 +261,13 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 llLayoutTime.setVisibility(View.VISIBLE);
                 ttvDateTag.setText(getString(R.string.text_home_countdown));
                 ttvSubmit.setText(getString(R.string.text_home_grab_it));
+                ttvSubmit.setVisibility(View.GONE);
                 break;
             case 1:
                 llLayoutTime.setVisibility(View.VISIBLE);
                 ttvDateTag.setText(getString(R.string.text_home_time_limit));
                 ttvSubmit.setText(getString(R.string.text_home_reminder));
-
+                ttvSubmit.setVisibility(View.GONE);
                 break;
             case 2:
                 llLayoutTime.setVisibility(View.GONE);
@@ -325,8 +330,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
 
         long current = System.currentTimeMillis() / 1000;
         if (end <= current) {
-            ttvDateDay.setVisibility(View.GONE);
-//            ttvDateDayUnit.setVisibility(View.GONE);
+            ttvDateDay.setText("00");
             ttvDateHour.setText("00");
             ttvDateMin.setText("00");
             ttvDateS.setText("00");
@@ -358,22 +362,16 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 // 计算差多少分钟
                 long s = millisUntilFinished % nd % nh % nm;
 
-//                long day = millisUntilFinished / (3600 * 24);
-//                long hour = millisUntilFinished % (3600 * 24);
-//                long min = millisUntilFinished % 3600 / 60;
-//                long s = millisUntilFinished % 3600 % 60;
                 if (ttvDateHour != null) {
-                    if (day > 0) {
-//                        ttvDateDay.setVisibility(View.VISIBLE);
-//                        ttvDateDayUnit.setVisibility(View.VISIBLE);
-                        ttvDateDay.setText(day + "");
-                    } else {
-                        ttvDateDay.setVisibility(View.GONE);
-//                        ttvDateDayUnit.setVisibility(View.GONE);
-                    }
-                    ttvDateHour.setText((day*24+hour) + "");
-                    ttvDateMin.setText(min + "");
-                    ttvDateS.setText(s + "");
+//                    if (day > 0) {
+//                        ttvDateDay.setText(day + "");
+//                    } else {
+//                        ttvDateDay.setVisibility(View.GONE);
+//                    }
+                    ttvDateDay.setText(FormatUtil.formatTime(day));
+                    ttvDateHour.setText(FormatUtil.formatTime(hour));
+                    ttvDateMin.setText(FormatUtil.formatTime(min));
+                    ttvDateS.setText(FormatUtil.formatTime(s));
                 }
             }
 

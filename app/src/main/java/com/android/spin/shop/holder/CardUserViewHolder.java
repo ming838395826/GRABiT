@@ -38,7 +38,11 @@ public class CardUserViewHolder extends RecyclerView.ViewHolder {
 
     public void initData(CardUserEntity entity) {
         GlideUtil.defualtLoad(mImgShopAvatar.getContext(), entity.getUser().getAvatar(),R.mipmap.icon_mine_header, mImgShopAvatar);
-        mTtvName.setText(entity.getUser().getName());
+        String userName=entity.getUser().getName();
+        if(entity.getUser().getName().length()>2){
+            userName=entity.getUser().getName().substring(0,1)+entity.getUser().getName().substring(0,1)+"*****";
+        }
+        mTtvName.setText(userName);
         mTtvTime.setText(entity.getUpdated_at().substring(5,16));
 
     }
