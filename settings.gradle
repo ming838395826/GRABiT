@@ -1,1 +1,1 @@
-include ':app', ':ylibrary', ':ptr_lib', ':uikit_core'
+include ':app', ':ylibrary', ':ptr_lib', ':uikit_core', ':zlbum'

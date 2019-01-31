@@ -2,6 +2,7 @@ package com.android.spin.shop.fragment;
 
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -41,6 +42,7 @@ import com.android.spin.shop.service.ShopRetrofitService;
 import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
 import com.flyco.tablayout.listener.CustomTabEntity;
+import com.rajesh.zlbum.ui.AlbumActivity;
 import com.taobao.uikit.feature.view.TRecyclerView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -427,6 +429,17 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
                 entity.setShowAll(true);
                 mListWrapper.getAdapter().notifyItemChanged(position+1);
+            }
+
+            @Override
+            public void showPortial(int position) {
+                ArrayList<String> imageUri = new ArrayList<>();
+                ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(position);
+                imageUri.add(entity.getBusiness().getAvatar());
+                Intent intent = new Intent(getActivity(), AlbumActivity.class);
+                intent.putExtra(AlbumActivity.INTENT_IMAGE, imageUri);
+                intent.putExtra(AlbumActivity.INTENT_INDEX, 0);
+                startActivity(intent);
             }
         });
         mListAdapter.setStatus(getType());

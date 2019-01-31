@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.android.base.base.BaseUIActivity;
 import com.android.spin.R;
 import com.android.spin.common.delegate.CommonShareDelegate;
+import com.android.spin.shop.entity.ShopProductDetailEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.util.image.BlurBuilder;
 
@@ -19,7 +20,7 @@ public class CommonShareActivity extends BaseUIActivity<CommonShareDelegate> {
         super.onCreate(savedInstanceState);
     }
 
-    public static void star(Context mcontext,ShopProductItemEntity entity){
+    public static void star(Context mcontext,ShopProductDetailEntity entity){
         Intent intent = new Intent(mcontext,CommonShareActivity.class);
         intent.putExtra("url",entity);
         mcontext.startActivity(intent);

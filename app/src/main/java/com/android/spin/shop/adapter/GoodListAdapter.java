@@ -121,6 +121,15 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
                 }
             }
         });
+        newHolder.showPortial(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onViewClickListener!=null){
+                    onViewClickListener.showPortial(position);
+                }
+            }
+        });
+
         newHolder.OnChildItem(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int ChildPosition, long l) {
@@ -156,5 +165,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
         void toItemDetail(int position,int childPosition);
 
         void showAll(int position);
+
+        void showPortial(int position);
     }
 }

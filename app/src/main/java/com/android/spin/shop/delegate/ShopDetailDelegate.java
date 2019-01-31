@@ -16,20 +16,19 @@ import com.android.base.util.DensityUtil;
 import com.android.base.util.ToastUtil;
 import com.android.base.util.image.GlideUtil;
 import com.android.spin.R;
+import com.android.spin.common.CommonShareActivity;
 import com.android.spin.common.CommonWebActivity;
 import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.common.util.Constant;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
-import com.android.spin.home.HomeActivity;
 import com.android.spin.home.entity.ProUpdateEvent;
-import com.android.spin.shop.ShopDetailActivity;
 import com.android.spin.shop.entity.ShopProductDetailEntity;
-import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
 import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
 import com.android.spin.util.FormatUtil;
+import com.android.spin.util.image.BlurBuilder;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
 
@@ -89,18 +88,20 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     LinearLayout llLayoutTime;
     @Bind(R.id.tv_submit)
     TTextView ttvSubmit;
+    @Bind(R.id.tiv_share)
+    TImageView mTivShare;
 
     private ShopProductDetailEntity mShopProductDetailEntity;
     private CountDownTimer timer;
-    private boolean clickEnable=true;
+    private boolean clickEnable = true;
 
     @Override
     public void onFail(String code, int type) {
-        switch (type){
+        switch (type) {
             case TYPE_POST_USER_COUPONS:
                 dismissLoadDialog();
                 if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
-                    if (getType()== 0) {//
+                    if (getType() == 0) {//
                         ToastUtil.shortShow(getString(R.string.text_getter_receied));
                     } else {
                         ToastUtil.shortShow(getString(R.string.text_set_receied));
@@ -108,13 +109,13 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 } else {
                     ErrorToastUtli.showErrorToast(code);
                     //刷新商品
-                    if (getType()== 0) {
-                        mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock()+1);
-                        clickEnable=false;
+                    if (getType() == 0) {
+                        mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock() + 1);
+                        clickEnable = false;
                         ttvSubmit.setEnabled(false);
                         ttvSubmit.setText(getString(R.string.text_home_got_it));
-                    }else {
-                        clickEnable=false;
+                    } else {
+                        clickEnable = false;
                         ttvSubmit.setEnabled(false);
                         ttvSubmit.setText(getString(R.string.text_home_grabit_reminder_set));
                     }
@@ -129,7 +130,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 dismissLoadDialog();
                 if (Constant.FAIL_GET_AGAIN_CODE.equals(code)) {
                     //已抢到
-                    clickEnable=false;
+                    clickEnable = false;
                     ttvSubmit.setEnabled(false);
                     ttvSubmit.setText(getString(R.string.text_home_got_it));
                 }
@@ -157,8 +158,8 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 //获取优惠券成功
                 dismissLoadDialog();
                 try {
-                    mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock()+1);
-                    clickEnable=false;
+                    mShopProductDetailEntity.setCurrent_stock(mShopProductDetailEntity.getCurrent_stock() + 1);
+                    clickEnable = false;
                     ttvSubmit.setEnabled(false);
                     ttvSubmit.setText(getString(R.string.text_home_got_it));
                     ttvGoodsCount.setText(mShopProductDetailEntity.getCurrent_stock() + "");
@@ -171,7 +172,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 } catch (Exception e) {
                 }
 
-                DialogUtil.getGetterDialog(getActivity(), true, mShopProductDetailEntity.getBusiness().getName(),mShopProductDetailEntity.getBusiness().getAvatar(),new DialogUtil.OnClickListener() {
+                DialogUtil.getGetterDialog(getActivity(), true, mShopProductDetailEntity.getBusiness().getName(), mShopProductDetailEntity.getBusiness().getAvatar(), new DialogUtil.OnClickListener() {
                     @Override
                     public void onClick(Dialog dialog, View view, int position) {
 
@@ -245,7 +246,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 GlideUtil.defaultLoad(this.getActivity(), entity.getFront_cover(), timgAvatar);
                 ttvGoodsTitle.setText(entity.getName());
                 ttvGoodsContent.setText(entity.getDescription());
-                GlideUtil.defualtLoad(this.getActivity(), entity.getBusiness().getAvatar(),R.mipmap.ic_shop_defaut, timgShopAvatar);
+                GlideUtil.defualtLoad(this.getActivity(), entity.getBusiness().getAvatar(), R.mipmap.ic_shop_defaut, timgShopAvatar);
                 ttvShopName.setText(entity.getBusiness().getName());
                 ttvGoodsCount.setText(entity.getCurrent_stock() + "");
                 ttvAddress.setText(entity.getLocation());
@@ -301,7 +302,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 }
                 break;
             case R.id.tv_submit:
-                if(clickEnable){
+                if (clickEnable) {
                     if (getType() == 0) {//领取
                         Map<String, Object> params = new HashMap<>();
                         params.put("card_id", getParentId());
@@ -396,4 +397,9 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
         timer.start();
     }
 
+    @OnClick(R.id.tiv_share)
+    public void share() {
+        BlurBuilder.snapShotWithoutStatusBar(getActivity());
+        CommonShareActivity.star(getActivity(),mShopProductDetailEntity);
+    }
 }

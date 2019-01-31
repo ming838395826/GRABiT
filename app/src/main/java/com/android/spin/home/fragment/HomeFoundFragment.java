@@ -107,7 +107,7 @@ public class HomeFoundFragment extends MvpFragment<IView,ShopPresenter> implemen
 //        btbTopBar.setHeaderTitle("GRABiT");
 //        btbTopBar.setTitleColor(getResources().getColor(R.color.app_font_color_main_title));
         btbTopBar.setHeaderLeftImage(R.mipmap.record);
-        btbTopBar.setHeaderRightImage(R.mipmap.share);
+//        btbTopBar.setHeaderRightImage(R.mipmap.share);
         btbTopBar.setOnClickListener(this,R.id.tv_top_bar_left,R.id.tv_top_bar_right);
     }
 
@@ -180,8 +180,8 @@ public class HomeFoundFragment extends MvpFragment<IView,ShopPresenter> implemen
                         }
                     },2000);
                     BlurBuilder.snapShotWithoutStatusBar(getActivity());
-                    CommonShareActivity.star(getActivity(),entity);
-                    dismissLoadDialog();
+//                    CommonShareActivity.star(getActivity(),entity);
+//                    dismissLoadDialog();
                 }catch (Exception e){
                     Log.e("分享失败",Log.getStackTraceString(e));
                     dismissLoadDialog();

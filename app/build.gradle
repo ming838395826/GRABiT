@@ -139,4 +139,5 @@ dependencies {
     compile files('libs/MobCommons-2017.0914.1125.jar')
 
     compile 'tyrantgit:explosionfield:1.0.1'
+    compile project(':zlbum')
 }

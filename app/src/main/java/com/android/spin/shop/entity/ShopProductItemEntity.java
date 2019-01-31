@@ -62,7 +62,7 @@ public class ShopProductItemEntity implements IEntity{
     private userItemNoticeBean user_item_notice;
 
     private Integer isRecerve;//是否已经领取,通知
-    private List<CardUserEntity> userList=new ArrayList<>();
+    private List<CardUserEntity> userList;
     private boolean isShowAll=false;
 
     public boolean isShowAll() {

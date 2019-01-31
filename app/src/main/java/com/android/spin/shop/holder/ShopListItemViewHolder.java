@@ -104,6 +104,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
         ln_have_grabit.setOnClickListener(listener);
     }
 
+    public void showPortial(View.OnClickListener listener){
+        mImgShopAvatar.setOnClickListener(listener);
+    }
+
     public void showAll(View.OnClickListener listener){
         tv_show_all.setOnClickListener(listener);
     }

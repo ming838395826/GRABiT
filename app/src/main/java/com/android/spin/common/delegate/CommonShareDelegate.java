@@ -15,6 +15,7 @@ import com.android.base.util.ToastUtil;
 import com.android.base.view.image.GlideRoundTransform;
 import com.android.spin.R;
 import com.android.spin.db.UserManager;
+import com.android.spin.shop.entity.ShopProductDetailEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.util.image.BlurBuilder;
 import com.bumptech.glide.Glide;
@@ -161,8 +162,8 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
         }
     }
 
-    private ShopProductItemEntity getShopProductItemEntity() {
-        return (ShopProductItemEntity) getActivity().getIntent().getSerializableExtra("url");
+    private ShopProductDetailEntity getShopProductItemEntity() {
+        return (ShopProductDetailEntity) getActivity().getIntent().getSerializableExtra("url");
     }
 
     private void share(SHARE_MEDIA qq) {
