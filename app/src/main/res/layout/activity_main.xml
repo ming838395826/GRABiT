@@ -9,6 +9,14 @@
     tools:context="com.android.spin.MainActivity">
 
     <com.taobao.uikit.feature.view.TImageView
+        android:id="@+id/timg_back"
+        android:src="@mipmap/common_back"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <com.taobao.uikit.feature.view.TImageView
         android:id="@+id/timg_logo"
         android:src="@mipmap/icon_home_logo"
         android:layout_centerHorizontal="true"

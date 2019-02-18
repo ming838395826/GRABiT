@@ -66,7 +66,7 @@ public class RegisterStepFourthFragment extends BaseRegisterFragment implements 
 
             @Override
             public void afterTextChanged(Editable s) {
-                tbtnNext.setEnabled(getTextLength(tetPwd) > 6 && getTextLength(tetPwd) < 21 );
+                tbtnNext.setEnabled(getTextLength(tetPwd) >= 6 && getTextLength(tetPwd) <=24 );
             }
         });
 

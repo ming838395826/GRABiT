@@ -4,14 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.android.base.base.delegate.AppDelegate;
 import com.android.base.base.delegate.MvpDelegate;
 import com.android.base.mvp.view.IView;
-import com.android.base.util.AppLanguageManager;
 import com.android.spin.base.SpinApplication;
 import com.android.spin.db.UserManager;
 import com.android.spin.home.HomeActivity;
@@ -19,24 +16,11 @@ import com.android.spin.logreg.LoginActivity;
 import com.android.spin.logreg.RegisterActivity;
 import com.android.spin.logreg.RegisterFacebookActivity;
 import com.android.spin.logreg.presenter.RegisterPresenter;
-import com.android.spin.mine.UserInfoActivity;
 import com.android.spin.util.facebook.FaceBookLogin;
 import com.android.spin.util.facebook.FacebookUser;
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.HttpMethod;
-import com.facebook.Profile;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.orhanobut.logger.Logger;
+import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,7 +34,7 @@ import butterknife.OnClick;
  * 描述：主页
  */
 
-public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implements View.OnClickListener {
+public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implements View.OnClickListener {
 
     @Bind(R.id.tv_sample_login)
     TTextView tvSampleLogin;
@@ -62,6 +46,8 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
     RelativeLayout rlContainer;
 
     FaceBookLogin faceBookLogin;
+    @Bind(R.id.timg_back)
+    TImageView mTimgBack;
 
     private FacebookUser mFacebookUser;
 
@@ -73,9 +59,9 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
     @Override
     public void onResume() {
         super.onResume();
-        if(TextUtils.isEmpty(UserManager.getInstance().getToken())&& !SpinApplication.isFirstLoad){
+        if (TextUtils.isEmpty(UserManager.getInstance().getToken()) && !SpinApplication.isFirstLoad) {
             showLoginView();
-        }else{
+        } else {
             hideLoginView();
         }
     }
@@ -86,35 +72,37 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(!SpinApplication.isFirstLoad||false&&TextUtils.isEmpty(UserManager.getInstance().getToken())){//无论怎么样都进主界面
+                if (!SpinApplication.isFirstLoad || false && TextUtils.isEmpty(UserManager.getInstance().getToken())) {//无论怎么样都进主界面
                     return;
                 }
                 HomeActivity.star(getActivity());
-                SpinApplication.isFirstLoad=false;
+                SpinApplication.isFirstLoad = false;
 
             }
-        },1000);
+        }, 1000);
     }
 
     /**
      * 显示登陆布局
      */
-    private void showLoginView(){
-        setVisibility(tvSampleLogin,View.VISIBLE);
-        setVisibility(tvFaceBookLogin,View.VISIBLE);
-        setVisibility(tvCreateAccount,View.VISIBLE);
+    private void showLoginView() {
+        setVisibility(tvSampleLogin, View.VISIBLE);
+        setVisibility(tvFaceBookLogin, View.VISIBLE);
+        setVisibility(tvCreateAccount, View.VISIBLE);
+        setVisibility(mTimgBack, View.VISIBLE);
     }
 
     /**
      * 显示登陆布局
      */
-    private void hideLoginView(){
-        setVisibility(tvSampleLogin,View.INVISIBLE);
-        setVisibility(tvFaceBookLogin,View.INVISIBLE);
-        setVisibility(tvCreateAccount,View.INVISIBLE);
+    private void hideLoginView() {
+        setVisibility(tvSampleLogin, View.INVISIBLE);
+        setVisibility(tvFaceBookLogin, View.INVISIBLE);
+        setVisibility(tvCreateAccount, View.INVISIBLE);
+        setVisibility(mTimgBack, View.INVISIBLE);
     }
 
-    @OnClick({R.id.tv_sample_login,R.id.tv_face_book_login,R.id.tv_create_account})
+    @OnClick({R.id.tv_sample_login, R.id.tv_face_book_login, R.id.tv_create_account,R.id.timg_back})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -136,10 +124,14 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
 //                AppLanguageManager.setLanguageHk();
 //                getActivity().recreate();
                 break;
+            case R.id.timg_back:
+                //返回
+                finish();
+                break;
         }
     }
 
-    private void initFaceBook(){
+    private void initFaceBook() {
 
         //初始化Facebook登录服务
         faceBookLogin = new FaceBookLogin(getActivity());
@@ -147,9 +139,9 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
             @Override
             public void facebookLoginSuccess(FacebookUser user) {
                 mFacebookUser = user;
-                Map<String,Object> params = new HashMap<>();
-                params.put("access_token",user.getToken());
-                getPrensenter().doFbLogin(params,0);
+                Map<String, Object> params = new HashMap<>();
+                params.put("access_token", user.getToken());
+                getPrensenter().doFbLogin(params, 0);
 
                 showLoadDialog();
             }
@@ -160,7 +152,7 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
             }
         });
 
-        if(faceBookLogin != null){
+        if (faceBookLogin != null) {
             faceBookLogin.login();
         }
 
@@ -169,7 +161,7 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(faceBookLogin == null){
+        if (faceBookLogin == null) {
             return;
         }
         //facebook回调
@@ -179,9 +171,9 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
 
     @Override
     public void onFail(String code, int type) {
-        if("1009".equals(code)){
+        if ("1009".equals(code)) {
             //没注册，需要绑定
-            RegisterFacebookActivity.star(getActivity(),mFacebookUser);
+            RegisterFacebookActivity.star(getActivity(), mFacebookUser);
         }
     }
 
@@ -192,7 +184,7 @@ public class MainDelegate extends MvpDelegate<IView,RegisterPresenter> implement
 
     @Override
     public void onSuccess(Object data, int type) {
-        switch (type){
+        switch (type) {
             case 0:
                 HomeActivity.star(this.getActivity());
                 break;

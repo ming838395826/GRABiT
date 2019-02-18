@@ -82,7 +82,7 @@ public class ForgetPwdThirdFragment extends MvpFragment<IView,RegisterPresenter>
 
             @Override
             public void afterTextChanged(Editable s) {
-                tbtnNext.setEnabled(getTextLength(tetPwd) > 6 && getTextLength(tetPwd) < 21 );
+                tbtnNext.setEnabled(getTextLength(tetPwd) >=6 && getTextLength(tetPwd) <= 24 );
             }
         });
     }

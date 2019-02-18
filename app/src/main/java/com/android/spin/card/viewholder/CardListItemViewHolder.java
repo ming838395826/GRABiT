@@ -73,7 +73,7 @@ public class CardListItemViewHolder extends RecyclerView.ViewHolder {
     }
     public void showUser(){
         iv_delete.setVisibility(View.GONE);
-        tv_to_use.setVisibility(View.GONE);
+        tv_to_use.setVisibility(View.INVISIBLE);
     }
 
 
