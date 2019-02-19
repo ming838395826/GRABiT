@@ -90,11 +90,11 @@ public class RegisterStepSixthFragment extends BaseRegisterFragment implements V
             @Override
             public void onItemClick(TRecyclerView parent, View view, int position, long id) {
 
-                if(getCheckedCount() > 4){
+                HobbyItemEntity entity = (HobbyItemEntity) mHobbyListWrapper.getAdapter().getDataList().get(position);
+                if(getCheckedCount() > 4&&!entity.isChecked()){
                     ToastUtil.shortShow(getString(R.string.text_most_place_hint));
                     return;
                 }
-                HobbyItemEntity entity = (HobbyItemEntity) mHobbyListWrapper.getAdapter().getDataList().get(position);
                 entity.setChecked(!entity.isChecked());
                 mHobbyListWrapper.getAdapter().notifyDataSetChanged();
             }

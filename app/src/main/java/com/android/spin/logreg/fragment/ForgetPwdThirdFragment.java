@@ -88,7 +88,7 @@ public class ForgetPwdThirdFragment extends MvpFragment<IView,RegisterPresenter>
     }
 
     private void checkParams() {
-        if(getTextLength(tetPwd) < 7){
+        if(getTextLength(tetPwd) < 6){
             ToastUtil.shortShow(getString(R.string.text_pwd_error_length));
             return;
         }

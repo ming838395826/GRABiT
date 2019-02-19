@@ -86,7 +86,7 @@ public class RegisterStepFourthFragment extends BaseRegisterFragment implements 
      *
      */
     private void checkParams() {
-        if (tetPwd.getText().toString().trim().length() < 7 || tetPwd.getText().toString().trim().length() > 20) {
+        if (tetPwd.getText().toString().trim().length() < 6 || tetPwd.getText().toString().trim().length() > 24) {
             ToastUtil.shortShow(getString(R.string.text_pwd_error_length));
             return;
         }

@@ -427,7 +427,7 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
     public void showNoLogin(){
         Intent intent=new Intent(getContext(),MainActivity.class);
         startActivity(intent);
-        finishActivity();
+//        finishActivity();
     }
 
     public void showLoginDialog(){
