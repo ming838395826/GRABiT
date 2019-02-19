@@ -259,10 +259,6 @@
 
         <!-- Required SDK核心功能 -->
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
-        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
-        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
-        <!-- Required. AppKey copied from Portal -->
-        <meta-data android:name="JPUSH_APPKEY" android:value="1675d2d0483e034e617408fe"/>
 
         <!-- Required since 3.0.7 -->
         <!-- 新的tag/alias接口结果返回需要开发者配置一个自定的广播 -->
