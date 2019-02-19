@@ -11,6 +11,7 @@ import com.android.spin.db.UserManager;
 import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.mine.entity.UserEntity;
 import com.android.spin.mine.model.MineModel;
+import com.android.spin.shop.entity.RecevierResultEntity;
 import com.android.spin.shop.entity.SetNoticeResultEntity;
 import com.android.spin.shop.entity.ShopHistroyItemEntity;
 import com.android.spin.shop.entity.ShopProductDetailEntity;
@@ -122,9 +123,9 @@ public class ShopPresenter extends MvpPresenter<IView> {
      * 领取优惠券
      */
     public void postUserCoupons(Map<String,Object> params, final int type) {
-        getCardModel().postUserCoupons(params, new OnNetRequestImplListener<Object>(getView(), type) {
+        getCardModel().postUserCoupons(params, new OnNetRequestImplListener<RecevierResultEntity>(getView(), type) {
             @Override
-            public void onSuccess(Object data) {
+            public void onSuccess(RecevierResultEntity data) {
                 super.onSuccess(data);
             }
         });

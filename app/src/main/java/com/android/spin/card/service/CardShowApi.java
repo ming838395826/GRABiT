@@ -6,6 +6,7 @@ import com.android.spin.card.api.CardApiInterface;
 import com.android.spin.card.entity.CardItemEntity;
 import com.android.spin.logreg.api.LogregApiInterface;
 import com.android.spin.mine.entity.UserEntity;
+import com.android.spin.shop.entity.RecevierResultEntity;
 
 import java.util.Map;
 
@@ -45,8 +46,8 @@ public interface CardShowApi<T> {
      */
     @FormUrlEncoded
     @POST(CardApiInterface.GET_USER_COUPONS_URL)
-    Observable<ShowApiResponse<Object>> postUserCoupons(@Header("Cache-Control") String cacheControl,
-                                                       @FieldMap Map<String, Object> map);
+    Observable<ShowApiResponse<RecevierResultEntity>> postUserCoupons(@Header("Cache-Control") String cacheControl,
+                                                                      @FieldMap Map<String, Object> map);
 
     /**
      * 删除优惠券

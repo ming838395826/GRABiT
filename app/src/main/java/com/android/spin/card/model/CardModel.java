@@ -10,6 +10,7 @@ import com.android.spin.card.service.CardRetrofitService;
 import com.android.spin.common.entity.LoginResultEntity;
 import com.android.spin.logreg.entity.RegisterResultEntity;
 import com.android.spin.logreg.service.LogregRetrofitService;
+import com.android.spin.shop.entity.RecevierResultEntity;
 
 import java.util.Map;
 
@@ -47,12 +48,12 @@ public class CardModel {
      * @param listener
      */
     public void postUserCoupons(Map<String,Object> params, OnNetRequestListener listener){
-        Observable<ShowApiResponse<Object>> observable = CardRetrofitService.getInstance().
+        Observable<ShowApiResponse<RecevierResultEntity>> observable = CardRetrofitService.getInstance().
                 createShowApi().postUserCoupons(CardRetrofitService.getCacheControl(), SignHelper.addSign(params));
 
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ChildSubscriber<ShowApiResponse<Object>>(listener) {
+                .subscribe(new ChildSubscriber<ShowApiResponse<RecevierResultEntity>>(listener) {
                 });
     }
 

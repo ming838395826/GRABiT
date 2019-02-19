@@ -35,6 +35,8 @@ import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.adapter.GoodListAdapter;
 import com.android.spin.shop.entity.CardUserEntity;
+import com.android.spin.shop.entity.RecevierResultEntity;
+import com.android.spin.shop.entity.ShopItemEntity;
 import com.android.spin.shop.entity.ShopItemReceivedEntity;
 import com.android.spin.shop.entity.ShopProductItemEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
@@ -188,8 +190,18 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                 try {
                     isRefresh = false;
                     if (recevierPosition >=0) {
+                        RecevierResultEntity result= (RecevierResultEntity) data;
                         ShopProductItemEntity item = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
                         item.setIsRecerve(1);
+                        if(result!=null){
+                            List<ShopItemEntity> items = item.getItems();
+                            for (int i=0;i<items.size();i++){
+                                if(result.getItem_id().equalsIgnoreCase(items.get(i).getId())){
+                                    items.get(i).setCurrent_stock(items.get(i).getCurrent_stock()+1);
+                                    break;
+                                }
+                            }
+                        }
                         mListWrapper.getAdapter().notifyItemChanged(recevierPosition + 1);
 //                        ShopProductItemEntity entity = (ShopProductItemEntity) mListWrapper.getAdapter().getItem(recevierPosition);
 //                        Map<String, Object> params = new HashMap<>();
