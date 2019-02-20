@@ -297,4 +297,8 @@
     <string name="text_place_Eastern_District">東區</string>
     <string name="text_place_Southern">南區</string>
     <string name="text_place_Wan_Chai_District">灣仔區</string>
+
+    <string name="text_notice">  即將開搶 祝你成功</string>
+    <string name="text_login_error">用戶不存在或密碼錯誤</string>
+    <string name="text_exit_app">雙擊返回退出</string>
 </resources>

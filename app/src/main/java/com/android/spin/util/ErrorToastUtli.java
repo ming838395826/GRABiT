@@ -20,7 +20,7 @@ public class ErrorToastUtli {
         }
 
         if("1001".equals(code)){
-            ToastUtil.shortShow("用户不存在或密码错误");
+            ToastUtil.shortShow("用戶不存在或密碼錯誤");
         }
     }
 }

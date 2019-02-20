@@ -95,7 +95,7 @@ public class GoodListAdapter extends BaseListAdapter<ShopProductItemEntity> {
                         break;
                     }
                 }
-                if (isRanOut) {//如果已经满库存
+                if (isRanOut&&status==0) {//如果已经满库存
                     newHolder.setSubmitRanOut();
                     DialogUtil.getNoGoodSDialog(getmActivity(), true, null).show();
                     return;

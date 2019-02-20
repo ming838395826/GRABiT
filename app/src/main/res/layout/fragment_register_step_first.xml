@@ -30,7 +30,7 @@
         android:textSize="@dimen/app_font_title_sub_13sp"
         android:layout_marginTop="30dp"
         android:gravity="center_vertical"
-        android:maxLength="8"
+        android:maxLength="25"
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="50dp" />

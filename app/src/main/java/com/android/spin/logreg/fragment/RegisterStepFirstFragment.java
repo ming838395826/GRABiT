@@ -61,7 +61,7 @@ public class RegisterStepFirstFragment extends BaseRegisterFragment implements V
 
             @Override
             public void afterTextChanged(Editable s) {
-                tbtnNext.setEnabled(getTextLength(ttvName) > 0 && getTextLength(ttvName) < 21 );
+                tbtnNext.setEnabled(getTextLength(ttvName) > 0 && getTextLength(ttvName) <=25 );
             }
         });
     }

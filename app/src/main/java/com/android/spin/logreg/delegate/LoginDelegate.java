@@ -112,7 +112,13 @@ public class LoginDelegate extends MvpDelegate<IView, RegisterPresenter> impleme
 
     @Override
     public void onFail(String code, int type) {
-        ErrorToastUtli.showErrorToast(code);
+        if(code == null){
+            return;
+        }
+        if("1001".equals(code)){
+            ToastUtil.shortShow(getString(R.string.text_login_error));
+        }
+//        ErrorToastUtli.showErrorToast(code);
     }
 
     @Override

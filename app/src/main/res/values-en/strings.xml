@@ -298,4 +298,8 @@
     <string name="text_place_Eastern_District">Eastern District</string>
     <string name="text_place_Southern">Southern</string>
     <string name="text_place_Wan_Chai_District">Wan Chai District</string>
+
+    <string name="text_notice"> is about to begin. Good luck!</string>
+    <string name="text_login_error">User does not exist or password error</string>
+    <string name="text_exit_app">Double Tap Back Button To Exit</string>
 </resources>

@@ -1,9 +1,12 @@
 package com.android.spin.shop.fragment;
 
 
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.app.Service;
 import android.content.Intent;
-import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -13,7 +16,6 @@ import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.base.base.MvpFragment;
-import com.android.base.event.TokenFailEvent;
 import com.android.base.module.http.callback.ChildSubscriber;
 import com.android.base.module.http.callback.ShowApiListResponse;
 import com.android.base.module.http.callback.ShowApiResponse;
@@ -26,13 +28,13 @@ import com.android.base.view.listview.CommonListViewWrapper;
 import com.android.base.view.listview.CommonListViewWrapperConfig;
 import com.android.base.view.listview.ListItemDecoration;
 import com.android.spin.R;
-import com.android.spin.card.entity.CardItemEntity;
 import com.android.spin.common.util.Constant;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
 import com.android.spin.home.HomeActivity;
 import com.android.spin.home.entity.NoticeResult;
 import com.android.spin.home.entity.ProUpdateEvent;
+import com.android.spin.recevier.AutoReceiver;
 import com.android.spin.shop.adapter.GoodListAdapter;
 import com.android.spin.shop.entity.CardUserEntity;
 import com.android.spin.shop.entity.RecevierResultEntity;
@@ -61,7 +63,7 @@ import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import retrofit2.http.POST;
+
 
 /**
  * 作者：yangqiyun
@@ -86,7 +88,7 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
     private CommonListViewWrapper mListWrapper;
 
     private int page = 1;
-    private final int perPage = 20;
+    private final int perPage = 10;
     private boolean isRefresh = false;
     private int recevierPosition = -1;
 
@@ -232,6 +234,29 @@ public class ShopListNewFragment extends MvpFragment<IView, ShopPresenter> imple
                             EventBus.getDefault().post(new UpdateCardEvent(itemsuccessful.getId()));
                         }
                     }).show();
+                    Intent intent = new Intent(getActivity(), AutoReceiver.class);
+                    intent.setAction("VIDEO_TIMER");
+                    intent.putExtra("NAME",itemsuccessful.getBusiness().getName());
+                    // PendingIntent这个类用于处理即将发生的事情 
+                    PendingIntent sender = PendingIntent.getBroadcast(getActivity(), 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT);
+                    AlarmManager am = (AlarmManager) getActivity().getSystemService(Service.ALARM_SERVICE);
+                    // AlarmManager.ELAPSED_REALTIME_WAKEUP表示闹钟在睡眠状态下会唤醒系统并执行提示功能，该状态下闹钟使用相对时间
+                    // SystemClock.elapsedRealtime()表示手机开始到现在经过的时间
+//                    am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+//                            SystemClock.elapsedRealtime(), 10 * 1000, sender);
+                    long startTime=itemsuccessful.getStart_time()*1000;
+                    long currentTime=System.currentTimeMillis();
+                    long noticeTime=startTime;
+                    if((startTime-currentTime)>5*60*1000){
+                        noticeTime=startTime-5*60*1000;
+                    }
+                    if(Build.VERSION.SDK_INT < 19){
+//                        am.set(AlarmManager.RTC_WAKEUP, noticeTime, sender);
+                    }else{
+//                        am.setExact(AlarmManager.RTC_WAKEUP, noticeTime, sender);
+                    }
+//                    am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+1000, sender);
+
                 }
                 try {
 //                    mShopProductItemEntity.setUser_item_notice(new ShopProductItemEntity.userItemNoticeBean());
