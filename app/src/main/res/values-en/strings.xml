@@ -163,7 +163,7 @@
     <string name="text_unit_right">&#160;Left</string>
     <!--好物-->
     <string name="text_home_premium_information">Information</string>
-    <string name="text_home_garb_address">Service address</string>
+    <string name="text_home_garb_address">Address</string>
     <string name="text_home_contact_us">Contact Us</string>
 
 
@@ -260,7 +260,7 @@
     <string name="text_feed_back_email">Email Address</string>
     <string name="text_feed_back_idea_hint">Thank you for using GRABiT. Any comments or suggestions will be appreiciated.</string>
     <string name="text_feed_back_email_hint">Leave a personal email to contact you.</string>
-    <string name="text_feed_back_submit">Submission</string>
+    <string name="text_feed_back_submit">Submit</string>
     <string name="text_feed_back_success">Successful feedback</string>
 
     <string name="text_home_Concern">Concern</string>
@@ -273,12 +273,12 @@
     <string name="text_delete_coupons_describe">Sure to delete your Premium permanently？</string>
     <string name="text_use_coupons_success"></string>
     <string name="ext_use_coupons_success_describe">Thank You For Using GRABiT</string>
-    <string name="text_coupons_detail_title">Details of card voucher</string>
+    <string name="text_coupons_detail_title">E-Voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
     <string name="text_glide_coupons">Show the card ticket to the merchant \nand slide down to use the card ticket.</string>
 
     <string name="text_login_welcome">Welcome to GRABiT</string>
-    <string name="text_login_describe">After login, you can get coupons \nand enjoy them.</string>
+    <string name="text_login_describe">Log in to grab the Premiums.</string>
 
     <string name="text_place_Islands_District">Islands District</string>
     <string name="text_place_Kwai_Tsing_District">Kwai Tsing District</string>
@@ -302,4 +302,5 @@
     <string name="text_notice"> is about to begin. Good luck!</string>
     <string name="text_login_error">User does not exist or password error</string>
     <string name="text_exit_app">Double Tap Back Button To Exit</string>
+    <string name="text_update_info_successful">Updated</string>
 </resources>

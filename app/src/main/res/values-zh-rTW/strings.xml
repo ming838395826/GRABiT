@@ -275,7 +275,7 @@
     <string name="text_glide_coupons">向商家出示卡券後 \n向下滑動可使用掉卡券</string>
 
     <string name="text_login_welcome">歡迎使用GRABiT</string>
-    <string name="text_login_describe">登錄後可領取優惠券 \n優惠享起來</string>
+    <string name="text_login_describe">登陸後即可狂搶優惠</string>
     <string name="text_history_title">歷史好物</string>
 
 
@@ -301,4 +301,5 @@
     <string name="text_notice">  即將開搶 祝你成功</string>
     <string name="text_login_error">用戶不存在或密碼錯誤</string>
     <string name="text_exit_app">雙擊返回退出</string>
+    <string name="text_update_info_successful">更新成功</string>
 </resources>

@@ -29,6 +29,7 @@ import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
 import com.android.spin.util.FormatUtil;
 import com.android.spin.util.image.BlurBuilder;
+import com.taobao.uikit.feature.view.TEditText;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
 
@@ -71,7 +72,7 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     @Bind(R.id.timg_back)
     TImageView timgBack;
     @Bind(R.id.ttv_address)
-    TTextView ttvAddress;
+    TEditText ttvAddress;
     @Bind(R.id.ttv_tel)
     TTextView ttvTel;
     @Bind(R.id.ttv_date_tag)

@@ -233,7 +233,7 @@
                 android:textColor="@color/app_font_color_main_title"
                 android:textSize="@dimen/app_font_title_sub_size" />
 
-            <com.taobao.uikit.feature.view.TTextView
+            <com.taobao.uikit.feature.view.TEditText
                 android:id="@+id/ttv_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -241,7 +241,10 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/app_font_color_main_title_sub"
-                android:textSize="@dimen/app_font_title_sub_14sp" />
+                android:textSize="@dimen/app_font_title_sub_14sp"
+                android:background="@color/transparent"
+                android:editable="false"
+                android:textIsSelectable="true"/>
 
             <View
                 android:layout_width="match_parent"

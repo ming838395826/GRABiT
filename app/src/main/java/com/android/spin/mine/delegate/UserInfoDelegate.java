@@ -99,7 +99,7 @@ public class UserInfoDelegate extends MvpDelegate<IView, MinePresenter> implemen
                 break;
             case TYPE_UPDATE_USER_INFO_CODE:
                 //更新用户信息成功
-                ToastUtil.shortShow("更新成功");
+                ToastUtil.shortShow(getString(R.string.text_update_info_successful));
                 initBtnStatus();
                 initData();
                 EventBus.getDefault().post(new UpdateUserInfoEvent());
