@@ -92,6 +92,10 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     TImageView mTivShare;
     @Bind(R.id.ttv_date_day_unit)
     TTextView mTtvDateDayUnit;
+    @Bind(R.id.ttv_date_hour_unit)
+    TTextView mTtvDateHourUnit;
+    @Bind(R.id.ttv_date_min_unit)
+    TTextView mTtvDateMinUnit;
 
     private ShopProductDetailEntity mShopProductDetailEntity;
     private CountDownTimer timer;
@@ -368,6 +372,12 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 if (ttvDateHour != null) {
                     if (day > 0) {
                         ttvDateDay.setText(FormatUtil.formatTime(day));
+                        mTtvDateHourUnit.setVisibility(View.GONE);
+                        mTtvDateMinUnit.setVisibility(View.GONE);
+                        ttvDateHour.setVisibility(View.GONE);
+                        ttvDateMin.setVisibility(View.GONE);
+                        ttvDateS.setVisibility(View.GONE);
+                        mTtvDateDayUnit.setText(getString(R.string.text_home_date_day));
                     } else {
                         ttvDateDay.setVisibility(View.GONE);
                         mTtvDateDayUnit.setVisibility(View.GONE);

@@ -26,7 +26,7 @@ public class HomeBackHolder {
         Timer tExit = null;
         if (isExit == false) {
             isExit = true; // 准备退出
-            ToastUtil.shortShow(activity.getString(R.string.text_exit_app) + activity.getString(R.string.app_name));
+            ToastUtil.shortShow(activity.getString(R.string.text_exit_app));
             tExit = new Timer();
             tExit.schedule(new TimerTask() {
                 @Override

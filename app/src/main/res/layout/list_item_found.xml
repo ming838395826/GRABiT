@@ -98,6 +98,7 @@
             android:textSize="@dimen/app_font_title_sub_15sp"/>
 
         <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_date_hour_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
@@ -120,6 +121,7 @@
             android:textSize="@dimen/app_font_title_sub_15sp"/>
 
         <com.taobao.uikit.feature.view.TTextView
+            android:id="@+id/ttv_date_min_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"

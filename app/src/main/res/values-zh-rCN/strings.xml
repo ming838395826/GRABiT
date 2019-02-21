@@ -8,51 +8,51 @@
 
     <string name="text_notice_go">前往查看</string>
 
-    <string name="text_main_title">觸手可及的免費優惠平台</string>
+    <string name="text_main_title">唾手可得的優惠</string>
     <string name="text_create_account">創建帳號</string>
-    <string name="text_your_name">你的名字</string>
-    <string name="text_your_name_remind">添加您的名字</string>
+    <string name="text_your_name">用戶名稱</string>
+    <string name="text_your_name_remind">創建用戶名稱</string>
     <string name="text_name">名字</string>
-    <string name="text_register_agreement">註冊意味著你同意GRABiT</string>
+    <string name="text_register_agreement">註冊意味著您同意GRABiT服務條款。 點擊 “下一步”，即表示您同意GRABiT服務條款</string>
     <string name="text_register_agreement_service">服務條款</string>
     <string name="text_register_next">下一步</string>
 
     <string name="text_name_error_length">請輸入20個字符以內名字</string>
 
     <string name="text_your_phone">電話號碼</string>
-    <string name="text_your_phone_remind">輸入註冊手機號碼</string>
-    <string name="text_phone_hint">註冊手機號碼</string>
+    <string name="text_your_phone_remind">註冊電話號碼</string>
+    <string name="text_phone_hint">輸入註冊電話號碼</string>
 
-    <string name="text_phone_error_length">請輸入正確的電話號碼</string>
+    <string name="text_phone_error_length">請輸入有效的電話號碼</string>
 
     <string name="text_sms_code">短訊驗證碼</string>
-    <string name="text_sms_code_remind">我们向 %s 发送了短訊驗證碼</string>
-    <string name="text_sms_code_hint">6位驗證碼</string>
-    <string name="text_get_sms_code">重新請求驗證碼？</string>
+    <string name="text_sms_code_remind">我們向 %s 發送了短訊驗證碼</string>
+    <string name="text_sms_code_hint">請輸入6位驗證碼</string>
+    <string name="text_get_sms_code">重新要求發送驗證碼？</string>
 
-    <string name="text_sms_code_error_length">請輸入6位驗證碼</string>
+    <string name="text_sms_code_error_length">請輸入有效短訊驗證碼</string>
 
     <string name="text_pwd">創建密碼</string>
-    <string name="text_pwd_remind">輸入大於6位的數字或字母</string>
+    <string name="text_pwd_remind">輸入6-24位的數字或字母</string>
     <string name="text_pwd_hint">密碼</string>
-    <string name="text_pwd_error_length">請輸入6-24位數字或字母，無輸入符號和空格</string>
+    <string name="text_pwd_error_length">請輸入6-24位的數字或字母，無輸入符號和空格</string>
 
-    <string name="text_your_info">填寫個人資訊</string>
+    <string name="text_your_info">填寫個人資料</string>
     <string name="text_your_info_remind">个人资讯文案</string>
     <string name="text_sex">性別</string>
-    <string name="text_sex_selector_hint">請選者你的性別</string>
+    <string name="text_sex_selector_hint">選擇您的性別</string>
     <string name="text_date">生日</string>
-    <string name="text_date_selector_hint">請選擇你的出生日期</string>
+    <string name="text_date_selector_hint">請選擇您的出生年月</string>
 
     <string name="text_sex_empty_error">請選擇性別</string>
     <string name="text_birthday_empty_error">請選擇出生日期</string>
     <string name="text_bind_phone">綁定電話號碼</string>
-    <string name="text_bind_accoutn_hint">我們已經獲得您的基礎信息，\n請綁定電話號碼</string>
+    <string name="text_bind_accoutn_hint">您的基本資料已提交，\n請綁定電話號碼</string>
 
     <string name="text_hobby">選擇你感興趣的內容</string>
     <string name="text_hobby_remind">最少尋找一個，我們將推薦合適的資訊給你</string>
-    <string name="text_place">選擇你常去的區域</string>
-    <string name="text_place_remind">選擇1個至5個你常去的區域 \n 我們將推送相關優惠卡券</string>
+    <string name="text_place">選擇您常去的地區</string>
+    <string name="text_place_remind">請選擇1個至5個您常去的地區 \n可根據您選擇的位置推送相關優惠券</string>
     <!--<string name="text_hobbyselector_error">请输入6-20位数字或字母，勿输入符号和空格</string>-->
     <string name="text_enter_home">進入首頁</string>
 
@@ -86,7 +86,7 @@
     <string name="text_forget_pwd_phone_hint">請輸入註冊時使用的手機號碼</string>
     <string name="text_forget_pwd_input_hint">請輸入8位香港手機號碼</string>
     <string name="text_forget_pwd_new_pwd">設置新密碼</string>
-    <string name="text_forget_pwd_new_pwd_input_hint">輸入大於6位少於24位的數字或字母</string>
+    <string name="text_forget_pwd_new_pwd_input_hint">輸入多於6位並少於24位的數字或字母</string>
     <string name="text_new_pwd_input_hint">請輸入新密碼</string>
     <string name="text_forget_pwd_submit">提交修改</string>
     <string name="text_forget_pwd_do_login">前往登錄</string>
@@ -95,8 +95,8 @@
     <string name="text_change_pwd_title">更換電話號碼</string>
     <string name="text_phone_title">電話號碼</string>
     <string name="text_finish">完成</string>
-    <string name="text_new_phone">新手機號碼</string>
-    <string name="text_new_phone_input">請輸入新手機號碼</string>
+    <string name="text_new_phone">新電話號碼</string>
+    <string name="text_new_phone_input">請輸入新電話號碼</string>
 
     <string name="dialog_select_language_title">請選擇您希望設定的語言</string>
 
@@ -109,15 +109,15 @@
     <string name="dialog_btn_confirm">確定</string>
     <string name="dialog_content_logout_hint">確定登出？</string>
     <!--设置提醒-->
-    <string name="text_reset_remind_success_hint">你已設置了開搶提示\n請耐心等待</string>
+    <string name="text_reset_remind_success_hint">您已經設置了開搶提示，\n請耐心等待</string>
     <string name="text_reset_success_title">設置成功</string>
     <string name="text_ok">好的</string>
     <!--好物已抢光-->
-    <string name="text_no_goods_hint">好物已被搶空\n下次請早點來吧</string>
-    <string name="text_no_goods_title">好物已搶光</string>
+    <string name="text_no_goods_hint">已被搶空\n下次快啲啦</string>
+    <string name="text_no_goods_title">已搶空</string>
     <!--抽中-->
-    <string name="text_getter_hint">您已搶到禮品\n請到卡包內查看使用詳情</string>
-    <string name="text_getter_title">領取成功</string>
+    <string name="text_getter_hint">您已搶到優惠，\n請到卡包內查看使用詳情</string>
+    <string name="text_getter_title">成功獲取</string>
     <string name="text_getter_receied">已領取過了</string>
     <string name="text_set_receied">已設置成功</string>
     <!--分享-->
@@ -129,13 +129,13 @@
     <string name="text_home_card">卡包</string>
     <string name="text_home_mine">我的</string>
 
-    <string name="text_home_grabit">狂搶好物</string>
-    <string name="text_home_upcoming">即將開槍</string>
-    <string name="text_home_countdown">狂搶倒計時:</string>
-    <string name="text_home_time_limit">開搶倒計時:</string>
-    <string name="text_home_grab_it">馬上領取好物</string>
-    <string name="text_home_ran_out">已搶光</string>
-    <string name="text_home_got_it">已領取好物</string>
+    <string name="text_home_grabit">狂搶優惠</string>
+    <string name="text_home_upcoming">即將開搶</string>
+    <string name="text_home_countdown">開搶倒數:</string>
+    <string name="text_home_time_limit">開搶倒數:</string>
+    <string name="text_home_grab_it">立即搶</string>
+    <string name="text_home_ran_out">已搶空</string>
+    <string name="text_home_got_it">成功搶到</string>
     <string name="text_home_reminder">開搶提醒</string>
     <string name="text_home_reminder_has">開搶提醒</string>
     <string name="text_home_grabit_reminder_set">已設置開搶提醒</string>
@@ -167,7 +167,7 @@
     <!--我的-->
     <string name="text_mine_title">個人中心</string>
     <string name="text_mine_bind_face_book">綁定Facebook</string>
-    <string name="text_mine_unbind_face_book">解绑Facebook</string>
+    <string name="text_mine_unbind_face_book">解綁Facebook</string>
     <string name="text_mine_bind_face_book_hint">绑定Facebook成功</string>
     <string name="text_mine_unbind_face_book_hint">解绑Facebook成功</string>
     <string name="text_mine_clear_cache">清理緩存</string>
@@ -184,10 +184,10 @@
 
     <!--卡包-->
     <string name="text_card_title">卡包</string>
-    <string name="text_card_empty">沒有卡券</string>
+    <string name="text_card_empty"></string>
     <string name="text_card_tab_new">未使用</string>
     <string name="text_card_tab_used">已使用</string>
-    <string name="text_card_tab_expired">已过期</string>
+    <string name="text_card_tab_expired">已過期</string>
     <string name="text_card_expiration_date">截止日期</string>
     <string name="text_card_service_address">兌換時間</string>
 
@@ -257,7 +257,7 @@
     <string name="text_feed_back_success">意見反饋成功</string>
 
     <!--好物抢购提示-->
-    <string name="text_home_grab_it_new">馬上領取好物</string>
+    <string name="text_home_grab_it_new">立即搶</string>
     <string name="text_home_ran_out_new">已搶光好物</string>
     <string name="text_home_got_it_new">已領取好物</string>
     <string name="text_home_Concern">關注</string>
@@ -272,10 +272,10 @@
     <string name="ext_use_coupons_success_describe">恭喜成功使用卡券</string>
     <string name="text_coupons_detail_title">卡券详情</string>
     <string name="text_coupons_use_soon">立即使用</string>
-    <string name="text_glide_coupons">向商家出示卡券後 \n  向下滑動可使用掉卡券</string>
+    <string name="text_glide_coupons">向商家出示卡券後 \n向下滑動可使用掉卡券</string>
 
     <string name="text_login_welcome">歡迎使用GRABiT</string>
-    <string name="text_login_describe">登錄後可領取優惠券 \n 優惠享起來</string>
+    <string name="text_login_describe">登錄後可領取優惠券 \n優惠享起來</string>
     <string name="text_history_title">歷史好物</string>
 
 

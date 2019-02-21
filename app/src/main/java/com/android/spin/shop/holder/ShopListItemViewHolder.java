@@ -50,6 +50,10 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
     TTextView mTtvDateDay;
     @Bind(R.id.ttv_date_day_unit)
     TTextView mTtvDateDayUnit;
+    @Bind(R.id.ttv_date_hour_unit)
+    TTextView mTtvDateHourUnit;
+    @Bind(R.id.ttv_date_min_unit)
+    TTextView mTtvDateMinUnit;
     @Bind(R.id.ttv_date_hour)
     TTextView mTtvDateHour;
     @Bind(R.id.ttv_date_min)
@@ -276,9 +280,22 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                         mTtvDateDay.setVisibility(View.VISIBLE);
                         mTtvDateDayUnit.setVisibility(View.VISIBLE);
                         mTtvDateDay.setText(FormatUtil.formatTime(day));
+                        mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day));
+
+                        mTtvDateHourUnit.setVisibility(View.GONE);
+                        mTtvDateMinUnit.setVisibility(View.GONE);
+                        mTtvDateHour.setVisibility(View.GONE);
+                        mTtvDateMin.setVisibility(View.GONE);
+                        mTtvDateSecond.setVisibility(View.GONE);
                     } else {
                         mTtvDateDay.setVisibility(View.GONE);
                         mTtvDateDayUnit.setVisibility(View.GONE);
+
+                        mTtvDateHourUnit.setVisibility(View.VISIBLE);
+                        mTtvDateMinUnit.setVisibility(View.VISIBLE);
+                        mTtvDateHour.setVisibility(View.VISIBLE);
+                        mTtvDateMin.setVisibility(View.VISIBLE);
+                        mTtvDateSecond.setVisibility(View.VISIBLE);
                     }
                     mTtvDateDay.setText(FormatUtil.formatTime(day));
                     mTtvDateHour.setText(FormatUtil.formatTime(hour));
