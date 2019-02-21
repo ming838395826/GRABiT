@@ -78,7 +78,7 @@
     <!--登陆-->
     <string name="text_login_phone">Phone number</string>
     <string name="text_login_phone_hint">Please enter your phone number</string>
-    <string name="text_login_pwd">password</string>
+    <string name="text_login_pwd">Password</string>
     <string name="text_login_pwd_hint">Please enter your password</string>
     <string name="text_login_forget_pwd">Forgot your password?</string>
     <string name="text_login_btn">Log In</string>
@@ -147,7 +147,7 @@
     <string name="text_home_unit_premiums"></string>
     <string name="text_home_premiums">Premiums</string>
     <string name="text_home_end">End</string>
-    <string name="text_home_date_day">day</string>
+    <string name="text_home_date_day">days</string>
     <string name="text_home_date_hour">hour</string>
     <string name="text_home_date_min">minute</string>
     <string name="text_home_date_s">second</string>
@@ -253,7 +253,7 @@
     <!--联系我们-->
     <string name="text_contact_phone">By Phone</string>
     <string name="text_contact_email">Email</string>
-    <string name="text_history_title">Good things in history</string>
+    <string name="text_history_title">History</string>
 
     <!--意见反馈-->
     <string name="text_feed_back_idea">Opinions or suggestions</string>
@@ -269,9 +269,9 @@
 
     <!--卡券使用-->
     <string name="text_use_coupons">Confirm the use of card tickets？</string>
-    <string name="text_delete_coupons">Delete Confirmation : Sure to delete your Premium permanently？ </string>
-    <string name="text_delete_coupons_describe">After deletion, the card ticket will be permanently deleted</string>
-    <string name="text_use_coupons_success">Voucher success</string>
+    <string name="text_delete_coupons">Delete Confirmation</string>
+    <string name="text_delete_coupons_describe">Sure to delete your Premium permanently？</string>
+    <string name="text_use_coupons_success"></string>
     <string name="ext_use_coupons_success_describe">Thank You For Using GRABiT</string>
     <string name="text_coupons_detail_title">Details of card voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
