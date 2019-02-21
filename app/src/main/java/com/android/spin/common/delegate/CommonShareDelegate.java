@@ -169,7 +169,7 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
     private void share(SHARE_MEDIA qq) {
         //开启自定义分享页面
         UMImage image = new UMImage(this.getActivity(), getShopProductItemEntity().getFront_cover());
-        UMWeb web = new UMWeb("https://api.spin-hk.com/items/" + getShopProductItemEntity().getId() + ".html");
+        UMWeb web = new UMWeb("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
         web.setTitle(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));//标题
         web.setThumb(image);  //缩略图
@@ -213,8 +213,8 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
         Platform.ShareParams sp = new Platform.ShareParams();
         sp.setText(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));
-        sp.setUrl("https://api.spin-hk.com/items/" + getShopProductItemEntity().getId() + ".html");
-        sp.setTitleUrl("https://api.spin-hk.com/items/" + getShopProductItemEntity().getId() + ".html");
+        sp.setUrl("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
+        sp.setTitleUrl("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
         sp.setExecuteUrl();
         sp.setImageUrl(getShopProductItemEntity().getFront_cover());
         sp.setTitle(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)

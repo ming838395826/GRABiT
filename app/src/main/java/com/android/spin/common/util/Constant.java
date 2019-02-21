@@ -25,7 +25,7 @@ public class Constant {
 
     public static final String HEADER_PUT_CONTENT_TYPE = "content-type:application/x-www-form-urlencoded";//消息已发送，请耐心等待
 
-    public static String URL_ABOUT_GRABIT = "https://api.spin-hk.com/docs/关于grabit.html";
-    public static String URL_SERVICE_AGREEMENT_CN = "https://api.spin-hk.com/docs/grabit-%E6%9C%8D%E5%8B%99%E6%A2%9D%E6%AC%BE-r2.html";
-    public static String URL_SERVICE_AGREEMENT_EN = "https://api.spin-hk.com/docs/grabit-terms-of-service-r2.html";
+    public static String URL_ABOUT_GRABIT = "http://api.grabithk.com/docs/关于grabit.html";
+    public static String URL_SERVICE_AGREEMENT_CN = "http://api.grabithk.com/docs/grabit-%E6%9C%8D%E5%8B%99%E6%A2%9D%E6%AC%BE-r2.html";
+    public static String URL_SERVICE_AGREEMENT_EN = "http://api.grabithk.com/docs/grabit-terms-of-service-r2.html";
 }
