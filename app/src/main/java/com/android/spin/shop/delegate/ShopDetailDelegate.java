@@ -90,6 +90,8 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     TTextView ttvSubmit;
     @Bind(R.id.tiv_share)
     TImageView mTivShare;
+    @Bind(R.id.ttv_date_day_unit)
+    TTextView mTtvDateDayUnit;
 
     private ShopProductDetailEntity mShopProductDetailEntity;
     private CountDownTimer timer;
@@ -364,11 +366,12 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                 long s = millisUntilFinished % nd % nh % nm;
 
                 if (ttvDateHour != null) {
-//                    if (day > 0) {
-//                        ttvDateDay.setText(day + "");
-//                    } else {
-//                        ttvDateDay.setVisibility(View.GONE);
-//                    }
+                    if (day > 0) {
+                        ttvDateDay.setText(FormatUtil.formatTime(day));
+                    } else {
+                        ttvDateDay.setVisibility(View.GONE);
+                        mTtvDateDayUnit.setVisibility(View.GONE);
+                    }
                     ttvDateDay.setText(FormatUtil.formatTime(day));
                     ttvDateHour.setText(FormatUtil.formatTime(hour));
                     ttvDateMin.setText(FormatUtil.formatTime(min));
@@ -400,6 +403,6 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     @OnClick(R.id.tiv_share)
     public void share() {
         BlurBuilder.snapShotWithoutStatusBar(getActivity());
-        CommonShareActivity.star(getActivity(),mShopProductDetailEntity);
+        CommonShareActivity.star(getActivity(), mShopProductDetailEntity);
     }
 }

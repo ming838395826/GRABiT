@@ -121,7 +121,7 @@
     <string name="text_no_goods_title">Ran out</string>
     <!--抽中-->
     <string name="text_getter_hint">You have grabbed the Premium, \nplease proceed to check the usage details in your bag</string>
-    <string name="text_getter_title">Successfully earned</string>
+    <string name="text_getter_title">You got it</string>
     <string name="text_getter_receied">ALREADY RECEIVED</string>
     <string name="text_set_receied">ALREADY RECEIVED</string>
     <!--分享-->
@@ -132,11 +132,11 @@
     <string name="text_home_draw">抽奖</string>
     <string name="text_home_card">Wallet</string>
     <string name="text_home_mine">我的</string>
-    <string name="text_home_grabit">GrabiT</string>
+    <string name="text_home_grabit">GRABiT</string>
     <string name="text_home_upcoming">Coming soon</string>
-    <string name="text_home_countdown">Time limit:</string>
-    <string name="text_home_time_limit">Time limit:</string>
-    <string name="text_home_grab_it">GRAB iT</string>
+    <string name="text_home_countdown">Countdown:</string>
+    <string name="text_home_time_limit">Countdown:</string>
+    <string name="text_home_grab_it">GRABiT</string>
     <string name="text_home_ran_out">Ran out</string>
     <string name="text_home_got_it">Got it</string>
     <string name="text_home_reminder">Reminder</string>
@@ -153,8 +153,8 @@
     <string name="text_home_date_s">second</string>
     <string name="text_product_count">%1$d</string>
     <string name="text_left_product_count">Only %1$d Left</string>
-    <string name="text_good_count">Surplus: %1$d</string>
-    <string name="text_card_user">Has grabbed the user</string>
+    <string name="text_good_count">Remaining: %1$d</string>
+    <string name="text_card_user">Winners</string>
 
     <string name="text_unit_comming_left"></string>
     <string name="text_unit_comming_right"></string>
@@ -162,7 +162,7 @@
     <string name="text_unit_left">Only&#160;</string>
     <string name="text_unit_right">&#160;Left</string>
     <!--好物-->
-    <string name="text_home_premium_information">Premium Information</string>
+    <string name="text_home_premium_information">Information</string>
     <string name="text_home_garb_address">Service address</string>
     <string name="text_home_contact_us">Contact Us</string>
 
@@ -187,7 +187,7 @@
 
     <!--卡包-->
     <string name="text_card_title">Wallet</string>
-    <string name="text_card_empty">Your bag is empty</string>
+    <string name="text_card_empty"></string>
     <string name="text_card_tab_new">New</string>
     <string name="text_card_tab_used">Used</string>
     <string name="text_card_tab_expired">Expired</string>
@@ -240,7 +240,7 @@
 
     <!--分享-->
     <string name="text_share_title_1">invites you to grab</string>
-    <string name="text_share_title_2">！GrabiT：</string>
+    <string name="text_share_title_2">！GRABiT：</string>
     <string name="text_share_install">Please install</string>
 
     <string name="text_fund_empty">Premium is coming</string>
@@ -251,15 +251,15 @@
     <string name="text_most_place_hint">Choose up to five areas you visit frequently.</string>
 
     <!--联系我们-->
-    <string name="text_contact_phone">Contact number</string>
-    <string name="text_contact_email">Contact mailbox</string>
+    <string name="text_contact_phone">By Phone</string>
+    <string name="text_contact_email">Email</string>
     <string name="text_history_title">Good things in history</string>
 
     <!--意见反馈-->
     <string name="text_feed_back_idea">Opinions or suggestions</string>
-    <string name="text_feed_back_email">Personal mailbox</string>
-    <string name="text_feed_back_idea_hint">Thank you for using GRABiT. Feedback us if you have any comments or suggestions in the course of using GRABiT.</string>
-    <string name="text_feed_back_email_hint">Leave your personal mailbox and contact you.</string>
+    <string name="text_feed_back_email">Email Address</string>
+    <string name="text_feed_back_idea_hint">Thank you for using GRABiT. Any comments or suggestions will be appreiciated.</string>
+    <string name="text_feed_back_email_hint">Leave a personal email to contact you.</string>
     <string name="text_feed_back_submit">Submission</string>
     <string name="text_feed_back_success">Successful feedback</string>
 
@@ -269,10 +269,10 @@
 
     <!--卡券使用-->
     <string name="text_use_coupons">Confirm the use of card tickets？</string>
-    <string name="text_delete_coupons">Determine to delete the card ticket？</string>
+    <string name="text_delete_coupons">Delete Confirmation : Sure to delete your Premium permanently？ </string>
     <string name="text_delete_coupons_describe">After deletion, the card ticket will be permanently deleted</string>
     <string name="text_use_coupons_success">Voucher success</string>
-    <string name="ext_use_coupons_success_describe">Congratulations on the successful use of card tickets</string>
+    <string name="ext_use_coupons_success_describe">Thank You For Using GRABiT</string>
     <string name="text_coupons_detail_title">Details of card voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
     <string name="text_glide_coupons">Show the card ticket to the merchant \nand slide down to use the card ticket.</string>

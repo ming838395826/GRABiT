@@ -65,7 +65,7 @@ public class HomeDelegate extends AppDelegate {
      */
     private void setFragmentVisible(int selectedFragmentId) {
         FragmentTransaction fragmentTransaction = ((AppCompatActivity) getActivity()).getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.app_slide_left_in,R.anim.app_slide_right_out);
+//        fragmentTransaction.setCustomAnimations(R.anim.app_slide_left_in,R.anim.app_slide_right_out);
         int[] ids = {R.id.fg_home_found, R.id.fg_home_card, R.id.fg_home_mine};
         for (int id : ids) {
             Fragment fragment = ((AppCompatActivity) getActivity()).getSupportFragmentManager().findFragmentById(id);

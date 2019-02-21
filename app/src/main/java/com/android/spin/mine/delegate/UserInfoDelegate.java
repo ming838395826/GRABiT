@@ -264,7 +264,7 @@ public class UserInfoDelegate extends MvpDelegate<IView, MinePresenter> implemen
             public void handle(String time) { // 回调接口，获得选中的时间
                 ttvDateBirth.setText(time.split(" ")[0]);
             }
-        }, "1970-01-01 00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
+        }, "1900-01-01 00:00", now); // 初始化日期格式请用：yyyy-MM-dd HH:mm，否则不能正常运行
         mCustomDatePicker.showSpecificTime(false); // 不显示时和分
         mCustomDatePicker.setIsLoop(false); // 不允许循环滚动
 

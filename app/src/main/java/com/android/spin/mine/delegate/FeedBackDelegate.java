@@ -62,7 +62,7 @@ public class FeedBackDelegate extends MvpDelegate<IView, MinePresenter> implemen
 
     @Override
     public void afterTextChanged(Editable s) {
-        mTvSubmit.setEnabled(getTextLength(mEtIdea) > 1 && getTextLength(mEtEmail) > 0);
+        mTvSubmit.setEnabled(getTextLength(mEtIdea) > 1);
     }
 
     @OnClick(R.id.tv_submit)

@@ -8,7 +8,7 @@
 
     <string name="text_notice_go">前往查看</string>
 
-    <string name="text_main_title">觸手可及的免費優惠平台</string>
+    <string name="text_main_title">唾手可得的優惠</string>
     <string name="text_create_account">創建帳號</string>
     <string name="text_your_name">用戶名稱</string>
     <string name="text_your_name_remind">創建用戶名稱</string>
@@ -129,11 +129,11 @@
     <string name="text_home_card">卡包</string>
     <string name="text_home_mine">我的</string>
 
-    <string name="text_home_grabit">狂搶好物</string>
+    <string name="text_home_grabit">狂搶優惠</string>
     <string name="text_home_upcoming">即將開搶</string>
-    <string name="text_home_countdown">開搶限期:</string>
-    <string name="text_home_time_limit">開搶限期:</string>
-    <string name="text_home_grab_it">馬上領取好物</string>
+    <string name="text_home_countdown">開搶倒數:</string>
+    <string name="text_home_time_limit">開搶倒數:</string>
+    <string name="text_home_grab_it">立即搶</string>
     <string name="text_home_ran_out">已搶空</string>
     <string name="text_home_got_it">成功搶到</string>
     <string name="text_home_reminder">開搶提醒</string>
@@ -184,7 +184,7 @@
 
     <!--卡包-->
     <string name="text_card_title">卡包</string>
-    <string name="text_card_empty">沒有卡券</string>
+    <string name="text_card_empty"></string>
     <string name="text_card_tab_new">未使用</string>
     <string name="text_card_tab_used">已使用</string>
     <string name="text_card_tab_expired">已過期</string>

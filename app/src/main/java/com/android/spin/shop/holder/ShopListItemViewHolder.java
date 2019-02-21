@@ -272,14 +272,14 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
 //                long min = millisUntilFinished % 3600 / 60;
 //                long s = millisUntilFinished % 3600 % 60;
                 if (mTtvDateHour != null) {
-//                    if (day > 0) {
-//                        mTtvDateDay.setVisibility(View.VISIBLE);
-//                        mTtvDateDayUnit.setVisibility(View.VISIBLE);
-//                        mTtvDateDay.setText(day + "");
-//                    } else {
-//                        mTtvDateDay.setVisibility(View.GONE);
-//                        mTtvDateDayUnit.setVisibility(View.GONE);
-//                    }
+                    if (day > 0) {
+                        mTtvDateDay.setVisibility(View.VISIBLE);
+                        mTtvDateDayUnit.setVisibility(View.VISIBLE);
+                        mTtvDateDay.setText(FormatUtil.formatTime(day));
+                    } else {
+                        mTtvDateDay.setVisibility(View.GONE);
+                        mTtvDateDayUnit.setVisibility(View.GONE);
+                    }
                     mTtvDateDay.setText(FormatUtil.formatTime(day));
                     mTtvDateHour.setText(FormatUtil.formatTime(hour));
                     mTtvDateMin.setText(FormatUtil.formatTime(min));
