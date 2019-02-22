@@ -25,6 +25,7 @@
         android:layout_height="121dp" />
 
     <com.taobao.uikit.feature.view.TTextView
+        android:id="@+id/tv_title"
         android:textSize="@dimen/app_font_title_sub_15sp"
         android:textColor="#c4c4c3"
         android:layout_below="@+id/timg_logo"

@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 
 import com.android.base.base.delegate.MvpDelegate;
 import com.android.base.mvp.view.IView;
+import com.android.base.util.AppLanguageManager;
 import com.android.spin.base.SpinApplication;
 import com.android.spin.db.UserManager;
 import com.android.spin.home.HomeActivity;
@@ -48,6 +49,8 @@ public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implemen
     FaceBookLogin faceBookLogin;
     @Bind(R.id.timg_back)
     TImageView mTimgBack;
+    @Bind(R.id.tv_title)
+    TTextView mTvTitle;
 
     private FacebookUser mFacebookUser;
 
@@ -63,6 +66,11 @@ public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implemen
             showLoginView();
         } else {
             hideLoginView();
+            if ("EN".equalsIgnoreCase(AppLanguageManager.getLanuage())) {
+                mTvTitle.setText("Free Discounts at Your Finger Tips");
+            }else {
+                mTvTitle.setText("唾手可得的優惠");
+            }
         }
     }
 
@@ -102,7 +110,7 @@ public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implemen
         setVisibility(mTimgBack, View.INVISIBLE);
     }
 
-    @OnClick({R.id.tv_sample_login, R.id.tv_face_book_login, R.id.tv_create_account,R.id.timg_back})
+    @OnClick({R.id.tv_sample_login, R.id.tv_face_book_login, R.id.tv_create_account, R.id.timg_back})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

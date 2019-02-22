@@ -170,7 +170,7 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
         //开启自定义分享页面
         UMImage image = new UMImage(this.getActivity(), getShopProductItemEntity().getFront_cover());
         UMWeb web = new UMWeb("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
-        web.setTitle(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
+        web.setTitle(UserManager.getInstance().getUser().getName() + " "+getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));//标题
         web.setThumb(image);  //缩略图
         web.setDescription(getShopProductItemEntity().getDescription());//描述
@@ -197,7 +197,7 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
 
                     }
                 })
-                .withText(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
+                .withText(UserManager.getInstance().getUser().getName() + " "+getString(R.string.text_share_title_1)
                         + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2))
                 .withMedia(web)
                 .share();
@@ -211,13 +211,13 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
 
     private void ShareByMob(String name){
         Platform.ShareParams sp = new Platform.ShareParams();
-        sp.setText(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
+        sp.setText(UserManager.getInstance().getUser().getName() +" "+ getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));
         sp.setUrl("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
         sp.setTitleUrl("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
         sp.setExecuteUrl();
         sp.setImageUrl(getShopProductItemEntity().getFront_cover());
-        sp.setTitle(UserManager.getInstance().getUser().getName() + getString(R.string.text_share_title_1)
+        sp.setTitle(UserManager.getInstance().getUser().getName() + " "+getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));
         Platform fb = ShareSDK.getPlatform(name);
         sp.setShareType(Platform.SHARE_WEBPAGE);
