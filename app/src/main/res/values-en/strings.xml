@@ -239,7 +239,7 @@
     <string name="text_clear_cache_hint">Should we clear your downloaded image information?</string>
 
     <!--分享-->
-    <string name="text_share_title_1">invites you to grab</string>
+    <string name="text_share_title_1"> invites you to grab</string>
     <string name="text_share_title_2">！GRABiT：</string>
     <string name="text_share_install">Please install</string>
 
@@ -303,4 +303,5 @@
     <string name="text_login_error">User does not exist or password error</string>
     <string name="text_exit_app">Double Tap Back Button To Exit</string>
     <string name="text_update_info_successful">Updated</string>
+    <string name="text_delete">Delete</string>
 </resources>

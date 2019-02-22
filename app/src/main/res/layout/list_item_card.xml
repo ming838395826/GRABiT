@@ -192,7 +192,7 @@
             <com.taobao.uikit.feature.view.TTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="刪除"
+                android:text="@string/text_delete"
                 android:textColor="#ffffffff"
                 android:textSize="@dimen/app_font_title_sub_13sp"
                 android:layout_marginTop="9dp"/>
