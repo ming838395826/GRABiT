@@ -136,7 +136,7 @@
     <string name="text_home_upcoming">Coming soon</string>
     <string name="text_home_countdown">Countdown:</string>
     <string name="text_home_time_limit">Countdown:</string>
-    <string name="text_home_grab_it">GRABiT</string>
+    <string name="text_home_grab_it">GRAB IT</string>
     <string name="text_home_ran_out">Ran out</string>
     <string name="text_home_got_it">Got it</string>
     <string name="text_home_reminder">Reminder</string>
@@ -261,7 +261,7 @@
     <string name="text_feed_back_idea_hint">Thank you for using GRABiT. Any comments or suggestions will be appreiciated.</string>
     <string name="text_feed_back_email_hint">Leave a personal email to contact you.</string>
     <string name="text_feed_back_submit">Submit</string>
-    <string name="text_feed_back_success">Successful feedback</string>
+    <string name="text_feed_back_success">Thank you for your feedback</string>
 
     <string name="text_home_Concern">Concern</string>
     <string name="text_home_have_Concern">Pay close attention to</string>
@@ -275,7 +275,7 @@
     <string name="ext_use_coupons_success_describe">Thank You For Using GRABiT</string>
     <string name="text_coupons_detail_title">E-Voucher</string>
     <string name="text_coupons_use_soon">Immediate use</string>
-    <string name="text_glide_coupons">Show the card ticket to the merchant \nand slide down to use the card ticket.</string>
+    <string name="text_glide_coupons">Show merchants the E-Voucher \nand slide to use it.</string>
 
     <string name="text_login_welcome">Welcome to GRABiT</string>
     <string name="text_login_describe">Log in to grab the Premiums.</string>
