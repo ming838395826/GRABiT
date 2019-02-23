@@ -62,7 +62,7 @@ public class AppLanguageManager {
         return Locale.CHINA;
     }
 
-    private static String getLanuage(){
+    public static String getLanuage(){
         //默认语言
         return SpUtil.getSharedPreferences().getString("language","HK");
 
