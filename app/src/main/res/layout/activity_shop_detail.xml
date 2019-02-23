@@ -13,18 +13,51 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+                <com.android.spin.view.gallery.SliderBanner
+                    android:id="@+id/sb_home_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_heightPercent="75%w"
+                    app:my_slider_banner_auto_play="true"
+                    app:my_slider_banner_indicator="@+id/dc_home_banner_indicator"
+                    app:my_slider_banner_pager="@+id/vp_home_banner_pager"
+                    app:my_slider_banner_recycle_show="true">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/vp_home_banner_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.android.spin.view.gallery.IndicatorContainer
+                        android:id="@+id/dc_home_banner_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="8dp"
+                        app:my_dot_type="rect"
+                        app:my_indicator_height="3dp"
+                        app:my_indicator_selected_color="@color/indicator_unselected_color"
+                        app:my_indicator_span="6dp"
+                        app:my_indicator_unselected_color="@color/indicator_selected_color"
+                        app:my_indicator_width="10dp" />
+                </com.android.spin.view.gallery.SliderBanner>
 
                 <com.taobao.uikit.feature.view.TImageView
                     android:id="@+id/timg_avatar"
                     android:src="@drawable/bg_pic_defualt"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"/>
 
                 <com.taobao.uikit.feature.view.TTextView
                     android:id="@+id/ttv_status"

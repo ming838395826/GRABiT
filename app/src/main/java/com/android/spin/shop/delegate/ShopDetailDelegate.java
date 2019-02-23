@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.android.spin.common.selector.view.CircleImageView;
 import com.android.spin.common.util.Constant;
 import com.android.spin.event.AddCardEvent;
 import com.android.spin.event.UpdateCardEvent;
+import com.android.spin.home.adapter.HomeBannerAdapter;
 import com.android.spin.home.entity.ProUpdateEvent;
 import com.android.spin.shop.entity.ShopProductDetailEntity;
 import com.android.spin.shop.presenter.ShopPresenter;
@@ -29,13 +31,17 @@ import com.android.spin.util.DialogUtil;
 import com.android.spin.util.ErrorToastUtli;
 import com.android.spin.util.FormatUtil;
 import com.android.spin.util.image.BlurBuilder;
+import com.android.spin.view.gallery.IndicatorContainer;
+import com.android.spin.view.gallery.SliderBanner;
 import com.taobao.uikit.feature.view.TEditText;
 import com.taobao.uikit.feature.view.TImageView;
 import com.taobao.uikit.feature.view.TTextView;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.Bind;
@@ -97,10 +103,19 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
     TTextView mTtvDateHourUnit;
     @Bind(R.id.ttv_date_min_unit)
     TTextView mTtvDateMinUnit;
+    @Bind(R.id.vp_home_banner_pager)
+    ViewPager mVpHomeBannerPager;
+    @Bind(R.id.dc_home_banner_indicator)
+    IndicatorContainer mDcHomeBannerIndicator;
+    @Bind(R.id.sb_home_banner)
+    SliderBanner mSbHomeBanner;
+    @Bind(R.id.ll_shop_info)
+    LinearLayout mLlShopInfo;
 
     private ShopProductDetailEntity mShopProductDetailEntity;
     private CountDownTimer timer;
     private boolean clickEnable = true;
+    private HomeBannerAdapter mBannerAdapter = new HomeBannerAdapter();
 
     @Override
     public void onFail(String code, int type) {
@@ -238,9 +253,13 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
 
 //        llBottom.setVisibility(View.GONE);
 
-        ViewGroup.LayoutParams vpParams = timgAvatar.getLayoutParams();
+//        ViewGroup.LayoutParams vpParams = timgAvatar.getLayoutParams();
+//        vpParams.height = (int) (DensityUtil.getWidth() * 0.752);
+//        timgAvatar.setLayoutParams(vpParams);
+
+        ViewGroup.LayoutParams vpParams = mSbHomeBanner.getLayoutParams();
         vpParams.height = (int) (DensityUtil.getWidth() * 0.752);
-        timgAvatar.setLayoutParams(vpParams);
+        mSbHomeBanner.setLayoutParams(vpParams);
 
         initData();
 
@@ -250,6 +269,16 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
         try {
             this.mShopProductDetailEntity = entity;
             if (entity != null) {
+                String image = entity.getImages();
+                String[] images = image.split(",");
+                List<String> list = new ArrayList<>();
+                for (int i = 0; i < images.length; i++) {
+                    list.add(images[i]);
+                }
+                mBannerAdapter.setData(list);
+                mSbHomeBanner.setAdapter(mBannerAdapter);
+                mDcHomeBannerIndicator.setNum(list.size());
+                mSbHomeBanner.beginPlay();
                 GlideUtil.defaultLoad(this.getActivity(), entity.getFront_cover(), timgAvatar);
                 ttvGoodsTitle.setText(entity.getName());
                 ttvGoodsContent.setText(entity.getDescription());
