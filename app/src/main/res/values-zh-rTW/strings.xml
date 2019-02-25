@@ -145,6 +145,7 @@
     <string name="text_home_unit_premiums">份</string>
     <string name="text_home_end">已結束</string>
     <string name="text_home_date_day">天</string>
+    <string name="text_home_date_day_single">天</string>
     <string name="text_home_date_hour">時</string>
     <string name="text_home_date_min">分</string>
     <string name="text_home_date_s">秒</string>

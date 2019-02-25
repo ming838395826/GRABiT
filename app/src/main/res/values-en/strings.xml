@@ -148,6 +148,7 @@
     <string name="text_home_premiums">Premiums</string>
     <string name="text_home_end">End</string>
     <string name="text_home_date_day">days</string>
+    <string name="text_home_date_day_single">day</string>
     <string name="text_home_date_hour">hour</string>
     <string name="text_home_date_min">minute</string>
     <string name="text_home_date_s">second</string>

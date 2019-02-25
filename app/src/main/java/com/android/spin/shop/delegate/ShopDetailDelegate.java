@@ -407,7 +407,11 @@ public class ShopDetailDelegate extends MvpDelegate<IView, ShopPresenter> implem
                         ttvDateHour.setVisibility(View.GONE);
                         ttvDateMin.setVisibility(View.GONE);
                         ttvDateS.setVisibility(View.GONE);
-                        mTtvDateDayUnit.setText(getString(R.string.text_home_date_day));
+                        if(day>1){
+                            mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day));
+                        }else{
+                            mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day_single));
+                        }
                     } else {
                         ttvDateDay.setVisibility(View.GONE);
                         mTtvDateDayUnit.setVisibility(View.GONE);

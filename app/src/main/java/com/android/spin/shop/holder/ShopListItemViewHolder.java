@@ -280,7 +280,11 @@ public class ShopListItemViewHolder extends RecyclerView.ViewHolder {
                         mTtvDateDay.setVisibility(View.VISIBLE);
                         mTtvDateDayUnit.setVisibility(View.VISIBLE);
                         mTtvDateDay.setText(FormatUtil.formatTime(day));
-                        mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day));
+                        if(day>1){
+                            mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day));
+                        }else{
+                            mTtvDateDayUnit.setText(mTtvDateDayUnit.getContext().getString(R.string.text_home_date_day_single));
+                        }
 
                         mTtvDateHourUnit.setVisibility(View.GONE);
                         mTtvDateMinUnit.setVisibility(View.GONE);
