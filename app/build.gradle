@@ -33,7 +33,7 @@ android {
         applicationId "com.ming.grabit"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 6
+        versionCode 7
         versionName "1.0.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -53,7 +53,7 @@ android {
 
         manifestPlaceholders = [
                 JPUSH_PKGNAME: applicationId,
-                JPUSH_APPKEY : "96b800dd2b26d9b7ac034fd8", //JPush上注册的包名对应的appkey.//1675d2d0483e034e617408fe
+                JPUSH_APPKEY : "5f030f62f379489c1aba3642", //JPush上注册的包名对应的appkey.//1675d2d0483e034e617408fe
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
 
