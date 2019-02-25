@@ -4,7 +4,7 @@
     android:id="@+id/ptr_material_style_ptr_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.shop.fragment.GoodsFragment">
+    tools:context="com.ming.grabit.shop.fragment.GoodsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.android.spin.view.gallery.SliderBanner
+            <com.ming.grabit.view.gallery.SliderBanner
                 android:id="@+id/sb_home_banner"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
-                <com.android.spin.view.gallery.IndicatorContainer
+                <com.ming.grabit.view.gallery.IndicatorContainer
                     android:id="@+id/dc_home_banner_indicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                     app:my_indicator_span="6dp"
                     app:my_indicator_unselected_color="@color/indicator_selected_color"
                     app:my_indicator_width="10dp" />
-            </com.android.spin.view.gallery.SliderBanner>
+            </com.ming.grabit.view.gallery.SliderBanner>
 
             <LinearLayout
                 android:id="@+id/ll_layout_time"
@@ -150,7 +150,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <com.android.spin.common.selector.view.CircleImageView
+                <com.ming.grabit.common.selector.view.CircleImageView
                     android:id="@+id/img_shop_avatar"
                     android:layout_width="30dp"
                     android:layout_height="30dp"

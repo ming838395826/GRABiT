@@ -64,7 +64,7 @@
             android:layout_marginTop="14dp"
             android:orientation="horizontal">
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/timg_shop_avatar"
                 android:layout_width="30dp"
                 android:layout_height="30dp"

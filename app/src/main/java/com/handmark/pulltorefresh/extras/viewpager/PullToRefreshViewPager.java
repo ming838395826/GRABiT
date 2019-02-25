@@ -20,7 +20,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 
-import com.android.spin.R;
+import com.ming.grabit.R;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 public class PullToRefreshViewPager extends PullToRefreshBase<ViewPager> {

@@ -23,7 +23,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.GridView;
 
-import com.android.spin.R;
+import com.ming.grabit.R;
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 
 public class PullToRefreshGridView extends

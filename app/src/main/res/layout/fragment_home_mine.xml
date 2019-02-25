@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.android.spin.home.fragment.HomeFoundFragment">
+    tools:context="com.ming.grabit.home.fragment.HomeFoundFragment">
 
     <com.android.base.base.BaseHeaderTitleBarView
         android:id="@+id/btb_top_bar"
@@ -33,7 +33,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin">
 
-                <com.android.spin.common.selector.view.CircleImageView
+                <com.ming.grabit.common.selector.view.CircleImageView
                     android:id="@+id/cimg_user_avatar"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
@@ -61,63 +61,63 @@
                 android:layout_height="10dp"
                 android:background="#f7f7f6" />
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_clear_cache"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:title="@string/text_mine_clear_cache"/>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_set_language"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:title="@string/text_mine_set_language"/>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:title="@string/text_mine_mobile"/>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_feed_back"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:title="@string/text_mine_feed_back"/>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_contact_us"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:title="@string/text_mine_contact_us"/>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_version"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:enable="false"
-                app:title="@string/text_mine_current_version"></com.android.spin.view.MineTabItemView>
+                app:title="@string/text_mine_current_version"></com.ming.grabit.view.MineTabItemView>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_agreement"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
-                app:title="@string/text_mine_service_agreement"></com.android.spin.view.MineTabItemView>
+                app:title="@string/text_mine_service_agreement"></com.ming.grabit.view.MineTabItemView>
 
-            <com.android.spin.view.MineTabItemView
+            <com.ming.grabit.view.MineTabItemView
                 android:id="@+id/miv_mine_about_grabit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_tab_item_height"
                 android:background="@color/color_white"
                 app:showLine="false"
-                app:title="@string/text_mine_about"></com.android.spin.view.MineTabItemView>
+                app:title="@string/text_mine_about"></com.ming.grabit.view.MineTabItemView>
 
             <include layout="@layout/layout_line" />
 

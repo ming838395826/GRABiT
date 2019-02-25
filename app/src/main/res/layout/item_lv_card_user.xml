@@ -7,7 +7,7 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp">
 
-    <com.android.spin.common.selector.view.CircleImageView
+    <com.ming.grabit.common.selector.view.CircleImageView
         android:id="@+id/img_shop_avatar"
         android:layout_width="40dp"
         android:layout_height="40dp"

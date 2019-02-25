@@ -4,7 +4,7 @@
     android:layout_height="45dp"
     android:orientation="horizontal">
 
-    <com.android.spin.common.selector.view.CircleImageView
+    <com.ming.grabit.common.selector.view.CircleImageView
         android:id="@+id/image"
         android:contentDescription="@null"
         android:scaleType="centerCrop"

@@ -26,7 +26,7 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView.ScaleType;
 
-import com.android.spin.R;
+import com.ming.grabit.R;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 @SuppressLint("ViewConstructor")

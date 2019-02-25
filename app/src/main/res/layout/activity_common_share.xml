@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    tools:context="com.android.spin.common.CommonShareActivity">
+    tools:context="com.ming.grabit.common.CommonShareActivity">
 
     <com.taobao.uikit.feature.view.TImageView
         android:id="@+id/timg_bg"

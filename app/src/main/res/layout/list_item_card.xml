@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.android.spin.draw.view.SwipeItemLayout
+<com.ming.grabit.draw.view.SwipeItemLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                 tools:text="是开始打瞌睡的卡圣诞贺卡就速度很快"
                 android:visibility="gone"/>
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/img_shop_avatar"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
@@ -200,4 +200,4 @@
 
 
     </LinearLayout>
-</com.android.spin.draw.view.SwipeItemLayout>
+</com.ming.grabit.draw.view.SwipeItemLayout>

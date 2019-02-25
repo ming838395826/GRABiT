@@ -18,7 +18,7 @@
         ptr:ptrMode="both"
         ptr:ptrScrollingWhileRefreshingEnabled="false" />
 
-    <com.android.spin.view.XGallery
+    <com.ming.grabit.view.XGallery
         android:id="@+id/xgallery"
         android:visibility="gone"
         android:layout_below="@+id/pager"
@@ -28,7 +28,7 @@
         ptr:xGallery_itemHeight="50dp"
         ptr:xGallery_itemWidth="50dp" />
 
-    <com.android.spin.view.tab.RecyclerTabLayout
+    <com.ming.grabit.view.tab.RecyclerTabLayout
         android:id="@+id/recycler_tab_layout"
         android:layout_below="@+id/pager"
         android:layout_width="match_parent"

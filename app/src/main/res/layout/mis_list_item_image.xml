@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.spin.common.selector.view.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ming.grabit.common.selector.view.SquareFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#1e000000"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <com.android.spin.common.selector.view.SquaredImageView
+    <com.ming.grabit.common.selector.view.SquaredImageView
         android:id="@+id/image"
         android:scaleType="centerInside"
         android:src="@mipmap/mis_default_error"
@@ -26,4 +26,4 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/mis_btn_unselected"/>
 
-</com.android.spin.common.selector.view.SquareFrameLayout>
+</com.ming.grabit.common.selector.view.SquareFrameLayout>

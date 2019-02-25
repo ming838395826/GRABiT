@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.shop.fragment.GoodsFragment">
+    tools:context="com.ming.grabit.shop.fragment.GoodsFragment">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_chind_content"
@@ -25,7 +25,7 @@
         tl:tl_underline_color="#33000000"
         tl:tl_underline_height="3dp"/>
 
-    <com.android.spin.view.gallery.IndicatorContainer
+    <com.ming.grabit.view.gallery.IndicatorContainer
         android:id="@+id/dc_indicator"
         android:layout_width="match_parent"
         android:background="#fff"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.shop.HistoryFundDetailActivity">
+    tools:context="com.ming.grabit.shop.HistoryFundDetailActivity">
 
     <com.taobao.uikit.feature.view.TScrollView
         android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <com.android.spin.common.selector.view.CircleImageView
+                <com.ming.grabit.common.selector.view.CircleImageView
                     android:id="@+id/timg_shop_avatar"
                     android:layout_width="30dp"
                     android:layout_height="30dp" />

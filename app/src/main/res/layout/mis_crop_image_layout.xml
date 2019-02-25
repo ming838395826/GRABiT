@@ -23,7 +23,7 @@
     -->
 
     <!--矩形裁剪框示例 -->
-    <com.android.spin.common.selector.view.ClipViewLayout
+    <com.ming.grabit.common.selector.view.ClipViewLayout
         android:id="@+id/clipViewLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"

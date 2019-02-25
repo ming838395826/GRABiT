@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_color_f7f7f6"
-    tools:context="com.android.spin.shop.HistoryFundActivity">
+    tools:context="com.ming.grabit.shop.HistoryFundActivity">
 
     <View
         android:id="@+id/sp_status"

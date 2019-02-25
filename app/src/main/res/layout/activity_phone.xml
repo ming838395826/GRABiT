@@ -6,7 +6,7 @@
     android:background="@color/color_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.mine.PhoneActivity">
+    tools:context="com.ming.grabit.mine.PhoneActivity">
 
     <include layout="@layout/layout_line"/>
 

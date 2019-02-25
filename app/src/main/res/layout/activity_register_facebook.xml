@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.android.spin.logreg.RegisterFacebookActivity">
+    tools:context="com.ming.grabit.logreg.RegisterFacebookActivity">
 
     <com.taobao.uikit.feature.view.TTextView
         android:id="@+id/ttv_mine_name"

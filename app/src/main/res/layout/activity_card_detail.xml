@@ -101,7 +101,7 @@
             android:text="***************************************************"
             android:visibility="gone"/>
 
-        <com.android.spin.common.selector.view.CircleImageView
+        <com.ming.grabit.common.selector.view.CircleImageView
             android:id="@+id/img_shop_avatar"
             android:layout_width="17dp"
             android:layout_height="17dp"

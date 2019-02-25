@@ -37,7 +37,7 @@
 
     <include layout="@layout/layout_line" />
 
-    <com.android.spin.draw.view.NoScrollViewPager
+    <com.ming.grabit.draw.view.NoScrollViewPager
         android:id="@+id/vp_mine_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

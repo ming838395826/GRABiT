@@ -34,7 +34,7 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.android.spin.R;
+import com.ming.grabit.R;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout
 		implements com.handmark.pulltorefresh.library.IPullToRefresh<T> {

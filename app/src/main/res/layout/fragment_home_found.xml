@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.home.fragment.HomeFoundFragment">
+    tools:context="com.ming.grabit.home.fragment.HomeFoundFragment">
 
     <com.android.base.base.BaseHeaderTitleBarView
         android:id="@+id/btb_top_bar"
@@ -40,23 +40,23 @@
 
         <fragment
             android:id="@+id/fg_goos_current"
-            android:name="com.android.spin.shop.fragment.ShopListNewFragment"
+            android:name="com.ming.grabit.shop.fragment.ShopListNewFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <fragment
             android:id="@+id/fg_goos_comming"
-            android:name="com.android.spin.shop.fragment.CommingShopListFragment"
+            android:name="com.ming.grabit.shop.fragment.CommingShopListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
     </FrameLayout>
 
-    <!--<com.android.spin.view.pager.NoScrollViewPager-->
+    <!--<NoScrollViewPager-->
         <!--android:id="@+id/vp_content"-->
         <!--android:layout_weight="1"-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"></com.android.spin.view.pager.NoScrollViewPager>-->
+        <!--android:layout_height="0dp"></NoScrollViewPager>-->
 
     <!--<LinearLayout-->
         <!--android:orientation="horizontal"-->

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.spin.mine.UserInfoActivity">
+    tools:context="com.ming.grabit.mine.UserInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:textColor="@color/app_color_4a4a4a"
                 android:textSize="@dimen/app_font_title_sub_15sp" />
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/timg_mine_avatar"
                 android:layout_width="47dp"
                 android:layout_height="47dp"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context="com.android.spin.MainActivity">
+    tools:context="com.ming.grabit.MainActivity">
 
     <com.taobao.uikit.feature.view.TImageView
         android:id="@+id/timg_back"

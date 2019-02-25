@@ -16,7 +16,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.android.spin.common.selector.view.CircleImageView
+        <com.ming.grabit.common.selector.view.CircleImageView
             android:id="@+id/img_shop_avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -151,7 +151,7 @@
             android:gravity="right"
             android:orientation="horizontal">
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_one"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
@@ -160,7 +160,7 @@
                 android:visibility="gone"
                 tools:src="@mipmap/icon_dialog_gifta" />
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_two"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
@@ -170,7 +170,7 @@
                 android:visibility="gone"
                 tools:src="@mipmap/icon_dialog_gifta" />
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_third"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
@@ -180,7 +180,7 @@
                 android:visibility="gone"
                 tools:src="@mipmap/icon_dialog_gifta" />
 
-            <com.android.spin.common.selector.view.CircleImageView
+            <com.ming.grabit.common.selector.view.CircleImageView
                 android:id="@+id/iv_person_four"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
@@ -209,7 +209,7 @@
         android:textColor="@color/color_white"
         android:textSize="@dimen/app_font_title_sub_15sp"/>
 
-    <com.android.spin.view.NoScrollListView
+    <com.ming.grabit.view.NoScrollListView
         android:id="@+id/tr_good_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
