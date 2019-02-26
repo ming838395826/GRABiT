@@ -305,4 +305,5 @@
     <string name="text_exit_app">Double Tap Back Button To Exit</string>
     <string name="text_update_info_successful">Updated</string>
     <string name="text_delete">Delete</string>
+    <string name="text_ssl_error">There is a certificate of distrust</string>
 </resources>

@@ -62,6 +62,8 @@ public class AgreementDelegate extends AppDelegate {
                     view.setTag(true);
                 }
             }
+
+
         });
 
         if (originalUrl.startsWith("http") || originalUrl.startsWith("https")) {

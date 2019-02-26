@@ -304,4 +304,6 @@
     <string name="text_exit_app">雙擊返回退出</string>
     <string name="text_update_info_successful">更新成功</string>
     <string name="text_delete">刪除</string>
+
+    <string name="text_ssl_error">存在不信任證書</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.android.base.view.layout;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Build;
@@ -11,6 +13,9 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.android.base.R;
+
 
 /**
  * 订制的 WebView
@@ -101,9 +106,26 @@ public class BaseWebView extends WebView {
     }
 
     @Override
-    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+    public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
       // 打开 https 页面时接受证书
-      handler.proceed();
+//      handler.proceed();
+      final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+      builder.setMessage("There is a certificate of distrust");
+      builder.setPositiveButton("continue", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+          handler.proceed();
+        }
+      });
+      builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+          handler.cancel();
+        }
+      });
+      final AlertDialog dialog = builder.create();
+      dialog.show();
+
     }
   }
 
