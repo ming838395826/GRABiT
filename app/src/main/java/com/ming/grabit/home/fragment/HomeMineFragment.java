@@ -256,7 +256,7 @@ public class HomeMineFragment extends MvpFragment<IView, MinePresenter> implemen
 
     private void initDatas() {
         try {
-            if(TextUtils.isEmpty(UserManager.getInstance().getUser().getName())){
+            if(!UserManager.getInstance().isLogin()){
                 ttvMineName.setText(getString(R.string.text_mine_login_register));
                 tvBindFaceBook.setVisibility(View.GONE);
                 tvFaceBookLogin.setVisibility(View.GONE);
