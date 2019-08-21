@@ -167,7 +167,7 @@ public class CommonShareDelegate extends MvpDelegate implements View.OnClickList
     private void share(SHARE_MEDIA qq) {
         //开启自定义分享页面
         UMImage image = new UMImage(this.getActivity(), getShopProductItemEntity().getFront_cover());
-        UMWeb web = new UMWeb("http://api.grabithk.com/items/" + getShopProductItemEntity().getId() + ".html");
+        UMWeb web = new UMWeb("http://http://39.108.185.60:8080/items/" + getShopProductItemEntity().getId() + ".html");
         web.setTitle(UserManager.getInstance().getUser().getName() + " "+getString(R.string.text_share_title_1)
                 + getShopProductItemEntity().getName() + getString(R.string.text_share_title_2));//标题
         web.setThumb(image);  //缩略图

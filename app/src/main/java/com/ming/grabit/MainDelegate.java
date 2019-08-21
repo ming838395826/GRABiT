@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.android.base.base.delegate.MvpDelegate;
@@ -51,6 +52,8 @@ public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implemen
     TImageView mTimgBack;
     @Bind(R.id.tv_title)
     TTextView mTvTitle;
+    @Bind(R.id.iv_splash)
+    ImageView ivSplash;
 
     private FacebookUser mFacebookUser;
 
@@ -64,11 +67,13 @@ public class MainDelegate extends MvpDelegate<IView, RegisterPresenter> implemen
         super.onResume();
         if (TextUtils.isEmpty(UserManager.getInstance().getToken()) && !SpinApplication.isFirstLoad) {
             showLoginView();
+            ivSplash.setVisibility(View.GONE);
+            mTvTitle.setText("招財蛙");
         } else {
             hideLoginView();
             if ("EN".equalsIgnoreCase(AppLanguageManager.getLanuage())) {
                 mTvTitle.setText("Free Discounts at Your Finger Tips");
-            }else {
+            } else {
                 mTvTitle.setText("唾手可得的優惠");
             }
         }
